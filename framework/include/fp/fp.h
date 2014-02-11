@@ -103,7 +103,7 @@
 #define fp_from_montgomery(res, a)	fp_from_montgomery_std(res, a);
 
 #if ARCHITECTURE==ARCH_CORTEXM0
-#include "fp/fp_cortexm0.h"
+#include "cortexm0/fp.h"
 #endif
 
 #endif /* FP_H_ */
