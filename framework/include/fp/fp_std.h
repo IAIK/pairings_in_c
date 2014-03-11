@@ -25,7 +25,7 @@ void fp_mul_monty_twostep_lazy(fp_t res, const fp_t a, const fp_t b, const bigin
 void fp_mul_monty_fips_std(fp_t res, const fp_t a, const fp_t b, const bigint_t modulo, const word_t n0);
 void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod);
 void fp_inv_exp_std(fp_t res, const fp_t a);
-void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod);
+void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod, const bigint_t mu);
 void fp_inv_bn(fp_t res, const fp_t a);
 void fp_hlv_std(fp_t res, const fp_t a, const bigint_t mod);
 void fp_exp_monty(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const bigint_t n0, const bigint_t r2);

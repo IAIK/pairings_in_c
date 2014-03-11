@@ -487,8 +487,9 @@ void fp_exp_monty(fp_t res, const fp_t a, const bigint_t b,
  * @param res the resulting inverse
  * @param a the operand
  * @param mod the prime (modulus)
+ * @param mu_n the parameter mu for barrett reduction
  */
-void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod) {
+void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod, const bigint_t mu_n) {
 	bigint_t e;
 	int i;
 	fp_t r;
@@ -498,10 +499,11 @@ void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod) {
 
 	fp_copy(r, a);
 
+	// branching is safe as modulus is assumed to be public
 	for (i =  bi_get_msb(e)-1; i >= 0; i--) {
-		fp_sqr(r, r);
+		fp_sqr_barett_var(r, r, mod, mu_n);
 		if (bi_test_bit(e, i)) {
-			fp_mul(r, r, a);
+			fp_mul_barett_var(r, r, a, mod, mu_n);
 		}
 	}
 

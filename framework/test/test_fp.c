@@ -4458,6 +4458,114 @@ int main (void) {
 		fp_sqrt(var_res, var_a);
 		assert_bi_equal(var_res, var_expected, "fp_sqrt 538 ");
 	}
+	{
+		static const bigint_t var_a = {0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 247 ");
+	}
+	{
+		static const bigint_t var_a = {0x0000000C, 0xA1000000, 0x00000010, 0xFF9F8000, 0x00000007, 0xBA344D80, 0x40000001, 0x25236482};
+		static const bigint_t var_expected = {0x0000000C, 0xA1000000, 0x00000010, 0xFF9F8000, 0x00000007, 0xBA344D80, 0x40000001, 0x25236482};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 248 ");
+	}
+	{
+		static const bigint_t var_a = {0x21282B29, 0x95FD9CB0, 0xD00EB27B, 0x6812ECFA, 0xAAE006C3, 0xDC63D7D5, 0xB973993D, 0x027F8FC5};
+		static const bigint_t var_expected = {0x8483852E, 0x35718FB0, 0x563E5E09, 0x50C4ADB1, 0x8DCA0F3C, 0x63FC2938, 0x6A4912BE, 0x203E7F20};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 249 ");
+	}
+	{
+		static const bigint_t var_a = {0x1F13019E, 0xC2322B6F, 0x0899EBE9, 0x9D425C8F, 0x9254AD79, 0x2E7C4005, 0x2FDCEB63, 0x092F9168};
+		static const bigint_t var_expected = {0x459DD9C3, 0x26EC3D10, 0xC19C2E85, 0xDC397E22, 0xA103B88D, 0x436C21F7, 0xD10D056B, 0x0C43CE72};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 250 ");
+	}
+	{
+		static const bigint_t var_a = {0x8D50E7F7, 0x6F17E25D, 0x88B9EA94, 0x2BC80896, 0x840D2A1B, 0x48972A31, 0xA80FD56D, 0x02D50E4E};
+		static const bigint_t var_expected = {0x6DB5CC31, 0xCCDC6338, 0xFCF57218, 0x5D592E6D, 0xBF8CD454, 0xA022D7FD, 0x81D8ABE0, 0x1181913A};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 251 ");
+	}
+	{
+		static const bigint_t var_a = {0x7A5479B1, 0xE59393C2, 0x88F91482, 0xE8A7D912, 0xC725A059, 0x442ABD76, 0xE3474EF7, 0x24B9C36F};
+		static const bigint_t var_expected = {0xBAF6415C, 0x9DB64F9B, 0xAEE9D3DB, 0x0969F1F9, 0x456C5038, 0x9B9FB764, 0xDDDE44CD, 0x1BB80EC6};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 252 ");
+	}
+	{
+		static const bigint_t var_a = {0x6B8838B6, 0xB7FF5C4E, 0x93B58898, 0xCB035950, 0xD5FD7CC2, 0xA80A1B7F, 0xB1C5231D, 0x1E9390AD};
+		static const bigint_t var_expected = {0x4C4ED356, 0x08C00224, 0xF4900D7E, 0x60780BA5, 0x8DD6A0B6, 0xF01A448A, 0xE2041B6A, 0x148264CC};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 253 ");
+	}
+	{
+		static const bigint_t var_a = {0xD9054BDF, 0xBB3BB1B5, 0x09B416D6, 0x6D783A05, 0xDE4EDF9A, 0xFF69ACEA, 0x77FEFFC8, 0x04D541B5};
+		static const bigint_t var_expected = {0xD4C05CF5, 0x3775E9DD, 0x5F2E7C3B, 0xDAA5803F, 0xCB94E7B3, 0x0CC85EB2, 0x4E7CD73B, 0x11CE3DCD};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 254 ");
+	}
+	{
+		static const bigint_t var_a = {0xB0203E83, 0x34D4E002, 0x9D0B3403, 0x8A2B7D1F, 0x430DDEE1, 0xE58722A9, 0xEF1C3E4A, 0x19520A07};
+		static const bigint_t var_expected = {0x7C915A45, 0x6C11C7D0, 0x2A4E252D, 0xC146DB2B, 0xB0969240, 0x5C247558, 0x28627E3B, 0x04C218DB};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 255 ");
+	}
+	{
+		static const bigint_t var_a = {0xD2C196C8, 0x1536D28E, 0xD75901BE, 0x87BAB2C3, 0x1B1BD9AE, 0x6AAF4946, 0x67C81DA3, 0x21336414};
+		static const bigint_t var_expected = {0xBF1F10D1, 0xDF9F6A82, 0x32B3FD6F, 0x541AABF6, 0xD41A859B, 0x581BB576, 0xCD914DF5, 0x03E73E12};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 256 ");
+	}
+	{
+		static const bigint_t var_a = {0x929155E7, 0x8CF3DB8F, 0x92490CA6, 0xE8955FDA, 0xB1CA3D05, 0xE302BEC8, 0x004D3243, 0x18778CFC};
+		static const bigint_t var_expected = {0xB79148D6, 0x74F14158, 0xFFBCB25F, 0x863AFF81, 0x7EA5B07D, 0x78E1601A, 0xD41108FE, 0x04DF2DE4};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 257 ");
+	}
+	{
+		static const bigint_t var_a = {0x3AF296B9, 0x9514F37A, 0x7F694DAC, 0xDB767E6F, 0x033169C2, 0xE91DF275, 0xB0032704, 0x08A7A7FB};
+		static const bigint_t var_expected = {0xECFC9543, 0x4E07353C, 0x4901B421, 0x80A0601D, 0xA70118C5, 0x37537CB3, 0xBF02435D, 0x076C2D80};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 258 ");
+	}
+	{
+		static const bigint_t var_a = {0x85CAECEB, 0xC4839F07, 0xA15293DB, 0xAB1BAD07, 0x4548921D, 0x9A613001, 0x01123371, 0x12BFB8A8};
+		static const bigint_t var_expected = {0xAD517ECC, 0x7A12DDED, 0xEB8E5DA9, 0xF3708068, 0x9995BB6A, 0xABCFCEB9, 0x9CB5014A, 0x1E2B6A5E};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 259 ");
+	}
+	{
+		static const bigint_t var_a = {0x25203CAC, 0x087A6883, 0xD01E7214, 0x47F9730E, 0x5CE2E59C, 0x1B6931C2, 0x507AD6E1, 0x20D3D803};
+		static const bigint_t var_expected = {0x4BB312CA, 0xE7859F9E, 0x9529F637, 0x08D9B24B, 0xD98F2258, 0x084A10A4, 0x59A33D46, 0x0FEFB8FB};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 260 ");
+	}
+	{
+		static const bigint_t var_a = {0x3E82146C, 0x1209AB45, 0x362F31EF, 0xCBE0B978, 0x646B3DF6, 0x117FD787, 0x0E77BAA1, 0x025A8E3A};
+		static const bigint_t var_expected = {0x1012259B, 0xE6C6B26A, 0x88720808, 0x0C5CAD6D, 0xE5A1F8C9, 0x95C93A10, 0xE959108C, 0x16CC2575};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 261 ");
+	}
+	{
+		static const bigint_t var_a = {0xE943EEF2, 0x7BAF0C81, 0xD4429431, 0xED08E99F, 0x2B7C2175, 0xE323E7A4, 0x822ECFC3, 0x0EAE60B4};
+		static const bigint_t var_expected = {0xC94C1219, 0xB1DBCAFD, 0x14FB222B, 0x2126A883, 0xDEC29CF2, 0x866D4864, 0x25807371, 0x09804858};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 262 ");
+	}
+	{
+		static const bigint_t var_a = {0xB286B5DF, 0x52F7FB63, 0xFEDC426E, 0x9219359C, 0xB33CECEA, 0x32266CEA, 0x86AA002A, 0x0F6E4C93};
+		static const bigint_t var_expected = {0x4139FE7C, 0x65CF3E09, 0xD432FF47, 0x1E1BBDB2, 0x0C61E8F2, 0xEA290202, 0x1AEF173A, 0x0450038F};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 263 ");
+	}
+	{
+		static const bigint_t var_a = {0x1B1588C6, 0xE831F175, 0xDBFB3F9E, 0x31C1122E, 0xB4965F11, 0x4AA483CE, 0x462B1D2A, 0x1B157C91};
+		static const bigint_t var_expected = {0xAC0DACC2, 0xF4872519, 0x433105D2, 0x46AF0FE9, 0x708CC316, 0x7003E9AA, 0x2BA21FBB, 0x06363ED6};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 264 ");
+	}
 #endif
 #elif (BNCURVE == BN158)
 #ifdef MONTGOMERY_ARITHMETIC
@@ -5928,6 +6036,114 @@ int main (void) {
 		static const bigint_t var_expected = {0x581425AB, 0x12EC7F7A, 0xA9458B11, 0xC6B99DC1, 0x206B2813};
 		fp_sqrt(var_res, var_a);
 		assert_bi_equal(var_res, var_expected, "fp_sqrt 538 ");
+	}
+	{
+		static const bigint_t var_a = {0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 247 ");
+	}
+	{
+		static const bigint_t var_a = {0x7A5035A4, 0x9E2B6B9F, 0x394A609C, 0xAF565BE6, 0x24012003, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x7A5035A4, 0x9E2B6B9F, 0x394A609C, 0xAF565BE6, 0x24012003, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 248 ");
+	}
+	{
+		static const bigint_t var_a = {0xCC584E6A, 0x7319C625, 0xBC7AA9A4, 0xAFAD9114, 0x0172CD94, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xD8C0B688, 0x53E2C59B, 0x967215B3, 0x9A9D6FBF, 0x1EB0997A, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 249 ");
+	}
+	{
+		static const bigint_t var_a = {0x459F11B6, 0x80749E61, 0x2EB815C3, 0x31EC4A55, 0x09E529BE, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xED9C1F7D, 0x9CA65381, 0xF607200C, 0xE6EFDB3C, 0x1593498D, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 250 ");
+	}
+	{
+		static const bigint_t var_a = {0xCC263413, 0xF2434BC3, 0x20D9727A, 0x94EB5411, 0x01659F13, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xFE45A49E, 0xE86917EF, 0xCD0A3F43, 0x8566492C, 0x1F4FD3EA, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 251 ");
+	}
+	{
+		static const bigint_t var_a = {0x5E981DCF, 0xF3A08A88, 0xFB9F2D3B, 0x9222E4A6, 0x13F5EDC4, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x9236722E, 0xEFE47A08, 0x92F79812, 0x6C37FD64, 0x1A943A1C, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 252 ");
+	}
+	{
+		static const bigint_t var_a = {0x4828FBDD, 0x842FF304, 0xC7E0E487, 0x5C1CD9BA, 0x0D7BAA76, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x0F7F1652, 0x03C02215, 0xC1AA8E8A, 0x1CC885C1, 0x09E43F1A, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 253 ");
+	}
+	{
+		static const bigint_t var_a = {0xDF97A55E, 0x0D65F3E5, 0x15289256, 0xB3836AAD, 0x1F1C8412, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x15ADFBFF, 0x17A502B3, 0x94EAB5D7, 0xF650E341, 0x0CAF846B, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 254 ");
+	}
+	{
+		static const bigint_t var_a = {0xBC2C33D1, 0x11D762A4, 0x9B104600, 0x3F04D6CD, 0x1AB9EADC, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x70B33951, 0xF47AC544, 0xBBC7548F, 0xA5AE050C, 0x1E3E6782, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 255 ");
+	}
+	{
+		static const bigint_t var_a = {0x547CB8FE, 0x7ED579AC, 0xE4989049, 0xB94F9297, 0x04FCE4E5, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x83E1C898, 0x2F3F2910, 0xC591B1EA, 0x42270D03, 0x1783B749, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 256 ");
+	}
+	{
+		static const bigint_t var_a = {0x17F0921F, 0xEC479A27, 0xDFD0FD54, 0x1BFFF0EF, 0x20B05652, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xD31AE753, 0xD11DFE06, 0x005BB7CB, 0xA8A35F23, 0x1D5D66F7, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 257 ");
+	}
+	{
+		static const bigint_t var_a = {0x7BD9B24A, 0x7BD20F44, 0x13EA89E6, 0x9183A6BF, 0x05AC029E, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x64E71D7B, 0x01446FCD, 0x5DA57924, 0xD99D701D, 0x1040AC50, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 258 ");
+	}
+	{
+		static const bigint_t var_a = {0x64A458A3, 0x0738F4D2, 0x849AA2C2, 0xDADC5278, 0x0C23382D, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x6CCA3D5E, 0x0857CD63, 0x0B653905, 0x05454476, 0x19AF0BCD, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 259 ");
+	}
+	{
+		static const bigint_t var_a = {0x44821ABC, 0xC4AF68F0, 0xAFFBC57C, 0xAC55A4CB, 0x0E4B1E8A, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xFC0B1518, 0xA92F4DDC, 0xF482FF58, 0x1AA6A788, 0x06654A69, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 260 ");
+	}
+	{
+		static const bigint_t var_a = {0xC1EA8184, 0xB215176B, 0x70BF372B, 0x537D1EB0, 0x21C3BDD4, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x80CC40D3, 0x6F0791E0, 0xDF165B8F, 0x24F03DC5, 0x035A8221, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 261 ");
+	}
+	{
+		static const bigint_t var_a = {0x71066E10, 0xEF37D20B, 0x7161EE6F, 0x11EC1768, 0x040B45EB, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x5C1EF97A, 0x8AFE188D, 0x45D08276, 0x6BB724B5, 0x1267D4C7, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 262 ");
+	}
+	{
+		static const bigint_t var_a = {0x628F180D, 0xED7EE45C, 0x942E9DD8, 0x4F2273E7, 0x228808CC, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0xE1F5012F, 0x5FABBAAF, 0x7AE4EDC2, 0x3B192749, 0x1C49F5A0, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 263 ");
+	}
+	{
+		static const bigint_t var_a = {0xE26A268C, 0xCA2907E1, 0x036E104F, 0xE3AEF91B, 0x06A66957, 0x00000000, 0x00000000, 0x00000000};
+		static const bigint_t var_expected = {0x6E7E6750, 0x2B60F75A, 0xCB0D304D, 0x6791AACD, 0x0552DF24, 0x00000000, 0x00000000, 0x00000000};
+		fp_inv_n(var_res, var_a);
+		assert_bi_equal(var_res, var_expected, "fp_inv_n 264 ");
 	}
 #endif
 #endif

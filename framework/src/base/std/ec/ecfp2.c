@@ -540,6 +540,9 @@ void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
 	for (i = msb - 1; i >= 0; i--) {
 		bit = bi_test_bit(k, i);
 		ecfp2_add_dbl_coz_std(x[~bit & 1], x[bit], z, (const fp_t*) a->x);
+		fp2_t diff;
+		fp2_sub(diff, x[0], x[1]);
+		//print_value(diff[0], BI_WORDS); print(" "); print_value(diff[1], BI_WORDS); print("\n");
 	}
 
 	ecfp2_recover_full_coord_coz_std(x[0], x[1], z, (const fp_t*) a->x, (const fp_t*) a->y);
