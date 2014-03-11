@@ -121,7 +121,7 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	// E(F_p) x E'(F_p12) -> F_p12
 	// but there is an efficient isomorphism from E(F_p2) to E(F_p12)
 
-	ecfp2_get_projective(&t, q);
+	ecfp2_get_homogeneous_projective(&t, q);
 	fp12_clear(res); res[0][0][0][0] = 1;
 	fp12_clear(tmp);
 
@@ -579,7 +579,7 @@ void pbc_map_opt_ate_optimized_miller_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	// E(F_p) x E'(F_p12) -> F_p12
 	// but there is an efficient isomorphism from E(F_p2) to E(F_p12)
 
-	ecfp2_get_projective(&t, q);
+	ecfp2_get_homogeneous_projective(&t, q);
 	fp12_clear(res); res[0][0][0][0] = 1;
 	fp12_clear(a);
 
@@ -658,7 +658,7 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 #endif
 	len = bi_get_msb(s);
 
-	ecfp2_get_projective(&t, q1);
+	ecfp2_get_homogeneous_projective(&t, q1);
 	fp12_clear(res); res[0][0][0][0] = 1;
 	fp12_clear(a);
 
@@ -692,7 +692,7 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	pbc_point_add_line_costello_eval(a, &t, &t, &q_f1, p1);
 	fp12_mul_mloop(res, (const fp4_t*) res, (const fp4_t*) a);
 
-	ecfp2_get_projective(&t, q2);
+	ecfp2_get_homogeneous_projective(&t, q2);
 	fp12_clear(r2); r2[0][0][0][0] = 1;
 
 	// len is the msb -> -1 instead of -2
@@ -748,8 +748,8 @@ void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	// E(F_p) x E'(F_p12) -> F_p12
 	// but there is an efficient isomorphism from E(F_p2) to E(F_p12)
 
-	ecfp2_get_projective(&t1, q1);
-	ecfp2_get_projective(&t2, q2);
+	ecfp2_get_homogeneous_projective(&t1, q1);
+	ecfp2_get_homogeneous_projective(&t2, q2);
 	fp12_clear(res); res[0][0][0][0] = 1;
 	fp12_clear(a);
 
@@ -795,7 +795,6 @@ void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	ecfp2_neg_proj(&t1);
 	ecfp2_neg_proj(&t2);
 #endif
-	print("\n");
 
 	//print_value(res[0][0][0], BI_WORDS); print("\n"); print("\n");
 

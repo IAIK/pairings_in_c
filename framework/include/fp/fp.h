@@ -38,7 +38,7 @@
 #define fp_mul_barett_var(res, a, b, mod, mu)	fp_mul_std(res, a, b, mod, mu)
 #define fp_sqr_barett_var(res, a, mod, mu)		fp_mul_std(res, a, a, mod, mu)
 #define fp_inv_var(res, a, mod)		fp_inv_exp_var_std(res, a, mod, mu)
-#define fp_inv_n(res, a)			fp_inv_exp_var_std(res, a, EC_PARAM_N, EC_PARAM_MU_N)
+#define fp_inv_n(res, a)			fp_inv_exp_var_std(res, a, EC_PARAM.n, EC_PARAM.mu_n)
 
 #ifdef NEGATIVE_PARAM_X
 #define fp_inv(res, a)				fp_inv_exp_std(res, a)

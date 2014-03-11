@@ -11109,7 +11109,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_a.infinity, "ecfp2_neg_proj 5641 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+		static ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
 	{0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
 	 { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
 	{0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
@@ -11128,7 +11128,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 665 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+		static ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
 	{0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
 	 { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
 	{0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
@@ -11147,7 +11147,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 670 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+		static ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
 	{0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
 	 { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
 	{0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
@@ -11166,7 +11166,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 675 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+		static ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
 	{0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
 	 { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
 	{0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
@@ -11185,7 +11185,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 680 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+		static ecpoint_fp2 var_a = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
 	{0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
 	 { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
 	{0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
@@ -11204,7 +11204,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 685 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0xA65161E7, 0xB92A8E89, 0x745021E8, 0x23F8A355, 0x214FCD9E},
+		static ecpoint_fp2 var_a = { { {0xA65161E7, 0xB92A8E89, 0x745021E8, 0x23F8A355, 0x214FCD9E},
 	{0xA8FE444A, 0x308D40A5, 0x6F1AEEAC, 0x9A4DAB01, 0x1A73FB56} } ,
 	 { {0x0F842193, 0x3F7F110F, 0x832DC365, 0x606EBF1C, 0x0B3F6064},
 	{0x8EC33C6A, 0x73686F8E, 0x4426FC87, 0x736756D9, 0x04E3F937} } ,
@@ -11223,7 +11223,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 690 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x3B54E50A, 0x0B2D1689, 0x08DAA5CD, 0xA04E618B, 0x0E6539DE},
+		static ecpoint_fp2 var_a = { { {0x3B54E50A, 0x0B2D1689, 0x08DAA5CD, 0xA04E618B, 0x0E6539DE},
 	{0xC7FEBA51, 0x1BCE8A27, 0x01B06925, 0xF578F1F5, 0x01B01185} } ,
 	 { {0x880D614F, 0xA10EB10D, 0x4AEA24A3, 0x6DECF006, 0x05F293C1},
 	{0x50296E3B, 0x9AEFB1E8, 0x6C80DABA, 0x20597B23, 0x08DCC4B1} } ,
@@ -11242,7 +11242,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 695 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x60FC33A5, 0x856517B1, 0xF25821C3, 0xA0BED65E, 0x00C41DB6},
+		static ecpoint_fp2 var_a = { { {0x60FC33A5, 0x856517B1, 0xF25821C3, 0xA0BED65E, 0x00C41DB6},
 	{0x98990E7B, 0x0C669F07, 0xF89DBA5B, 0x913BADDA, 0x0127B119} } ,
 	 { {0xE1EBEF21, 0xB8BE5BBB, 0xA6679807, 0xACBFB601, 0x1AF3BAAD},
 	{0x883AAAD2, 0x670572D5, 0xFDAE88A9, 0xE9E6D00F, 0x1966B70F} } ,
@@ -11261,7 +11261,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 700 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x567781BC, 0xC030BD91, 0xD00A5AD1, 0x722BDD61, 0x1FAB3E72},
+		static ecpoint_fp2 var_a = { { {0x567781BC, 0xC030BD91, 0xD00A5AD1, 0x722BDD61, 0x1FAB3E72},
 	{0x42CC2845, 0xF08875D4, 0x20D63740, 0xF9D85DDF, 0x23F32C53} } ,
 	 { {0xAA68338C, 0x3710BFF2, 0xAE74E27F, 0x0C282ECB, 0x22BDBCD7},
 	{0x09ABDD8D, 0x9CFD4119, 0xDD7F3500, 0x792134AF, 0x1A34FBD6} } ,
@@ -11280,7 +11280,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 705 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0xFA84A2B6, 0xAAE55B70, 0xA57BBAAF, 0x94EE3B7F, 0x11A8BB9C},
+		static ecpoint_fp2 var_a = { { {0xFA84A2B6, 0xAAE55B70, 0xA57BBAAF, 0x94EE3B7F, 0x11A8BB9C},
 	{0x154BA811, 0x3EA5AE21, 0x5A468702, 0xBD744BD7, 0x065285D9} } ,
 	 { {0x2653F8D2, 0x99263438, 0x2DD734E6, 0x8E26169B, 0x0EA7B296},
 	{0x279CBF96, 0xEB04FBF8, 0xA617BA3F, 0xF843E2B4, 0x223E4BCB} } ,
@@ -11299,7 +11299,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 710 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x3ED1E69F, 0xAF7A1B10, 0x09E85E17, 0xBBF76894, 0x17ACAD0E},
+		static ecpoint_fp2 var_a = { { {0x3ED1E69F, 0xAF7A1B10, 0x09E85E17, 0xBBF76894, 0x17ACAD0E},
 	{0x89E857BB, 0x18375C59, 0x0E604B53, 0xF1A229D7, 0x0229C80C} } ,
 	 { {0x54132E21, 0x26E0E2E9, 0x30D52061, 0x97C6C848, 0x06CD20FC},
 	{0x4242FFBD, 0xF46C89D4, 0x456C556C, 0xD412DFE9, 0x0EB0A21C} } ,
@@ -11318,7 +11318,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 715 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x45826445, 0xE4724CD8, 0xFFC4A1EA, 0x646DD570, 0x02808C77},
+		static ecpoint_fp2 var_a = { { {0x45826445, 0xE4724CD8, 0xFFC4A1EA, 0x646DD570, 0x02808C77},
 	{0x89C41A8B, 0xC309A1FA, 0x360C1A19, 0x5E751F06, 0x008BFFF0} } ,
 	 { {0xEB6BD0BA, 0x68BB9161, 0x2282FCCD, 0x11D320BA, 0x03039668},
 	{0x710506EB, 0xCDFFC7E0, 0x544643B6, 0x22608779, 0x21A79E37} } ,
@@ -11337,7 +11337,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 720 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x5C450603, 0x0EB1783F, 0x7E56CE69, 0x4D00B54C, 0x097EE771},
+		static ecpoint_fp2 var_a = { { {0x5C450603, 0x0EB1783F, 0x7E56CE69, 0x4D00B54C, 0x097EE771},
 	{0x7076658D, 0x04F6469F, 0x7BA4425A, 0xD9F703CE, 0x1A0B54DC} } ,
 	 { {0xFF1CF36F, 0x23976137, 0x691CD2FC, 0xFE14202A, 0x15612155},
 	{0x54465332, 0xB8A9CBE3, 0xB913E008, 0xF98CFCA7, 0x090E4F0D} } ,
@@ -11356,7 +11356,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 725 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0xFE1F6C51, 0x4CA94AFA, 0xFD7EFF39, 0x934814B1, 0x13087CC9},
+		static ecpoint_fp2 var_a = { { {0xFE1F6C51, 0x4CA94AFA, 0xFD7EFF39, 0x934814B1, 0x13087CC9},
 	{0x74C7FD68, 0x85770C72, 0x0E2218D6, 0x39F07A3A, 0x1EBCF7E9} } ,
 	 { {0xB22CFCCF, 0x580F2629, 0x673C8294, 0xF34ED002, 0x0C214143},
 	{0x3FB7B643, 0x57ED477A, 0xDF494911, 0xFCA91336, 0x1A7CB9C4} } ,
@@ -11375,7 +11375,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 730 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x531DD416, 0xB38F22D3, 0xF3882106, 0xAFD78701, 0x1294C1DD},
+		static ecpoint_fp2 var_a = { { {0x531DD416, 0xB38F22D3, 0xF3882106, 0xAFD78701, 0x1294C1DD},
 	{0xFBA80481, 0xEED3BBB8, 0xF14D280F, 0xBD164E32, 0x013EEF6C} } ,
 	 { {0x493F2D69, 0x4C10E808, 0xA7ADB544, 0xD96336B9, 0x10B4BF81},
 	{0xEF168FEF, 0x5D52EE4A, 0x07C692BA, 0x0E0E9355, 0x129CF54B} } ,
@@ -11394,7 +11394,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 735 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x86353B9C, 0x38EB6056, 0x9EBA7A81, 0x2D7C1E30, 0x07D0E666},
+		static ecpoint_fp2 var_a = { { {0x86353B9C, 0x38EB6056, 0x9EBA7A81, 0x2D7C1E30, 0x07D0E666},
 	{0x2641E21F, 0x62A6B13E, 0xE9EC4D62, 0xF1F46E75, 0x0AC3DBEE} } ,
 	 { {0x0E24015D, 0xA88CD1B7, 0xAB2A5E25, 0x2955AB27, 0x058837D4},
 	{0xEB8FD0DB, 0xADC9284A, 0xB5D59AC0, 0x64774A28, 0x20A0944C} } ,
@@ -11413,7 +11413,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 740 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0xCF49C15B, 0x43522213, 0x96261C25, 0xDD2C1975, 0x1B6CB534},
+		static ecpoint_fp2 var_a = { { {0xCF49C15B, 0x43522213, 0x96261C25, 0xDD2C1975, 0x1B6CB534},
 	{0xBC429EC3, 0x40CA2DFA, 0x2694EA73, 0x30268289, 0x202D3D4A} } ,
 	 { {0x2A191427, 0x4D465AE9, 0x0C661FAA, 0xD4877DB2, 0x1B7BF95A},
 	{0x198F4373, 0x77BF6FD6, 0x3167CDAD, 0x8DCE60D6, 0x0841977A} } ,
@@ -11432,7 +11432,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 745 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x4744629F, 0xBB3F9395, 0x8C3609C2, 0x7AEF5B85, 0x1E6C0083},
+		static ecpoint_fp2 var_a = { { {0x4744629F, 0xBB3F9395, 0x8C3609C2, 0x7AEF5B85, 0x1E6C0083},
 	{0x3BB4694A, 0x9A42F3A5, 0x91895733, 0x69B69976, 0x223572FE} } ,
 	 { {0x5B0D0CFD, 0x71D6E9C7, 0x04C87334, 0x22D08BDC, 0x186F44C6},
 	{0xE0A003C2, 0x769203E8, 0xF7B7BA6A, 0x9117B8C3, 0x19663F7B} } ,
@@ -11451,7 +11451,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 750 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x27860095, 0x94A1697E, 0xBB7B9A2A, 0xC3042076, 0x0671A786},
+		static ecpoint_fp2 var_a = { { {0x27860095, 0x94A1697E, 0xBB7B9A2A, 0xC3042076, 0x0671A786},
 	{0x10540952, 0x58289082, 0x421614BC, 0x31978A9B, 0x19B80A41} } ,
 	 { {0xBB5622D3, 0x9B58CCD8, 0x82B9BDAB, 0x16DFD858, 0x0ECF29F3},
 	{0xC18A275F, 0xBA8BBBDC, 0xC627FBC5, 0x8458CB61, 0x19954E15} } ,
@@ -11470,7 +11470,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 755 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0xE2B509FB, 0x1BF1B4BF, 0x10613554, 0x06DD36E2, 0x03905B65},
+		static ecpoint_fp2 var_a = { { {0xE2B509FB, 0x1BF1B4BF, 0x10613554, 0x06DD36E2, 0x03905B65},
 	{0xD2D9E2B9, 0x85F811E2, 0x0791342E, 0x4D3401F7, 0x18F1D72B} } ,
 	 { {0xCB077B18, 0x30C37AB8, 0x101FB790, 0x50385619, 0x035ABE31},
 	{0xF4B6F987, 0x701F7E63, 0xBB74AB5F, 0x6EA4545A, 0x02ACC697} } ,
@@ -11489,7 +11489,7 @@ int main(void) {
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 760 infinity");
 	}
 	{
-		static const ecpoint_fp2 var_a = { { {0x61E59AE4, 0x40DD9BC6, 0x03F9D8D8, 0x438CB834, 0x22AD9F57},
+		static ecpoint_fp2 var_a = { { {0x61E59AE4, 0x40DD9BC6, 0x03F9D8D8, 0x438CB834, 0x22AD9F57},
 	{0xB4F295D0, 0x4CC3AD2D, 0x1229C77A, 0xE823A969, 0x0B585F4C} } ,
 	 { {0xFDCF150A, 0x178F1F1E, 0x54C97B2A, 0x881714DB, 0x1688CAA5},
 	{0x804778D7, 0xD7D50C1F, 0xDF8868C4, 0x3F9553BD, 0x1609B55A} } ,
@@ -11507,7 +11507,7 @@ int main(void) {
 		assert_bi_equal(var_expected.y[1], var_res.y[1], "ecfp2_mul 764 a.y[1]");
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_mul 765 infinity");
 	}
-	/*{
+	{
 		static const bigint_t var_t = {0xC00812A6, 0x03521E74, 0x5D1E5003, 0x5C8DDDE0, 0x219F7346};
 		static ecpoint_fp2 var_expected = { { {0x3BE8910B, 0x3D5E864F, 0x65602C25, 0x6DAF8F47, 0x0608025E},
 	{0x7835BA41, 0x82A9BC90, 0xC2DCE382, 0xCCF7FFF5, 0x0E388291} } ,
@@ -11744,7 +11744,7 @@ int main(void) {
 		assert_bi_equal(var_expected.y[0], var_res.y[0], "ecfp2_hash_to_point 5829 a.y[0]");
 		assert_bi_equal(var_expected.y[1], var_res.y[1], "ecfp2_hash_to_point 5830 a.y[1]");
 		assert_equal(var_expected.infinity,var_res.infinity, "ecfp2_hash_to_point 5831 infinity");
-	}*/
+	}
 #endif
 #endif
 	return 0;

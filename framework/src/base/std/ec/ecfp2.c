@@ -24,9 +24,9 @@
 void ecfp2_add_affine_std(ecfp2_pt res, const ecfp2_pt a, const ecfp2_pt b) {
 	ecpoint_fp2_proj a_proj, res_proj;
 
-	ecfp2_get_projective(&a_proj, a);
+	ecfp2_get_jacobian_projective(&a_proj, a);
 	ecfp2_add_proj(&res_proj, &a_proj, b);
-	ecfp2_get_affine(res, &res_proj);
+	ecfp2_get_affine_from_jacobian(res, &res_proj);
 }
 
 /**
@@ -165,9 +165,9 @@ void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt
 void ecfp2_dbl_affine_std(ecfp2_pt res, const ecfp2_pt a) {
 	ecpoint_fp2_proj a_proj, res_proj;
 
-	ecfp2_get_projective(&a_proj, a);
+	ecfp2_get_jacobian_projective(&a_proj, a);
 	ecfp2_dbl_proj(&res_proj, &a_proj);
-	ecfp2_get_affine(res, &res_proj);
+	ecfp2_get_affine_from_jacobian(res, &res_proj);
 }
 
 /**
@@ -287,6 +287,33 @@ void ecfp2_neg_affine_std(ecfp2_pt a) {
  */
 void ecfp2_neg_proj_std(ecfp2_proj_pt a) {
 	fp2_neg(a->y, (const fp_t*) a->y);
+}
+
+/**
+ * Performs the multiplication of a point of an elliptic curve group
+ * defined over the quadratic extension of a prime field with a scalar.
+ * @param res the resulting product
+ * @param a the elliptic curve point to be multiplied
+ * @param k the scalar operand
+ */
+void ecfp2_mul_l2rb_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
+	// plain left-to-right binary multiplication
+	int msb = bi_get_msb(k);
+	int i ;
+
+	ecpoint_fp2_proj r, tmp;
+	r.infinity=1;
+
+	for (i = msb; i >= 0; i--) {
+		ecfp2_dbl_proj(&r, &r);
+		if (bi_test_bit(k, i)) {
+			ecfp2_add_proj(&r, &r, a);
+		} else {
+			ecfp2_add_proj(&tmp, &r, a);
+		}
+	}
+
+	ecfp2_get_affine_from_jacobian(res, &r);
 }
 
 /**
@@ -540,9 +567,6 @@ void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
 	for (i = msb - 1; i >= 0; i--) {
 		bit = bi_test_bit(k, i);
 		ecfp2_add_dbl_coz_std(x[~bit & 1], x[bit], z, (const fp_t*) a->x);
-		fp2_t diff;
-		fp2_sub(diff, x[0], x[1]);
-		//print_value(diff[0], BI_WORDS); print(" "); print_value(diff[1], BI_WORDS); print("\n");
 	}
 
 	ecfp2_recover_full_coord_coz_std(x[0], x[1], z, (const fp_t*) a->x, (const fp_t*) a->y);
@@ -560,39 +584,12 @@ void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
 }
 
 /**
- * Performs the multiplication of a point of an elliptic curve group
- * defined over the quadratic extension of a prime field with a scalar.
- * @param res the resulting product
- * @param a the elliptic curve point to be multiplied
- * @param k the scalar operand
- */
-void ecfp2_mul_l2rb_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
-	// plain left-to-right binary multiplication
-	int msb = bi_get_msb(k);
-	int i ;
-
-	ecpoint_fp2_proj r, tmp;
-	r.infinity=1;
-
-	for (i = msb; i >= 0; i--) {
-		ecfp2_dbl_proj(&r, &r);
-		if (bi_test_bit(k, i)) {
-			ecfp2_add_proj(&r, &r, a);
-		} else {
-			ecfp2_add_proj(&tmp, &r, a);
-		}
-	}
-
-	ecfp2_get_affine(res, &r);
-}
-
-/**
- * Converts an elliptic curve point in porjective coordinates to
+ * Converts an elliptic curve point in jacobian projective coordinates to
  * an elliptic curve point in affine coordinates.
  * @param affine the resulting affine elliptic curve point
  * @param projective the input projective elliptic curve point
  */
-void ecfp2_get_affine_std(ecfp2_pt affine, const ecfp2_proj_pt projective) {
+void ecfp2_get_affine_from_jacobian_std(ecfp2_pt affine, const ecfp2_proj_pt projective) {
 	affine->infinity = projective->infinity;
 	if (projective->infinity)
 		return;
@@ -625,11 +622,40 @@ void ecfp2_get_projective_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
 
 /**
  * Converts an elliptic curve point in affine coordinates to
- * a randomized elliptic curve point in projective coordinates.
+ * a randomized elliptic curve point in jacobian projective coordinates.
  * @param projective the resulting randomized, projective elliptic curve point
  * @param affine the input affine elliptic curve point
  */
-void ecfp2_get_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
+void ecfp2_get_jacobian_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
+	projective->infinity = affine->infinity;
+
+	if (affine->infinity)
+		return;
+
+	// get random value for z and reduce modulo prime
+	cprng_get_bytes(projective->z, 2*FP_BYTES);
+
+#ifndef REAL_LAZY_REDUCTION
+	fp_rdc(projective->z[0]);
+	fp_rdc(projective->z[1]);
+#endif
+
+	fp2_t z2;
+	fp2_sqr(z2, (const fp_t*) projective->z);
+
+	// adapt x and y coordinates appropriately
+	fp2_mul(projective->x, (const fp_t*) affine->x, (const fp_t*) z2);
+	fp2_mul(projective->y, (const fp_t*) affine->y, (const fp_t*) projective->z);
+	fp2_mul(projective->y, (const fp_t*) projective->y, (const fp_t*) z2);
+}
+
+/**
+ * Converts an elliptic curve point in affine coordinates to
+ * a randomized elliptic curve point in homogeneous projective coordinates.
+ * @param projective the resulting randomized, projective elliptic curve point
+ * @param affine the input affine elliptic curve point
+ */
+void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
 	projective->infinity = affine->infinity;
 
 	if (affine->infinity)
@@ -847,7 +873,7 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
     ecfp2_neg_affine(&px);
 #endif
     ecfp2_frobenius_map(res, res, 3);
-    ecfp2_get_projective(&tp, res);
+    ecfp2_get_jacobian_projective(&tp, res);
     ecfp2_add_proj(&tp, &tp, &px);
 
     ecfp2_frobenius_map(res, &px, 2);
@@ -858,7 +884,7 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
     ecfp2_frobenius_map(res, res, 1);
     ecfp2_add_proj(&tp, &tp, res);
 
-    ecfp2_get_affine(res, &tp);
+    ecfp2_get_affine_from_jacobian(res, &tp);
 }
 
 /**
