@@ -16,8 +16,12 @@
 #define ecfp_add_affine(res, a, b)	ecfp_add_affine_direct_std(res, a, b)
 #define ecfp_dbl_affine(res, a)		ecfp_dbl_affine_direct_std(res, a)
 #define ecfp_mul(res, a, k)			ecfp_mul_montyladder_std(res, a, k)
-#define ecfp_get_affine(a, p)		ecfp_get_affine_std(a, p)
-#define ecfp_get_projective(p, a)	ecfp_get_projective_std(p, a)
+#define ecfp_get_affine_from_jacobian(a, p)		ecfp_get_affine_from_jacobian_std(a, p)
+#ifdef RAND_PROJECTIVE_COORDINATES
+  #define ecfp_get_jacobian_projective(p, a) 	ecfp_get_jacobian_projective_rnd_std(p, a)
+#else
+  #define ecfp_get_jacobian_projective(p, a)	ecfp_get_projective_std(p, a)
+#endif
 #define ecfp_neg_affine(a)			ecfp_neg_affine_std(a)
 #define ecfp_neg_proj(a)			ecfp_neg_proj_std(a)
 #define ecfp_copy(res, a)			ecfp_copy_std(res, a)
@@ -35,10 +39,10 @@
 #define ecfp2_get_affine_from_jacobian(a, p)		ecfp2_get_affine_from_jacobian_std(a, p)
 #ifdef RAND_PROJECTIVE_COORDINATES
  #define ecfp2_get_jacobian_projective(p, a)		ecfp2_get_jacobian_projective_rnd_std(p, a)
- #define ecfp2_get_homogeneous_projective(p, a)	ecfp2_get_homogeneous_projective_rnd_std(p, a)
+ #define ecfp2_get_homogeneous_projective(p, a)		ecfp2_get_homogeneous_projective_rnd_std(p, a)
 #else
- #define ecfp2_get_homogeneous_projective(p, a)	ecfp2_get_projective_std(p, a)
- #define ecfp2_get_jacobian_projective(p,a)		ecfp2_get_projective_std(p, a)
+ #define ecfp2_get_homogeneous_projective(p, a)		ecfp2_get_projective_std(p, a)
+ #define ecfp2_get_jacobian_projective(p,a)			ecfp2_get_projective_std(p, a)
 #endif
 #define ecfp2_neg_affine(a)			ecfp2_neg_affine_std(a)
 #define ecfp2_neg_proj(a)			ecfp2_neg_proj_std(a)

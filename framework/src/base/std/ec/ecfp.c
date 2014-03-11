@@ -28,9 +28,9 @@ int ecfp_verify_homogeneous_projective_coordinates(fp_t x, fp_t y, fp_t z);
 void ecfp_add_affine_std(ecfp_pt res, const ecfp_pt a, const ecfp_pt b) {
 	ecpoint_fp_proj a_proj, res_proj;
 
-	ecfp_get_projective(&a_proj, a);
+	ecfp_get_jacobian_projective(&a_proj, a);
 	ecfp_add_proj(&res_proj, &a_proj, b);
-	ecfp_get_affine(res, &res_proj);
+	ecfp_get_affine_from_jacobian(res, &res_proj);
 }
 
 /**
@@ -232,9 +232,9 @@ void ecfp_add_proj_std(ecfp_proj_pt res, const ecfp_proj_pt a, const ecfp_pt b) 
 void ecfp_dbl_affine_std(ecfp_pt res, const ecfp_pt a) {
 	ecpoint_fp_proj a_proj, res_proj;
 
-	ecfp_get_projective(&a_proj, a);
+	ecfp_get_jacobian_projective(&a_proj, a);
 	ecfp_dbl_proj(&res_proj, &a_proj);
-	ecfp_get_affine(res, &res_proj);
+	ecfp_get_affine_from_jacobian(res, &res_proj);
 }
 
 /**
@@ -407,7 +407,7 @@ void ecfp_mul_l2rb_std(ecfp_pt res, const ecfp_pt a, const fp_t k) {
 		}
 	}
 
-	ecfp_get_affine(res, &r);
+	ecfp_get_affine_from_jacobian(res, &r);
 }
 /*
 // does not pay off
@@ -867,7 +867,7 @@ void ecfp_mul_montyladder_std(ecfp_pt res, const ecfp_pt a, const fp_t k) {
  * @param projective the resulting projective elliptic curve point
  * @param affine the input affine elliptic curve point
  */
-void ecfp_get_projective(ecfp_proj_pt projective, const ecfp_pt affine) {
+void ecfp_get_projective_std(ecfp_proj_pt projective, const ecfp_pt affine) {
  	projective->infinity = affine->infinity;
 
  	if (affine->infinity)
@@ -879,12 +879,40 @@ void ecfp_get_projective(ecfp_proj_pt projective, const ecfp_pt affine) {
  }
 
  /**
-  * Converts an elliptic curve point in porjective coordinates to
+  * Converts an elliptic curve point in affine coordinates to
+  * an elliptic curve point in randomized jacobian projective coordinates.
+  * @param projective the resulting randomized projective elliptic curve point
+  * @param affine the input affine elliptic curve point
+  */
+ void ecfp_get_jacobian_projective_rnd_std(ecfp_proj_pt projective, const ecfp_pt affine) {
+	projective->infinity = affine->infinity;
+
+	if (affine->infinity)
+		return;
+
+	// get random value for z and reduce modulo prime
+	cprng_get_bytes(projective->z, FP_BYTES);
+
+#ifndef REAL_LAZY_REDUCTION
+	fp_rdc(projective->z);
+#endif
+
+	fp_t z2;
+	fp_sqr(z2, projective->z);
+
+	// adapt x and y coordinates appropriately
+	fp_mul(projective->x, affine->x, z2);
+	fp_mul(projective->y, affine->y, projective->z);
+	fp_mul(projective->y, projective->y, z2);
+  }
+
+ /**
+  * Converts an elliptic curve point in jacobian projective coordinates to
   * an elliptic curve point in affine coordinates.
   * @param affine the resulting affine elliptic curve point
   * @param projective the input projective elliptic curve point
   */
-void ecfp_get_affine_std(ecfp_pt affine, const ecfp_proj_pt projective) {
+void ecfp_get_affine_from_jacobian_std(ecfp_pt affine, const ecfp_proj_pt projective) {
  	affine->infinity = projective->infinity;
  	if (projective->infinity)
  		return;

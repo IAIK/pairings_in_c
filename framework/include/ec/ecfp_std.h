@@ -24,8 +24,9 @@ void ecfp_mul_naf_std(ecfp_pt res, const ecfp_pt a, const fp_t k);
 void ecfp_mul_glv_std(ecfp_pt res, const ecfp_pt a, const fp_t k);
 void ecfp_mul_glv_dec_k_std(bigint_t k1, bigint_t k2, bigint_t k);
 
-void ecfp_get_affine_std(ecfp_pt affine, const ecfp_proj_pt projective);
+void ecfp_get_affine_from_jacobian_std(ecfp_pt affine, const ecfp_proj_pt projective);
 void ecfp_get_projective_std(ecfp_proj_pt projective, const ecfp_pt affine);
+void ecfp_get_jacobian_projective_rnd_std(ecfp_proj_pt projective, const ecfp_pt affine);
 
 void ecfp_hash_to_point_std(ecfp_pt res, const bigint_t t);
 
