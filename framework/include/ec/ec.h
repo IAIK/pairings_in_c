@@ -30,6 +30,8 @@
 #define ecfp_to_montgomery(res, a)	ecfp_to_montgomery_std(res, a)
 #define ecfp_from_montgomery(res, a) ecfp_from_montgomery_std(res, a)
 
+#define ecfp_rand(res)                  ecfp_rand_std(res)
+
 #define ecfp2_add_proj(res, a, b)	ecfp2_add_proj_std(res, a, b)
 #define ecfp2_dbl_proj(res, a)		ecfp2_dbl_proj_std(res, a)
 #define ecfp2_add_affine(res, a, b)	ecfp2_add_affine_direct_std(res, a, b)
@@ -53,5 +55,7 @@
 #define ecfp2_hash_to_point(res, t)	ecfp2_hash_to_point_std(res, t)
 #define ecfp2_to_montgomery(res, a)	ecfp2_to_montgomery_std(res, a)
 #define ecfp2_from_montgomery(res, a) 	ecfp2_from_montgomery_std(res, a)
+
+#define ecfp2_rand(res)                 ecfp2_rand_std(res);
 
 #endif /* EC_H_ */

@@ -206,6 +206,8 @@
 
         const bigint_t BN_INV_CONST = {0x030000D1, 0x00000180, 0x00000000, 0x00000000, 0x00000000};
 
+
+
         #ifdef MONTGOMERY_ARITHMETIC
 
         const structECParam EC_PARAM = {{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
@@ -230,6 +232,16 @@
         		                {0x17D8B103, 0xE35BEE1C, 0xDEFC99AA, 0xD22637CD, 0x16BDD032} }};
 
         const fp_t FP_ONE = {0xE9CDBF83, 0x2CC2AF9D, 0x6EF4BBAD, 0x34A37CB4, 0x03F81FE6};
+
+        const ecpoint_fp ECFP_GENERATOR = {{0x628292D8, 0xF16AA502, 0xCA5604F0, 0x7AB2DF31, 0x2009001D},
+                                      {0xE9CDBF83, 0x2CC2AF9D, 0x6EF4BBAD, 0x34A37CB4, 0x03F81FE6},
+                                      0};
+
+        const ecpoint_fp2 ECFP2_GENERATOR = { { {0x7EF67F7E, 0xEB786BEB, 0xFA868838, 0x07AA5972, 0x08CEB873},
+                                       {0x5B5E9933, 0x5461A237, 0xC890D90F, 0x0CE80187, 0x1F34E570} } ,
+                                       { {0x744E7891, 0x11FDCA56, 0x4B369FFE, 0x5DBDD859, 0x0C1E282B},
+                                      {0x81C379E5, 0x8EE47E6F, 0xB0BBE950, 0xD019932D, 0x16C1019A} } ,
+                                      0};
     #endif
   #endif
 #endif

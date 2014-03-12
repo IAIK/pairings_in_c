@@ -1114,3 +1114,18 @@ void ecfp_from_montgomery_std(ecfp_pt res, const ecfp_pt a) {
 	fp_from_montgomery(res->x, a->x);
 	fp_from_montgomery(res->y, a->y);
 }
+
+/**
+ * Generates a random elliptic curve point.
+ * To this end, we generate a random scalar (that is not known by
+ * anyone) and multiply it with the base point.
+ * @param res     [out] the random point.
+ */
+void ecfp_rand_std(ecfp_pt res) {
+  bigint_t r;
+  do {
+    cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
+  } while (bi_compare(r, bi_zero) == 0);
+
+  ecfp_mul(res, (const ecfp_pt)&ECFP_GENERATOR, r);
+}

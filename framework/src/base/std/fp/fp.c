@@ -489,7 +489,7 @@ void fp_exp_monty(fp_t res, const fp_t a, const bigint_t b,
  * @param mod the prime (modulus)
  * @param mu_n the parameter mu for barrett reduction
  */
-void fp_inv_exp_var_std(fp_t res, const fp_t a, bigint_t mod, const bigint_t mu_n) {
+void fp_inv_exp_var_std(fp_t res, const fp_t a, const bigint_t mod, const bigint_t mu_n) {
 	bigint_t e;
 	int i;
 	fp_t r;

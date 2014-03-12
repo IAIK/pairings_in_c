@@ -24,12 +24,12 @@
 
 // Decide on target architecture
 #ifndef ARCHITECTURE
-  #define ARCHITECTURE 	ARCH_X86
+  #define ARCHITECTURE 	ARCH_X86_64
 #endif
 
 // Decide on the elliptic curve to be used
 #ifndef BNCURVE
-#define BNCURVE BN254
+#define BNCURVE BN158
 #endif
 
 // Activate assembly optimizations if available

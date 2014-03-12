@@ -21,7 +21,13 @@ void ecfp2_neg_proj_std(ecfp2_proj_pt a);
 void ecfp2_mul_l2rb_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k);
 void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k);
 
+
 void ecfp2_get_affine_from_jacobian_std(ecfp2_pt affine, const ecfp2_proj_pt projective);
+
+void ecfp2_rand_std(ecfp2_pt res);
+
+void ecfp2_get_affine_std(ecfp2_pt affine, const ecfp2_proj_pt projective);
+
 void ecfp2_get_projective_std(ecfp2_proj_pt projective, const ecfp2_pt affine);
 void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine);
 void ecfp2_get_jacobian_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine);

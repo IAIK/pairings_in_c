@@ -908,3 +908,18 @@ void ecfp2_from_montgomery_std(ecfp2_pt res, const ecfp2_pt a) {
 	fp2_from_montgomery(res->x, (const fp_t*) a->x);
 	fp2_from_montgomery(res->y, (const fp_t*) a->y);
 }
+
+/**
+ * Generate random point.
+ * To this end, we generate a random scalar (that is not known by
+ * anyone) and multiply it with the base point.
+ * @param res the randomly generated point.
+ */
+void ecfp2_rand_std(ecfp2_pt res) {
+  bigint_t r;
+    do {
+      cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
+    } while (bi_compare(r, bi_zero) == 0);
+
+  ecfp2_mul(res, (const ecfp2_pt) &ECFP2_GENERATOR, r);
+}
