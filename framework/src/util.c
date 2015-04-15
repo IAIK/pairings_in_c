@@ -94,7 +94,7 @@ void print_value(const word_t *value, const length_t len) {
     	for (; i >= (cnt*WORDS_PER_BITS(32)); i--) {
     		buf_ptr = print_word(buf, value[i]);
     	}
-    	//*(buf_ptr++) = ' ';
+    	*(buf_ptr++) = ' ';
     	*(buf_ptr++) = '\0';
     	print(buf);
     }

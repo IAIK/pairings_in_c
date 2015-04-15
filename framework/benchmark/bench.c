@@ -478,8 +478,8 @@ void benchmark_ibe() {
 #endif
 int main() {
 
-	/*benchmark_bi();
-	print("\n\n");*/
+	benchmark_bi();
+	print("\n\n");
 
 	benchmark_fp();
 	print("\n\n");
@@ -490,8 +490,8 @@ int main() {
 	benchmark_g2();
 	print("\n\n");
 
-	/*benchmark_fp2();
-	print("\n\n");*/
+	benchmark_fp2();
+	print("\n\n");
 
 	benchmark_gt();
 	print("\n\n");

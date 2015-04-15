@@ -22,6 +22,7 @@ int bi_compare_cm0_256(const word_t *a, const word_t *b);
 int bi_shift_right_one_cm0_256(word_t *res, const word_t *a);
 int bi_shift_left_one_cm0_256(word_t *res, const word_t *a);
 void bi_multiply_cm0_256(word_t * res, const word_t *a, const word_t *b);
+void bi_multiply_cm0_256_16bit(word_t *res, const word_t *a, const word_t *b);
 void bi_multiply_mulacc_cm0_256(word_t * res, const word_t *a, const word_t *b);
 void bi_multiply_mulacc_hybrid_cm0_256(word_t* res, const word_t *a, const word_t *b);
 void bi_square_mulacc_cm0_256(word_t * res, const word_t *a);
@@ -115,7 +116,7 @@ void bi_subtract_dbllen_cm0_256(word_t * res, const word_t *a, const word_t *b);
  #else
   #define bi_square(res, a) 			bi_multiply_cm0_var(res, a, a, BI_WORDS, BI_WORDS)
   #ifdef LAZY_REDUCTION
-    #define bi_multiply(res, a, b) 		bi_multiply_cm0_256(res, a, b)
+    #define bi_multiply(res, a, b) 		bi_multiply_cm0_256_karatsuba(res, a, b)
   #else
     #define bi_multiply(res, a, b) 		bi_multiply_cm0_var(res, a, b, BI_WORDS, BI_WORDS)
   #endif

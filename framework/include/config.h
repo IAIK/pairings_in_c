@@ -29,7 +29,7 @@
 
 // Decide on the elliptic curve to be used
 #ifndef BNCURVE
-#define BNCURVE BN158
+#define BNCURVE BN254
 #endif
 
 // Activate assembly optimizations if available

@@ -101,18 +101,18 @@ void sha256_update_GT(sha256_ctx_t *ctx, const fp12_t gt)
 
 #elif FP_BITS  <= SHA256_BLOCK_BITS
 
-  memset(block, 0, 64); memcpy(block, R_2[0][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[0][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[0][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[0][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[1][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[1][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[1][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[1][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[2][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[2][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[2][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
-  memset(block, 0, 64); memcpy(block, R_2[2][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[0][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[0][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[0][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[0][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[1][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[1][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[1][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[1][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[2][0][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[2][0][1], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[2][1][0], FP_BYTES); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, gt[2][1][1], FP_BYTES); sha256_nextBlock(&ctx, block);
 
 #else
 

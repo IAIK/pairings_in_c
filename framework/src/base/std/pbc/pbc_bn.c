@@ -599,7 +599,7 @@ void pbc_map_opt_ate_optimized_miller_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 
 	if (!p->infinity && !q->infinity) {
 		// len is the msb -> -1 instead of -2
-		for (i = len - 1; i >= 0; i--) {	// interleaved evaluation according to Castello et.al.
+		for (i = len - 1; i >= 0; i--) {	// interleaved evaluation according to Costello et.al.
 			fp12_sqr(res, (const fp4_t*) res);
 			pbc_point_dbl_line_costello_eval(a, &t, &t, p);
 			fp12_mul_sparse(res, (const fp4_t*) res, (const fp2_t*) a[0], (const fp_t*) a[1][0]);

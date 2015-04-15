@@ -17,20 +17,18 @@
 	mul r2, r2, r1  @ high * high
 	mul r1, r1, r7  @ high * low
 
+	lsl r7, r6, #16
+	lsr r6, r6, #16
+	add r0, r7, r0
+	adc r2, r6, r2
+
+	lsl r7, r1, #16
+	lsr r6, r1, #16
+	add r0, r7, r0
+	adc r2, r6, r2
+
 	mov r7, #0
 
-	add r5, r5, r0
-	adc r4, r4, r2
-	adc r3, r3, r7
-
-	lsl r0, r6, #16
-	lsr r2, r6, #16
-	add r5, r5, r0
-	adc r4, r4, r2
-	adc r3, r3, r7
-
-	lsl r0, r1, #16
-	lsr r2, r1, #16
 	add r5, r5, r0
 	adc r4, r4, r2
 	adc r3, r3, r7
