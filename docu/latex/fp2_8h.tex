@@ -1,0 +1,373 @@
+\hypertarget{fp2_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp2.h File Reference}
+\label{fp2_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp2.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp2.\-h}}
+}
+{\ttfamily \#include \char`\"{}fp/fp2\-\_\-std.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fp2_8h_af3a8d2ed0de9a3a93fb6139fa469b9eb}{fp2\-\_\-add}(res, a, b)~\hyperlink{fp2_8c_a4cc7b06d9cc0b4a82ad58e676a1eed7e}{fp2\-\_\-add\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp2_8h_aa2e2a3000746697c54b2f4bd908dbf29}{fp2\-\_\-dbl}(res, a)~\hyperlink{fp2_8c_a4cc7b06d9cc0b4a82ad58e676a1eed7e}{fp2\-\_\-add\-\_\-std}(res, a, a)
+\item 
+\#define \hyperlink{fp2_8h_a80ef5b8586eff1362a93eec92d4d4dcf}{fp2\-\_\-sub}(res, a, b)~\hyperlink{fp2_8c_af07d68166748e0f8d406c35dab1c7aef}{fp2\-\_\-sub\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp2_8h_ad3b75e89147a079e99e310dd28c6160e}{fp2\-\_\-neg}(res, a)~\hyperlink{fp2_8c_a372d75f66ea04418a36e5762b14ab448}{fp2\-\_\-neg\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a249d88480e7eedfdaccf5682d564d3ff}{fp2\-\_\-mul}(res, a, b)~\hyperlink{fp2_8c_a9a14efb061dfb896d4867d600ba10f7a}{fp2\-\_\-mul\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp2_8h_afc81c9126f61faa9dcc2649e737f7c2a}{fp2\-\_\-mulfp}(res, a, b)~\hyperlink{fp2_8c_ac08fa7beb7c3b4ea06c34373effde292}{fp2\-\_\-mulfp\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp2_8h_a79c6f3100f7c038a08bce55d715eb951}{fp2\-\_\-sqr}(res, a)~\hyperlink{fp2_8c_a8770196df738c57a7873288ddb9b3376}{fp2\-\_\-sqr\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a722ef75d8e17b2d2fe83b3aa466e4129}{fp2\-\_\-inv}(res, a)~\hyperlink{fp2_8c_abe504cc9240b3bc558610e7ffa3b29d2}{fp2\-\_\-inv\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a34a93cf06c900a84c6b2ff4257f6e21e}{fp2\-\_\-hlv}(res, a)~\hyperlink{fp2_8c_ae89e7bd821fe84ba90a48c3fdc43baec}{fp2\-\_\-hlv\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a3f4ea03802605797cf2e07b4c567ba78}{fp2\-\_\-exp}(res, a, b)~\hyperlink{fp2_8c_a91d6edc1acf0583b3dc498ef71469dcd}{fp2\-\_\-exp\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp2_8h_a9967161036b927e1b4de2ddfc103e82d}{fp2\-\_\-frobenius\-\_\-map}(res, a, i)~\hyperlink{fp2_8c_a9c1b643459174fbec5dd0263d79de856}{fp2\-\_\-frobenius\-\_\-map\-\_\-std}(res, a, i)
+\item 
+\#define \hyperlink{fp2_8h_a36f77cf01395192b5dbb0d316d3a576d}{fp2\-\_\-mul\-\_\-qnr}(res, a)~\hyperlink{fp2_8c_afa93bd8aca356fd99c15f358535ab786}{fp2\-\_\-mul\-\_\-qnr\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a19f20c6650531c19ecadaec62134fbc1}{fp2\-\_\-div\-\_\-qnr}(res, a)~\hyperlink{fp2_8c_acc09a1c1396a0a6c5fde639692ae0384}{fp2\-\_\-div\-\_\-qnr\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a762d41fd582848801745329995fb1141}{fp2\-\_\-sqrt}(res, a)~\hyperlink{fp2_8c_a203abf98828fe151c66605b50ac0d2f4}{fp2\-\_\-sqrt\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp2_8h_a2e853258f25e52b9d76519f256e037e6}{fp2\-\_\-legendre}(a)~\hyperlink{fp2_8c_aa105efead16806ec2078f9330f07b7ee}{fp2\-\_\-legendre\-\_\-std}(a)
+\item 
+\#define \hyperlink{fp2_8h_abad6510562c47e0c9ba059a35b41f8e1}{fp2\-\_\-to\-\_\-montgomery}(r, a)~\hyperlink{fp2_8c_aff1ff459e411202b2da2c1716dc3fba5}{fp2\-\_\-to\-\_\-montgomery\-\_\-std}(r, a)
+\item 
+\#define \hyperlink{fp2_8h_a6f59bbf37c5a980fa8a8132e13b20552}{fp2\-\_\-from\-\_\-montgomery}(r, a)~\hyperlink{fp2_8c_a86bc39fca3f488e4df564040eacda88a}{fp2\-\_\-from\-\_\-montgomery\-\_\-std}(r, a)
+\item 
+\#define \hyperlink{fp2_8h_a02f99e4f1c2b843fbc5186200f099a46}{fp2\-\_\-rdc}(a)~\hyperlink{fp2_8c_a4957fde592ef0621ff5ac1768f2c5129}{fp2\-\_\-rdc\-\_\-std}(a)
+\item 
+\#define \hyperlink{fp2_8h_ae9d268b620b9bc044fa10a1051ed08b0}{fp2\-\_\-clear}(a)~\hyperlink{fp2_8c_a2568e2e4658a71fe74f084f527deb781}{fp2\-\_\-clear\-\_\-std}(a)
+\item 
+\#define \hyperlink{fp2_8h_ae6232a29da4da775bdc36f98792d6da7}{fp2\-\_\-copy}(res, a)~\hyperlink{fp2_8c_a8a3976e369db302cb94484373f8eaa45}{fp2\-\_\-copy\-\_\-std}(res, a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{fp2_8h_af3a8d2ed0de9a3a93fb6139fa469b9eb}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-add@{fp2\-\_\-add}}
+\index{fp2\-\_\-add@{fp2\-\_\-add}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-add(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-add\-\_\-std}(res, a, b)}}\label{fp2_8h_af3a8d2ed0de9a3a93fb6139fa469b9eb}
+
+
+Definition at line 40 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std(), fp4\-\_\-add\-\_\-std(), fp4\-\_\-mul\-\_\-std(), fp4\-\_\-sqr\-\_\-std(), main(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_ae9d268b620b9bc044fa10a1051ed08b0}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-clear@{fp2\-\_\-clear}}
+\index{fp2\-\_\-clear@{fp2\-\_\-clear}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-clear\-\_\-std}(a)}}\label{fp2_8h_ae9d268b620b9bc044fa10a1051ed08b0}
+
+
+Definition at line 65 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-clear\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std(), fp12\-\_\-exp\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-exp\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp4\-\_\-clear\-\_\-std(), fp4\-\_\-exp\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_ae6232a29da4da775bdc36f98792d6da7}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-copy@{fp2\-\_\-copy}}
+\index{fp2\-\_\-copy@{fp2\-\_\-copy}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-copy\-\_\-std}(res, a)}}\label{fp2_8h_ae6232a29da4da775bdc36f98792d6da7}
+
+
+Definition at line 66 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-copy\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-get\-\_\-projective\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), fp12\-\_\-conjugate\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp2\-\_\-exp\-\_\-sqrmul\-\_\-std(), fp4\-\_\-copy\-\_\-std(), fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std(), main(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_aa2e2a3000746697c54b2f4bd908dbf29}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-dbl@{fp2\-\_\-dbl}}
+\index{fp2\-\_\-dbl@{fp2\-\_\-dbl}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-dbl}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-dbl(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-add\-\_\-std}(res, a, a)}}\label{fp2_8h_aa2e2a3000746697c54b2f4bd908dbf29}
+
+
+Definition at line 41 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std(), fp4\-\_\-sqr\-\_\-std(), main(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_a19f20c6650531c19ecadaec62134fbc1}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-div\-\_\-qnr@{fp2\-\_\-div\-\_\-qnr}}
+\index{fp2\-\_\-div\-\_\-qnr@{fp2\-\_\-div\-\_\-qnr}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-div\-\_\-qnr}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-div\-\_\-qnr(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-div\-\_\-qnr\-\_\-std}(res, a)}}\label{fp2_8h_a19f20c6650531c19ecadaec62134fbc1}
+
+
+Definition at line 56 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval().
+
+\hypertarget{fp2_8h_a3f4ea03802605797cf2e07b4c567ba78}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-exp@{fp2\-\_\-exp}}
+\index{fp2\-\_\-exp@{fp2\-\_\-exp}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-exp}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-exp(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-exp\-\_\-std}(res, a, b)}}\label{fp2_8h_a3f4ea03802605797cf2e07b4c567ba78}
+
+
+Definition at line 53 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_a9967161036b927e1b4de2ddfc103e82d}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-frobenius\-\_\-map@{fp2\-\_\-frobenius\-\_\-map}}
+\index{fp2\-\_\-frobenius\-\_\-map@{fp2\-\_\-frobenius\-\_\-map}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-frobenius\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-frobenius\-\_\-map(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-frobenius\-\_\-map\-\_\-std}(res, a, i)}}\label{fp2_8h_a9967161036b927e1b4de2ddfc103e82d}
+
+
+Definition at line 54 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-inv\-\_\-frb\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_a6f59bbf37c5a980fa8a8132e13b20552}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-from\-\_\-montgomery@{fp2\-\_\-from\-\_\-montgomery}}
+\index{fp2\-\_\-from\-\_\-montgomery@{fp2\-\_\-from\-\_\-montgomery}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-from\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-from\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-from\-\_\-montgomery\-\_\-std}(r, a)}}\label{fp2_8h_a6f59bbf37c5a980fa8a8132e13b20552}
+
+
+Definition at line 61 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-from\-\_\-montgomery\-\_\-std(), fp12\-\_\-from\-\_\-montgomery\-\_\-std(), and fp4\-\_\-from\-\_\-montgomery\-\_\-std().
+
+\hypertarget{fp2_8h_a34a93cf06c900a84c6b2ff4257f6e21e}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-hlv@{fp2\-\_\-hlv}}
+\index{fp2\-\_\-hlv@{fp2\-\_\-hlv}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-hlv}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-hlv(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-hlv\-\_\-std}(res, a)}}\label{fp2_8h_a34a93cf06c900a84c6b2ff4257f6e21e}
+
+
+Definition at line 52 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), fp4\-\_\-hlv\-\_\-std(), main(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_a722ef75d8e17b2d2fe83b3aa466e4129}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-inv@{fp2\-\_\-inv}}
+\index{fp2\-\_\-inv@{fp2\-\_\-inv}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-inv}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-inv(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-inv\-\_\-std}(res, a)}}\label{fp2_8h_a722ef75d8e17b2d2fe83b3aa466e4129}
+
+
+Definition at line 51 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), fp12\-\_\-decompress\-\_\-std(), fp4\-\_\-inv\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_a2e853258f25e52b9d76519f256e037e6}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-legendre@{fp2\-\_\-legendre}}
+\index{fp2\-\_\-legendre@{fp2\-\_\-legendre}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-legendre}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-legendre(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-legendre\-\_\-std}(a)}}\label{fp2_8h_a2e853258f25e52b9d76519f256e037e6}
+
+
+Definition at line 58 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_a249d88480e7eedfdaccf5682d564d3ff}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-mul@{fp2\-\_\-mul}}
+\index{fp2\-\_\-mul@{fp2\-\_\-mul}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-mul}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-mul(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-mul\-\_\-std}(res, a, b)}}\label{fp2_8h_a249d88480e7eedfdaccf5682d564d3ff}
+
+
+Definition at line 47 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std(), ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed(), fp2\-\_\-exp\-\_\-sqrmul\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp4\-\_\-inv\-\_\-std(), fp4\-\_\-mul\-\_\-std(), fp4\-\_\-mulfp2\-\_\-std(), fp4\-\_\-sqr\-\_\-std(), main(), pbc\-\_\-eval\-\_\-line\-\_\-function(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_a36f77cf01395192b5dbb0d316d3a576d}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-mul\-\_\-qnr@{fp2\-\_\-mul\-\_\-qnr}}
+\index{fp2\-\_\-mul\-\_\-qnr@{fp2\-\_\-mul\-\_\-qnr}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-mul\-\_\-qnr}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-mul\-\_\-qnr(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-mul\-\_\-qnr\-\_\-std}(res, a)}}\label{fp2_8h_a36f77cf01395192b5dbb0d316d3a576d}
+
+
+Definition at line 55 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp4\-\_\-inv\-\_\-std(), fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std(), fp4\-\_\-mul\-\_\-std(), and fp4\-\_\-sqr\-\_\-std().
+
+\hypertarget{fp2_8h_afc81c9126f61faa9dcc2649e737f7c2a}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-mulfp@{fp2\-\_\-mulfp}}
+\index{fp2\-\_\-mulfp@{fp2\-\_\-mulfp}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-mulfp}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-mulfp(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-mulfp\-\_\-std}(res, a, b)}}\label{fp2_8h_afc81c9126f61faa9dcc2649e737f7c2a}
+
+
+Definition at line 49 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_ad3b75e89147a079e99e310dd28c6160e}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-neg@{fp2\-\_\-neg}}
+\index{fp2\-\_\-neg@{fp2\-\_\-neg}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-neg}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-neg(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-neg\-\_\-std}(res, a)}}\label{fp2_8h_ad3b75e89147a079e99e310dd28c6160e}
+
+
+Definition at line 43 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-neg\-\_\-affine\-\_\-std(), ecfp2\-\_\-neg\-\_\-proj\-\_\-std(), fp12\-\_\-conjugate\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std(), fp4\-\_\-inv\-\_\-std(), fp4\-\_\-neg\-\_\-std(), main(), pbc\-\_\-eval\-\_\-line\-\_\-function(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_a02f99e4f1c2b843fbc5186200f099a46}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-rdc@{fp2\-\_\-rdc}}
+\index{fp2\-\_\-rdc@{fp2\-\_\-rdc}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-rdc}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-rdc(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-rdc\-\_\-std}(a)}}\label{fp2_8h_a02f99e4f1c2b843fbc5186200f099a46}
+
+
+Definition at line 63 of file fp2.\-h.
+
+
+
+Referenced by fp4\-\_\-rdc\-\_\-std().
+
+\hypertarget{fp2_8h_a79c6f3100f7c038a08bce55d715eb951}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-sqr@{fp2\-\_\-sqr}}
+\index{fp2\-\_\-sqr@{fp2\-\_\-sqr}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-sqr}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-sqr(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-sqr\-\_\-std}(res, a)}}\label{fp2_8h_a79c6f3100f7c038a08bce55d715eb951}
+
+
+Definition at line 50 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std(), ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-exp\-\_\-sqrmul\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp4\-\_\-inv\-\_\-std(), main(), pbc\-\_\-eval\-\_\-line\-\_\-function(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_a762d41fd582848801745329995fb1141}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-sqrt@{fp2\-\_\-sqrt}}
+\index{fp2\-\_\-sqrt@{fp2\-\_\-sqrt}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-sqrt}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-sqrt(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-sqrt\-\_\-std}(res, a)}}\label{fp2_8h_a762d41fd582848801745329995fb1141}
+
+
+Definition at line 57 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), and main().
+
+\hypertarget{fp2_8h_a80ef5b8586eff1362a93eec92d4d4dcf}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-sub@{fp2\-\_\-sub}}
+\index{fp2\-\_\-sub@{fp2\-\_\-sub}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-sub(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-sub\-\_\-std}(res, a, b)}}\label{fp2_8h_a80ef5b8586eff1362a93eec92d4d4dcf}
+
+
+Definition at line 42 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-dbl\-\_\-proj\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), fp12\-\_\-decompress\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed(), fp4\-\_\-inv\-\_\-std(), fp4\-\_\-mul\-\_\-std(), fp4\-\_\-sqr\-\_\-std(), fp4\-\_\-sub\-\_\-std(), main(), pbc\-\_\-eval\-\_\-line\-\_\-function(), pbc\-\_\-eval\-\_\-tangent\-\_\-function(), pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval().
+
+\hypertarget{fp2_8h_abad6510562c47e0c9ba059a35b41f8e1}{\index{fp2.\-h@{fp2.\-h}!fp2\-\_\-to\-\_\-montgomery@{fp2\-\_\-to\-\_\-montgomery}}
+\index{fp2\-\_\-to\-\_\-montgomery@{fp2\-\_\-to\-\_\-montgomery}!fp2.h@{fp2.\-h}}
+\subsubsection[{fp2\-\_\-to\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp2\-\_\-to\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp2\-\_\-to\-\_\-montgomery\-\_\-std}(r, a)}}\label{fp2_8h_abad6510562c47e0c9ba059a35b41f8e1}
+
+
+Definition at line 60 of file fp2.\-h.
+
+
+
+Referenced by ecfp2\-\_\-to\-\_\-montgomery\-\_\-std(), fp12\-\_\-to\-\_\-montgomery\-\_\-std(), and fp4\-\_\-to\-\_\-montgomery\-\_\-std().
+

@@ -1,0 +1,256 @@
+\hypertarget{sha1_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha1.h File Reference}
+\label{sha1_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha1.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha1.\-h}}
+}
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structHASH__SHA1__}{H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structHASH__SHA1__}{H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-} \hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sha1_8h_a9b93f0a16a43246c840003e4e9f36f23}{sha1\-\_\-hash} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$result, const uint8\-\_\-t $\ast$message, uint32\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Performs a S\-H\-A1 hash calculation. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a9ba64b975213df16ad4859623b93c5a7}{sha1\-\_\-init\-\_\-state} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Initialize the state variable. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a159620f35a74718ac583e1bcd6b91ea8}{sha1\-\_\-process\-\_\-block} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state, uint32\-\_\-t $\ast$w)
+\begin{DoxyCompactList}\small\item\em Process a 512-\/bit block (w) to update the current hash state. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a68785a9620c45f9bad927972390aec73}{sha1\-\_\-process\-\_\-message} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state, const uint8\-\_\-t $\ast$message)
+\begin{DoxyCompactList}\small\item\em Converts the message to a block and calls sha1\-\_\-process\-\_\-block. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a09809e14d19e7b2052587cde401e17d8}{sha1\-\_\-process\-\_\-message\-\_\-final} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state, const uint8\-\_\-t $\ast$message, uint32\-\_\-t remaining\-\_\-length, uint32\-\_\-t total\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Finalizes the sha1 hash calculation. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a0506219d2238f5f8e38e64895849a6d5}{sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state, uint8\-\_\-t $\ast$message)
+\begin{DoxyCompactList}\small\item\em Converts the resulted hash state to a uint8\-\_\-t$\ast$ message. \end{DoxyCompactList}\item 
+void \hyperlink{sha1_8h_a333b3ab5a1c93d0e402f97b1dde6bf85}{sha1\-\_\-state\-\_\-to\-\_\-bigint} (\hyperlink{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$state, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Converts the given hash (state) to a big integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}{\index{sha1.\-h@{sha1.\-h}!H\-A\-S\-H\-\_\-\-S\-H\-A1@{H\-A\-S\-H\-\_\-\-S\-H\-A1}}
+\index{H\-A\-S\-H\-\_\-\-S\-H\-A1@{H\-A\-S\-H\-\_\-\-S\-H\-A1}!sha1.h@{sha1.\-h}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-S\-H\-A1}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-}  {\bf H\-A\-S\-H\-\_\-\-S\-H\-A1}}}\label{sha1_8h_a505ceb30000ae1cc803aabffd3984d57}
+
+
+\subsection{Function Documentation}
+\hypertarget{sha1_8h_a9b93f0a16a43246c840003e4e9f36f23}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-hash@{sha1\-\_\-hash}}
+\index{sha1\-\_\-hash@{sha1\-\_\-hash}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{result, }
+\item[{const uint8\-\_\-t $\ast$}]{message, }
+\item[{uint32\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a9b93f0a16a43246c840003e4e9f36f23}
+
+
+Performs a S\-H\-A1 hash calculation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & the resulting big integer to be used by e.\-g. E\-C\-D\-S\-A \\
+\hline
+{\em message} & the message to be hashed \\
+\hline
+{\em length} & the number of bytes to be hashed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file sha1.\-c.
+
+
+
+References sha1\-\_\-init\-\_\-state(), sha1\-\_\-process\-\_\-message\-\_\-final(), and sha1\-\_\-state\-\_\-to\-\_\-bigint().
+
+\hypertarget{sha1_8h_a9ba64b975213df16ad4859623b93c5a7}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-init\-\_\-state@{sha1\-\_\-init\-\_\-state}}
+\index{sha1\-\_\-init\-\_\-state@{sha1\-\_\-init\-\_\-state}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-init\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-init\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a9ba64b975213df16ad4859623b93c5a7}
+
+
+Initialize the state variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state to initialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file sha1.\-c.
+
+
+
+References H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H0, H0\-\_\-\-R\-O\-M, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H1, H1\-\_\-\-R\-O\-M, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H2, H2\-\_\-\-R\-O\-M, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H3, H3\-\_\-\-R\-O\-M, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H4, and H4\-\_\-\-R\-O\-M.
+
+
+
+Referenced by cprng\-\_\-one\-\_\-way\-\_\-func(), and sha1\-\_\-hash().
+
+\hypertarget{sha1_8h_a159620f35a74718ac583e1bcd6b91ea8}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-process\-\_\-block@{sha1\-\_\-process\-\_\-block}}
+\index{sha1\-\_\-process\-\_\-block@{sha1\-\_\-process\-\_\-block}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-process\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-process\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state, }
+\item[{uint32\-\_\-t $\ast$}]{w}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a159620f35a74718ac583e1bcd6b91ea8}
+
+
+Process a 512-\/bit block (w) to update the current hash state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the hash state to update \\
+\hline
+{\em w} & already prepared uint32\-\_\-t\mbox{[}16\mbox{]} array used to update the state (is overwritten during the calculation) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file sha1.\-c.
+
+
+
+References H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H0, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H1, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H2, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H3, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H4, and leftrotate.
+
+
+
+Referenced by sha1\-\_\-process\-\_\-message(), and sha1\-\_\-process\-\_\-message\-\_\-final().
+
+\hypertarget{sha1_8h_a68785a9620c45f9bad927972390aec73}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-process\-\_\-message@{sha1\-\_\-process\-\_\-message}}
+\index{sha1\-\_\-process\-\_\-message@{sha1\-\_\-process\-\_\-message}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-process\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-process\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state, }
+\item[{const uint8\-\_\-t $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a68785a9620c45f9bad927972390aec73}
+
+
+Converts the message to a block and calls sha1\-\_\-process\-\_\-block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file sha1.\-c.
+
+
+
+References sha1\-\_\-process\-\_\-block(), and temp.
+
+\hypertarget{sha1_8h_a09809e14d19e7b2052587cde401e17d8}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-process\-\_\-message\-\_\-final@{sha1\-\_\-process\-\_\-message\-\_\-final}}
+\index{sha1\-\_\-process\-\_\-message\-\_\-final@{sha1\-\_\-process\-\_\-message\-\_\-final}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-process\-\_\-message\-\_\-final}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-process\-\_\-message\-\_\-final (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state, }
+\item[{const uint8\-\_\-t $\ast$}]{message, }
+\item[{uint32\-\_\-t}]{remaining\-\_\-length, }
+\item[{uint32\-\_\-t}]{total\-\_\-length}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a09809e14d19e7b2052587cde401e17d8}
+
+
+Finalizes the sha1 hash calculation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the current state of the hash calculation --$>$ will contain the final hash value. \\
+\hline
+{\em message} & the remaining message to be signed. The buffer must be a multiple of 64 s.\-t. message padding can be done by this function directly. \\
+\hline
+{\em remaining\-\_\-length} & the number of remaining bytes within \char`\"{}message\char`\"{} \\
+\hline
+{\em total\-\_\-length} & the total number of bytes signed\\
+\hline
+\end{DoxyParams}
+(total\-\_\-length -\/ remaining\-\_\-length) should already been processed using sha1\-\_\-process\-\_\-message or sha1\-\_\-process\-\_\-block. (total\-\_\-length -\/ remaining\-\_\-length) must be a multiple of 64!! 
+
+Definition at line 158 of file sha1.\-c.
+
+
+
+References sha1\-\_\-process\-\_\-block(), and temp.
+
+
+
+Referenced by cprng\-\_\-one\-\_\-way\-\_\-func(), and sha1\-\_\-hash().
+
+\hypertarget{sha1_8h_a333b3ab5a1c93d0e402f97b1dde6bf85}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-state\-\_\-to\-\_\-bigint@{sha1\-\_\-state\-\_\-to\-\_\-bigint}}
+\index{sha1\-\_\-state\-\_\-to\-\_\-bigint@{sha1\-\_\-state\-\_\-to\-\_\-bigint}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-state\-\_\-to\-\_\-bigint}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-state\-\_\-to\-\_\-bigint (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state, }
+\item[{{\bf word\-\_\-t} $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a333b3ab5a1c93d0e402f97b1dde6bf85}
+
+
+Converts the given hash (state) to a big integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the hash to convert \\
+\hline
+{\em result} & the big integer memory to use (make sure it is big enough) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file sha1.\-c.
+
+
+
+References H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H0, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H1, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H2, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H3, and H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H4.
+
+
+
+Referenced by sha1\-\_\-hash().
+
+\hypertarget{sha1_8h_a0506219d2238f5f8e38e64895849a6d5}{\index{sha1.\-h@{sha1.\-h}!sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array@{sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array}}
+\index{sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array@{sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array}!sha1.h@{sha1.\-h}}
+\subsubsection[{sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}void sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{{\bf H\-A\-S\-H\-\_\-\-S\-H\-A1} $\ast$}]{state, }
+\item[{uint8\-\_\-t $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{sha1_8h_a0506219d2238f5f8e38e64895849a6d5}
+
+
+Converts the resulted hash state to a uint8\-\_\-t$\ast$ message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file sha1.\-c.
+
+
+
+References H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H0, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H1, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H2, H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H3, and H\-A\-S\-H\-\_\-\-S\-H\-A1\-\_\-\-::\-H4.
+
+
+
+Referenced by cprng\-\_\-one\-\_\-way\-\_\-func().
+

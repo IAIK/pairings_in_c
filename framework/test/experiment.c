@@ -1,9 +1,36 @@
-/*
- * experiment.c
- *
- *  Created on: May 28, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "fp/fp.h"
 #include "fp/fp2.h"
@@ -29,20 +56,20 @@ int main() {
 	bigint_t two;
 	bigint_t two_monty;
 
-	fp_mul_monty(a_monty, a, MONTY_PRIME.r2);
-	fp_mul_monty(one_monty, bi_one, MONTY_PRIME.r2);
+	fp_mul_monty(a_monty, a, MONTY_PRIME_R2);
+	fp_mul_monty(one_monty, bi_one, MONTY_PRIME_R2);
 	fp_neg(minus_one, bi_one);
-	fp_mul_monty(minus_one_monty, minus_one, MONTY_PRIME.r2);
+	fp_mul_monty(minus_one_monty, minus_one, MONTY_PRIME_R2);
 	fp_neg(neg_a, a);
 	fp_neg(neg_a_monty, a_monty);
 	fp_dbl(a2, a);
-	fp_mul_monty(a2_monty, a2, MONTY_PRIME.r2);
+	fp_mul_monty(a2_monty, a2, MONTY_PRIME_R2);
 	fp_add(a_and_a_monty, a_monty, a_monty);
 
 	fp_copy(two, bi_zero);
 	two[0] = 2;
 
-	fp_mul_monty(two_monty, two, MONTY_PRIME.r2);
+	fp_mul_monty(two_monty, two, MONTY_PRIME_R2);
 
 	fp_mul_monty(monty2_a, two_monty, a_monty);
 

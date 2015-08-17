@@ -1,0 +1,51 @@
+\hypertarget{rand_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/rand.h File Reference}
+\label{rand_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/rand.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/rand.\-h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rand_8h_a0b51ba29fcbe9fd69f9f3348ce99ad17}{cprng\-\_\-get\-\_\-bytes} (void $\ast$buf, \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} size)
+\begin{DoxyCompactList}\small\item\em Returns the specified number of bytes in the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{rand_8h_a0b51ba29fcbe9fd69f9f3348ce99ad17}{\index{rand.\-h@{rand.\-h}!cprng\-\_\-get\-\_\-bytes@{cprng\-\_\-get\-\_\-bytes}}
+\index{cprng\-\_\-get\-\_\-bytes@{cprng\-\_\-get\-\_\-bytes}!rand.h@{rand.\-h}}
+\subsubsection[{cprng\-\_\-get\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}void cprng\-\_\-get\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf length\-\_\-t}}]{size}
+\end{DoxyParamCaption}
+)}}\label{rand_8h_a0b51ba29fcbe9fd69f9f3348ce99ad17}
+
+
+Returns the specified number of bytes in the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the buffer to filled with random bytes \\
+\hline
+{\em size} & number of random bytes to generate\\
+\hline
+\end{DoxyParams}
+Returns the specified number of bytes in the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer to be filled with random bytes \\
+\hline
+{\em size} & the size of the buffer in byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file rand.\-c.
+
+
+
+References cprng\-\_\-one\-\_\-way\-\_\-func(), C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E, C\-P\-R\-N\-G\-State, and H\-A\-S\-H\-\_\-\-L\-E\-N.
+
+
+
+Referenced by ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp2\-\_\-rand\-\_\-std(), ecfp\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp\-\_\-rand\-\_\-std(), encapsulate\-\_\-key(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), and hwang\-\_\-sign().
+

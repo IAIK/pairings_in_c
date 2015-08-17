@@ -1,0 +1,292 @@
+\hypertarget{util_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/util.c File Reference}
+\label{util_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/util.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/util.\-c}}
+}
+{\ttfamily \#include \char`\"{}util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{util_8c_aa501d94aad5260161a3f0b89ec827e92}{U\-A\-R\-T\-\_\-\-B\-A\-S\-E}~0x40000000
+\item 
+\#define \hyperlink{util_8c_a6d5154d9b98ae04cde875e48005193b2}{T\-X\-\_\-\-O\-F\-F\-S\-E\-T}~20
+\item 
+\#define \hyperlink{util_8c_af7765c03f86ff962da47cfca3c3ff00d}{T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T}~0x000004
+\item 
+\#define \hyperlink{util_8c_a692cdc3b2fb2da5c6dba77414d299486}{C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R}~0x\-E000\-E\-D80
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{util_8c_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Prints a message. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{util_8c_a5d568453cb03714ebec5283b2c92991e}{print\-\_\-word} (char $\ast$buffer, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} w)
+\begin{DoxyCompactList}\small\item\em Prints a processor word to a string. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_aea1346d83f00ca84de30d26d7bf07788}{print\-\_\-value} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$value, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} len)
+\begin{DoxyCompactList}\small\item\em Prints a multi-\/precision integer of defined length. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a66f50c20c381d5f2103fcde6623d4930}{print\-\_\-bytes} (const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$value, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} len)
+\begin{DoxyCompactList}\small\item\em Prints an array of bytes of arbitrary length. \end{DoxyCompactList}\item 
+int \hyperlink{util_8c_af5b4b3772c8fc599597bf86e21ede0c8}{compare\-\_\-bytes} (const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$a, const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} len)
+\begin{DoxyCompactList}\small\item\em Compares two byte arrays of defined length. \end{DoxyCompactList}\item 
+unsigned long long \hyperlink{util_8c_a0307e400f008e04b1c77590c26aac8e8}{get\-\_\-cycles} ()
+\begin{DoxyCompactList}\small\item\em Determines the processor's current cycle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{util_8c_ad635464ffb1c316509083d6881b4912c}{hex\-\_\-lookup} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{util_8c_a692cdc3b2fb2da5c6dba77414d299486}{\index{util.\-c@{util.\-c}!C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R@{C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R}}
+\index{C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R@{C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R}!util.c@{util.\-c}}
+\subsubsection[{C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R~0x\-E000\-E\-D80}}\label{util_8c_a692cdc3b2fb2da5c6dba77414d299486}
+
+
+Definition at line 47 of file util.\-c.
+
+
+
+Referenced by get\-\_\-cycles().
+
+\hypertarget{util_8c_af7765c03f86ff962da47cfca3c3ff00d}{\index{util.\-c@{util.\-c}!T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T@{T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T@{T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T}!util.c@{util.\-c}}
+\subsubsection[{T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T~0x000004}}\label{util_8c_af7765c03f86ff962da47cfca3c3ff00d}
+
+
+Definition at line 46 of file util.\-c.
+
+
+
+Referenced by print().
+
+\hypertarget{util_8c_a6d5154d9b98ae04cde875e48005193b2}{\index{util.\-c@{util.\-c}!T\-X\-\_\-\-O\-F\-F\-S\-E\-T@{T\-X\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{T\-X\-\_\-\-O\-F\-F\-S\-E\-T@{T\-X\-\_\-\-O\-F\-F\-S\-E\-T}!util.c@{util.\-c}}
+\subsubsection[{T\-X\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-X\-\_\-\-O\-F\-F\-S\-E\-T~20}}\label{util_8c_a6d5154d9b98ae04cde875e48005193b2}
+
+
+Definition at line 45 of file util.\-c.
+
+
+
+Referenced by print().
+
+\hypertarget{util_8c_aa501d94aad5260161a3f0b89ec827e92}{\index{util.\-c@{util.\-c}!U\-A\-R\-T\-\_\-\-B\-A\-S\-E@{U\-A\-R\-T\-\_\-\-B\-A\-S\-E}}
+\index{U\-A\-R\-T\-\_\-\-B\-A\-S\-E@{U\-A\-R\-T\-\_\-\-B\-A\-S\-E}!util.c@{util.\-c}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-B\-A\-S\-E~0x40000000}}\label{util_8c_aa501d94aad5260161a3f0b89ec827e92}
+
+
+Definition at line 44 of file util.\-c.
+
+
+
+Referenced by print().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{util_8c_af5b4b3772c8fc599597bf86e21ede0c8}{\index{util.\-c@{util.\-c}!compare\-\_\-bytes@{compare\-\_\-bytes}}
+\index{compare\-\_\-bytes@{compare\-\_\-bytes}!util.c@{util.\-c}}
+\subsubsection[{compare\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}int compare\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{const {\bf byte} $\ast$}]{a, }
+\item[{const {\bf byte} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{len}
+\end{DoxyParamCaption}
+)}}\label{util_8c_af5b4b3772c8fc599597bf86e21ede0c8}
+
+
+Compares two byte arrays of defined length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first array to be compared \\
+\hline
+{\em b} & the second array to be compared \\
+\hline
+{\em len} & the length of the arrays \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if equal, 1 if the first is larger, -\/1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 152 of file util.\-c.
+
+
+
+Referenced by assert\-\_\-bytearr\-\_\-equal().
+
+\hypertarget{util_8c_a0307e400f008e04b1c77590c26aac8e8}{\index{util.\-c@{util.\-c}!get\-\_\-cycles@{get\-\_\-cycles}}
+\index{get\-\_\-cycles@{get\-\_\-cycles}!util.c@{util.\-c}}
+\subsubsection[{get\-\_\-cycles}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long get\-\_\-cycles (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a0307e400f008e04b1c77590c26aac8e8}
+
+
+Determines the processor's current cycle. 
+
+\begin{DoxyReturn}{Returns}
+the number of the current cycle 
+\end{DoxyReturn}
+
+
+Definition at line 170 of file util.\-c.
+
+
+
+References C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-A\-D\-D\-R.
+
+
+
+Referenced by benchmark\-\_\-start(), and benchmark\-\_\-stop().
+
+\hypertarget{util_8c_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\index{util.\-c@{util.\-c}!print@{print}}
+\index{print@{print}!util.c@{util.\-c}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void print (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a3ef8f6a8ea3d3304dd22ce582c404bfc}
+
+
+Prints a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file util.\-c.
+
+
+
+References T\-C\-T\-L\-\_\-\-O\-F\-F\-S\-E\-T, T\-X\-\_\-\-O\-F\-F\-S\-E\-T, and U\-A\-R\-T\-\_\-\-B\-A\-S\-E.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal(), assert\-\_\-bi\-\_\-equal\-\_\-var(), assert\-\_\-bytearr\-\_\-equal(), assert\-\_\-equal(), assert\-\_\-true(), benchmark\-\_\-print(), generate\-Multiply\-Karatsuba\-Full\-::high\-Part(), generate\-Multiply\-Karatsuba\-::high\-Part(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), generate\-Multiply\-Karatsuba\-::low\-Part(), generate\-Multiply\-Karatsuba\-Full\-::low\-Part(), main(), generate\-Multiply\-Karatsuba\-::middle\-Part(), generate\-Multiply\-Karatsuba\-Full\-::middle\-Part(), print\-\_\-bytes(), print\-\_\-value(), generate\-Multiply\-Karatsuba\-::propagate\-Accumulator(), and generate\-Multiply\-Karatsuba\-Full\-::propagate\-Accumulator().
+
+\hypertarget{util_8c_a66f50c20c381d5f2103fcde6623d4930}{\index{util.\-c@{util.\-c}!print\-\_\-bytes@{print\-\_\-bytes}}
+\index{print\-\_\-bytes@{print\-\_\-bytes}!util.c@{util.\-c}}
+\subsubsection[{print\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{const {\bf byte} $\ast$}]{value, }
+\item[{const {\bf length\-\_\-t}}]{len}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a66f50c20c381d5f2103fcde6623d4930}
+
+
+Prints an array of bytes of arbitrary length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the byte array to be printed \\
+\hline
+{\em len} & the length of the array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file util.\-c.
+
+
+
+References hex\-\_\-lookup, and print().
+
+
+
+Referenced by assert\-\_\-bytearr\-\_\-equal().
+
+\hypertarget{util_8c_aea1346d83f00ca84de30d26d7bf07788}{\index{util.\-c@{util.\-c}!print\-\_\-value@{print\-\_\-value}}
+\index{print\-\_\-value@{print\-\_\-value}!util.c@{util.\-c}}
+\subsubsection[{print\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{value, }
+\item[{const {\bf length\-\_\-t}}]{len}
+\end{DoxyParamCaption}
+)}}\label{util_8c_aea1346d83f00ca84de30d26d7bf07788}
+
+
+Prints a multi-\/precision integer of defined length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to be printed \\
+\hline
+{\em len} & the number of words of the value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file util.\-c.
+
+
+
+References print(), print\-\_\-word(), and W\-O\-R\-D\-S\-\_\-\-P\-E\-R\-\_\-\-B\-I\-T\-S.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal(), assert\-\_\-bi\-\_\-equal\-\_\-var(), assert\-\_\-equal(), hash\-\_\-update\-\_\-\-G1(), and main().
+
+\hypertarget{util_8c_a5d568453cb03714ebec5283b2c92991e}{\index{util.\-c@{util.\-c}!print\-\_\-word@{print\-\_\-word}}
+\index{print\-\_\-word@{print\-\_\-word}!util.c@{util.\-c}}
+\subsubsection[{print\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ print\-\_\-word (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{const {\bf word\-\_\-t}}]{w}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a5d568453cb03714ebec5283b2c92991e}
+
+
+Prints a processor word to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer that is written to \\
+\hline
+{\em w} & the processor word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file util.\-c.
+
+
+
+References hex\-\_\-lookup.
+
+
+
+Referenced by print\-\_\-value().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{util_8c_ad635464ffb1c316509083d6881b4912c}{\index{util.\-c@{util.\-c}!hex\-\_\-lookup@{hex\-\_\-lookup}}
+\index{hex\-\_\-lookup@{hex\-\_\-lookup}!util.c@{util.\-c}}
+\subsubsection[{hex\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}const char hex\-\_\-lookup\mbox{[}$\,$\mbox{]}}}\label{util_8c_ad635464ffb1c316509083d6881b4912c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{\textcolor{charliteral}{'0'}, \textcolor{charliteral}{'1'}, \textcolor{charliteral}{'2'}, \textcolor{charliteral}{'3'},
+                     \textcolor{charliteral}{'4'}, \textcolor{charliteral}{'5'}, \textcolor{charliteral}{'6'}, \textcolor{charliteral}{'7'},
+                     \textcolor{charliteral}{'8'}, \textcolor{charliteral}{'9'}, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'b'},
+                     \textcolor{charliteral}{'c'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'f'}\}
+\end{DoxyCode}
+
+
+Definition at line 39 of file util.\-c.
+
+
+
+Referenced by print\-\_\-bytes(), and print\-\_\-word().
+

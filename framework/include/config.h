@@ -1,9 +1,36 @@
-/*
- * config.h
- *
- *  Created on: Apr 19, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #ifndef CONFIG_H_
 #define CONFIG_H_
@@ -54,29 +81,11 @@
 // Use a precomputed constant for the value 4b (from the elliptic curve equation's b)
 #define USE_PREDEFINED_4B
 
-// Use the multiply-accumulate extensions of the underlying processor
-//#define ASM_MULACC_EXTENSION
-
-// Use the area-saving 4-cycle multiply-accumulate extension of the underlying processor
-// (only makes sense for the Cortex-M0+)
-//#define ASM_4CYCLE_MULACC		// is only recognized if ASM_MULACC_EXTENSION is set
-
-// Use a dedicated assembler-optimized, unrolled squaring routine in Fp.
-//#define DEDICATED_SQUARING
-
-// Use the Toom-Cook variant to multiply in cubic extension fields.
-//#define TK3_MUL_OPT
-
 // Use the lazy reduction technique by Sanchez in Fp2 mult
 #define LAZY_REDUCTION
 
-// Use lazy reduction in Fp arithmetic.
-//#define REAL_LAZY_REDUCTION
-
 // Randomize projective coordinates.
 #define RAND_PROJECTIVE_COORDINATES
-
-//#define HYBRID_MULTIPLICATION
 
 // Depending on the curve, set which quadratic and cubic non-residue in Fp2
 // needs to be used and whether the BN parameter x is negative

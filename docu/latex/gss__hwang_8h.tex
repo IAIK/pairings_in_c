@@ -1,0 +1,285 @@
+\hypertarget{gss__hwang_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/gss/gss\-\_\-hwang.h File Reference}
+\label{gss__hwang_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/gss/gss\-\_\-hwang.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/gss/gss\-\_\-hwang.\-h}}
+}
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhwang__signing__key__s}{hwang\-\_\-signing\-\_\-key\-\_\-s}
+\begin{DoxyCompactList}\small\item\em Private signing key. \end{DoxyCompactList}\item 
+struct \hyperlink{structhwang__signature__s}{hwang\-\_\-signature\-\_\-s}
+\begin{DoxyCompactList}\small\item\em Resulting group signature. \end{DoxyCompactList}\item 
+struct \hyperlink{structhwang__public__parameters__s}{hwang\-\_\-public\-\_\-parameters\-\_\-s}
+\begin{DoxyCompactList}\small\item\em Public parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gss__hwang_8h_ad5aeca1a1a793c8ba18f85cbac89e768}{D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T}~1
+\item 
+\#define \hyperlink{gss__hwang_8h_a7879f8d74fbb9262198fc5e8dbda4948}{P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T}(T\-A\-G, num)~\hyperlink{util_8c_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(T\-A\-G); \hyperlink{util_8c_aea1346d83f00ca84de30d26d7bf07788}{print\-\_\-value}(num, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S}); \hyperlink{util_8c_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\char`\"{}\textbackslash{}n\char`\"{});
+\begin{DoxyCompactList}\small\item\em Print a bigint\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{gss__hwang_8h_a4bfdcf48885a356c27828911dd4e2524}{P\-R\-I\-N\-T\-\_\-\-G1}(T\-A\-G, g1)
+\begin{DoxyCompactList}\small\item\em Print an element in \{G\}\-\_\-1. \end{DoxyCompactList}\item 
+\#define \hyperlink{gss__hwang_8h_a629e2a10d076e44992002af1bc567db1}{P\-R\-I\-N\-T\-\_\-\-G2}(T\-A\-G, g2)
+\begin{DoxyCompactList}\small\item\em Print an element in \{G\}\-\_\-2. \end{DoxyCompactList}\item 
+\#define \hyperlink{gss__hwang_8h_a8bad16e4f32db6bc47b628b8454d77de}{P\-R\-I\-N\-T\-\_\-\-G\-T}(T\-A\-G, gt)
+\begin{DoxyCompactList}\small\item\em Print an element in \{G\}\-\_\-\-T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structhwang__signing__key__s}{hwang\-\_\-signing\-\_\-key\-\_\-s} \hyperlink{gss__hwang_8h_a7d1c4565427830d298f9d1756bc42b3c}{hwang\-\_\-signing\-\_\-key}
+\item 
+typedef struct \\*
+\hyperlink{structhwang__signing__key__s}{hwang\-\_\-signing\-\_\-key\-\_\-s} $\ast$ \hyperlink{gss__hwang_8h_a9fb82923594c2981cea0ac048ce8f1de}{hwang\-\_\-signing\-\_\-key\-\_\-ptr}
+\item 
+typedef struct \hyperlink{structhwang__signature__s}{hwang\-\_\-signature\-\_\-s} \hyperlink{gss__hwang_8h_a71655f02dfa9aff95f45a25bd4a84b4c}{hwang\-\_\-signature}
+\item 
+typedef struct \hyperlink{structhwang__signature__s}{hwang\-\_\-signature\-\_\-s} $\ast$ \hyperlink{gss__hwang_8h_a8b2bf681e03a008deb9632a75143fd84}{hwang\-\_\-signature\-\_\-ptr}
+\item 
+typedef struct \\*
+\hyperlink{structhwang__public__parameters__s}{hwang\-\_\-public\-\_\-parameters\-\_\-s} \hyperlink{gss__hwang_8h_a817029204ff0526e9bfa00461d0a3cae}{hwang\-\_\-public\-\_\-parameters}
+\item 
+typedef struct \\*
+\hyperlink{structhwang__public__parameters__s}{hwang\-\_\-public\-\_\-parameters\-\_\-s} $\ast$ \hyperlink{gss__hwang_8h_af489725283a217696811c1ea7072d7f8}{hwang\-\_\-public\-\_\-parameters\-\_\-ptr}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_ae1e823357de7a263f2ed95e66b14e66c}{sbyte} \hyperlink{gss__hwang_8h_a07e069d6b71f2621bfb1fc1553b00bb2}{hwang\-\_\-sign} (\hyperlink{gss__hwang_8h_a8b2bf681e03a008deb9632a75143fd84}{hwang\-\_\-signature\-\_\-ptr} sig, \hyperlink{gss__hwang_8h_af489725283a217696811c1ea7072d7f8}{hwang\-\_\-public\-\_\-parameters\-\_\-ptr} data, \hyperlink{gss__hwang_8h_a9fb82923594c2981cea0ac048ce8f1de}{hwang\-\_\-signing\-\_\-key\-\_\-ptr} usk)
+\begin{DoxyCompactList}\small\item\em Generates a signature according to the scheme of H\-W\-A\-N\-G. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{gss__hwang_8h_ad5aeca1a1a793c8ba18f85cbac89e768}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T@{D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T}}
+\index{D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T@{D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G\-\_\-\-P\-R\-I\-N\-T~1}}\label{gss__hwang_8h_ad5aeca1a1a793c8ba18f85cbac89e768}
+
+
+Definition at line 42 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_a7879f8d74fbb9262198fc5e8dbda4948}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T@{P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T}}
+\index{P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T@{P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T(
+\begin{DoxyParamCaption}
+\item[{}]{T\-A\-G, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf print}(T\-A\-G); {\bf print\-\_\-value}(num, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S}); {\bf print}(\char`\"{}\textbackslash{}n\char`\"{});}}\label{gss__hwang_8h_a7879f8d74fbb9262198fc5e8dbda4948}
+
+
+Print a bigint\-\_\-t variable. 
+
+
+
+Definition at line 45 of file gss\-\_\-hwang.\-h.
+
+
+
+Referenced by hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{gss__hwang_8h_a4bfdcf48885a356c27828911dd4e2524}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!P\-R\-I\-N\-T\-\_\-\-G1@{P\-R\-I\-N\-T\-\_\-\-G1}}
+\index{P\-R\-I\-N\-T\-\_\-\-G1@{P\-R\-I\-N\-T\-\_\-\-G1}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{P\-R\-I\-N\-T\-\_\-\-G1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-I\-N\-T\-\_\-\-G1(
+\begin{DoxyParamCaption}
+\item[{}]{T\-A\-G, }
+\item[{}]{g1}
+\end{DoxyParamCaption}
+)}}\label{gss__hwang_8h_a4bfdcf48885a356c27828911dd4e2524}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(TAG); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   x: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g1.x, \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); 
+      \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   y: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g1.y, \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); 
+      \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"});
+\end{DoxyCode}
+
+
+Print an element in \{G\}\-\_\-1. 
+
+
+
+Definition at line 49 of file gss\-\_\-hwang.\-h.
+
+
+
+Referenced by hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{gss__hwang_8h_a629e2a10d076e44992002af1bc567db1}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!P\-R\-I\-N\-T\-\_\-\-G2@{P\-R\-I\-N\-T\-\_\-\-G2}}
+\index{P\-R\-I\-N\-T\-\_\-\-G2@{P\-R\-I\-N\-T\-\_\-\-G2}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{P\-R\-I\-N\-T\-\_\-\-G2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-I\-N\-T\-\_\-\-G2(
+\begin{DoxyParamCaption}
+\item[{}]{T\-A\-G, }
+\item[{}]{g2}
+\end{DoxyParamCaption}
+)}}\label{gss__hwang_8h_a629e2a10d076e44992002af1bc567db1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(TAG); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   x[0]: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g2.x[0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   x[1]: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g2.x[1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   y[0]: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g2.y[0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{          print}(\textcolor{stringliteral}{"   y[1]: "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(g2.y[1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"});
+\end{DoxyCode}
+
+
+Print an element in \{G\}\-\_\-2. 
+
+
+
+Definition at line 55 of file gss\-\_\-hwang.\-h.
+
+
+
+Referenced by hwang\-\_\-init\-\_\-parameters().
+
+\hypertarget{gss__hwang_8h_a8bad16e4f32db6bc47b628b8454d77de}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!P\-R\-I\-N\-T\-\_\-\-G\-T@{P\-R\-I\-N\-T\-\_\-\-G\-T}}
+\index{P\-R\-I\-N\-T\-\_\-\-G\-T@{P\-R\-I\-N\-T\-\_\-\-G\-T}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{P\-R\-I\-N\-T\-\_\-\-G\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-I\-N\-T\-\_\-\-G\-T(
+\begin{DoxyParamCaption}
+\item[{}]{T\-A\-G, }
+\item[{}]{gt}
+\end{DoxyParamCaption}
+)}}\label{gss__hwang_8h_a8bad16e4f32db6bc47b628b8454d77de}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(TAG); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   0 0 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[0][0][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   0 0 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[0][0][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   0 1 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[0][1][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   0 1 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[0][1][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   1 0 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[1][0][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   1 0 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[1][0][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   1 1 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[1][1][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   1 1 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[1][1][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   2 0 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[2][0][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   2 0 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[2][0][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   2 1 0 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[2][1][0], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{\(\backslash\)}
+\hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{         print}(\textcolor{stringliteral}{"   2 1 1 "}); \hyperlink{util_8h_aea1346d83f00ca84de30d26d7bf07788}{print\_value}(R\_2[2][1][1], 
+      \hyperlink{types_8h_a082de4f3f4ad27ccb8c23bfb923e7990}{FP\_WORDS}); \hyperlink{util_8h_a3ef8f6a8ea3d3304dd22ce582c404bfc}{print}(\textcolor{stringliteral}{"\(\backslash\)n"}); \(\backslash\)
+\end{DoxyCode}
+
+
+Print an element in \{G\}\-\_\-\-T. 
+
+
+
+Definition at line 63 of file gss\-\_\-hwang.\-h.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{gss__hwang_8h_a817029204ff0526e9bfa00461d0a3cae}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-public\-\_\-parameters@{hwang\-\_\-public\-\_\-parameters}}
+\index{hwang\-\_\-public\-\_\-parameters@{hwang\-\_\-public\-\_\-parameters}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-public\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-public\-\_\-parameters\-\_\-s} {\bf hwang\-\_\-public\-\_\-parameters}}}\label{gss__hwang_8h_a817029204ff0526e9bfa00461d0a3cae}
+
+
+Definition at line 106 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_af489725283a217696811c1ea7072d7f8}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-public\-\_\-parameters\-\_\-ptr@{hwang\-\_\-public\-\_\-parameters\-\_\-ptr}}
+\index{hwang\-\_\-public\-\_\-parameters\-\_\-ptr@{hwang\-\_\-public\-\_\-parameters\-\_\-ptr}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-public\-\_\-parameters\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-public\-\_\-parameters\-\_\-s}$\ast$ {\bf hwang\-\_\-public\-\_\-parameters\-\_\-ptr}}}\label{gss__hwang_8h_af489725283a217696811c1ea7072d7f8}
+
+
+Definition at line 107 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_a71655f02dfa9aff95f45a25bd4a84b4c}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-signature@{hwang\-\_\-signature}}
+\index{hwang\-\_\-signature@{hwang\-\_\-signature}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-signature}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-signature\-\_\-s} {\bf hwang\-\_\-signature}}}\label{gss__hwang_8h_a71655f02dfa9aff95f45a25bd4a84b4c}
+
+
+Definition at line 95 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_a8b2bf681e03a008deb9632a75143fd84}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-signature\-\_\-ptr@{hwang\-\_\-signature\-\_\-ptr}}
+\index{hwang\-\_\-signature\-\_\-ptr@{hwang\-\_\-signature\-\_\-ptr}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-signature\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-signature\-\_\-s}$\ast$ {\bf hwang\-\_\-signature\-\_\-ptr}}}\label{gss__hwang_8h_a8b2bf681e03a008deb9632a75143fd84}
+
+
+Definition at line 96 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_a7d1c4565427830d298f9d1756bc42b3c}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-signing\-\_\-key@{hwang\-\_\-signing\-\_\-key}}
+\index{hwang\-\_\-signing\-\_\-key@{hwang\-\_\-signing\-\_\-key}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-signing\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-signing\-\_\-key\-\_\-s} {\bf hwang\-\_\-signing\-\_\-key}}}\label{gss__hwang_8h_a7d1c4565427830d298f9d1756bc42b3c}
+
+
+Definition at line 85 of file gss\-\_\-hwang.\-h.
+
+\hypertarget{gss__hwang_8h_a9fb82923594c2981cea0ac048ce8f1de}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-signing\-\_\-key\-\_\-ptr@{hwang\-\_\-signing\-\_\-key\-\_\-ptr}}
+\index{hwang\-\_\-signing\-\_\-key\-\_\-ptr@{hwang\-\_\-signing\-\_\-key\-\_\-ptr}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-signing\-\_\-key\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hwang\-\_\-signing\-\_\-key\-\_\-s}$\ast$ {\bf hwang\-\_\-signing\-\_\-key\-\_\-ptr}}}\label{gss__hwang_8h_a9fb82923594c2981cea0ac048ce8f1de}
+
+
+Definition at line 86 of file gss\-\_\-hwang.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{gss__hwang_8h_a07e069d6b71f2621bfb1fc1553b00bb2}{\index{gss\-\_\-hwang.\-h@{gss\-\_\-hwang.\-h}!hwang\-\_\-sign@{hwang\-\_\-sign}}
+\index{hwang\-\_\-sign@{hwang\-\_\-sign}!gss_hwang.h@{gss\-\_\-hwang.\-h}}
+\subsubsection[{hwang\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sbyte} hwang\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf hwang\-\_\-signature\-\_\-ptr}}]{sig, }
+\item[{{\bf hwang\-\_\-public\-\_\-parameters\-\_\-ptr}}]{data, }
+\item[{{\bf hwang\-\_\-signing\-\_\-key\-\_\-ptr}}]{usk}
+\end{DoxyParamCaption}
+)}}\label{gss__hwang_8h_a07e069d6b71f2621bfb1fc1553b00bb2}
+
+
+Generates a signature according to the scheme of H\-W\-A\-N\-G. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sig} & \mbox{[}out\mbox{]} computed signature. \\
+\hline
+{\em data} & \mbox{[}in\mbox{]} public data of H\-W\-A\-N\-G scheme. \\
+\hline
+{\em usk} & \mbox{[}in\mbox{]} user secret key to generate a valid signature.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success; -\/1 on E\-R\-R\-O\-R;
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sig} & \mbox{[}out\mbox{]} computed signature. \\
+\hline
+{\em data} & \mbox{[}in\mbox{]} public data of H\-W\-A\-N\-G scheme. \\
+\hline
+{\em usk} & \mbox{[}in\mbox{]} user secret key to generate a valid signature.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; -\/1 on E\-R\-R\-O\-R; 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file gss\-\_\-hwang.\-c.
+
+
+
+References hwang\-\_\-signing\-\_\-key\-\_\-s\-::\-A, bi\-\_\-add, B\-I\-\_\-\-B\-Y\-T\-E\-S, bi\-\_\-clear\-\_\-var\-\_\-std(), bi\-\_\-compare, bi\-\_\-copy\-\_\-var, bi\-\_\-copy\-\_\-var\-\_\-std(), bi\-\_\-multiply, bi\-\_\-subtract, bi\-\_\-subtract\-\_\-dbl\-\_\-len, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-zero, hwang\-\_\-signature\-\_\-s\-::c, cprng\-\_\-get\-\_\-bytes(), hwang\-\_\-public\-\_\-parameters\-\_\-s\-::d, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-1, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-2, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-3, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-U\-\_\-\-N, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-N, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-mul, fp12\-\_\-mul, fp\-\_\-rdc\-\_\-2l\-\_\-var, fp\-\_\-rdc\-\_\-n, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::g, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::g2, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::h1, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::h\-\_\-theta, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, hash\-\_\-final, hash\-\_\-init, hash\-\_\-update, hash\-\_\-update\-\_\-\-G1(), hash\-\_\-update\-\_\-\-G\-T(), hwang\-\_\-public\-\_\-parameters\-\_\-s\-::order\-\_\-p, pbc\-\_\-map\-\_\-opt\-\_\-ate, print(), P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T, P\-R\-I\-N\-T\-\_\-\-G1, P\-R\-I\-N\-T\-\_\-\-G\-T, hwang\-\_\-signature\-\_\-s\-::s\-\_\-alpha, hwang\-\_\-signature\-\_\-s\-::s\-\_\-gamma, hwang\-\_\-signature\-\_\-s\-::s\-\_\-x, hwang\-\_\-signature\-\_\-s\-::s\-\_\-y, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::u, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::w, hwang\-\_\-signing\-\_\-key\-\_\-s\-::x, hwang\-\_\-signing\-\_\-key\-\_\-s\-::y, and hwang\-\_\-signing\-\_\-key\-\_\-s\-::z.
+
+
+
+Referenced by main().
+

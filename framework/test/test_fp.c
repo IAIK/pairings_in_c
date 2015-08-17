@@ -1,9 +1,36 @@
-/*
- * test_fp.c
- *
- *  Created on: Apr 19, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "fp/fp.h"
 
@@ -1945,8 +1972,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 324 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 324");
 	}
 	{
@@ -1963,8 +1990,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 326 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 326");
 	}
 	{
@@ -1973,10 +2000,10 @@ int main (void) {
 		static const bigint_t var_expected = {0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 327 ");
-		fp_mul_monty_fips_std(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_fips_std(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 327");
 	}
 	{
@@ -1986,8 +2013,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 328 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_fips_std(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_fips_std(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 328");
 	}
 	{
@@ -2011,8 +2038,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 331 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 331");
 	}
 	{
@@ -2029,8 +2056,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 333 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 333");
 	}
 	{
@@ -2075,8 +2102,8 @@ int main (void) {
 		fp_mul(var_res, var_a, var_b);
 		assert_bi_equal(var_res, var_expected, "fp_mul 339 ");
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res2, var_res, "fp_mul monty 339");
 	}
 	{
@@ -2084,8 +2111,8 @@ int main (void) {
 		static const bigint_t var_b = {0x8556a835, 0xdce2d15e, 0x2c0a8b9d, 0x94a432f5, 0x3c37671b, 0xf3951ad6, 0x17a719f9, 0x8a1595bf};
 
 		bigint_t var_res2;
-		fp_mul_monty_std(var_res, var_a, var_b, PRIME.p, MONTY_PRIME.n0);
-		fp_mul_monty_var(var_res2, var_a, var_b, PRIME.p, MONTY_PRIME.n0[0]);
+		fp_mul_monty_std(var_res, var_a, var_b, PRIME_P, MONTY_PRIME_N0);
+		fp_mul_monty_var(var_res2, var_a, var_b, PRIME_P, MONTY_PRIME_N0[0]);
 		assert_bi_equal(var_res, var_res2, "fp_mul monty 339v2");
 	}
 	{

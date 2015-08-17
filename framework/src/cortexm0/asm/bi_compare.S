@@ -1,50 +1,40 @@
-@ bi_add
-
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 .global bi_compare_cm0_256
 .type bi_compare_cm0_256, %function
 .text
 .thumb
-/*
-.macro compareOne regA, regB
-	cmp \regA, \regB
-	mov r6, #0
-	sbc r6, r6, r6		@ is set to -1 if A < B
-
-	cmp \regB, \regA
-	mov \regB, #0
-	sbc \regB, \regB, \regB
-	mvn \regA, \regB
-	neg \regB, \regB	@ is set to 1 if A > B
-
-	and r7, r7, \regA	@ clear if it needs to be set to one
-	orr r7, r7, \regB	@ integrate  1
-	orr r7, r7, r6		@ integrate -1
-.endm
-
-.macro compareTwo
-	ldm	r0!, {r2, r3}
-	ldm	r1!, {r4, r5}
-
-	compareOne r2, r4
-	compareOne r3, r5
-.endm
-
-bi_compare_cm0_256:
-	push {r4, r5, r6, r7}
-
-	mov r6, #0
-	mov r7, #0
-
-   	compareTwo
-	compareTwo
-	compareTwo
-	compareTwo
-
-	mov r0, r7
-
-	pop {r4, r5, r6, r7}
-	bx lr*/
-
 
 .macro compareABFirst baseA, baseB
 	ldm	\baseA!, {r2, r3}

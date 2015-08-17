@@ -1,0 +1,265 @@
+\hypertarget{sha2__small__common_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha2\-\_\-small\-\_\-common.c File Reference}
+\label{sha2__small__common_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha2\-\_\-small\-\_\-common.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha2\-\_\-small\-\_\-common.\-c}}
+}
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}hash/sha2\-\_\-small\-\_\-common.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sha2__small__common_8c_a8782a401fbf55261460863fc2f8df1ce}{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}
+\item 
+\#define \hyperlink{sha2__small__common_8c_a0ed6c9c714485592a8c317a8ad91c83b}{C\-H}(x, y, z)~(((x)\&(y)) $^\wedge$ (($\sim$(x))\&(z)))
+\item 
+\#define \hyperlink{sha2__small__common_8c_ae2f6c7a0b4fdb15387259356b16854c9}{M\-A\-J}(x, y, z)~(((x)\&(y)) $^\wedge$ ((x)\&(z)) $^\wedge$ ((y)\&(z)))
+\item 
+\#define \hyperlink{sha2__small__common_8c_af6f8ea907d6e1eaf7212b320a684359c}{S\-I\-G\-M\-A\-\_\-0}(x)~(\hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32}((x), 2) $^\wedge$ \hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32}((x),13) $^\wedge$ \hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32}((x),10))
+\item 
+\#define \hyperlink{sha2__small__common_8c_acca956ff58d18f854f26d73596c623b4}{S\-I\-G\-M\-A\-\_\-1}(x)~(\hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32}((x), 6) $^\wedge$ \hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32}((x),11) $^\wedge$ \hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32}((x),7))
+\item 
+\#define \hyperlink{sha2__small__common_8c_a463be29c7ec87140ad05bb11240cf116}{S\-I\-G\-M\-A\-\_\-a}(x)~(\hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32}((x), 7) $^\wedge$ \hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32}((x),14) $^\wedge$ ((x)$>$$>$3))
+\item 
+\#define \hyperlink{sha2__small__common_8c_a6d1e0b31c4f8cd4ad19fe7aa1ac18c32}{S\-I\-G\-M\-A\-\_\-b}(x)~(\hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32}((x),15) $^\wedge$ \hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32}((x),13) $^\wedge$ ((x)$>$$>$10))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\-\_\-t \hyperlink{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{rotr32} (uint32\-\_\-t x, uint8\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em rotate x right by n positions \end{DoxyCompactList}\item 
+static uint32\-\_\-t \hyperlink{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{rotl32} (uint32\-\_\-t x, uint8\-\_\-t n)
+\item 
+static void \hyperlink{sha2__small__common_8c_a3cd181b5e42a7d8aa760806d975e1d82}{load\-\_\-endian32\-\_\-changed} (uint8\-\_\-t $\ast$dest, uint8\-\_\-t $\ast$src, uint16\-\_\-t words)
+\item 
+void \hyperlink{sha2__small__common_8c_a2bbb476416d65a863e7fd81968dcee27}{sha2\-\_\-small\-\_\-common\-\_\-next\-Block} (\hyperlink{structsha2__small__common__ctx__t}{sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block)
+\begin{DoxyCompactList}\small\item\em block must be, 512, Bit = 64, Byte, long !!! \end{DoxyCompactList}\item 
+void \hyperlink{sha2__small__common_8c_aaf172976a3a8d090b3fb3904130452aa}{sha2\-\_\-small\-\_\-common\-\_\-last\-Block} (\hyperlink{structsha2__small__common__ctx__t}{sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block, uint16\-\_\-t length\-\_\-b)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\-\_\-t \hyperlink{sha2__small__common_8c_aa8d3dd0ab4254661354e66d8521e53a3}{k} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sha2__small__common_8c_a0ed6c9c714485592a8c317a8ad91c83b}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!C\-H@{C\-H}}
+\index{C\-H@{C\-H}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{z}
+\end{DoxyParamCaption}
+)~(((x)\&(y)) $^\wedge$ (($\sim$(x))\&(z)))}}\label{sha2__small__common_8c_a0ed6c9c714485592a8c317a8ad91c83b}
+
+
+Definition at line 52 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_a8782a401fbf55261460863fc2f8df1ce}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N@{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}}
+\index{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N@{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}}\label{sha2__small__common_8c_a8782a401fbf55261460863fc2f8df1ce}
+
+
+Definition at line 24 of file sha2\-\_\-small\-\_\-common.\-c.
+
+\hypertarget{sha2__small__common_8c_ae2f6c7a0b4fdb15387259356b16854c9}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!M\-A\-J@{M\-A\-J}}
+\index{M\-A\-J@{M\-A\-J}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{M\-A\-J}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-J(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{z}
+\end{DoxyParamCaption}
+)~(((x)\&(y)) $^\wedge$ ((x)\&(z)) $^\wedge$ ((y)\&(z)))}}\label{sha2__small__common_8c_ae2f6c7a0b4fdb15387259356b16854c9}
+
+
+Definition at line 53 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_af6f8ea907d6e1eaf7212b320a684359c}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!S\-I\-G\-M\-A\-\_\-0@{S\-I\-G\-M\-A\-\_\-0}}
+\index{S\-I\-G\-M\-A\-\_\-0@{S\-I\-G\-M\-A\-\_\-0}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{S\-I\-G\-M\-A\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-M\-A\-\_\-0(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~({\bf rotr32}((x), 2) $^\wedge$ {\bf rotr32}((x),13) $^\wedge$ {\bf rotl32}((x),10))}}\label{sha2__small__common_8c_af6f8ea907d6e1eaf7212b320a684359c}
+
+
+Definition at line 55 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_acca956ff58d18f854f26d73596c623b4}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!S\-I\-G\-M\-A\-\_\-1@{S\-I\-G\-M\-A\-\_\-1}}
+\index{S\-I\-G\-M\-A\-\_\-1@{S\-I\-G\-M\-A\-\_\-1}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{S\-I\-G\-M\-A\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-M\-A\-\_\-1(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~({\bf rotr32}((x), 6) $^\wedge$ {\bf rotr32}((x),11) $^\wedge$ {\bf rotl32}((x),7))}}\label{sha2__small__common_8c_acca956ff58d18f854f26d73596c623b4}
+
+
+Definition at line 56 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_a463be29c7ec87140ad05bb11240cf116}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!S\-I\-G\-M\-A\-\_\-a@{S\-I\-G\-M\-A\-\_\-a}}
+\index{S\-I\-G\-M\-A\-\_\-a@{S\-I\-G\-M\-A\-\_\-a}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{S\-I\-G\-M\-A\-\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-M\-A\-\_\-a(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~({\bf rotr32}((x), 7) $^\wedge$ {\bf rotl32}((x),14) $^\wedge$ ((x)$>$$>$3))}}\label{sha2__small__common_8c_a463be29c7ec87140ad05bb11240cf116}
+
+
+Definition at line 57 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_a6d1e0b31c4f8cd4ad19fe7aa1ac18c32}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!S\-I\-G\-M\-A\-\_\-b@{S\-I\-G\-M\-A\-\_\-b}}
+\index{S\-I\-G\-M\-A\-\_\-b@{S\-I\-G\-M\-A\-\_\-b}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{S\-I\-G\-M\-A\-\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-M\-A\-\_\-b(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~({\bf rotl32}((x),15) $^\wedge$ {\bf rotl32}((x),13) $^\wedge$ ((x)$>$$>$10))}}\label{sha2__small__common_8c_a6d1e0b31c4f8cd4ad19fe7aa1ac18c32}
+
+
+Definition at line 58 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sha2__small__common_8c_a3cd181b5e42a7d8aa760806d975e1d82}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!load\-\_\-endian32\-\_\-changed@{load\-\_\-endian32\-\_\-changed}}
+\index{load\-\_\-endian32\-\_\-changed@{load\-\_\-endian32\-\_\-changed}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{load\-\_\-endian32\-\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}static void load\-\_\-endian32\-\_\-changed (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{dest, }
+\item[{uint8\-\_\-t $\ast$}]{src, }
+\item[{uint16\-\_\-t}]{words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sha2__small__common_8c_a3cd181b5e42a7d8aa760806d975e1d82}
+
+
+Definition at line 73 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+\hypertarget{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!rotl32@{rotl32}}
+\index{rotl32@{rotl32}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{rotl32}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\-\_\-t rotl32 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{x, }
+\item[{uint8\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sha2__small__common_8c_ad5ee58d601524c5ef4983cd612e32c4e}
+
+
+Definition at line 35 of file sha2\-\_\-small\-\_\-common.\-c.
+
+\hypertarget{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!rotr32@{rotr32}}
+\index{rotr32@{rotr32}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{rotr32}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\-\_\-t rotr32 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{x, }
+\item[{uint8\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sha2__small__common_8c_aecc13e2a9424bb42c99f600d58107fbe}
+
+
+rotate x right by n positions 
+
+
+
+Definition at line 30 of file sha2\-\_\-small\-\_\-common.\-c.
+
+\hypertarget{sha2__small__common_8c_aaf172976a3a8d090b3fb3904130452aa}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!sha2\-\_\-small\-\_\-common\-\_\-last\-Block@{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}}
+\index{sha2\-\_\-small\-\_\-common\-\_\-last\-Block@{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha2\-\_\-small\-\_\-common\-\_\-last\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block, }
+\item[{uint16\-\_\-t}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{sha2__small__common_8c_aaf172976a3a8d090b3fb3904130452aa}
+
+
+Definition at line 129 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::length, and sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+
+
+Referenced by sha256\-\_\-last\-Block().
+
+\hypertarget{sha2__small__common_8c_a2bbb476416d65a863e7fd81968dcee27}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!sha2\-\_\-small\-\_\-common\-\_\-next\-Block@{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}}
+\index{sha2\-\_\-small\-\_\-common\-\_\-next\-Block@{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha2\-\_\-small\-\_\-common\-\_\-next\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block}
+\end{DoxyParamCaption}
+)}}\label{sha2__small__common_8c_a2bbb476416d65a863e7fd81968dcee27}
+
+
+block must be, 512, Bit = 64, Byte, long !!! 
+
+
+
+Definition at line 86 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+References C\-H, sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::h, k, sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::length, load\-\_\-endian32\-\_\-changed(), M\-A\-J, S\-I\-G\-M\-A\-\_\-0, S\-I\-G\-M\-A\-\_\-1, S\-I\-G\-M\-A\-\_\-a, and S\-I\-G\-M\-A\-\_\-b.
+
+
+
+Referenced by sha256\-\_\-next\-Block(), and sha2\-\_\-small\-\_\-common\-\_\-last\-Block().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sha2__small__common_8c_aa8d3dd0ab4254661354e66d8521e53a3}{\index{sha2\-\_\-small\-\_\-common.\-c@{sha2\-\_\-small\-\_\-common.\-c}!k@{k}}
+\index{k@{k}!sha2_small_common.c@{sha2\-\_\-small\-\_\-common.\-c}}
+\subsubsection[{k}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\-\_\-t k\mbox{[}$\,$\mbox{]}}}\label{sha2__small__common_8c_aa8d3dd0ab4254661354e66d8521e53a3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{
+    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+\}
+\end{DoxyCode}
+
+
+Definition at line 61 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+Referenced by encapsulate\-\_\-key(), and sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+

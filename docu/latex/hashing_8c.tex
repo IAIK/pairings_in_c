@@ -1,0 +1,140 @@
+\hypertarget{hashing_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/hashing.c File Reference}
+\label{hashing_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/hashing.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/hashing.\-c}}
+}
+{\ttfamily \#include \char`\"{}hash/hash\-\_\-function.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hashing_8c_a62899051d0e4140ec1dd7c572f4db540}{hash\-\_\-key} (\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$res, \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} key)
+\begin{DoxyCompactList}\small\item\em Hash a fp12\-\_\-t element to a 128-\/bit key. \end{DoxyCompactList}\item 
+void \hyperlink{hashing_8c_a92c81e4be5d86120a6bd729dd95d34a0}{hash\-\_\-id} (\hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} res, char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Hash a an identity string to a big integer. \end{DoxyCompactList}\item 
+void \hyperlink{hashing_8c_ac52b47c17da178cdef7a16a14b775abb}{hash\-\_\-update\-\_\-\-G1} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} g1)
+\begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given element in \{G\}\-\_\-1. \end{DoxyCompactList}\item 
+void \hyperlink{hashing_8c_ad341f9926d028e196f7cc256b7774d12}{hash\-\_\-update\-\_\-\-G\-T} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} gt)
+\begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given element in \{G\}\-\_\-\-T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{hashing_8c_a92c81e4be5d86120a6bd729dd95d34a0}{\index{hashing.\-c@{hashing.\-c}!hash\-\_\-id@{hash\-\_\-id}}
+\index{hash\-\_\-id@{hash\-\_\-id}!hashing.c@{hashing.\-c}}
+\subsubsection[{hash\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void hash\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{{\bf bigint\-\_\-t}}]{res, }
+\item[{char $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{hashing_8c_a92c81e4be5d86120a6bd729dd95d34a0}
+
+
+Hash a an identity string to a big integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting big integer \\
+\hline
+{\em id} & the identity string of arbitrary length \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file hashing.\-c.
+
+
+
+References B\-I\-\_\-\-B\-Y\-T\-E\-S, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, and hash\-\_\-function.
+
+\hypertarget{hashing_8c_a62899051d0e4140ec1dd7c572f4db540}{\index{hashing.\-c@{hashing.\-c}!hash\-\_\-key@{hash\-\_\-key}}
+\index{hash\-\_\-key@{hash\-\_\-key}!hashing.c@{hashing.\-c}}
+\subsubsection[{hash\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}void hash\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} $\ast$}]{res, }
+\item[{{\bf fp12\-\_\-t}}]{key}
+\end{DoxyParamCaption}
+)}}\label{hashing_8c_a62899051d0e4140ec1dd7c572f4db540}
+
+
+Hash a fp12\-\_\-t element to a 128-\/bit key. 
+
+The user must ensure that the array represented by res is of appropriate size. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting 128-\/bit key \\
+\hline
+{\em key} & the element to be hashed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file hashing.\-c.
+
+
+
+References B\-I\-\_\-\-W\-O\-R\-D\-S, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, and hash\-\_\-function.
+
+
+
+Referenced by decapsulate\-\_\-key(), and encapsulate\-\_\-key().
+
+\hypertarget{hashing_8c_ac52b47c17da178cdef7a16a14b775abb}{\index{hashing.\-c@{hashing.\-c}!hash\-\_\-update\-\_\-\-G1@{hash\-\_\-update\-\_\-\-G1}}
+\index{hash\-\_\-update\-\_\-\-G1@{hash\-\_\-update\-\_\-\-G1}!hashing.c@{hashing.\-c}}
+\subsubsection[{hash\-\_\-update\-\_\-\-G1}]{\setlength{\rightskip}{0pt plus 5cm}void hash\-\_\-update\-\_\-\-G1 (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state, }
+\item[{const {\bf ecfp\-\_\-pt}}]{g1}
+\end{DoxyParamCaption}
+)}}\label{hashing_8c_ac52b47c17da178cdef7a16a14b775abb}
+
+
+Updates the given Hash state with the given element in \{G\}\-\_\-1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the Hash state to be used. \\
+\hline
+{\em g1} & the elliptic curve point to be hashed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file hashing.\-c.
+
+
+
+References B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S, F\-P\-\_\-\-B\-Y\-T\-E\-S, F\-P\-\_\-\-W\-O\-R\-D\-S, hash\-\_\-update, print\-\_\-value(), ecpoint\-\_\-fp\-::x, and ecpoint\-\_\-fp\-::y.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{hashing_8c_ad341f9926d028e196f7cc256b7774d12}{\index{hashing.\-c@{hashing.\-c}!hash\-\_\-update\-\_\-\-G\-T@{hash\-\_\-update\-\_\-\-G\-T}}
+\index{hash\-\_\-update\-\_\-\-G\-T@{hash\-\_\-update\-\_\-\-G\-T}!hashing.c@{hashing.\-c}}
+\subsubsection[{hash\-\_\-update\-\_\-\-G\-T}]{\setlength{\rightskip}{0pt plus 5cm}void hash\-\_\-update\-\_\-\-G\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state, }
+\item[{const {\bf fp12\-\_\-t}}]{gt}
+\end{DoxyParamCaption}
+)}}\label{hashing_8c_ad341f9926d028e196f7cc256b7774d12}
+
+
+Updates the given Hash state with the given element in \{G\}\-\_\-\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the Hash state to be used. \\
+\hline
+{\em g1} & the 12th extension field to be hashed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file hashing.\-c.
+
+
+
+References B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S, F\-P\-\_\-\-B\-Y\-T\-E\-S, and hash\-\_\-update.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+

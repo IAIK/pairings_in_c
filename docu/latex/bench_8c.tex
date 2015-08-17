@@ -1,0 +1,64 @@
+\hypertarget{bench_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/benchmark/bench.c File Reference}
+\label{bench_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/benchmark/bench.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/benchmark/bench.\-c}}
+}
+{\ttfamily \#include \char`\"{}bench\-\_\-util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp2.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp12.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pbc/pbc.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ibe/bbkem.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bench_8c_a1c6fb748136c0f11b56084d4a8e56d04}{benchmark\-\_\-call}(msg, function)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bench_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bench_8c_a1c6fb748136c0f11b56084d4a8e56d04}{\index{bench.\-c@{bench.\-c}!benchmark\-\_\-call@{benchmark\-\_\-call}}
+\index{benchmark\-\_\-call@{benchmark\-\_\-call}!bench.c@{bench.\-c}}
+\subsubsection[{benchmark\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}\#define benchmark\-\_\-call(
+\begin{DoxyParamCaption}
+\item[{}]{msg, }
+\item[{}]{function}
+\end{DoxyParamCaption}
+)}}\label{bench_8c_a1c6fb748136c0f11b56084d4a8e56d04}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}{benchmark\_start}();                                                       
+      \hyperlink{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}{\(\backslash\)}
+\hyperlink{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}{    benchmark\_start}();                                                      \(\backslash\)
+    function;                                                                     
+      \hyperlink{bench__util_8h_a7a85288b0e9bc5b94e29e62ae3e3cc5c}{\(\backslash\)}
+\hyperlink{bench__util_8h_a7a85288b0e9bc5b94e29e62ae3e3cc5c}{    benchmark\_stop}();                                                          
+      \hyperlink{bench__util_8h_a1cce11f793fd9164a8bc71eb76ad9e3d}{\(\backslash\)}
+\hyperlink{bench__util_8h_a1cce11f793fd9164a8bc71eb76ad9e3d}{    benchmark\_compute\_single}();                                        
+      \hyperlink{bench__util_8h_ad58b720ea22f8ec80db8400402cdb517}{\(\backslash\)}
+\hyperlink{bench__util_8h_ad58b720ea22f8ec80db8400402cdb517}{    benchmark\_print}(msg);                                                   \(\backslash\)
+\end{DoxyCode}
+
+
+Definition at line 45 of file bench.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{bench_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{bench.\-c@{bench.\-c}!main@{main}}
+\index{main@{main}!bench.c@{bench.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{bench_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 506 of file bench.\-c.
+

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/arch.h
+
+../include/config.h
+arch.h
+../include/arch.h
+
+../include/hash/Keccak-compact-settings.h
+
+../include/hash/Keccak-compact.h
+Keccak-compact-settings.h
+../include/hash/Keccak-compact-settings.h
+
+../include/hash/hash_function.h
+hash/Keccak-compact.h
+../include/hash/hash/Keccak-compact.h
+
+../include/hash/hashing.h
+types.h
+../include/hash/types.h
+hash/hash_function.h
+../include/hash/hash/hash_function.h
+
+../include/types.h
+config.h
+../include/config.h
+
+/home/work/workspace/bipair_in_c/test/test_sha.c
+hash/hashing.h
+/home/work/workspace/bipair_in_c/test/hash/hashing.h
+types.h
+/home/work/workspace/bipair_in_c/test/types.h
+

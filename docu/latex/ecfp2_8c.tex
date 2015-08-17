@@ -1,0 +1,821 @@
+\hypertarget{ecfp2_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/ec/ecfp2.c File Reference}
+\label{ecfp2_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/ec/ecfp2.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/ec/ecfp2.\-c}}
+}
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp2.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rand.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ecfp2_8c_afaec4ca70fb412841d91fee5c1d04907}{ecfp2\-\_\-add\-\_\-affine\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} b)
+\begin{DoxyCompactList}\small\item\em Adds two points of an elliptic curve group over the quadratic extension of a prime field using affine coordinates via projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_abda40df811cd5a2bd144f9d3760f2c32}{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} b)
+\begin{DoxyCompactList}\small\item\em Adds two points of an elliptic curve group over the quadratic extension of a prime field using affine coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a2c9eaf7306dc226ae9c589a241d07e6a}{ecfp2\-\_\-add\-\_\-proj\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} res, const \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} b)
+\begin{DoxyCompactList}\small\item\em Adds two points of an elliptic curve group over the quadratic extension of a prime field using mixed affine and projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a96ad5b8f0d80644130e1355eb0913090}{ecfp2\-\_\-dbl\-\_\-affine\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using affine coordinates via projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_aedff7216035a04cf6892340bdbbdb4ef}{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using affine coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a0a18498cc280ad0b9439b914dc7a19cf}{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} res, const \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using mixed affine and projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_acaf2d2eb698a39e792ff7c5ecdc155fe}{ecfp2\-\_\-neg\-\_\-affine\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Negates a point of an elliptic curve group defined over the quadratic extension of a prime field, i.\-e., computes -\/\-P. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a564405ab3e614d64520958163de8e932}{ecfp2\-\_\-neg\-\_\-proj\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Negates a point of an elliptic curve group defined over the quadratic extension of a prime field, i.\-e., computes -\/\-P. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a21209d25a1a896ec15284142cd050f39}{ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} k)
+\begin{DoxyCompactList}\small\item\em Performs the multiplication of a point of an elliptic curve group defined over the quadratic extension of a prime field with a scalar. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_ae5d53f707f3239e6f40501390211226c}{ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std} (\hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x1, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x2, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} z, const \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x\-\_\-d)
+\begin{DoxyCompactList}\small\item\em Performs a mixed add and double operation in co-\/\-Z coordinates to be used in a specialize Montgomery ladder implementation of the elliptic curve point multiplication. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a0e7e58c283ac433eb89ba7052efd5a29}{ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std} (\hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x1, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x2, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} z, const \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x\-\_\-d, const \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} y\-\_\-d)
+\begin{DoxyCompactList}\small\item\em Recovers the coordinates of the result of the Montgomery ladder elliptic curve point multiplication using co-\/\-Z coordinates. \end{DoxyCompactList}\item 
+int \hyperlink{ecfp2_8c_af3cc76c601bb2a88bd01a7cf67589953}{ecfp2\-\_\-verify\-\_\-coordinates} (\hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} y)
+\item 
+int \hyperlink{ecfp2_8c_a7f802b491f93d90645ae2131e6ac6911}{ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates} (\hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} x, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} y, \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} z)
+\item 
+void \hyperlink{ecfp2_8c_a4c83f9c185f0ac8e00b6d59e6a59deb1}{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} k)
+\begin{DoxyCompactList}\small\item\em Elliptic curve point multiplication using a Montgomery ladder with co-\/\-Z coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a6c3e60f2872d2ada353e61a0297ca584}{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} affine, const \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} projective)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point in jacobian projective coordinates to an elliptic curve point in affine coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a61767bbe6ec5b3bc1e9f4857159f149d}{ecfp2\-\_\-get\-\_\-projective\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} projective, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} affine)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point in affine coordinates to an elliptic curve point in projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_ad9ec95f747a4cc1727a7e9bb00d8301a}{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} projective, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} affine)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point in affine coordinates to a randomized elliptic curve point in jacobian projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a2c9c39d0d43ee2886f06e35b216255dd}{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} projective, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} affine)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point in affine coordinates to a randomized elliptic curve point in homogeneous projective coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a70d878bd0ac88540b2ba343af75733fe}{ecfp2\-\_\-copy\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Copies a point of an elliptic curve group over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_ae7a30654619f8312b237c5bfae4eb684}{ecfp2\-\_\-clear\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Clears a point of an elliptic curve group over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a9b626a9c9b63adf41bc300f3b6b4d2bd}{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of a point of an elliptic curve group over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_ab5b2b99b7c5e76722471b69e27193cd3}{ecfp2\-\_\-frobenius\-\_\-map\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of a point of an elliptic curve group over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+int \hyperlink{ecfp2_8c_a6cb1faf66b7f90b7e442ff9add319f4e}{ecfp2\-\_\-compare\-\_\-std} (\hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a, const \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} b)
+\begin{DoxyCompactList}\small\item\em Compares two points of an elliptic curve group defined over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a407c55c384aeefd9a9f8b3757465173e}{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} t)
+\begin{DoxyCompactList}\small\item\em Hashes an integer to a point in the elliptic curve group over the quadratic extension of a prime field. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a28151c277e807b3e5271ced265814b0c}{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point to the Montgomery domain. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_a25563af6eea069306c8d7cb1276d6367}{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res, const \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} a)
+\begin{DoxyCompactList}\small\item\em Converts an elliptic curve point in Montgomery domain back. \end{DoxyCompactList}\item 
+void \hyperlink{ecfp2_8c_ad6b8fc7bb8e9600fbb84fb3931e85238}{ecfp2\-\_\-rand\-\_\-std} (\hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} res)
+\begin{DoxyCompactList}\small\item\em Generate random point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ecfp2_8c_abda40df811cd5a2bd144f9d3760f2c32}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std@{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}}
+\index{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std@{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{b}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_abda40df811cd5a2bd144f9d3760f2c32}
+
+
+Adds two points of an elliptic curve group over the quadratic extension of a prime field using affine coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the sum of the two points \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-compare, ecfp2\-\_\-dbl\-\_\-affine, fp2\-\_\-copy, fp2\-\_\-inv, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_afaec4ca70fb412841d91fee5c1d04907}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-add\-\_\-affine\-\_\-std@{ecfp2\-\_\-add\-\_\-affine\-\_\-std}}
+\index{ecfp2\-\_\-add\-\_\-affine\-\_\-std@{ecfp2\-\_\-add\-\_\-affine\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-affine\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-add\-\_\-affine\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{b}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_afaec4ca70fb412841d91fee5c1d04907}
+
+
+Adds two points of an elliptic curve group over the quadratic extension of a prime field using affine coordinates via projective coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the sum of the two points \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file ecfp2.\-c.
+
+
+
+References ecfp2\-\_\-add\-\_\-proj, ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian, and ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective.
+
+\hypertarget{ecfp2_8c_ae5d53f707f3239e6f40501390211226c}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std@{ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std}}
+\index{ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std@{ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp2\-\_\-t}}]{x1, }
+\item[{{\bf fp2\-\_\-t}}]{x2, }
+\item[{{\bf fp2\-\_\-t}}]{z, }
+\item[{const {\bf fp2\-\_\-t}}]{x\-\_\-d}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_ae5d53f707f3239e6f40501390211226c}
+
+
+Performs a mixed add and double operation in co-\/\-Z coordinates to be used in a specialize Montgomery ladder implementation of the elliptic curve point multiplication. 
+
+Note that the function updates the parameters! 
+\begin{DoxyParams}{Parameters}
+{\em x1} & the x-\/coordinate of the first point in the Montgomery ladder \\
+\hline
+{\em x2} & the x-\/coordinate of the second point in the Montgomery ladder \\
+\hline
+{\em z} & the common z-\/coordinate of the two points in the Montgomery ladder \\
+\hline
+{\em x\-\_\-d} & the constant difference of the x-\/coordinates of the two points in the Montgomery ladder \\
+\hline
+\end{DoxyParams}
+Algorithm 5 from \char`\"{}\-Memory-\/\-Constrained Implementations of Elliptic Curve Cryptography in Co-\/\-Z
+\-Coordinate Representation\char`\"{}, Hutter et. al. 
+
+Definition at line 353 of file ecfp2.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-4\-B, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, and fp\-\_\-copy.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std().
+
+\hypertarget{ecfp2_8c_a2c9eaf7306dc226ae9c589a241d07e6a}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-add\-\_\-proj\-\_\-std@{ecfp2\-\_\-add\-\_\-proj\-\_\-std}}
+\index{ecfp2\-\_\-add\-\_\-proj\-\_\-std@{ecfp2\-\_\-add\-\_\-proj\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-proj\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-add\-\_\-proj\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-proj\-\_\-pt}}]{a, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{b}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a2c9eaf7306dc226ae9c589a241d07e6a}
+
+
+Adds two points of an elliptic curve group over the quadratic extension of a prime field using mixed affine and projective coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the projective sum of the two points \\
+\hline
+{\em a} & the projective point operand \\
+\hline
+{\em b} & the affine point operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-zero, ecfp2\-\_\-dbl\-\_\-proj, fp2\-\_\-add, fp2\-\_\-copy, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-copy, F\-P\-\_\-\-O\-N\-E, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_ae7a30654619f8312b237c5bfae4eb684}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-clear\-\_\-std@{ecfp2\-\_\-clear\-\_\-std}}
+\index{ecfp2\-\_\-clear\-\_\-std@{ecfp2\-\_\-clear\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-clear\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-clear\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_ae7a30654619f8312b237c5bfae4eb684}
+
+
+Clears a point of an elliptic curve group over the quadratic extension of a prime field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the elliptic curve point in affine coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 719 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-clear, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a6cb1faf66b7f90b7e442ff9add319f4e}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-compare\-\_\-std@{ecfp2\-\_\-compare\-\_\-std}}
+\index{ecfp2\-\_\-compare\-\_\-std@{ecfp2\-\_\-compare\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-compare\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int ecfp2\-\_\-compare\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{a, }
+\item[{const {\bf ecfp2\-\_\-proj\-\_\-pt}}]{b}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a6cb1faf66b7f90b7e442ff9add319f4e}
+
+
+Compares two points of an elliptic curve group defined over the quadratic extension of a prime field. 
+
+Note that the check for equality does merely check the absolute values of the coordinates, i.\-e., it does not recognize equal projective points in different representations. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the first projective elliptic curve point \\
+\hline
+{\em b} & the second projective elliptic curve point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if equal, 1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 799 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-compare, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_a70d878bd0ac88540b2ba343af75733fe}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-copy\-\_\-std@{ecfp2\-\_\-copy\-\_\-std}}
+\index{ecfp2\-\_\-copy\-\_\-std@{ecfp2\-\_\-copy\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-copy\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-copy\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a70d878bd0ac88540b2ba343af75733fe}
+
+
+Copies a point of an elliptic curve group over the quadratic extension of a prime field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting copy \\
+\hline
+{\em a} & the affine input point to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 708 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-copy, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_aedff7216035a04cf6892340bdbbdb4ef}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std@{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}}
+\index{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std@{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_aedff7216035a04cf6892340bdbbdb4ef}
+
+
+Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using affine coordinates. 
+
+Uses the elliptic curve twist of the originally defined curve. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the point operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 205 of file ecfp2.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, fp2\-\_\-add, fp2\-\_\-copy, fp2\-\_\-dbl, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-inv, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, fp\-\_\-copy, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a96ad5b8f0d80644130e1355eb0913090}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-dbl\-\_\-affine\-\_\-std@{ecfp2\-\_\-dbl\-\_\-affine\-\_\-std}}
+\index{ecfp2\-\_\-dbl\-\_\-affine\-\_\-std@{ecfp2\-\_\-dbl\-\_\-affine\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-dbl\-\_\-affine\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-dbl\-\_\-affine\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a96ad5b8f0d80644130e1355eb0913090}
+
+
+Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using affine coordinates via projective coordinates. 
+
+Uses the elliptic curve twist of the originally defined curve. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the point operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 190 of file ecfp2.\-c.
+
+
+
+References ecfp2\-\_\-dbl\-\_\-proj, ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian, and ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective.
+
+\hypertarget{ecfp2_8c_a0a18498cc280ad0b9439b914dc7a19cf}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-dbl\-\_\-proj\-\_\-std@{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std}}
+\index{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std@{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-dbl\-\_\-proj\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-proj\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a0a18498cc280ad0b9439b914dc7a19cf}
+
+
+Calculates the double of a point of an elliptic curve group over the quadratic extension of a prime field using mixed affine and projective coordinates. 
+
+Uses the elliptic curve twist of the originally defined curve. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the point operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file ecfp2.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, fp2\-\_\-add, fp2\-\_\-copy, fp2\-\_\-dbl, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-hlv, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, fp\-\_\-copy, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_a9b626a9c9b63adf41bc300f3b6b4d2bd}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}}
+\index{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a9b626a9c9b63adf41bc300f3b6b4d2bd}
+
+
+Computes the frobenius map of a point of an elliptic curve group over the quadratic extension of a prime field. 
+
+Uses a precomputed table for the roots of the quadratic non-\/residue in Fp2. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting elliptic curve point \\
+\hline
+{\em a} & the operand point \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 733 of file ecfp2.\-c.
+
+
+
+References ecfp2\-\_\-copy, fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, R\-O\-O\-T\-\_\-\-R\-E\-S\-I\-D\-U\-E\-\_\-\-F\-P4, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_ab5b2b99b7c5e76722471b69e27193cd3}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-frobenius\-\_\-map\-\_\-std@{ecfp2\-\_\-frobenius\-\_\-map\-\_\-std}}
+\index{ecfp2\-\_\-frobenius\-\_\-map\-\_\-std@{ecfp2\-\_\-frobenius\-\_\-map\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-frobenius\-\_\-map\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-frobenius\-\_\-map\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_ab5b2b99b7c5e76722471b69e27193cd3}
+
+
+Computes the frobenius map of a point of an elliptic curve group over the quadratic extension of a prime field. 
+
+The function computes everything from scratch. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting elliptic curve point \\
+\hline
+{\em a} & the operand point \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 759 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-div3, bi\-\_\-one, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-subtract, ecfp2\-\_\-copy, fp2\-\_\-exp, fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, fp2\-\_\-sqr, fp\-\_\-clear, fp\-\_\-copy, F\-P\-\_\-\-O\-N\-E, P\-R\-I\-M\-E\-\_\-\-P, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a25563af6eea069306c8d7cb1276d6367}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-from\-\_\-montgomery\-\_\-std@{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std}}
+\index{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std@{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-from\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a25563af6eea069306c8d7cb1276d6367}
+
+
+Converts an elliptic curve point in Montgomery domain back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting point in normal number format \\
+\hline
+{\em a} & the elliptc curve point in Montgomery domain to be converted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 917 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-from\-\_\-montgomery, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a6c3e60f2872d2ada353e61a0297ca584}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std@{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}}
+\index{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std@{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{affine, }
+\item[{const {\bf ecfp2\-\_\-proj\-\_\-pt}}]{projective}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a6c3e60f2872d2ada353e61a0297ca584}
+
+
+Converts an elliptic curve point in jacobian projective coordinates to an elliptic curve point in affine coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em affine} & the resulting affine elliptic curve point \\
+\hline
+{\em projective} & the input projective elliptic curve point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 617 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-inv, fp2\-\_\-mul, fp2\-\_\-sqr, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_a2c9c39d0d43ee2886f06e35b216255dd}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std@{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std}}
+\index{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std@{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{projective, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{affine}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a2c9c39d0d43ee2886f06e35b216255dd}
+
+
+Converts an elliptic curve point in affine coordinates to a randomized elliptic curve point in homogeneous projective coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projective} & the resulting randomized, projective elliptic curve point \\
+\hline
+{\em affine} & the input affine elliptic curve point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 683 of file ecfp2.\-c.
+
+
+
+References cprng\-\_\-get\-\_\-bytes(), fp2\-\_\-mul, F\-P\-\_\-\-B\-Y\-T\-E\-S, fp\-\_\-rdc, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_ad9ec95f747a4cc1727a7e9bb00d8301a}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std@{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std}}
+\index{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std@{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{projective, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{affine}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_ad9ec95f747a4cc1727a7e9bb00d8301a}
+
+
+Converts an elliptic curve point in affine coordinates to a randomized elliptic curve point in jacobian projective coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projective} & the resulting randomized, projective elliptic curve point \\
+\hline
+{\em affine} & the input affine elliptic curve point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 654 of file ecfp2.\-c.
+
+
+
+References cprng\-\_\-get\-\_\-bytes(), fp2\-\_\-mul, fp2\-\_\-sqr, F\-P\-\_\-\-B\-Y\-T\-E\-S, fp\-\_\-rdc, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_a61767bbe6ec5b3bc1e9f4857159f149d}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-get\-\_\-projective\-\_\-std@{ecfp2\-\_\-get\-\_\-projective\-\_\-std}}
+\index{ecfp2\-\_\-get\-\_\-projective\-\_\-std@{ecfp2\-\_\-get\-\_\-projective\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-projective\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-get\-\_\-projective\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{projective, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{affine}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a61767bbe6ec5b3bc1e9f4857159f149d}
+
+
+Converts an elliptic curve point in affine coordinates to an elliptic curve point in projective coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projective} & the resulting projective elliptic curve point \\
+\hline
+{\em affine} & the input affine elliptic curve point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 637 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-copy, fp\-\_\-clear, fp\-\_\-copy, F\-P\-\_\-\-O\-N\-E, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+\hypertarget{ecfp2_8c_a407c55c384aeefd9a9f8b3757465173e}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std@{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}}
+\index{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std@{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf bigint\-\_\-t}}]{t}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a407c55c384aeefd9a9f8b3757465173e}
+
+
+Hashes an integer to a point in the elliptic curve group over the quadratic extension of a prime field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting elliptic curve point \\
+\hline
+{\em t} & the integer to be hashed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 812 of file ecfp2.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, ecfp2\-\_\-add\-\_\-affine, ecfp2\-\_\-add\-\_\-proj, ecfp2\-\_\-dbl\-\_\-affine, ecfp2\-\_\-frobenius\-\_\-map, ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian, ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective, ecfp2\-\_\-mul, ecfp2\-\_\-neg\-\_\-affine, fp2\-\_\-add, fp2\-\_\-copy, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-hlv, fp2\-\_\-inv, fp2\-\_\-legendre, fp2\-\_\-mul, fp2\-\_\-mulfp, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sqrt, fp2\-\_\-sub, fp\-\_\-add, fp\-\_\-clear, fp\-\_\-copy, fp\-\_\-dbl, fp\-\_\-legendre, fp\-\_\-neg, F\-P\-\_\-\-O\-N\-E, fp\-\_\-sqr, fp\-\_\-sqrt, fp\-\_\-sub, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a21209d25a1a896ec15284142cd050f39}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std@{ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std}}
+\index{ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std@{ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{k}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a21209d25a1a896ec15284142cd050f39}
+
+
+Performs the multiplication of a point of an elliptic curve group defined over the quadratic extension of a prime field with a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the elliptic curve point to be multiplied \\
+\hline
+{\em k} & the scalar operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 324 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, ecfp2\-\_\-add\-\_\-proj, ecfp2\-\_\-dbl\-\_\-proj, ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian, and ecpoint\-\_\-fp2\-\_\-proj\-::infinity.
+
+\hypertarget{ecfp2_8c_a4c83f9c185f0ac8e00b6d59e6a59deb1}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std@{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std}}
+\index{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std@{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{k}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a4c83f9c185f0ac8e00b6d59e6a59deb1}
+
+
+Elliptic curve point multiplication using a Montgomery ladder with co-\/\-Z coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the point operand \\
+\hline
+{\em k} & the scalar operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 561 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, cprng\-\_\-get\-\_\-bytes(), ecfp2\-\_\-add\-\_\-dbl\-\_\-coz\-\_\-std(), ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), fp2\-\_\-clear, fp2\-\_\-inv, fp2\-\_\-mul, F\-P\-\_\-\-B\-Y\-T\-E\-S, fp\-\_\-rdc, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_acaf2d2eb698a39e792ff7c5ecdc155fe}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-neg\-\_\-affine\-\_\-std@{ecfp2\-\_\-neg\-\_\-affine\-\_\-std}}
+\index{ecfp2\-\_\-neg\-\_\-affine\-\_\-std@{ecfp2\-\_\-neg\-\_\-affine\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-neg\-\_\-affine\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-neg\-\_\-affine\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_acaf2d2eb698a39e792ff7c5ecdc155fe}
+
+
+Negates a point of an elliptic curve group defined over the quadratic extension of a prime field, i.\-e., computes -\/\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the affine elliptic curve point (out\-: the negated point) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 304 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-neg, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_a564405ab3e614d64520958163de8e932}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-neg\-\_\-proj\-\_\-std@{ecfp2\-\_\-neg\-\_\-proj\-\_\-std}}
+\index{ecfp2\-\_\-neg\-\_\-proj\-\_\-std@{ecfp2\-\_\-neg\-\_\-proj\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-neg\-\_\-proj\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-neg\-\_\-proj\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a564405ab3e614d64520958163de8e932}
+
+
+Negates a point of an elliptic curve group defined over the quadratic extension of a prime field, i.\-e., computes -\/\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the projective elliptic curve point (out\-: the negated point) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 313 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-neg, and ecpoint\-\_\-fp2\-\_\-proj\-::y.
+
+\hypertarget{ecfp2_8c_ad6b8fc7bb8e9600fbb84fb3931e85238}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-rand\-\_\-std@{ecfp2\-\_\-rand\-\_\-std}}
+\index{ecfp2\-\_\-rand\-\_\-std@{ecfp2\-\_\-rand\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-rand\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-rand\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_ad6b8fc7bb8e9600fbb84fb3931e85238}
+
+
+Generate random point. 
+
+To this end, we generate a random scalar (that is not known by anyone) and multiply it with the base point. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the randomly generated point. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 929 of file ecfp2.\-c.
+
+
+
+References B\-I\-\_\-\-B\-Y\-T\-E\-S, bi\-\_\-compare, bi\-\_\-zero, cprng\-\_\-get\-\_\-bytes(), E\-C\-F\-P2\-\_\-\-G\-E\-N\-E\-R\-A\-T\-O\-R, ecfp2\-\_\-mul, and fp\-\_\-rdc\-\_\-n.
+
+\hypertarget{ecfp2_8c_a0e7e58c283ac433eb89ba7052efd5a29}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std@{ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std}}
+\index{ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std@{ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-recover\-\_\-full\-\_\-coord\-\_\-coz\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp2\-\_\-t}}]{x1, }
+\item[{{\bf fp2\-\_\-t}}]{x2, }
+\item[{{\bf fp2\-\_\-t}}]{z, }
+\item[{const {\bf fp2\-\_\-t}}]{x\-\_\-d, }
+\item[{const {\bf fp2\-\_\-t}}]{y\-\_\-d}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a0e7e58c283ac433eb89ba7052efd5a29}
+
+
+Recovers the coordinates of the result of the Montgomery ladder elliptic curve point multiplication using co-\/\-Z coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & the first point in the Montgomery ladder implementation (out\-: the x-\/coordinate of the resulting point) \\
+\hline
+{\em x2} & the second point in the Montgomery ladder implementation (out\-: the y-\/coordinate of the resulting point) \\
+\hline
+{\em z} & the common z-\/coordinate of the two points in the Montgomery ladder \\
+\hline
+{\em x\-\_\-d} & the constant difference of the x-\/coordinates of the two points in the Montgomery ladder \\
+\hline
+{\em y\-\_\-d} & the difference of the y-\/coordinates of the two input points \\
+\hline
+\end{DoxyParams}
+Algorithm 7 from \char`\"{}\-Memory-\/\-Constrained Implementations of Elliptic Curve Cryptography in Co-\/\-Z
+\-Coordinate Representation\char`\"{}, Hutter et. al. 
+
+Definition at line 445 of file ecfp2.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-4\-B, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-mul, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, and fp\-\_\-copy.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std().
+
+\hypertarget{ecfp2_8c_a28151c277e807b3e5271ced265814b0c}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-to\-\_\-montgomery\-\_\-std@{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std}}
+\index{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std@{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void ecfp2\-\_\-to\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf ecfp2\-\_\-pt}}]{res, }
+\item[{const {\bf ecfp2\-\_\-pt}}]{a}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a28151c277e807b3e5271ced265814b0c}
+
+
+Converts an elliptic curve point to the Montgomery domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting point in Montgomery domain \\
+\hline
+{\em a} & the elliptic curve point to be converted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 906 of file ecfp2.\-c.
+
+
+
+References fp2\-\_\-to\-\_\-montgomery, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-::x, and ecpoint\-\_\-fp2\-::y.
+
+\hypertarget{ecfp2_8c_af3cc76c601bb2a88bd01a7cf67589953}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-verify\-\_\-coordinates@{ecfp2\-\_\-verify\-\_\-coordinates}}
+\index{ecfp2\-\_\-verify\-\_\-coordinates@{ecfp2\-\_\-verify\-\_\-coordinates}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-verify\-\_\-coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int ecfp2\-\_\-verify\-\_\-coordinates (
+\begin{DoxyParamCaption}
+\item[{{\bf fp2\-\_\-t}}]{x, }
+\item[{{\bf fp2\-\_\-t}}]{y}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_af3cc76c601bb2a88bd01a7cf67589953}
+
+
+Definition at line 498 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-compare, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, fp2\-\_\-add, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-mul, fp2\-\_\-sqr, fp\-\_\-clear, and fp\-\_\-copy.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std().
+
+\hypertarget{ecfp2_8c_a7f802b491f93d90645ae2131e6ac6911}{\index{ecfp2.\-c@{ecfp2.\-c}!ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates@{ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates}}
+\index{ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates@{ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates}!ecfp2.c@{ecfp2.\-c}}
+\subsubsection[{ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates (
+\begin{DoxyParamCaption}
+\item[{{\bf fp2\-\_\-t}}]{x, }
+\item[{{\bf fp2\-\_\-t}}]{y, }
+\item[{{\bf fp2\-\_\-t}}]{z}
+\end{DoxyParamCaption}
+)}}\label{ecfp2_8c_a7f802b491f93d90645ae2131e6ac6911}
+
+
+Definition at line 523 of file ecfp2.\-c.
+
+
+
+References bi\-\_\-compare, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-A, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, fp2\-\_\-add, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-mul, fp2\-\_\-sqr, fp\-\_\-clear, and fp\-\_\-copy.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std().
+

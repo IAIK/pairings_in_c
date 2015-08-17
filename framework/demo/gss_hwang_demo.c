@@ -1,31 +1,55 @@
-/*
- * gss_demo.c
- *
- *  Created on: Mar 10, 2014
- *      Author: Raphael Spreitzer
- */
-
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "pbc/pbc.h"
 #include "bigint/bi.h"
 #include "types.h"
 #include "gss/gss_hwang.h"
-#include "hash/sha256.h"
+#include "hash/hash_function.h"
 #include <string.h>
 
 /**
  * Initializes the public parameters, the master issuing key (MIK),
  * the master opening key (MOK), and the master linking key (MLK).
  *
- * TODO: currently we only use one struct (we should add different
- * ones for MIK, MOK, and MLK.)
  */
 void hwang_init_parameters(hwang_public_parameters_ptr data)
 {
   bigint_t eta, xi, bi_tmp;
 
   // We need the order (p) of the groups G1 and G2 to compute in Z_p
-  bi_copy_var_std(data->order_p, EC_PARAM.n, BI_WORDS);
+  bi_copy_var_std(data->order_p, EC_PARAM_N, BI_WORDS);
 
   ecfp2_rand(&data->h1); // h1 \in_R \mathbb{G_2}
 
@@ -44,11 +68,11 @@ void hwang_init_parameters(hwang_public_parameters_ptr data)
   } while (bi_compare(data->theta, bi_zero) == 0);
 
 
-  ecfp_mul(&data->w, &data->u, eta); // w = u^{eta}
+  ecfp_mul(&data->w, &data->u, eta);                 // w = u^{eta}
 
-  ecfp_mul(&data->d, &data->u, xi); // d = u^{xi}
+  ecfp_mul(&data->d, &data->u, xi);                  // d = u^{xi}
 
-  ecfp2_mul(&data->U, &data->h1, xi); // U = h1^{xi}
+  ecfp2_mul(&data->U, &data->h1, xi);                // U = h1^{xi}
 
   ecfp2_mul(&data->h_theta, &data->h1, data->theta); // h_{theta} = h1^{theta}
 
@@ -103,39 +127,17 @@ void hwang_generate_usk(hwang_signing_key_ptr usk, hwang_public_parameters_ptr d
 
 
   // A = g1 * g2^{-y} * w^{-z}
-  bi_subtract(bi_tmp, data->order_p, usk->y);  // negate y
-  bi_subtract(bi_tmp1, data->order_p, usk->z); // negate z
-  ecfp_mul(&usk->A, &data->g2, bi_tmp);  // A = g2^{-y}
-  ecfp_mul(&G1_tmp, &data->w, bi_tmp1);  //   = w^{-z}
+  bi_subtract(bi_tmp, data->order_p, usk->y);   // negate y
+  bi_subtract(bi_tmp1, data->order_p, usk->z);  // negate z
+  ecfp_mul(&usk->A, &data->g2, bi_tmp);         // A = g2^{-y}
+  ecfp_mul(&G1_tmp, &data->w, bi_tmp1);         //   = w^{-z}
   ecfp_add_affine(&usk->A, &usk->A, &G1_tmp);
   ecfp_add_affine(&usk->A, &usk->A, &data->g1);
-  //bn_sub(bn_tmp, data->order_p, usk->y);   // negate y
-  //bn_sub(bn_tmp1, data->order_p, usk->z);  // negate z
-  //g1_mul_sim(usk->A, data->g2, bn_tmp, data->w, bn_tmp1);
-  //g1_add(usk->A, usk->A, data->g1);
+
 
   bi_add(bi_tmp, data->theta, usk->x); fp_rdc_n(bi_tmp);
 
-  //fp_t fp_tmp;
-  //fp_to_montgomery_std(fp_tmp, bi_tmp);
-
   fp_inv_n(inv, bi_tmp);
-  //fp_inv_var(inv, fp_tmp, data->order_p);
-
-  //bigint_t inv2;
-  //fp_from_montgomery(inv2, inv);
-  //fp_inv_var(inv, bi_tmp, data->order_p);
-  //fp_inv(inv, bi_tmp);
-
-  //bn_gcd_ext(bn_tmp1, inv, bn_tmp3, bn_tmp, data->order_p);  // invert bn_tmp (mod order p)
-  // TODO: test if inv is negative and add order if necessary!!!
-  //if (bn_sign(inv) == BN_NEG) {
-  //  bn_add(inv, inv, data->order_p);
-  //}
-
-//#if DEBUG_PRINT == 1
-//  PRINT_BIGINT("\inv  : ", inv);
-//#endif
 
   ecfp_mul(&usk->A, &usk->A, inv);    // A = (g1 * g2^{-y} * w^{-z})^{1/(theta + x)}
 
@@ -160,9 +162,9 @@ void hwang_generate_usk(hwang_signing_key_ptr usk, hwang_public_parameters_ptr d
  */
 sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
 {
-  sha256_ctx_t ctx;
+  hashState state;
   unsigned char block[64];
-  unsigned char hash[SHA256_HASH_BYTES];
+  unsigned char hash[HASH_BYTES];
   unsigned char msg[1] = {0x01};
 
   sbyte ret = -1;
@@ -175,60 +177,32 @@ sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
 
   // BEGIN: Check signature
 
-  ecfp_mul(&R_1, &data->u, sig->s_alpha); // R_1 = u^{s_{alpha}}
-  //g1_mul(R_1, data->u, sig->s_alpha);    // R_1 = u^{s_{alpha}}
+  ecfp_mul(&R_1, &data->u, sig->s_alpha);     // R_1 = u^{s_{alpha}}
 
   bi_subtract(bi_tmp, data->order_p, sig->c); // negate c (mod order p);
-  //bn_sub(bn_tmp, data->order_p, sig->c); // negate c (mod order p)
 
   ecfp_mul(&g1_tmp1, &sig->D_1, bi_tmp);
-  ecfp_add_affine(&R_1, &R_1, &g1_tmp1);   // R_1 = u^{s_{alpha}} * D_1^{-c}
-  //g1_mul(g1_tmp, sig->D_1, bn_tmp);
-  //g1_add(R_1, R_1, g1_tmp);              // R_1 = u^{s_{alpha}} * D_1^{-c}
+  ecfp_add_affine(&R_1, &R_1, &g1_tmp1);      // R_1 = u^{s_{alpha}} * D_1^{-c}
 
 #if DEBUG_PRINT == 1
   PRINT_G1("[verify] R_1: ", R_1);
 #endif
 
-  // TODO: this was rewritten to support sim pairing and multiplication of results.
+
   ecfp_mul(&g1_tmp1, &sig->D_2, sig->s_x);
   bi_subtract(bi_tmp, data->order_p, sig->s_alpha); // negate s_alpha (mod order p)
   ecfp_mul(&g1_tmp2, &data->w, bi_tmp);
   pbc_map_opt_ate_mul(gt_tmp1, &g1_tmp1, &data->h1, &g1_tmp2, & data->h_theta); // R_2 = e(D_2, h_1)^{s_x} * e(w, h_theta)^{-s_{alpha}}
-  //pc_map(R_2, sig->D_2, data->h1);
-  //gt_exp(R_2, R_2, sig->s_x);                   // R_2 = e(D_2, h_1)^{s_x}
-  //bn_sub(bn_tmp, data->order_p, sig->s_alpha);  // negate s_alpha (mod order p)
-  //pc_map(gt_tmp, data->w, data->h_theta);
-  //gt_exp(gt_tmp, gt_tmp, bn_tmp);
-  //gt_mul(R_2, R_2, gt_tmp);                     // R_2 *= e(w, h_theta)^{-s_{alpha}}
 
-
-  // TODO: this was rewritten to support sim pairing and multiplication of results.
-  // TODO: there is one pairing that might be collapsed here (including h1).
   bi_subtract(bi_tmp, data->order_p, sig->s_gamma); // negate s_gamma (mod order p)
   ecfp_mul(&g1_tmp1, &data->w, bi_tmp);
   ecfp_mul(&g1_tmp2, &data->g2, sig->s_y);
   pbc_map_opt_ate_mul(gt_tmp2, &g1_tmp1, &data->h1, &g1_tmp2, &data->h1);
   fp12_mul_std(gt_tmp3, gt_tmp1, gt_tmp2);
 
-  //bn_sub(bn_tmp, data->order_p, sig->s_gamma);  // negate s_gamma (mod order p)
-  //pc_map(gt_tmp, data->w, data->h1);
-  //gt_exp(gt_tmp, gt_tmp, bn_tmp);
-  //gt_mul(R_2, R_2, gt_tmp);                     // R_2 *= e(w, h_1)^{-s{gamma}}
-  //pc_map(gt_tmp, data->g2, data->h1);
-  //gt_exp(gt_tmp, gt_tmp, sig->s_y);
-  //gt_mul(R_2, R_2, gt_tmp);                     // R_2 *= e(g_2, h_1)^{s_y}
-
-
   pbc_map_opt_ate_div(gt_tmp1, &sig->D_2, &data->h_theta, &data->g1, &data->h1);
   fp12_exp_std(gt_tmp2, gt_tmp1, sig->c);
   fp12_mul_std(R_2, gt_tmp3, gt_tmp2);
-  //pc_map(gt_tmp2, sig->D_2, data->h_theta);
-  //pc_map(gt_tmp3, data->g1, data->h1);
-  //gt_inv(gt_tmp4, gt_tmp3);
-  //gt_mul(gt_tmp, gt_tmp2, gt_tmp4);
-  //gt_exp(gt_tmp, gt_tmp, sig->c);
-  //gt_mul(R_2, R_2, gt_tmp);                     // R_2 *= (e(D_2, h_theta) / e(g_1, h_1))^c
 
 #if DEBUG_PRINT == 1
   PRINT_GT("[verify] R_2:", R_2);
@@ -241,48 +215,38 @@ sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
   ecfp_mul(&g1_tmp1, &sig->D_3, bi_tmp);
   ecfp_add_affine(&R_3, &R_3, &g1_tmp1);
 
-/*
-  g1_mul_sim(R_3, data->g, sig->s_y, data->d, sig->s_alpha);
-  g1_norm(R_3, R_3);
-  bn_sub(bn_tmp, data->order_p, sig->c);
-  g1_mul(g1_tmp, sig->D_3, bn_tmp);
-  g1_norm(g1_tmp, g1_tmp);
-  g1_add(R_3, R_3, g1_tmp);
-  g1_norm(R_3, R_3);
-  util_printf("[verify] R_3:\n"); g1_print(R_3);
-*/
 
 #if DEBUG_PRINT == 1
   PRINT_G1("[verify] R_3:", R_3);
 #endif
 
-   sha256_init(&ctx);
+   hash_init(&state);
 
    // hash message M
-   memset(block, 0, 64); memcpy(block, msg, 1); sha256_nextBlock(&ctx, block);
+   memset(block, 0, 64); memcpy(block, msg, 1); hash_update(&state, block, 64);
 
    // hash D1
-   sha256_update_G1(&ctx, &sig->D_1);
+   hash_update_G1(&state, &sig->D_1);
 
    // hash D2
-   sha256_update_G1(&ctx, &sig->D_2);
+   hash_update_G1(&state, &sig->D_2);
 
    // hash D3
-   sha256_update_G1(&ctx, &sig->D_3);
+   hash_update_G1(&state, &sig->D_3);
 
    // hash R1
-   sha256_update_G1(&ctx, &R_1);
+   hash_update_G1(&state, &R_1);
 
    // hash R2
-   sha256_update_GT(&ctx, R_2);
+   hash_update_GT(&state, R_2);
 
    // hash R3
-   sha256_update_G1(&ctx, &R_3);
+   hash_update_G1(&state, &R_3);
 
-   sha256_ctx2hash(hash, &ctx);
+   hash_final(&state , hash, HASH_BYTES);
 
-   bi_clear_var_std(bigint_tmp_dbl, 2*BI_WORDS); bi_copy_var_std(bigint_tmp_dbl, (const word_t *) hash, SHA256_HASH_BYTES);
-   fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+   bi_clear_var_std(bigint_tmp_dbl, 2*BI_WORDS); bi_copy_var_std(bigint_tmp_dbl, (const word_t *) hash, HASH_BYTES);
+   fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
    bi_copy_var_std(c, bigint_tmp_dbl, BI_WORDS);
 
 #if DEBUG_PRINT == 1

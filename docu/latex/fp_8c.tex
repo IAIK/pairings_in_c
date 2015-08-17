@@ -1,0 +1,1087 @@
+\hypertarget{fp_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp.c File Reference}
+\label{fp_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp.\-c}}
+}
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fp_8c_a0f5bc011453a1e86b92e12e1df124f3c}{fp\-\_\-add\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\begin{DoxyCompactList}\small\item\em Adds two prime field elements. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a5113b45c9c4cf6e49f8a28f628d69b7b}{fp\-\_\-add\-\_\-lazy} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} multiple\-Mod)
+\begin{DoxyCompactList}\small\item\em Adds two prime field elements using lazy reduction, ie. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_ad38760ec9798f6ef1e3e60715780e26b}{fp\-\_\-dbl\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\begin{DoxyCompactList}\small\item\em Doubles a prime field element. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a6a63a4c1908f6694e9fc00ab62675528}{fp\-\_\-sub\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\begin{DoxyCompactList}\small\item\em Subtracts two prime field elements. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_ac16deec65ebffafa8cac4de49c91dc73}{fp\-\_\-sub\-\_\-lazy} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} multiple\-Mod)
+\begin{DoxyCompactList}\small\item\em Subtracts two prime field elements using lazy reduction, ie. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a83c6835113f8567985e7fa3807441515}{fp\-\_\-neg\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\begin{DoxyCompactList}\small\item\em Negates a prime field element. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a3671cc05d0053fb4cb76733b557074eb}{fp\-\_\-neg\-\_\-lazy} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} multiple\-Mod)
+\begin{DoxyCompactList}\small\item\em Negates a prime field element using lazy reduction. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a9899cfe80d4ff20a20e55c381d1ca912}{fp\-\_\-mul\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Multiplies to prime field elements in two separate steps\-: multiplication and barrett reduction. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_aed81c5a92032153bce72951f5d615b54}{fp\-\_\-hlv\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\begin{DoxyCompactList}\small\item\em Halves a prime field element. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_abe5eded028673ac03c2b1dbb7e2c4826}{fp\-\_\-rdc\-\_\-monty\-\_\-lazy} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$t, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} n0, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} multiple\-Mod)
+\begin{DoxyCompactList}\small\item\em Montgomery reduction using lazy reduction, ie. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_af968e18ffc0dcd8dbcb3daf7ffe72b38}{fp\-\_\-rdc\-\_\-monty\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$t, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} n0)
+\begin{DoxyCompactList}\small\item\em A montgomery reduction routine. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a5e281bdfab8b8e5b48c2a10bd36b80cc}{fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} modulo, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} n0, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} multiple\-Mod)
+\begin{DoxyCompactList}\small\item\em Montgomery prime field multiplication using lazy reduction. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a370bc3239e38ece9c5366083c70351bf}{fp\-\_\-mul\-\_\-monty\-\_\-twostep} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} modulo, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} n0)
+\begin{DoxyCompactList}\small\item\em Montgomery prime field multiplication that is separated into a bigint multiplication and a reduction step. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_ab122dc1675f46277df6d2e0630bc2df7}{fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} n, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} n0)
+\begin{DoxyCompactList}\small\item\em The montgomery multiplication in its F\-I\-P\-S (Finely Integrated Product Scanning) variant. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_aedc9ef2ab2cc9d603bb85379cfc579e5}{fp\-\_\-mul\-\_\-monty\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} modulo, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} n0)
+\begin{DoxyCompactList}\small\item\em Simple and straight forward Montgomery multiplication. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a9c5b73920db03f5475da7a69f238da21}{fp\-\_\-exp\-\_\-monty} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} modulo, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} n0, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} r2)
+\begin{DoxyCompactList}\small\item\em Prime field exponentation that converts the operands into the Montgomery domain and converts the result back. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_acfe772506fcfce6c93c6c8613c2e0386}{fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu\-\_\-n)
+\begin{DoxyCompactList}\small\item\em Prime field inversion by exponentiation using Little Fermat. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a4e239f65d9b6951d7865092fc8a5a054}{fp\-\_\-inv\-\_\-exp\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Prime field inversion by exponentation using Little Fermat using the default prime and a precomputed exponent. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a84e3b92aac03c0b95e57b4e9060aef3f}{fp\-\_\-exp\-\_\-bn} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} exp)
+\begin{DoxyCompactList}\small\item\em Simple square and multiply exponentiation that uses branches and may only be used for known exponents (S\-C\-A leakage!). \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a13deddf7496ba718fda792f3405b44fd}{fp\-\_\-inv\-\_\-bn} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Special inversion algorithm valid for B\-N curves. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a30491c7d51e48b52bc4ba1195742a64a}{fp\-\_\-exp\-\_\-slide\-\_\-var} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Sliding window prime field exponentiation algorithm based on the precomputation of a table. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a9428b24de714ea680245966cdfb15874}{fp\-\_\-exp\-\_\-sqrmul} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Square-\/and-\/\-Multiply prime field exponentiation with side-\/channel dummy (but not S\-C\-A secure (use Montgomery ladder instead)). \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a5b746cf51be5cac1ccd6c0754b14ef7a}{fp\-\_\-exp\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Prime field exponentiation (but not S\-C\-A secure (use Montgomery ladder instead)). \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a5345cebba1827b7441aaadfa939efcae}{fp\-\_\-sqrt\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Prime field square root computation. \end{DoxyCompactList}\item 
+int \hyperlink{fp_8c_ab613926e01986ffd6eecc718979968b4}{fp\-\_\-legendre\-\_\-std} (const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mu)
+\begin{DoxyCompactList}\small\item\em Legendre operation in the prime field, ie. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a65abd9cd5950003ff2798cb771ad7547}{fp\-\_\-rdc\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod)
+\item 
+void \hyperlink{fp_8c_a9b65216ffa3c4964028f3b07c02b88f8}{fp\-\_\-rdc\-\_\-2l\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} mod, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$mu)
+\begin{DoxyCompactList}\small\item\em Performs a modular reduction (Barrett reduction) on a big integer that is twice the normal size. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_ad1590b22e734b7183abadff9a0a326bc}{fp\-\_\-clear\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Clears the prime field value. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a87ebe15515cf8d8ef709363b88a9f20c}{fp\-\_\-copy\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Copies the prime field element. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_af3c305cb83663fc1fbfb8a9b84cbf12e}{fp\-\_\-to\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Transforms a prime field value into montgomery domain. \end{DoxyCompactList}\item 
+void \hyperlink{fp_8c_a7f494bafabb5c6818404d8af5bb2ad06}{fp\-\_\-from\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} res, const \hyperlink{types_8h_a394d4948fdab003e7d47d78d73f8a64f}{fp\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Transform a prime field value in montgomery domain back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fp_8c_a5113b45c9c4cf6e49f8a28f628d69b7b}{\index{fp.\-c@{fp.\-c}!fp\-\_\-add\-\_\-lazy@{fp\-\_\-add\-\_\-lazy}}
+\index{fp\-\_\-add\-\_\-lazy@{fp\-\_\-add\-\_\-lazy}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-add\-\_\-lazy}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-add\-\_\-lazy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{multiple\-Mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a5113b45c9c4cf6e49f8a28f628d69b7b}
+
+
+Adds two prime field elements using lazy reduction, ie. 
+
+it subtracts the prime only if an overflow occurs. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the sum \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em multiple\-Mod} & a multiple of the modulus that, if an overflow occurs, can be subtracted at once if the prime has leading zeros \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file fp.\-c.
+
+
+
+References bi\-\_\-add, and bi\-\_\-subtract.
+
+\hypertarget{fp_8c_a0f5bc011453a1e86b92e12e1df124f3c}{\index{fp.\-c@{fp.\-c}!fp\-\_\-add\-\_\-std@{fp\-\_\-add\-\_\-std}}
+\index{fp\-\_\-add\-\_\-std@{fp\-\_\-add\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-add\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-add\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a0f5bc011453a1e86b92e12e1df124f3c}
+
+
+Adds two prime field elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the sum \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file fp.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-compare, and bi\-\_\-subtract.
+
+\hypertarget{fp_8c_ad1590b22e734b7183abadff9a0a326bc}{\index{fp.\-c@{fp.\-c}!fp\-\_\-clear\-\_\-std@{fp\-\_\-clear\-\_\-std}}
+\index{fp\-\_\-clear\-\_\-std@{fp\-\_\-clear\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-clear\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-clear\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_ad1590b22e734b7183abadff9a0a326bc}
+
+
+Clears the prime field value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the prime field element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 998 of file fp.\-c.
+
+
+
+References bi\-\_\-clear.
+
+\hypertarget{fp_8c_a87ebe15515cf8d8ef709363b88a9f20c}{\index{fp.\-c@{fp.\-c}!fp\-\_\-copy\-\_\-std@{fp\-\_\-copy\-\_\-std}}
+\index{fp\-\_\-copy\-\_\-std@{fp\-\_\-copy\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-copy\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-copy\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a87ebe15515cf8d8ef709363b88a9f20c}
+
+
+Copies the prime field element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the destination \\
+\hline
+{\em b} & the source \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1007 of file fp.\-c.
+
+
+
+References bi\-\_\-copy.
+
+\hypertarget{fp_8c_ad38760ec9798f6ef1e3e60715780e26b}{\index{fp.\-c@{fp.\-c}!fp\-\_\-dbl\-\_\-std@{fp\-\_\-dbl\-\_\-std}}
+\index{fp\-\_\-dbl\-\_\-std@{fp\-\_\-dbl\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-dbl\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-dbl\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_ad38760ec9798f6ef1e3e60715780e26b}
+
+
+Doubles a prime field element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the doubled result \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file fp.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-shift\-\_\-left\-\_\-one, bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, and B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{fp_8c_a84e3b92aac03c0b95e57b4e9060aef3f}{\index{fp.\-c@{fp.\-c}!fp\-\_\-exp\-\_\-bn@{fp\-\_\-exp\-\_\-bn}}
+\index{fp\-\_\-exp\-\_\-bn@{fp\-\_\-exp\-\_\-bn}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-exp\-\_\-bn}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-exp\-\_\-bn (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{exp}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a84e3b92aac03c0b95e57b4e9060aef3f}
+
+
+Simple square and multiply exponentiation that uses branches and may only be used for known exponents (S\-C\-A leakage!). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em exp} & the exponent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 526 of file fp.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp\-\_\-copy, fp\-\_\-mul, and fp\-\_\-sqr.
+
+
+
+Referenced by fp\-\_\-inv\-\_\-bn().
+
+\hypertarget{fp_8c_a9c5b73920db03f5475da7a69f238da21}{\index{fp.\-c@{fp.\-c}!fp\-\_\-exp\-\_\-monty@{fp\-\_\-exp\-\_\-monty}}
+\index{fp\-\_\-exp\-\_\-monty@{fp\-\_\-exp\-\_\-monty}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-exp\-\_\-monty}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-exp\-\_\-monty (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{modulo, }
+\item[{const {\bf bigint\-\_\-t}}]{n0, }
+\item[{const {\bf bigint\-\_\-t}}]{r2}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a9c5b73920db03f5475da7a69f238da21}
+
+
+Prime field exponentation that converts the operands into the Montgomery domain and converts the result back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em b} & the exponent \\
+\hline
+{\em modulo} & the prime modulus \\
+\hline
+{\em n0} & the precomputed constant for Montgomery reduction \\
+\hline
+{\em r2} & the precomputed constant r$^\wedge$2 for converting into the montgomery domain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 440 of file fp.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-get\-\_\-msb, bi\-\_\-one, bi\-\_\-subtract, bi\-\_\-test\-\_\-bit, fp\-\_\-copy, and fp\-\_\-mul\-\_\-monty\-\_\-var.
+
+\hypertarget{fp_8c_a30491c7d51e48b52bc4ba1195742a64a}{\index{fp.\-c@{fp.\-c}!fp\-\_\-exp\-\_\-slide\-\_\-var@{fp\-\_\-exp\-\_\-slide\-\_\-var}}
+\index{fp\-\_\-exp\-\_\-slide\-\_\-var@{fp\-\_\-exp\-\_\-slide\-\_\-var}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-exp\-\_\-slide\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-exp\-\_\-slide\-\_\-var (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a30491c7d51e48b52bc4ba1195742a64a}
+
+
+Sliding window prime field exponentiation algorithm based on the precomputation of a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em b} & the exponent \\
+\hline
+{\em mod} & the (prime modulus) \\
+\hline
+{\em mu} & the precomputed constant for the barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 575 of file fp.\-c.
+
+
+
+References bi\-\_\-clear, bi\-\_\-copy, bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, F\-P\-\_\-\-E\-X\-P\-\_\-\-S\-L\-W\-\_\-\-T\-B\-L\-\_\-\-S\-Z, F\-P\-\_\-\-E\-X\-P\-\_\-\-S\-L\-W\-\_\-\-W\-I\-D\-T\-H, fp\-\_\-mul\-\_\-var, and fp\-\_\-sqr\-\_\-var.
+
+\hypertarget{fp_8c_a9428b24de714ea680245966cdfb15874}{\index{fp.\-c@{fp.\-c}!fp\-\_\-exp\-\_\-sqrmul@{fp\-\_\-exp\-\_\-sqrmul}}
+\index{fp\-\_\-exp\-\_\-sqrmul@{fp\-\_\-exp\-\_\-sqrmul}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-exp\-\_\-sqrmul}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-exp\-\_\-sqrmul (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a9428b24de714ea680245966cdfb15874}
+
+
+Square-\/and-\/\-Multiply prime field exponentiation with side-\/channel dummy (but not S\-C\-A secure (use Montgomery ladder instead)). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the exponent \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu} & the precomputed constant for the Barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 879 of file fp.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp\-\_\-copy, fp\-\_\-mul\-\_\-var, F\-P\-\_\-\-O\-N\-E, and fp\-\_\-sqr\-\_\-var.
+
+
+
+Referenced by fp\-\_\-exp\-\_\-std().
+
+\hypertarget{fp_8c_a5b746cf51be5cac1ccd6c0754b14ef7a}{\index{fp.\-c@{fp.\-c}!fp\-\_\-exp\-\_\-std@{fp\-\_\-exp\-\_\-std}}
+\index{fp\-\_\-exp\-\_\-std@{fp\-\_\-exp\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a5b746cf51be5cac1ccd6c0754b14ef7a}
+
+
+Prime field exponentiation (but not S\-C\-A secure (use Montgomery ladder instead)). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the exponent \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu} & the precomputed constant for the Barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 906 of file fp.\-c.
+
+
+
+References fp\-\_\-exp\-\_\-sqrmul().
+
+\hypertarget{fp_8c_a7f494bafabb5c6818404d8af5bb2ad06}{\index{fp.\-c@{fp.\-c}!fp\-\_\-from\-\_\-montgomery\-\_\-std@{fp\-\_\-from\-\_\-montgomery\-\_\-std}}
+\index{fp\-\_\-from\-\_\-montgomery\-\_\-std@{fp\-\_\-from\-\_\-montgomery\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-from\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-from\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a7f494bafabb5c6818404d8af5bb2ad06}
+
+
+Transform a prime field value in montgomery domain back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the value in montgomery domain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1027 of file fp.\-c.
+
+
+
+References bi\-\_\-one, fp\-\_\-copy, and fp\-\_\-mul\-\_\-monty.
+
+\hypertarget{fp_8c_aed81c5a92032153bce72951f5d615b54}{\index{fp.\-c@{fp.\-c}!fp\-\_\-hlv\-\_\-std@{fp\-\_\-hlv\-\_\-std}}
+\index{fp\-\_\-hlv\-\_\-std@{fp\-\_\-hlv\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-hlv\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-hlv\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_aed81c5a92032153bce72951f5d615b54}
+
+
+Halves a prime field element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the halved value \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file fp.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-is\-\_\-even, bi\-\_\-shift\-\_\-right\-\_\-one, B\-I\-\_\-\-W\-O\-R\-D\-S, and B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{fp_8c_a13deddf7496ba718fda792f3405b44fd}{\index{fp.\-c@{fp.\-c}!fp\-\_\-inv\-\_\-bn@{fp\-\_\-inv\-\_\-bn}}
+\index{fp\-\_\-inv\-\_\-bn@{fp\-\_\-inv\-\_\-bn}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-inv\-\_\-bn}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-inv\-\_\-bn (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a13deddf7496ba718fda792f3405b44fd}
+
+
+Special inversion algorithm valid for B\-N curves. 
+
+It makes use of the special form of the B\-N primes to calculate a$^\wedge$(p-\/2) for side-\/channel resistant inversion. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the inverse of a \\
+\hline
+{\em a} & the value to be inverted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 550 of file fp.\-c.
+
+
+
+References B\-N\-\_\-\-I\-N\-V\-\_\-\-C\-O\-N\-S\-T, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, fp\-\_\-exp\-\_\-bn(), fp\-\_\-mul, and fp\-\_\-sqr.
+
+\hypertarget{fp_8c_a4e239f65d9b6951d7865092fc8a5a054}{\index{fp.\-c@{fp.\-c}!fp\-\_\-inv\-\_\-exp\-\_\-std@{fp\-\_\-inv\-\_\-exp\-\_\-std}}
+\index{fp\-\_\-inv\-\_\-exp\-\_\-std@{fp\-\_\-inv\-\_\-exp\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-inv\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-inv\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a4e239f65d9b6951d7865092fc8a5a054}
+
+
+Prime field inversion by exponentation using Little Fermat using the default prime and a precomputed exponent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 504 of file fp.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp\-\_\-copy, fp\-\_\-mul, fp\-\_\-sqr, and M\-O\-D\-\_\-\-I\-N\-V\-\_\-\-E\-X\-P\-O\-N\-E\-N\-T.
+
+\hypertarget{fp_8c_acfe772506fcfce6c93c6c8613c2e0386}{\index{fp.\-c@{fp.\-c}!fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std@{fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std}}
+\index{fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std@{fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu\-\_\-n}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_acfe772506fcfce6c93c6c8613c2e0386}
+
+
+Prime field inversion by exponentiation using Little Fermat. 
+
+Works for any prime modulus. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting inverse \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu\-\_\-n} & the parameter mu for barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 478 of file fp.\-c.
+
+
+
+References bi\-\_\-clear, bi\-\_\-get\-\_\-msb, bi\-\_\-subtract, bi\-\_\-test\-\_\-bit, fp\-\_\-copy, fp\-\_\-mul\-\_\-barett\-\_\-var, and fp\-\_\-sqr\-\_\-barett\-\_\-var.
+
+\hypertarget{fp_8c_ab613926e01986ffd6eecc718979968b4}{\index{fp.\-c@{fp.\-c}!fp\-\_\-legendre\-\_\-std@{fp\-\_\-legendre\-\_\-std}}
+\index{fp\-\_\-legendre\-\_\-std@{fp\-\_\-legendre\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-legendre\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int fp\-\_\-legendre\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_ab613926e01986ffd6eecc718979968b4}
+
+
+Legendre operation in the prime field, ie. 
+
+it determines whether the operand is a square or not. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime modulus \\
+\hline
+{\em mu} & the precomputed constnat for the Barrett reduction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if square, -\/1 if not, 0 if zero 
+\end{DoxyReturn}
+
+
+Definition at line 932 of file fp.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-one, bi\-\_\-shift\-\_\-right, bi\-\_\-subtract, bi\-\_\-zero, fp\-\_\-exp\-\_\-var, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp_8c_ab122dc1675f46277df6d2e0630bc2df7}{\index{fp.\-c@{fp.\-c}!fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std@{fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std}}
+\index{fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std@{fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{n, }
+\item[{const {\bf word\-\_\-t}}]{n0}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_ab122dc1675f46277df6d2e0630bc2df7}
+
+
+The montgomery multiplication in its F\-I\-P\-S (Finely Integrated Product Scanning) variant. 
+
+Warning\-: This one is rather slow in pure C -\/ in assembler it can be nicely optimized. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em n} & the modulus (prime) \\
+\hline
+{\em n0} & the precomputed constant for montgomery reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 342 of file fp.\-c.
+
+
+
+References bi\-\_\-add\-\_\-var, bi\-\_\-clear\-\_\-var, bi\-\_\-compare, bi\-\_\-copy, bi\-\_\-multiply\-\_\-var, bi\-\_\-subtract, and B\-I\-\_\-\-W\-O\-R\-D\-S.
+
+
+
+Referenced by main().
+
+\hypertarget{fp_8c_aedc9ef2ab2cc9d603bb85379cfc579e5}{\index{fp.\-c@{fp.\-c}!fp\-\_\-mul\-\_\-monty\-\_\-std@{fp\-\_\-mul\-\_\-monty\-\_\-std}}
+\index{fp\-\_\-mul\-\_\-monty\-\_\-std@{fp\-\_\-mul\-\_\-monty\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-mul\-\_\-monty\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-mul\-\_\-monty\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{modulo, }
+\item[{const {\bf bigint\-\_\-t}}]{n0}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_aedc9ef2ab2cc9d603bb85379cfc579e5}
+
+
+Simple and straight forward Montgomery multiplication. 
+
+Don't expect speed records... 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em modulo} & the prime (modulus) \\
+\hline
+{\em n0} & the precomputed constant for montgomery reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file fp.\-c.
+
+
+
+References bi\-\_\-add\-\_\-var, bi\-\_\-compare\-\_\-var, bi\-\_\-copy, bi\-\_\-multiply, bi\-\_\-multiply\-\_\-var, bi\-\_\-shift\-\_\-right\-\_\-var, bi\-\_\-subtract, F\-P\-\_\-\-B\-I\-T\-S, and F\-P\-\_\-\-W\-O\-R\-D\-S.
+
+
+
+Referenced by main().
+
+\hypertarget{fp_8c_a370bc3239e38ece9c5366083c70351bf}{\index{fp.\-c@{fp.\-c}!fp\-\_\-mul\-\_\-monty\-\_\-twostep@{fp\-\_\-mul\-\_\-monty\-\_\-twostep}}
+\index{fp\-\_\-mul\-\_\-monty\-\_\-twostep@{fp\-\_\-mul\-\_\-monty\-\_\-twostep}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-mul\-\_\-monty\-\_\-twostep}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-mul\-\_\-monty\-\_\-twostep (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{modulo, }
+\item[{const {\bf word\-\_\-t}}]{n0}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a370bc3239e38ece9c5366083c70351bf}
+
+
+Montgomery prime field multiplication that is separated into a bigint multiplication and a reduction step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em modulo} & the prime (modulus) \\
+\hline
+{\em n0} & the precomputed constant for montomgery reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 326 of file fp.\-c.
+
+
+
+References bi\-\_\-multiply, fp\-\_\-rdc\-\_\-monty, and F\-P\-\_\-\-W\-O\-R\-D\-S.
+
+\hypertarget{fp_8c_a5e281bdfab8b8e5b48c2a10bd36b80cc}{\index{fp.\-c@{fp.\-c}!fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy@{fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy}}
+\index{fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy@{fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{modulo, }
+\item[{const {\bf word\-\_\-t}}]{n0, }
+\item[{const {\bf bigint\-\_\-t}}]{multiple\-Mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a5e281bdfab8b8e5b48c2a10bd36b80cc}
+
+
+Montgomery prime field multiplication using lazy reduction. 
+
+It is separated into a bigint multiplication and a reduction step. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em modulo} & the prime (modulus) \\
+\hline
+{\em n0} & the precomputed constant for montgomery reduction \\
+\hline
+{\em multiple\-Mod} & a multiple of the modulus for reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 311 of file fp.\-c.
+
+
+
+References bi\-\_\-multiply, fp\-\_\-rdc\-\_\-monty\-\_\-lazy(), and F\-P\-\_\-\-W\-O\-R\-D\-S.
+
+\hypertarget{fp_8c_a9899cfe80d4ff20a20e55c381d1ca912}{\index{fp.\-c@{fp.\-c}!fp\-\_\-mul\-\_\-std@{fp\-\_\-mul\-\_\-std}}
+\index{fp\-\_\-mul\-\_\-std@{fp\-\_\-mul\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-mul\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-mul\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a9899cfe80d4ff20a20e55c381d1ca912}
+
+
+Multiplies to prime field elements in two separate steps\-: multiplication and barrett reduction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu} & parameter mu for barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file fp.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-multiply, fp\-\_\-rdc\-\_\-2l\-\_\-var, and F\-P\-\_\-\-W\-O\-R\-D\-S.
+
+\hypertarget{fp_8c_a3671cc05d0053fb4cb76733b557074eb}{\index{fp.\-c@{fp.\-c}!fp\-\_\-neg\-\_\-lazy@{fp\-\_\-neg\-\_\-lazy}}
+\index{fp\-\_\-neg\-\_\-lazy@{fp\-\_\-neg\-\_\-lazy}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-neg\-\_\-lazy}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-neg\-\_\-lazy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{multiple\-Mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a3671cc05d0053fb4cb76733b557074eb}
+
+
+Negates a prime field element using lazy reduction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the negated element \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em multiple\-Mod} & a multiple of the modulus that is used to \char`\"{}mirror\char`\"{} the operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file fp.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-compare, bi\-\_\-copy, bi\-\_\-subtract, and bi\-\_\-zero.
+
+\hypertarget{fp_8c_a83c6835113f8567985e7fa3807441515}{\index{fp.\-c@{fp.\-c}!fp\-\_\-neg\-\_\-std@{fp\-\_\-neg\-\_\-std}}
+\index{fp\-\_\-neg\-\_\-std@{fp\-\_\-neg\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-neg\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-neg\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a83c6835113f8567985e7fa3807441515}
+
+
+Negates a prime field element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the negated element \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file fp.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-copy, bi\-\_\-subtract, and bi\-\_\-zero.
+
+\hypertarget{fp_8c_a9b65216ffa3c4964028f3b07c02b88f8}{\index{fp.\-c@{fp.\-c}!fp\-\_\-rdc\-\_\-2l\-\_\-std@{fp\-\_\-rdc\-\_\-2l\-\_\-std}}
+\index{fp\-\_\-rdc\-\_\-2l\-\_\-std@{fp\-\_\-rdc\-\_\-2l\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-rdc\-\_\-2l\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-rdc\-\_\-2l\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a9b65216ffa3c4964028f3b07c02b88f8}
+
+
+Performs a modular reduction (Barrett reduction) on a big integer that is twice the normal size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the value to be reduced \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu} & the constant for Barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 967 of file fp.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-copy\-\_\-var, bi\-\_\-multiply\-\_\-var, bi\-\_\-subtract\-\_\-var, and F\-P\-\_\-\-W\-O\-R\-D\-S.
+
+\hypertarget{fp_8c_abe5eded028673ac03c2b1dbb7e2c4826}{\index{fp.\-c@{fp.\-c}!fp\-\_\-rdc\-\_\-monty\-\_\-lazy@{fp\-\_\-rdc\-\_\-monty\-\_\-lazy}}
+\index{fp\-\_\-rdc\-\_\-monty\-\_\-lazy@{fp\-\_\-rdc\-\_\-monty\-\_\-lazy}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-rdc\-\_\-monty\-\_\-lazy}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-rdc\-\_\-monty\-\_\-lazy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{{\bf word\-\_\-t} $\ast$}]{t, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf word\-\_\-t}}]{n0, }
+\item[{const {\bf bigint\-\_\-t}}]{multiple\-Mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_abe5eded028673ac03c2b1dbb7e2c4826}
+
+
+Montgomery reduction using lazy reduction, ie. 
+
+the final reduction step is performed using lazy reduction. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the reduced result \\
+\hline
+{\em t} & the operand to be reduced (length\-: 2$\ast$\-B\-I\-\_\-\-W\-O\-R\-D\-S) \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em n0} & the precomputed value n0 of the montgomery reduction \\
+\hline
+{\em multiple\-Mod} & a multiple of the modulus that may be subtracted at once in the final reduction step if the prime has leading zeros \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file fp.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and W\-O\-R\-D\-\_\-\-M\-A\-X.
+
+
+
+Referenced by fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy().
+
+\hypertarget{fp_8c_af968e18ffc0dcd8dbcb3daf7ffe72b38}{\index{fp.\-c@{fp.\-c}!fp\-\_\-rdc\-\_\-monty\-\_\-std@{fp\-\_\-rdc\-\_\-monty\-\_\-std}}
+\index{fp\-\_\-rdc\-\_\-monty\-\_\-std@{fp\-\_\-rdc\-\_\-monty\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-rdc\-\_\-monty\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-rdc\-\_\-monty\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{{\bf word\-\_\-t} $\ast$}]{t, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf word\-\_\-t}}]{n0}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_af968e18ffc0dcd8dbcb3daf7ffe72b38}
+
+
+A montgomery reduction routine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the reduced result \\
+\hline
+{\em t} & the operand to be reduced (length\-: 2$\ast$\-B\-I\-\_\-\-W\-O\-R\-D\-S) \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em n0} & the precomputed value n0 of the montgomery reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 236 of file fp.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-copy, bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and W\-O\-R\-D\-\_\-\-M\-A\-X.
+
+\hypertarget{fp_8c_a65abd9cd5950003ff2798cb771ad7547}{\index{fp.\-c@{fp.\-c}!fp\-\_\-rdc\-\_\-std@{fp\-\_\-rdc\-\_\-std}}
+\index{fp\-\_\-rdc\-\_\-std@{fp\-\_\-rdc\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-rdc\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-rdc\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a65abd9cd5950003ff2798cb771ad7547}
+
+
+Definition at line 956 of file fp.\-c.
+
+
+
+References bi\-\_\-compare, and bi\-\_\-subtract.
+
+\hypertarget{fp_8c_a5345cebba1827b7441aaadfa939efcae}{\index{fp.\-c@{fp.\-c}!fp\-\_\-sqrt\-\_\-std@{fp\-\_\-sqrt\-\_\-std}}
+\index{fp\-\_\-sqrt\-\_\-std@{fp\-\_\-sqrt\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-sqrt\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-sqrt\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{mu}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a5345cebba1827b7441aaadfa939efcae}
+
+
+Prime field square root computation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em mu} & the precomputed constant for the Barrett reduction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 917 of file fp.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-one, bi\-\_\-shift\-\_\-right, and fp\-\_\-exp\-\_\-var.
+
+\hypertarget{fp_8c_ac16deec65ebffafa8cac4de49c91dc73}{\index{fp.\-c@{fp.\-c}!fp\-\_\-sub\-\_\-lazy@{fp\-\_\-sub\-\_\-lazy}}
+\index{fp\-\_\-sub\-\_\-lazy@{fp\-\_\-sub\-\_\-lazy}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-sub\-\_\-lazy}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-sub\-\_\-lazy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod, }
+\item[{const {\bf bigint\-\_\-t}}]{multiple\-Mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_ac16deec65ebffafa8cac4de49c91dc73}
+
+
+Subtracts two prime field elements using lazy reduction, ie. 
+
+it adds the prime only if an underflow occurs. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the difference \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand that is subtracted \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+{\em multiple\-Mod} & a multiple of the modulus that, if an underflow occurs, can be added at once if the prime has leading zeros \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file fp.\-c.
+
+
+
+References bi\-\_\-add, and bi\-\_\-subtract.
+
+\hypertarget{fp_8c_a6a63a4c1908f6694e9fc00ab62675528}{\index{fp.\-c@{fp.\-c}!fp\-\_\-sub\-\_\-std@{fp\-\_\-sub\-\_\-std}}
+\index{fp\-\_\-sub\-\_\-std@{fp\-\_\-sub\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-sub\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-sub\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a, }
+\item[{const {\bf fp\-\_\-t}}]{b, }
+\item[{const {\bf bigint\-\_\-t}}]{mod}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_a6a63a4c1908f6694e9fc00ab62675528}
+
+
+Subtracts two prime field elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the difference \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand that is subtracted \\
+\hline
+{\em mod} & the prime (modulus) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file fp.\-c.
+
+
+
+References bi\-\_\-add, and bi\-\_\-subtract.
+
+\hypertarget{fp_8c_af3c305cb83663fc1fbfb8a9b84cbf12e}{\index{fp.\-c@{fp.\-c}!fp\-\_\-to\-\_\-montgomery\-\_\-std@{fp\-\_\-to\-\_\-montgomery\-\_\-std}}
+\index{fp\-\_\-to\-\_\-montgomery\-\_\-std@{fp\-\_\-to\-\_\-montgomery\-\_\-std}!fp.c@{fp.\-c}}
+\subsubsection[{fp\-\_\-to\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp\-\_\-to\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp\-\_\-t}}]{res, }
+\item[{const {\bf fp\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp_8c_af3c305cb83663fc1fbfb8a9b84cbf12e}
+
+
+Transforms a prime field value into montgomery domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the orignal value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1016 of file fp.\-c.
+
+
+
+References fp\-\_\-copy, fp\-\_\-mul\-\_\-monty, and M\-O\-N\-T\-Y\-\_\-\-P\-R\-I\-M\-E\-\_\-\-R2.
+

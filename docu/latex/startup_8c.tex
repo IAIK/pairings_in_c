@@ -1,0 +1,155 @@
+\hypertarget{startup_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/cortexm0/startup.c File Reference}
+\label{startup_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/cortexm0/startup.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/cortexm0/startup.\-c}}
+}
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{startup_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+void \hyperlink{startup_8c_ae7ee340978f5c25f52f0cad1457c6616}{Reset\-\_\-\-Handler} (void)
+\item 
+void \hyperlink{startup_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{N\-M\-I\-\_\-\-Handler} (void)
+\item 
+void \hyperlink{startup_8c_a4ed9b32000d3b15c46ffd748f32ed44d}{Dummy\-\_\-\-Handler} (void)
+\item 
+void \hyperlink{startup_8c_adc3b7a9ecf7861d82af566731791f631}{\-\_\-endless\-\_\-loop\-\_\-\-\_\-} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{startup_8c_a02439aa1dd4dacc6807cf953370088a0}{\-\_\-\-\_\-stack}
+\item 
+unsigned int \hyperlink{startup_8c_a5f81299d844beba3436aa06c26c20523}{\-\_\-\-\_\-erodata}
+\item 
+unsigned int \hyperlink{startup_8c_a4bb3c5ee86f936e283171326c4355112}{\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-}
+\item 
+unsigned int \hyperlink{startup_8c_a5504d44d6f6c0e5c4040d982b80c8b63}{\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-}
+\item 
+unsigned int \hyperlink{startup_8c_a2431ecc498e90c57e8281de8972c5af8}{\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-}
+\item 
+unsigned int \hyperlink{startup_8c_aaf3e997542a737017aa3041cd3c8e06a}{\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{startup_8c_adc3b7a9ecf7861d82af566731791f631}{\index{startup.\-c@{startup.\-c}!\-\_\-endless\-\_\-loop\-\_\-\-\_\-@{\-\_\-endless\-\_\-loop\-\_\-\-\_\-}}
+\index{\-\_\-endless\-\_\-loop\-\_\-\-\_\-@{\-\_\-endless\-\_\-loop\-\_\-\-\_\-}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-endless\-\_\-loop\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-endless\-\_\-loop\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{startup_8c_adc3b7a9ecf7861d82af566731791f631}
+
+
+Definition at line 145 of file startup.\-c.
+
+\hypertarget{startup_8c_a4ed9b32000d3b15c46ffd748f32ed44d}{\index{startup.\-c@{startup.\-c}!Dummy\-\_\-\-Handler@{Dummy\-\_\-\-Handler}}
+\index{Dummy\-\_\-\-Handler@{Dummy\-\_\-\-Handler}!startup.c@{startup.\-c}}
+\subsubsection[{Dummy\-\_\-\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Dummy\-\_\-\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{startup_8c_a4ed9b32000d3b15c46ffd748f32ed44d}
+
+
+Definition at line 140 of file startup.\-c.
+
+\hypertarget{startup_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{startup.\-c@{startup.\-c}!main@{main}}
+\index{main@{main}!startup.c@{startup.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{startup_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Definition at line 506 of file bench.\-c.
+
+
+
+References assert\-\_\-bi\-\_\-equal(), assert\-\_\-bi\-\_\-equal\-\_\-var(), assert\-\_\-bytearr\-\_\-equal(), assert\-\_\-equal(), assert\-\_\-true(), bi\-\_\-add, bi\-\_\-clear, bi\-\_\-compare, bi\-\_\-copy, bi\-\_\-div3, bi\-\_\-multiply, bi\-\_\-one, bi\-\_\-shift\-\_\-right, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-square, bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-zero, decapsulate\-\_\-key(), ecfp2\-\_\-add\-\_\-affine, ecfp2\-\_\-add\-\_\-proj, ecfp2\-\_\-clear, ecfp2\-\_\-copy, ecfp2\-\_\-dbl\-\_\-affine, ecfp2\-\_\-dbl\-\_\-proj, ecfp2\-\_\-hash\-\_\-to\-\_\-point, ecfp2\-\_\-mul, ecfp2\-\_\-neg\-\_\-affine, ecfp2\-\_\-neg\-\_\-proj, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-add\-\_\-proj, ecfp\-\_\-clear, ecfp\-\_\-copy, ecfp\-\_\-dbl\-\_\-affine, ecfp\-\_\-dbl\-\_\-proj, ecfp\-\_\-hash\-\_\-to\-\_\-point, ecfp\-\_\-mul, ecfp\-\_\-neg\-\_\-affine, ecfp\-\_\-neg\-\_\-proj, encapsulate\-\_\-key(), fp12\-\_\-add, fp12\-\_\-clear, fp12\-\_\-copy, fp12\-\_\-dbl, fp12\-\_\-exp, fp12\-\_\-exp\-\_\-cyclotomic, fp12\-\_\-frobenius\-\_\-map, fp12\-\_\-hlv, fp12\-\_\-inv, fp12\-\_\-mul, fp12\-\_\-neg, fp12\-\_\-sqr, fp12\-\_\-sub, fp2\-\_\-add, fp2\-\_\-clear, fp2\-\_\-copy, fp2\-\_\-dbl, fp2\-\_\-exp, fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-hlv, fp2\-\_\-inv, fp2\-\_\-legendre, fp2\-\_\-mul, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sqrt, fp2\-\_\-sub, fp4\-\_\-add, fp4\-\_\-clear, fp4\-\_\-copy, fp4\-\_\-dbl, fp4\-\_\-exp, fp4\-\_\-frobenius\-\_\-map, fp4\-\_\-hlv, fp4\-\_\-inv, fp4\-\_\-mul, fp4\-\_\-neg, fp4\-\_\-sqr, fp4\-\_\-sub, fp\-\_\-add, fp\-\_\-clear, fp\-\_\-copy, fp\-\_\-dbl, fp\-\_\-exp, fp\-\_\-hlv, fp\-\_\-inv, fp\-\_\-inv\-\_\-n, fp\-\_\-legendre, fp\-\_\-mul, fp\-\_\-mul\-\_\-monty, fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-var, fp\-\_\-neg, fp\-\_\-sqr, fp\-\_\-sqrt, fp\-\_\-sub, hash\-\_\-id(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), hwang\-\_\-verify(), ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp\-\_\-proj\-::infinity, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, M\-O\-N\-T\-Y\-\_\-\-P\-R\-I\-M\-E\-\_\-\-N0, M\-O\-N\-T\-Y\-\_\-\-P\-R\-I\-M\-E\-\_\-\-R2, pbc\-\_\-map\-\_\-opt\-\_\-ate, pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div, pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul, P\-R\-I\-M\-E\-\_\-\-P, print(), print\-\_\-value(), ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp\-\_\-proj\-::x, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp\-\_\-proj\-::y, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, ecpoint\-\_\-fp\-\_\-proj\-::z, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{\index{startup.\-c@{startup.\-c}!N\-M\-I\-\_\-\-Handler@{N\-M\-I\-\_\-\-Handler}}
+\index{N\-M\-I\-\_\-\-Handler@{N\-M\-I\-\_\-\-Handler}!startup.c@{startup.\-c}}
+\subsubsection[{N\-M\-I\-\_\-\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void N\-M\-I\-\_\-\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{startup_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}
+
+
+Definition at line 48 of file startup.\-c.
+
+
+
+References \-\_\-\-\_\-stack, and Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_ae7ee340978f5c25f52f0cad1457c6616}{\index{startup.\-c@{startup.\-c}!Reset\-\_\-\-Handler@{Reset\-\_\-\-Handler}}
+\index{Reset\-\_\-\-Handler@{Reset\-\_\-\-Handler}!startup.c@{startup.\-c}}
+\subsubsection[{Reset\-\_\-\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Reset\-\_\-\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{startup_8c_ae7ee340978f5c25f52f0cad1457c6616}
+
+
+Definition at line 123 of file startup.\-c.
+
+
+
+References \-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-, \-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-, \-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-, \-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-, \-\_\-\-\_\-erodata, and main().
+
+
+
+Referenced by N\-M\-I\-\_\-\-Handler().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{startup_8c_aaf3e997542a737017aa3041cd3c8e06a}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-@{\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-@{\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-bss\-\_\-end\-\_\-\-\_\-}}\label{startup_8c_aaf3e997542a737017aa3041cd3c8e06a}
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a2431ecc498e90c57e8281de8972c5af8}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-@{\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-@{\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-bss\-\_\-start\-\_\-\-\_\-}}\label{startup_8c_a2431ecc498e90c57e8281de8972c5af8}
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a5504d44d6f6c0e5c4040d982b80c8b63}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-data\-\_\-end\-\_\-\-\_\-}}\label{startup_8c_a5504d44d6f6c0e5c4040d982b80c8b63}
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a4bb3c5ee86f936e283171326c4355112}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-data\-\_\-start\-\_\-\-\_\-}}\label{startup_8c_a4bb3c5ee86f936e283171326c4355112}
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a5f81299d844beba3436aa06c26c20523}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-erodata@{\-\_\-\-\_\-erodata}}
+\index{\-\_\-\-\_\-erodata@{\-\_\-\-\_\-erodata}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-erodata}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-erodata}}\label{startup_8c_a5f81299d844beba3436aa06c26c20523}
+
+
+Referenced by Reset\-\_\-\-Handler().
+
+\hypertarget{startup_8c_a02439aa1dd4dacc6807cf953370088a0}{\index{startup.\-c@{startup.\-c}!\-\_\-\-\_\-stack@{\-\_\-\-\_\-stack}}
+\index{\-\_\-\-\_\-stack@{\-\_\-\-\_\-stack}!startup.c@{startup.\-c}}
+\subsubsection[{\-\_\-\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int \-\_\-\-\_\-stack}}\label{startup_8c_a02439aa1dd4dacc6807cf953370088a0}
+
+
+Referenced by N\-M\-I\-\_\-\-Handler().
+

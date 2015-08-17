@@ -1,0 +1,829 @@
+\hypertarget{bigint_2bi_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bigint/bi.h File Reference}
+\label{bigint_2bi_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bigint/bi.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bigint/bi.\-h}}
+}
+{\ttfamily \#include \char`\"{}bigint/bi\-\_\-std.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arch/cortexm0/bi.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bigint_2bi_8h_a7f9d6e8a963d97b31afa43f48054f963}{bi\-\_\-add}(res, a, b)~\hyperlink{bi_8c_aaf932a213e27cd20fba2358aa46a1114}{bi\-\_\-add\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_af0f6efb5a90d18bb7a7ae770914a3a68}{bi\-\_\-add\-\_\-var}(res, a, b, length)~\hyperlink{bi_8c_aaf932a213e27cd20fba2358aa46a1114}{bi\-\_\-add\-\_\-var\-\_\-std}(res, a, b, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a2296eddabfd724d8f16753b8b86dc041}{bi\-\_\-add\-\_\-carry\-\_\-var}(res, a, b, length, carry)~\hyperlink{bi_8c_ad199fd67684859c3f5a106b99e6211d8}{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std}(res, a, b, length, carry)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a75839608dbeb95883297c1e518a7d647}{bi\-\_\-add\-\_\-word}(res, a, b)~\hyperlink{bi_8c_afb065e889c57553459521975a8d71eeb}{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ad4714fe068804e8b92729676bfbc4f9e}{bi\-\_\-subtract}(res, a, b)~\hyperlink{bi_8c_a6f12c7326292227d8788ebd51d53be11}{bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_aa70d749906b1ef948c6fe3431b123b5d}{bi\-\_\-subtract\-\_\-var}(res, a, b, length)~\hyperlink{bi_8c_a6f12c7326292227d8788ebd51d53be11}{bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a5679b56b604f1d33c80e505c472af618}{bi\-\_\-subtract\-\_\-vl}(res, a, b, len\-\_\-a, len\-\_\-b)~\hyperlink{bi_8c_a8045740b6f35dd53588e2d10f873a40c}{bi\-\_\-subtract\-\_\-vl\-\_\-std}(res, a, b, len\-\_\-a, len\-\_\-b)
+\item 
+\#define \hyperlink{bigint_2bi_8h_af5173600dd672feb4d523514f4acdc9f}{bi\-\_\-subtract\-\_\-word}(res, a, b)~\hyperlink{bi_8c_aced3e1ee5a515797ae7cfe6c9b0bd03f}{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ae59fc38d8df2a30bac0214d9e4eca06a}{bi\-\_\-subtract\-\_\-dbl\-\_\-len}(res, a, b)~\hyperlink{bi_8c_a6f12c7326292227d8788ebd51d53be11}{bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, 2$\ast$\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a08177042ef819d4dd58a085b91e82563}{bi\-\_\-clear}(a)~\hyperlink{bi_8c_ab8f4e154c6cf109a174045d738f8e926}{bi\-\_\-clear\-\_\-var\-\_\-std}(a,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a574f84998b5fab19aba986dd264e55a5}{bi\-\_\-clear\-\_\-var}(a, length)~\hyperlink{bi_8c_ab8f4e154c6cf109a174045d738f8e926}{bi\-\_\-clear\-\_\-var\-\_\-std}(a,length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a4281f3891d2d3a08734aac9115258c20}{bi\-\_\-xor}(res, a, b)~\hyperlink{bi_8c_a8e8316ef6b78615b75ea1b667ef23f8d}{bi\-\_\-xor\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ac7ade7879029a606afee9119092a5f6c}{bi\-\_\-xor\-\_\-var}(res, a, b, length)~\hyperlink{bi_8c_a8e8316ef6b78615b75ea1b667ef23f8d}{bi\-\_\-xor\-\_\-var\-\_\-std}(res, a, b, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ae2257a0b6a254337b82217e2055a71e5}{bi\-\_\-shift\-\_\-right}(res, a, right)~\hyperlink{bi_8c_ad5c2b7db053a13be0cad8d1dd35393c4}{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}(res, a, right, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a134a58e27520f56fe34b3bab9b7d5d16}{bi\-\_\-shift\-\_\-right\-\_\-var}(res, a, right, length)~\hyperlink{bi_8c_ad5c2b7db053a13be0cad8d1dd35393c4}{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}(res, a, right, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_aa971cbb555316d742decd67cc6f1b8cf}{bi\-\_\-shift\-\_\-right\-\_\-one}(res, a)~\hyperlink{bi_8c_a6046ec47d71e30a03efe1418cea6be09}{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}(res, a, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ac713e52e1d38a0df843e7bde725070de}{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var}(res, a, length)~\hyperlink{bi_8c_a6046ec47d71e30a03efe1418cea6be09}{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}(res, a, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a932b80ecd0d368eadbae359ab213bb45}{bi\-\_\-shift\-\_\-left\-\_\-one}(res, a)~\hyperlink{bi_8c_a0acbebc0971af6906ae0544a7b1cc5cf}{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std}(res, a, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a9dce49fd0306bd5975d11a927e00d975}{bi\-\_\-div3}(res, a)~\hyperlink{bi_8c_a16b1d17fe4a67b4457a8ce31fc31cf1f}{bi\-\_\-div3\-\_\-var\-\_\-std}(res, a, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a3335856a31d7ce8961d05fd33ca8beed}{bi\-\_\-div3\-\_\-var}(res, a, length)~\hyperlink{bi_8c_a16b1d17fe4a67b4457a8ce31fc31cf1f}{bi\-\_\-div3\-\_\-var\-\_\-std}(res, a, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a6b2acf360e12fed6bec3931cd4ac6205}{bi\-\_\-compare}(a, b)~\hyperlink{bi_8c_af3fd5b2e4ba367afd30f10b03413bf4b}{bi\-\_\-compare\-\_\-var\-\_\-std}(a,b,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ac5df36cc5e70236a6abb38370a70a68d}{bi\-\_\-compare\-\_\-var}(a, b, length)~\hyperlink{bi_8c_af3fd5b2e4ba367afd30f10b03413bf4b}{bi\-\_\-compare\-\_\-var\-\_\-std}(a,b,length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_aa555c266704b82bcb6800248903d523c}{bi\-\_\-compare\-\_\-vl}(a, b, len\-\_\-a, len\-\_\-b)~\hyperlink{bi_8c_aa0d41e5b08ad4db2f52172e218070c68}{bi\-\_\-compare\-\_\-vl\-\_\-std}(a, b, len\-\_\-a, len\-\_\-b)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a18eaa674eac9c7538c545c458723944f}{bi\-\_\-multiply\-\_\-word}(res, a, b)~\hyperlink{bi_8c_a2dadd8872caea962f9d439a3a390dd84}{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_aa2c6291549383c2164b28a97700c1523}{bi\-\_\-multiply}(res, a, b)~\hyperlink{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, b, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S}, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_ad927e94b7c9be4f7b06a4897c0500e71}{bi\-\_\-multiply\-\_\-var}(res, a, b, len\-\_\-a, len\-\_\-b)~\hyperlink{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, b, len\-\_\-a, len\-\_\-b)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a8effc24b3fba7fc264d5f19e8042682f}{bi\-\_\-square}(res, a)~\hyperlink{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, a, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S}, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_acd97760228a41072ccc148a4259aa714}{bi\-\_\-square\-\_\-var}(res, a, len)~\hyperlink{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, a, len, len);
+\item 
+\#define \hyperlink{bigint_2bi_8h_a8f2ed128187f2af39d49891a29f36231}{bi\-\_\-copy}(dest, src)~\hyperlink{bi_8c_a4abe007654e9cfe32edab93a43dc97fc}{bi\-\_\-copy\-\_\-var\-\_\-std}(dest, src, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a6f0b87425d2f891942806d95f04ab8ab}{bi\-\_\-copy\-\_\-var}(dest, src, len)~\hyperlink{bi_8c_a4abe007654e9cfe32edab93a43dc97fc}{bi\-\_\-copy\-\_\-var\-\_\-std}(dest, src, len)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a9cf1be211a96240dfbc356d0ec5ebeca}{bi\-\_\-set\-\_\-bit}(a, bit)~\hyperlink{bi_8c_ab9721a6b67568c8411b4a495fdc1b808}{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}(a,bit,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_a875a2e0781dd11878e8c60d9872c8de3}{bi\-\_\-set\-\_\-bit\-\_\-var}(a, bit, length)~\hyperlink{bi_8c_ab9721a6b67568c8411b4a495fdc1b808}{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}(a,bit,length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a443d6861528c91dd95dd3cbcb0cfb80b}{bi\-\_\-test\-\_\-bit}(a, bit)~\hyperlink{bi_8c_a5aeb7985ba5b5e863b4f618f83976598}{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}(a,bit,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_af380373c918b601744aee7b889d9dcd5}{bi\-\_\-test\-\_\-bit\-\_\-var}(a, bit, length)~\hyperlink{bi_8c_a5aeb7985ba5b5e863b4f618f83976598}{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}(a,bit,length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ad05e5569f48835d6e03979851ad622f6}{bi\-\_\-get\-\_\-msb}(a)~\hyperlink{bi_8c_afa1c8fddc51c53b112a79b8ea71d4a1f}{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}(a,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\item 
+\#define \hyperlink{bigint_2bi_8h_af4d6b23d08177baa33e088b91f76f3f0}{bi\-\_\-get\-\_\-msb\-\_\-var}(a, length)~\hyperlink{bi_8c_afa1c8fddc51c53b112a79b8ea71d4a1f}{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}(a,length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ab32d9f4bf91d339e8a0264269daa330d}{bi\-\_\-set\-\_\-byte}(a, index, value)~\hyperlink{bi_8c_a6ecbc36c5e703d2c0dda37736ff2d6b5}{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}(a,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S},index,value)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ad1492ada337a2d074817b353466aad0e}{bi\-\_\-set\-\_\-byte\-\_\-var}(a, length, index, value)~\hyperlink{bi_8c_a6ecbc36c5e703d2c0dda37736ff2d6b5}{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}(a,length,index,value)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ac94cd05062f48ec1b233ded9c7bd17be}{bi\-\_\-get\-\_\-byte}(a, index)~\hyperlink{bi_8c_a436b9d7a754277e553b6cf836330d30e}{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}(a,\hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S},index)
+\item 
+\#define \hyperlink{bigint_2bi_8h_af9848506b52c351e3ed2fe3b5b1c0e11}{bi\-\_\-get\-\_\-byte\-\_\-var}(a, length, index)~\hyperlink{bi_8c_a436b9d7a754277e553b6cf836330d30e}{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}(a,length,index)
+\item 
+\#define \hyperlink{bigint_2bi_8h_ac743c27db318c822b2e7693d5d07fb61}{bi\-\_\-is\-\_\-even}(a)~(!(a\mbox{[}0\mbox{]} \& 0x01))
+\item 
+\#define \hyperlink{bigint_2bi_8h_abd38fdea063cfa59acf274f10c4b2873}{bi\-\_\-is\-\_\-odd}(a)~(a\mbox{[}0\mbox{]} \& 0x01)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a9772128ab3754227346cda1dab93914b}{bi\-\_\-get\-\_\-nafw}(nafw, a, width)~\hyperlink{bi_8c_afdde22888ebf7acb6e5bf1c1def62ab1}{bi\-\_\-get\-\_\-nafw\-\_\-std}(nafw, a, width)
+\item 
+\#define \hyperlink{bigint_2bi_8h_acea439160495f3a7daf4faeeb3694d7f}{bi\-\_\-get\-\_\-nafb}(naf, a)~\hyperlink{bi_8c_a47e9a9efc6cf8044c65a664c539a7fe1}{bi\-\_\-get\-\_\-nafb\-\_\-std}(naf, a)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a6f923c7a69ea16cf1cf9aba3db2b282a}{bi\-\_\-negate\-\_\-var}(res, a, length)~\hyperlink{bi_8c_ab889cf3ebd4fdde3861c455ef126f56e}{bi\-\_\-negate\-\_\-var\-\_\-std}(res, a, length)
+\item 
+\#define \hyperlink{bigint_2bi_8h_a700a8e96bfde85125e711b60ab94fa86}{bi\-\_\-negate}(res, a)~\hyperlink{bi_8c_ab889cf3ebd4fdde3861c455ef126f56e}{bi\-\_\-negate\-\_\-var\-\_\-std}(res, a, \hyperlink{types_8h_a131287fbdaff3c7eb9d40905186013e5}{B\-I\-\_\-\-W\-O\-R\-D\-S})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} \hyperlink{bigint_2bi_8h_a02d6aa2233dbb0252b38732218109d48}{bi\-\_\-one}
+\item 
+const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} \hyperlink{bigint_2bi_8h_ae17ebabb8f6e58c8c803d47bc3b425e5}{bi\-\_\-zero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bigint_2bi_8h_a7f9d6e8a963d97b31afa43f48054f963}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-add@{bi\-\_\-add}}
+\index{bi\-\_\-add@{bi\-\_\-add}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-add(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-add\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a7f9d6e8a963d97b31afa43f48054f963}
+
+
+Definition at line 44 of file bi.\-h.
+
+
+
+Referenced by fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-mul\-\_\-lazy(), fp\-\_\-add\-\_\-lazy(), fp\-\_\-add\-\_\-std(), fp\-\_\-hlv\-\_\-std(), fp\-\_\-neg\-\_\-lazy(), fp\-\_\-rdc\-\_\-monty\-\_\-std(), fp\-\_\-sqrt\-\_\-std(), fp\-\_\-sub\-\_\-lazy(), fp\-\_\-sub\-\_\-std(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-sign(), and main().
+
+\hypertarget{bigint_2bi_8h_a2296eddabfd724d8f16753b8b86dc041}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-add\-\_\-carry\-\_\-var@{bi\-\_\-add\-\_\-carry\-\_\-var}}
+\index{bi\-\_\-add\-\_\-carry\-\_\-var@{bi\-\_\-add\-\_\-carry\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-add\-\_\-carry\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-add\-\_\-carry\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{length, }
+\item[{}]{carry}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std}(res, a, b, length, carry)}}\label{bigint_2bi_8h_a2296eddabfd724d8f16753b8b86dc041}
+
+
+Definition at line 46 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_af0f6efb5a90d18bb7a7ae770914a3a68}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-add\-\_\-var@{bi\-\_\-add\-\_\-var}}
+\index{bi\-\_\-add\-\_\-var@{bi\-\_\-add\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-add\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-add\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-add\-\_\-var\-\_\-std}(res, a, b, length)}}\label{bigint_2bi_8h_af0f6efb5a90d18bb7a7ae770914a3a68}
+
+
+Definition at line 45 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-negate\-\_\-var\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), and fp\-\_\-mul\-\_\-monty\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a75839608dbeb95883297c1e518a7d647}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-add\-\_\-word@{bi\-\_\-add\-\_\-word}}
+\index{bi\-\_\-add\-\_\-word@{bi\-\_\-add\-\_\-word}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-add\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-add\-\_\-word(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a75839608dbeb95883297c1e518a7d647}
+
+
+Definition at line 47 of file bi.\-h.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a08177042ef819d4dd58a085b91e82563}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-clear@{bi\-\_\-clear}}
+\index{bi\-\_\-clear@{bi\-\_\-clear}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-clear\-\_\-var\-\_\-std}(a,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a08177042ef819d4dd58a085b91e82563}
+
+
+Definition at line 53 of file bi.\-h.
+
+
+
+Referenced by fp2\-\_\-sqrt\-\_\-std(), fp\-\_\-clear\-\_\-std(), fp\-\_\-exp\-\_\-slide\-\_\-var(), fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_a574f84998b5fab19aba986dd264e55a5}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-clear\-\_\-var@{bi\-\_\-clear\-\_\-var}}
+\index{bi\-\_\-clear\-\_\-var@{bi\-\_\-clear\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-clear\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-clear\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-clear\-\_\-var\-\_\-std}(a,length)}}\label{bigint_2bi_8h_a574f84998b5fab19aba986dd264e55a5}
+
+
+Definition at line 54 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-multiply\-\_\-var\-\_\-std(), and fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a6b2acf360e12fed6bec3931cd4ac6205}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-compare@{bi\-\_\-compare}}
+\index{bi\-\_\-compare@{bi\-\_\-compare}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-compare(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-compare\-\_\-var\-\_\-std}(a,b,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a6b2acf360e12fed6bec3931cd4ac6205}
+
+
+Definition at line 64 of file bi.\-h.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal(), bi\-\_\-get\-\_\-nafb\-\_\-std(), bi\-\_\-get\-\_\-nafw\-\_\-std(), ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-compare\-\_\-std(), ecfp2\-\_\-rand\-\_\-std(), ecfp2\-\_\-verify\-\_\-coordinates(), ecfp2\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), ecfp\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp\-\_\-add\-\_\-proj\-\_\-std(), ecfp\-\_\-rand\-\_\-std(), ecfp\-\_\-verify\-\_\-coordinates(), ecfp\-\_\-verify\-\_\-homogeneous\-\_\-projective\-\_\-coordinates(), fp12\-\_\-decompress\-\_\-std(), fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp\-\_\-add\-\_\-std(), fp\-\_\-dbl\-\_\-std(), fp\-\_\-exp\-\_\-monty(), fp\-\_\-legendre\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), fp\-\_\-neg\-\_\-lazy(), fp\-\_\-neg\-\_\-std(), fp\-\_\-rdc\-\_\-std(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), hwang\-\_\-verify(), and main().
+
+\hypertarget{bigint_2bi_8h_ac5df36cc5e70236a6abb38370a70a68d}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-compare\-\_\-var@{bi\-\_\-compare\-\_\-var}}
+\index{bi\-\_\-compare\-\_\-var@{bi\-\_\-compare\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-compare\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-compare\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-compare\-\_\-var\-\_\-std}(a,b,length)}}\label{bigint_2bi_8h_ac5df36cc5e70236a6abb38370a70a68d}
+
+
+Definition at line 65 of file bi.\-h.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal\-\_\-var(), and fp\-\_\-mul\-\_\-monty\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_aa555c266704b82bcb6800248903d523c}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-compare\-\_\-vl@{bi\-\_\-compare\-\_\-vl}}
+\index{bi\-\_\-compare\-\_\-vl@{bi\-\_\-compare\-\_\-vl}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-compare\-\_\-vl}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-compare\-\_\-vl(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{len\-\_\-a, }
+\item[{}]{len\-\_\-b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-compare\-\_\-vl\-\_\-std}(a, b, len\-\_\-a, len\-\_\-b)}}\label{bigint_2bi_8h_aa555c266704b82bcb6800248903d523c}
+
+
+Definition at line 66 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a8f2ed128187f2af39d49891a29f36231}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-copy@{bi\-\_\-copy}}
+\index{bi\-\_\-copy@{bi\-\_\-copy}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-copy\-\_\-var\-\_\-std}(dest, src, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a8f2ed128187f2af39d49891a29f36231}
+
+
+Definition at line 72 of file bi.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp\-\_\-copy\-\_\-std(), fp\-\_\-exp\-\_\-slide\-\_\-var(), fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-std(), fp\-\_\-mul\-\_\-std(), fp\-\_\-neg\-\_\-lazy(), fp\-\_\-neg\-\_\-std(), fp\-\_\-rdc\-\_\-2l\-\_\-std(), fp\-\_\-rdc\-\_\-monty\-\_\-lazy(), fp\-\_\-rdc\-\_\-monty\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_a6f0b87425d2f891942806d95f04ab8ab}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-copy\-\_\-var@{bi\-\_\-copy\-\_\-var}}
+\index{bi\-\_\-copy\-\_\-var@{bi\-\_\-copy\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-copy\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-copy\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{src, }
+\item[{}]{len}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-copy\-\_\-var\-\_\-std}(dest, src, len)}}\label{bigint_2bi_8h_a6f0b87425d2f891942806d95f04ab8ab}
+
+
+Definition at line 73 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-div3\-\_\-var\-\_\-std(), fp\-\_\-rdc\-\_\-2l\-\_\-std(), and hwang\-\_\-sign().
+
+\hypertarget{bigint_2bi_8h_a9dce49fd0306bd5975d11a927e00d975}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-div3@{bi\-\_\-div3}}
+\index{bi\-\_\-div3@{bi\-\_\-div3}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-div3}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-div3(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-div3\-\_\-var\-\_\-std}(res, a, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a9dce49fd0306bd5975d11a927e00d975}
+
+
+Definition at line 62 of file bi.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_a3335856a31d7ce8961d05fd33ca8beed}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-div3\-\_\-var@{bi\-\_\-div3\-\_\-var}}
+\index{bi\-\_\-div3\-\_\-var@{bi\-\_\-div3\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-div3\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-div3\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-div3\-\_\-var\-\_\-std}(res, a, length)}}\label{bigint_2bi_8h_a3335856a31d7ce8961d05fd33ca8beed}
+
+
+Definition at line 63 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ac94cd05062f48ec1b233ded9c7bd17be}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-byte@{bi\-\_\-get\-\_\-byte}}
+\index{bi\-\_\-get\-\_\-byte@{bi\-\_\-get\-\_\-byte}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-byte(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}(a,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S},index)}}\label{bigint_2bi_8h_ac94cd05062f48ec1b233ded9c7bd17be}
+
+
+Definition at line 82 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_af9848506b52c351e3ed2fe3b5b1c0e11}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-byte\-\_\-var@{bi\-\_\-get\-\_\-byte\-\_\-var}}
+\index{bi\-\_\-get\-\_\-byte\-\_\-var@{bi\-\_\-get\-\_\-byte\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-byte\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-byte\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{length, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}(a,length,index)}}\label{bigint_2bi_8h_af9848506b52c351e3ed2fe3b5b1c0e11}
+
+
+Definition at line 83 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ad05e5569f48835d6e03979851ad622f6}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-msb@{bi\-\_\-get\-\_\-msb}}
+\index{bi\-\_\-get\-\_\-msb@{bi\-\_\-get\-\_\-msb}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-msb}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-msb(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}(a,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_ad05e5569f48835d6e03979851ad622f6}
+
+
+Definition at line 78 of file bi.\-h.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp\-\_\-mul\-\_\-l2rb\-\_\-std(), ecfp\-\_\-mul\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std(), fp12\-\_\-exp\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-mulexp\-\_\-std(), fp2\-\_\-exp\-\_\-sqrmul\-\_\-std(), fp4\-\_\-exp\-\_\-std(), fp\-\_\-exp\-\_\-bn(), fp\-\_\-exp\-\_\-monty(), fp\-\_\-exp\-\_\-slide\-\_\-var(), fp\-\_\-exp\-\_\-sqrmul(), fp\-\_\-inv\-\_\-exp\-\_\-std(), fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_af4d6b23d08177baa33e088b91f76f3f0}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-msb\-\_\-var@{bi\-\_\-get\-\_\-msb\-\_\-var}}
+\index{bi\-\_\-get\-\_\-msb\-\_\-var@{bi\-\_\-get\-\_\-msb\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-msb\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-msb\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}(a,length)}}\label{bigint_2bi_8h_af4d6b23d08177baa33e088b91f76f3f0}
+
+
+Definition at line 79 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_acea439160495f3a7daf4faeeb3694d7f}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-nafb@{bi\-\_\-get\-\_\-nafb}}
+\index{bi\-\_\-get\-\_\-nafb@{bi\-\_\-get\-\_\-nafb}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-nafb}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-nafb(
+\begin{DoxyParamCaption}
+\item[{}]{naf, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-nafb\-\_\-std}(naf, a)}}\label{bigint_2bi_8h_acea439160495f3a7daf4faeeb3694d7f}
+
+
+Definition at line 89 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a9772128ab3754227346cda1dab93914b}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-get\-\_\-nafw@{bi\-\_\-get\-\_\-nafw}}
+\index{bi\-\_\-get\-\_\-nafw@{bi\-\_\-get\-\_\-nafw}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-get\-\_\-nafw}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-get\-\_\-nafw(
+\begin{DoxyParamCaption}
+\item[{}]{nafw, }
+\item[{}]{a, }
+\item[{}]{width}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-get\-\_\-nafw\-\_\-std}(nafw, a, width)}}\label{bigint_2bi_8h_a9772128ab3754227346cda1dab93914b}
+
+
+Definition at line 88 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ac743c27db318c822b2e7693d5d07fb61}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-is\-\_\-even@{bi\-\_\-is\-\_\-even}}
+\index{bi\-\_\-is\-\_\-even@{bi\-\_\-is\-\_\-even}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-is\-\_\-even}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-is\-\_\-even(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(!(a\mbox{[}0\mbox{]} \& 0x01))}}\label{bigint_2bi_8h_ac743c27db318c822b2e7693d5d07fb61}
+
+
+Definition at line 85 of file bi.\-h.
+
+
+
+Referenced by fp\-\_\-hlv\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_abd38fdea063cfa59acf274f10c4b2873}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-is\-\_\-odd@{bi\-\_\-is\-\_\-odd}}
+\index{bi\-\_\-is\-\_\-odd@{bi\-\_\-is\-\_\-odd}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-is\-\_\-odd}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-is\-\_\-odd(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(a\mbox{[}0\mbox{]} \& 0x01)}}\label{bigint_2bi_8h_abd38fdea063cfa59acf274f10c4b2873}
+
+
+Definition at line 86 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-get\-\_\-nafb\-\_\-std(), and bi\-\_\-get\-\_\-nafw\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_aa2c6291549383c2164b28a97700c1523}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-multiply@{bi\-\_\-multiply}}
+\index{bi\-\_\-multiply@{bi\-\_\-multiply}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-multiply}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-multiply(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S}, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_aa2c6291549383c2164b28a97700c1523}
+
+
+Definition at line 68 of file bi.\-h.
+
+
+
+Referenced by fp2\-\_\-mul\-\_\-lazy(), fp\-\_\-mul\-\_\-monty\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-twostep(), fp\-\_\-mul\-\_\-monty\-\_\-twostep\-\_\-lazy(), fp\-\_\-mul\-\_\-std(), hwang\-\_\-sign(), and main().
+
+\hypertarget{bigint_2bi_8h_ad927e94b7c9be4f7b06a4897c0500e71}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-multiply\-\_\-var@{bi\-\_\-multiply\-\_\-var}}
+\index{bi\-\_\-multiply\-\_\-var@{bi\-\_\-multiply\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-multiply\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-multiply\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{len\-\_\-a, }
+\item[{}]{len\-\_\-b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, b, len\-\_\-a, len\-\_\-b)}}\label{bigint_2bi_8h_ad927e94b7c9be4f7b06a4897c0500e71}
+
+
+Definition at line 69 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-div3\-\_\-var\-\_\-std(), bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-std(), and fp\-\_\-rdc\-\_\-2l\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a18eaa674eac9c7538c545c458723944f}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-multiply\-\_\-word@{bi\-\_\-multiply\-\_\-word}}
+\index{bi\-\_\-multiply\-\_\-word@{bi\-\_\-multiply\-\_\-word}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-multiply\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-multiply\-\_\-word(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a18eaa674eac9c7538c545c458723944f}
+
+
+Definition at line 67 of file bi.\-h.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a700a8e96bfde85125e711b60ab94fa86}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-negate@{bi\-\_\-negate}}
+\index{bi\-\_\-negate@{bi\-\_\-negate}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-negate}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-negate(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-negate\-\_\-var\-\_\-std}(res, a, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a700a8e96bfde85125e711b60ab94fa86}
+
+
+Definition at line 92 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a6f923c7a69ea16cf1cf9aba3db2b282a}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-negate\-\_\-var@{bi\-\_\-negate\-\_\-var}}
+\index{bi\-\_\-negate\-\_\-var@{bi\-\_\-negate\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-negate\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-negate\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-negate\-\_\-var\-\_\-std}(res, a, length)}}\label{bigint_2bi_8h_a6f923c7a69ea16cf1cf9aba3db2b282a}
+
+
+Definition at line 91 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a9cf1be211a96240dfbc356d0ec5ebeca}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-set\-\_\-bit@{bi\-\_\-set\-\_\-bit}}
+\index{bi\-\_\-set\-\_\-bit@{bi\-\_\-set\-\_\-bit}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-set\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-set\-\_\-bit(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}(a,bit,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a9cf1be211a96240dfbc356d0ec5ebeca}
+
+
+Definition at line 74 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a875a2e0781dd11878e8c60d9872c8de3}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-set\-\_\-bit\-\_\-var@{bi\-\_\-set\-\_\-bit\-\_\-var}}
+\index{bi\-\_\-set\-\_\-bit\-\_\-var@{bi\-\_\-set\-\_\-bit\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-set\-\_\-bit\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-set\-\_\-bit\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{bit, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}(a,bit,length)}}\label{bigint_2bi_8h_a875a2e0781dd11878e8c60d9872c8de3}
+
+
+Definition at line 75 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ab32d9f4bf91d339e8a0264269daa330d}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-set\-\_\-byte@{bi\-\_\-set\-\_\-byte}}
+\index{bi\-\_\-set\-\_\-byte@{bi\-\_\-set\-\_\-byte}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-set\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-set\-\_\-byte(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{index, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}(a,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S},index,value)}}\label{bigint_2bi_8h_ab32d9f4bf91d339e8a0264269daa330d}
+
+
+Definition at line 80 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ad1492ada337a2d074817b353466aad0e}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-set\-\_\-byte\-\_\-var@{bi\-\_\-set\-\_\-byte\-\_\-var}}
+\index{bi\-\_\-set\-\_\-byte\-\_\-var@{bi\-\_\-set\-\_\-byte\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-set\-\_\-byte\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-set\-\_\-byte\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{length, }
+\item[{}]{index, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}(a,length,index,value)}}\label{bigint_2bi_8h_ad1492ada337a2d074817b353466aad0e}
+
+
+Definition at line 81 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a932b80ecd0d368eadbae359ab213bb45}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-shift\-\_\-left\-\_\-one@{bi\-\_\-shift\-\_\-left\-\_\-one}}
+\index{bi\-\_\-shift\-\_\-left\-\_\-one@{bi\-\_\-shift\-\_\-left\-\_\-one}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-shift\-\_\-left\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-shift\-\_\-left\-\_\-one(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std}(res, a, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a932b80ecd0d368eadbae359ab213bb45}
+
+
+Definition at line 61 of file bi.\-h.
+
+
+
+Referenced by fp\-\_\-dbl\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_ae2257a0b6a254337b82217e2055a71e5}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-shift\-\_\-right@{bi\-\_\-shift\-\_\-right}}
+\index{bi\-\_\-shift\-\_\-right@{bi\-\_\-shift\-\_\-right}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-shift\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-shift\-\_\-right(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{right}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}(res, a, right, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_ae2257a0b6a254337b82217e2055a71e5}
+
+
+Definition at line 57 of file bi.\-h.
+
+
+
+Referenced by fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp\-\_\-legendre\-\_\-std(), fp\-\_\-sqrt\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_aa971cbb555316d742decd67cc6f1b8cf}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-shift\-\_\-right\-\_\-one@{bi\-\_\-shift\-\_\-right\-\_\-one}}
+\index{bi\-\_\-shift\-\_\-right\-\_\-one@{bi\-\_\-shift\-\_\-right\-\_\-one}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-shift\-\_\-right\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-shift\-\_\-right\-\_\-one(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}(res, a, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_aa971cbb555316d742decd67cc6f1b8cf}
+
+
+Definition at line 59 of file bi.\-h.
+
+
+
+Referenced by bi\-\_\-get\-\_\-nafb\-\_\-std(), bi\-\_\-get\-\_\-nafw\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp\-\_\-hlv\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_ac713e52e1d38a0df843e7bde725070de}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var@{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var}}
+\index{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var@{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}(res, a, length)}}\label{bigint_2bi_8h_ac713e52e1d38a0df843e7bde725070de}
+
+
+Definition at line 60 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a134a58e27520f56fe34b3bab9b7d5d16}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-shift\-\_\-right\-\_\-var@{bi\-\_\-shift\-\_\-right\-\_\-var}}
+\index{bi\-\_\-shift\-\_\-right\-\_\-var@{bi\-\_\-shift\-\_\-right\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-shift\-\_\-right\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-shift\-\_\-right\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{right, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}(res, a, right, length)}}\label{bigint_2bi_8h_a134a58e27520f56fe34b3bab9b7d5d16}
+
+
+Definition at line 58 of file bi.\-h.
+
+
+
+Referenced by fp\-\_\-mul\-\_\-monty\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a8effc24b3fba7fc264d5f19e8042682f}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-square@{bi\-\_\-square}}
+\index{bi\-\_\-square@{bi\-\_\-square}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-square}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-square(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, a, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S}, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a8effc24b3fba7fc264d5f19e8042682f}
+
+
+Definition at line 70 of file bi.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{bigint_2bi_8h_acd97760228a41072ccc148a4259aa714}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-square\-\_\-var@{bi\-\_\-square\-\_\-var}}
+\index{bi\-\_\-square\-\_\-var@{bi\-\_\-square\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-square\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-square\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{len}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-multiply\-\_\-var\-\_\-std}(res, a, a, len, len);}}\label{bigint_2bi_8h_acd97760228a41072ccc148a4259aa714}
+
+
+Definition at line 71 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_ad4714fe068804e8b92729676bfbc4f9e}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-subtract@{bi\-\_\-subtract}}
+\index{bi\-\_\-subtract@{bi\-\_\-subtract}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-subtract}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-subtract(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_ad4714fe068804e8b92729676bfbc4f9e}
+
+
+Definition at line 48 of file bi.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp\-\_\-add\-\_\-lazy(), fp\-\_\-add\-\_\-std(), fp\-\_\-dbl\-\_\-std(), fp\-\_\-exp\-\_\-monty(), fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std(), fp\-\_\-legendre\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-fips\-\_\-std(), fp\-\_\-mul\-\_\-monty\-\_\-std(), fp\-\_\-neg\-\_\-lazy(), fp\-\_\-neg\-\_\-std(), fp\-\_\-rdc\-\_\-monty\-\_\-lazy(), fp\-\_\-rdc\-\_\-monty\-\_\-std(), fp\-\_\-rdc\-\_\-std(), fp\-\_\-sub\-\_\-lazy(), fp\-\_\-sub\-\_\-std(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-sign(), hwang\-\_\-verify(), and main().
+
+\hypertarget{bigint_2bi_8h_ae59fc38d8df2a30bac0214d9e4eca06a}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-subtract\-\_\-dbl\-\_\-len@{bi\-\_\-subtract\-\_\-dbl\-\_\-len}}
+\index{bi\-\_\-subtract\-\_\-dbl\-\_\-len@{bi\-\_\-subtract\-\_\-dbl\-\_\-len}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-subtract\-\_\-dbl\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-subtract\-\_\-dbl\-\_\-len(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, 2$\ast${\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_ae59fc38d8df2a30bac0214d9e4eca06a}
+
+
+Definition at line 52 of file bi.\-h.
+
+
+
+Referenced by fp2\-\_\-mul\-\_\-lazy(), and hwang\-\_\-sign().
+
+\hypertarget{bigint_2bi_8h_aa70d749906b1ef948c6fe3431b123b5d}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-subtract\-\_\-var@{bi\-\_\-subtract\-\_\-var}}
+\index{bi\-\_\-subtract\-\_\-var@{bi\-\_\-subtract\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-subtract\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-subtract\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-subtract\-\_\-var\-\_\-std}(res, a, b, length)}}\label{bigint_2bi_8h_aa70d749906b1ef948c6fe3431b123b5d}
+
+
+Definition at line 49 of file bi.\-h.
+
+
+
+Referenced by fp\-\_\-rdc\-\_\-2l\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a5679b56b604f1d33c80e505c472af618}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-subtract\-\_\-vl@{bi\-\_\-subtract\-\_\-vl}}
+\index{bi\-\_\-subtract\-\_\-vl@{bi\-\_\-subtract\-\_\-vl}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-subtract\-\_\-vl}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-subtract\-\_\-vl(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{len\-\_\-a, }
+\item[{}]{len\-\_\-b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-subtract\-\_\-vl\-\_\-std}(res, a, b, len\-\_\-a, len\-\_\-b)}}\label{bigint_2bi_8h_a5679b56b604f1d33c80e505c472af618}
+
+
+Definition at line 50 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_af5173600dd672feb4d523514f4acdc9f}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-subtract\-\_\-word@{bi\-\_\-subtract\-\_\-word}}
+\index{bi\-\_\-subtract\-\_\-word@{bi\-\_\-subtract\-\_\-word}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-subtract\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-subtract\-\_\-word(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_af5173600dd672feb4d523514f4acdc9f}
+
+
+Definition at line 51 of file bi.\-h.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_a443d6861528c91dd95dd3cbcb0cfb80b}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-test\-\_\-bit@{bi\-\_\-test\-\_\-bit}}
+\index{bi\-\_\-test\-\_\-bit@{bi\-\_\-test\-\_\-bit}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-test\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-test\-\_\-bit(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}(a,bit,{\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a443d6861528c91dd95dd3cbcb0cfb80b}
+
+
+Definition at line 76 of file bi.\-h.
+
+
+
+Referenced by ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp\-\_\-mul\-\_\-l2rb\-\_\-std(), ecfp\-\_\-mul\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std(), fp12\-\_\-exp\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-mulexp\-\_\-std(), fp2\-\_\-exp\-\_\-sqrmul\-\_\-std(), fp4\-\_\-exp\-\_\-std(), fp\-\_\-exp\-\_\-bn(), fp\-\_\-exp\-\_\-monty(), fp\-\_\-exp\-\_\-slide\-\_\-var(), fp\-\_\-exp\-\_\-sqrmul(), fp\-\_\-inv\-\_\-exp\-\_\-std(), fp\-\_\-inv\-\_\-exp\-\_\-var\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{bigint_2bi_8h_af380373c918b601744aee7b889d9dcd5}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-test\-\_\-bit\-\_\-var@{bi\-\_\-test\-\_\-bit\-\_\-var}}
+\index{bi\-\_\-test\-\_\-bit\-\_\-var@{bi\-\_\-test\-\_\-bit\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-test\-\_\-bit\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-test\-\_\-bit\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{bit, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}(a,bit,length)}}\label{bigint_2bi_8h_af380373c918b601744aee7b889d9dcd5}
+
+
+Definition at line 77 of file bi.\-h.
+
+\hypertarget{bigint_2bi_8h_a4281f3891d2d3a08734aac9115258c20}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-xor@{bi\-\_\-xor}}
+\index{bi\-\_\-xor@{bi\-\_\-xor}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-xor}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-xor(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-xor\-\_\-var\-\_\-std}(res, a, b, {\bf B\-I\-\_\-\-W\-O\-R\-D\-S})}}\label{bigint_2bi_8h_a4281f3891d2d3a08734aac9115258c20}
+
+
+Definition at line 55 of file bi.\-h.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal().
+
+\hypertarget{bigint_2bi_8h_ac7ade7879029a606afee9119092a5f6c}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-xor\-\_\-var@{bi\-\_\-xor\-\_\-var}}
+\index{bi\-\_\-xor\-\_\-var@{bi\-\_\-xor\-\_\-var}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-xor\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}\#define bi\-\_\-xor\-\_\-var(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf bi\-\_\-xor\-\_\-var\-\_\-std}(res, a, b, length)}}\label{bigint_2bi_8h_ac7ade7879029a606afee9119092a5f6c}
+
+
+Definition at line 56 of file bi.\-h.
+
+
+
+Referenced by assert\-\_\-bi\-\_\-equal\-\_\-var().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{bigint_2bi_8h_a02d6aa2233dbb0252b38732218109d48}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-one@{bi\-\_\-one}}
+\index{bi\-\_\-one@{bi\-\_\-one}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf bigint\-\_\-t} bi\-\_\-one}}\label{bigint_2bi_8h_a02d6aa2233dbb0252b38732218109d48}
+
+
+Referenced by bi\-\_\-negate\-\_\-var\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), fp12\-\_\-frobenius\-\_\-map\-\_\-std(), fp2\-\_\-from\-\_\-montgomery\-\_\-std(), fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp4\-\_\-frobenius\-\_\-map\-\_\-std(), fp\-\_\-exp\-\_\-monty(), fp\-\_\-from\-\_\-montgomery\-\_\-std(), fp\-\_\-legendre\-\_\-std(), fp\-\_\-sqrt\-\_\-std(), and main().
+
+\hypertarget{bigint_2bi_8h_ae17ebabb8f6e58c8c803d47bc3b425e5}{\index{bigint/bi.\-h@{bigint/bi.\-h}!bi\-\_\-zero@{bi\-\_\-zero}}
+\index{bi\-\_\-zero@{bi\-\_\-zero}!bigint/bi.h@{bigint/bi.\-h}}
+\subsubsection[{bi\-\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf bigint\-\_\-t} bi\-\_\-zero}}\label{bigint_2bi_8h_ae17ebabb8f6e58c8c803d47bc3b425e5}
+
+
+Referenced by bi\-\_\-get\-\_\-nafb\-\_\-std(), bi\-\_\-get\-\_\-nafw\-\_\-std(), ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-rand\-\_\-std(), ecfp\-\_\-add\-\_\-proj\-\_\-std(), ecfp\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp\-\_\-rand\-\_\-std(), fp12\-\_\-decompress\-\_\-std(), fp2\-\_\-legendre\-\_\-std(), fp2\-\_\-sqrt\-\_\-std(), fp\-\_\-legendre\-\_\-std(), fp\-\_\-neg\-\_\-lazy(), fp\-\_\-neg\-\_\-std(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), and main().
+

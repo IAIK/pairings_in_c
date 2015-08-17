@@ -1,0 +1,63 @@
+\hypertarget{sha2__small__common_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha2\-\_\-small\-\_\-common.h File Reference}
+\label{sha2__small__common_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha2\-\_\-small\-\_\-common.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/sha2\-\_\-small\-\_\-common.\-h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsha2__small__common__ctx__t}{sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sha2__small__common_8h_a2bbb476416d65a863e7fd81968dcee27}{sha2\-\_\-small\-\_\-common\-\_\-next\-Block} (\hyperlink{structsha2__small__common__ctx__t}{sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block)
+\begin{DoxyCompactList}\small\item\em block must be, 512, Bit = 64, Byte, long !!! \end{DoxyCompactList}\item 
+void \hyperlink{sha2__small__common_8h_aaf172976a3a8d090b3fb3904130452aa}{sha2\-\_\-small\-\_\-common\-\_\-last\-Block} (\hyperlink{structsha2__small__common__ctx__t}{sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block, uint16\-\_\-t length\-\_\-b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sha2__small__common_8h_aaf172976a3a8d090b3fb3904130452aa}{\index{sha2\-\_\-small\-\_\-common.\-h@{sha2\-\_\-small\-\_\-common.\-h}!sha2\-\_\-small\-\_\-common\-\_\-last\-Block@{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}}
+\index{sha2\-\_\-small\-\_\-common\-\_\-last\-Block@{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}!sha2_small_common.h@{sha2\-\_\-small\-\_\-common.\-h}}
+\subsubsection[{sha2\-\_\-small\-\_\-common\-\_\-last\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha2\-\_\-small\-\_\-common\-\_\-last\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block, }
+\item[{uint16\-\_\-t}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{sha2__small__common_8h_aaf172976a3a8d090b3fb3904130452aa}
+
+
+Definition at line 129 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::length, and sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+
+
+Referenced by sha256\-\_\-last\-Block().
+
+\hypertarget{sha2__small__common_8h_a2bbb476416d65a863e7fd81968dcee27}{\index{sha2\-\_\-small\-\_\-common.\-h@{sha2\-\_\-small\-\_\-common.\-h}!sha2\-\_\-small\-\_\-common\-\_\-next\-Block@{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}}
+\index{sha2\-\_\-small\-\_\-common\-\_\-next\-Block@{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}!sha2_small_common.h@{sha2\-\_\-small\-\_\-common.\-h}}
+\subsubsection[{sha2\-\_\-small\-\_\-common\-\_\-next\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha2\-\_\-small\-\_\-common\-\_\-next\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block}
+\end{DoxyParamCaption}
+)}}\label{sha2__small__common_8h_a2bbb476416d65a863e7fd81968dcee27}
+
+
+block must be, 512, Bit = 64, Byte, long !!! 
+
+
+
+Definition at line 86 of file sha2\-\_\-small\-\_\-common.\-c.
+
+
+
+References C\-H, sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::h, k, sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::length, load\-\_\-endian32\-\_\-changed(), M\-A\-J, S\-I\-G\-M\-A\-\_\-0, S\-I\-G\-M\-A\-\_\-1, S\-I\-G\-M\-A\-\_\-a, and S\-I\-G\-M\-A\-\_\-b.
+
+
+
+Referenced by sha256\-\_\-next\-Block(), and sha2\-\_\-small\-\_\-common\-\_\-last\-Block().
+

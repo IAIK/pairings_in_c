@@ -1,44 +1,55 @@
-/*
- * param.c
- *
- *	Parameters that define the type of pairing,  the elliptic curve,
- *	the extension field and the prime.
- *
- *  Created on: Apr 21, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "param.h"
 
 #if BYTES_PER_WORD == 4
   #if PRECISION == 256
   #if (BNCURVE == BN256)
-    const structPrime PRIME = {{0x622C349B, 0xFEEE89B1, 0xD477DF46, 0x1311ACA0,
-    					  0x53E289B5, 0xFB605C6B, 0x401EDC28, 0xBA139EC2},
-    					 {0x0302D742, 0xD6D8380C, 0xCA4B9850, 0xD683E79F,
-    					  0x80E2F720, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001},
-		  	  	  	  	  -1,
-		  	  	  	  	  -1};
 
-    const structMontyParam MONTY_PRIME = {{0x73696E6D, 0xAC3FC985, 0x06D41D7C, 0x4922CABA,
-    					  	  	  	  	   0x456E351F, 0x2BF4C8D5, 0xCE341AA8, 0xEFD5FAE5},
-    									  {0x5636430A, 0x8EF6DE97, 0xBD8A829D, 0x214654A0,
-    									   0xDF0F9586, 0xB826482C, 0x0510FB76, 0x2B6940FA}};
+    const bigint_t PRIME_P = {0x622C349B, 0xFEEE89B1, 0xD477DF46, 0x1311ACA0,
+        0x53E289B5, 0xFB605C6B, 0x401EDC28, 0xBA139EC2};
+    const word_t   PRIME_MU[FP_WORDS+1] = {0x0302D742, 0xD6D8380C, 0xCA4B9850, 0xD683E79F,
+        0x80E2F720, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001};
+    const int PRIME_QNR = -1;
+    const int PRIME_CNR = -1;
 
-    const structGLVParam GLV_PARAM = {{{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-    	    				    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-    						    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-    						    0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-      						  {{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-            					0x00000000, 0x00000000, 0x00000000, 0x00000000},
-      						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-      						    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-      						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-      						    0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-      						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-      						    0x00000000, 0x00000000, 0x00000000, 0x00000000}};
+
+    const bigint_t MONTY_PRIME_N0 = {0x73696E6D, 0xAC3FC985, 0x06D41D7C, 0x4922CABA,
+        0x456E351F, 0x2BF4C8D5, 0xCE341AA8, 0xEFD5FAE5};
+    const bigint_t MONTY_PRIME_R2 = {0x5636430A, 0x8EF6DE97, 0xBD8A829D, 0x214654A0,
+        0xDF0F9586, 0xB826482C, 0x0510FB76, 0x2B6940FA};
 
     const bigint_t OPTATE_LOOP_CONST = {0x00180194, 0x43000000, 0x00000002, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
 
@@ -49,18 +60,16 @@
 
     #ifdef MONTGOMERY_ARITHMETIC
 
-    const structECParam EC_PARAM = {{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-    							0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    							{0x774F2D94, 0x0445D93A, 0xAE2082E4, 0xB3B94D7C,
-    							0xB075D92B, 0x127E8E52, 0xFF848F5C, 0x17B184F6},
-    							{0x00040043, 0x60800000, 0x00000000, 0x00000000,
-    							0x00000000, 0x00000000, 0x00000000, 0x00000000},
-//    		    			   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-//    		    			   0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    		    			   {0x559BCB65, 0xECEE8951, 0xD465C617, 0x38D02CA0,
-    		    			    0x53E289B4, 0xFB605C6B, 0x401EDC28, 0xBA139EC2},
-    		    			    {0xBEBED793, 0xAA48D8F6, 0x30929D62, 0x739F314A,
-    		    			     0x80E2F722, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001}};
+    const fp_t EC_PARAM_A = {0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000};
+    const fp_t EC_PARAM_B = {0x774F2D94, 0x0445D93A, 0xAE2082E4, 0xB3B94D7C,
+        0xB075D92B, 0x127E8E52, 0xFF848F5C, 0x17B184F6};
+    const bigint_t EC_PARAM_X = {0x00040043, 0x60800000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000};
+    const bigint_t EC_PARAM_N = {0x559BCB65, 0xECEE8951, 0xD465C617, 0x38D02CA0,
+        0x53E289B4, 0xFB605C6B, 0x401EDC28, 0xBA139EC2};
+    const word_t EC_PARAM_MU_N[FP_WORDS+1] = {0xBEBED793, 0xAA48D8F6, 0x30929D62, 0x739F314A,
+        0x80E2F722, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001};
 
     const fp_t EC_PARAM_4B = {0xDD3CB650, 0x111764E9, 0xB8820B90, 0xCEE535F2, 0xC1D764AE, 0x49FA394A, 0xFE123D70, 0x5EC613DB};
 
@@ -80,18 +89,17 @@
     const fp_t FP_ONE = {0x9DD3CB65, 0x0111764E, 0x2B8820B9, 0xECEE535F, 0xAC1D764A, 0x049FA394, 0xBFE123D7, 0x45EC613D};
 
 	#else
-    const structECParam EC_PARAM = {{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-			  	  	  	  	   0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    						  {0x00000003, 0x00000000, 0x00000000, 0x00000000,
-    		    			   0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    		    			   {0x00040043, 0x60800000, 0x00000000, 0x00000000,
-    		    			    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-//    		    			   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-//    		    			   0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    		    			   {0x559BCB65, 0xECEE8951, 0xD465C617, 0x38D02CA0,
-    		    			    0x53E289B4, 0xFB605C6B, 0x401EDC28, 0xBA139EC2},
-    		    			    {0xBEBED793, 0xAA48D8F6, 0x30929D62, 0x739F314A,
-    		    			     0x80E2F722, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001}};
+
+    const fp_t EC_PARAM_A = {0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000};
+    const fp_t EC_PARAM_B = {0x00000003, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000};
+    const bigint_t EC_PARAM_X = {0x00040043, 0x60800000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000};
+    const bigint_t EC_PARAM_N = {0x559BCB65, 0xECEE8951, 0xD465C617, 0x38D02CA0,
+        0x53E289B4, 0xFB605C6B, 0x401EDC28, 0xBA139EC2};
+    const word_t EC_PARAM_MU_N[FP_WORDS+1] = {0xBEBED793, 0xAA48D8F6, 0x30929D62, 0x739F314A,
+        0x80E2F722, 0x6DAD8102, 0x744EDA0F, 0x6032EF36, 0x00000001};
 
     const fp_t EC_PARAM_4B = {0x00000012, 0x00000000, 0x00000000, 0x00000000,
 			   	   	   	   	  0x00000000, 0x00000000, 0x00000000, 0x00000000};
@@ -112,35 +120,22 @@
     		};
 	#endif
   #elif (BNCURVE == BN254)
-    	const structPrime PRIME = {{0x00000013, 0xA7000000, 0x00000013, 0x61210000,
-    								0x00000008, 0xBA344D80, 0x40000001, 0x25236482},
-    							{0x4C735A91, 0x5A5F8D22, 0x3B56F610, 0x24046450,
-    							0x7BB36C39, 0x7FCEDBA3, 0x93AF3394, 0xE4A64840, 0x00000006},
-    		  	  	  	  	  -1,
-    		  	  	  	  	  -1};
+
+      const bigint_t PRIME_P = {0x00000013, 0xA7000000, 0x00000013, 0x61210000,
+          0x00000008, 0xBA344D80, 0x40000001, 0x25236482};
+      const word_t   PRIME_MU[FP_WORDS+1] = {0x4C735A91, 0x5A5F8D22, 0x3B56F610, 0x24046450,
+          0x7BB36C39, 0x7FCEDBA3, 0x93AF3394, 0xE4A64840, 0x00000006};
+      const int PRIME_QNR = -1;
+      const int PRIME_CNR = -1;
 
     	const bigint_t LAZYR_PRIMEC = {0x00000072, 0xEA000000, 0x00000075, 0x46C60000,
     								  0x00000032, 0x5D39D100, 0x8000000A, 0xDED45B0D};
 
-        const structMontyParam MONTY_PRIME = {{0xD79435E5, 0x08435E50, 0x1104F6C8, 0x6E371BA8,
-        									  0xC45B843C, 0x92022379, 0xBA60808C, 0xB65373CC},
-        										{0x5370473D, 0xB3E88674, 0x8C1CC3F1, 0x55EFBF6E,
-        										0x7F86954F, 0x281E3A1B, 0xF6403A3D, 0x1B0A32FD}};
+        const bigint_t MONTY_PRIME_N0 = {0xD79435E5, 0x08435E50, 0x1104F6C8, 0x6E371BA8,
+            0xC45B843C, 0x92022379, 0xBA60808C, 0xB65373CC};
+        const bigint_t MONTY_PRIME_R2 = {0x5370473D, 0xB3E88674, 0x8C1CC3F1, 0x55EFBF6E,
+            0x7F86954F, 0x281E3A1B, 0xF6403A3D, 0x1B0A32FD};
 
-        const structGLVParam GLV_PARAM = {{{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        	    				    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        						    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        						    0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-          						  {{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-                					0x00000000, 0x00000000, 0x00000000, 0x00000000},
-          						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-          						    0x00000000, 0x00000000, 0x00000000, 0x00000000},
-          						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-          						    0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-          						   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-          						    0x00000000, 0x00000000, 0x00000000, 0x00000000}};
 
         const bigint_t OPTATE_LOOP_CONST = {0x00000004, 0x83000000, 0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
 
@@ -151,18 +146,16 @@
 
         #ifdef MONTGOMERY_ARITHMETIC
 
-        const structECParam EC_PARAM = {{0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        							0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        							{0xFFFFFF09, 0x84FFFFFF, 0xFFFFFF00, 0x1152FFFF,
-        							 0xFFFFFF93, 0x8B58107F, 0xBFFFFFE9, 0x1D33E562},
-        							 {0x00000001, 0x40800000, 0x00000000, 0x00000000,
-        							 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-//        		    			   {0x00000000, 0x00000000, 0x00000000, 0x00000000,
-//        		    			   0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        		    			   {0x0000000D, 0xA1000000, 0x00000010, 0xFF9F8000,
-        		    			    0x00000007, 0xBA344D80, 0x40000001, 0x25236482},
-        		    			    {0x284DF31B, 0x8CBAA5A3, 0x3AD196E5, 0x3D13303C,
-        		    			     0x7BB36C4B, 0x7FCEDBA3, 0x93AF3394, 0xE4A64840, 0x00000006}};
+        const fp_t EC_PARAM_A = {0x00000000, 0x00000000, 0x00000000, 0x00000000,
+            0x00000000, 0x00000000, 0x00000000, 0x00000000};
+        const fp_t EC_PARAM_B = {0xFFFFFF09, 0x84FFFFFF, 0xFFFFFF00, 0x1152FFFF,
+            0xFFFFFF93, 0x8B58107F, 0xBFFFFFE9, 0x1D33E562};
+        const bigint_t EC_PARAM_X = {0x00000001, 0x40800000, 0x00000000, 0x00000000,
+            0x00000000, 0x00000000, 0x00000000, 0x00000000};
+        const bigint_t EC_PARAM_N = {0x0000000D, 0xA1000000, 0x00000010, 0xFF9F8000,
+            0x00000007, 0xBA344D80, 0x40000001, 0x25236482};
+        const word_t EC_PARAM_MU_N[FP_WORDS+1] =  {0x284DF31B, 0x8CBAA5A3, 0x3AD196E5, 0x3D13303C,
+            0x7BB36C4B, 0x7FCEDBA3, 0x93AF3394, 0xE4A64840, 0x00000006};
 
         const fp_t EC_PARAM_4B = {0xFFFFFBEB, 0x1EFFFFFF, 0xFFFFFBC7, 0x21E8FFFF, 0xFFFFFE33, 0xFEC3597F, 0x3FFFFFA0, 0x05656804};
 
@@ -181,24 +174,32 @@
 
         const fp_t FP_ONE = {0xFFFFFF8E, 0x15FFFFFF, 0xFFFFFF8A, 0xB939FFFF, 0xFFFFFFCD, 0xA2C62EFF, 0x7FFFFFF5, 0x212BA4F2};
 
+        const ecpoint_fp ECFP_GENERATOR = {{0x00000085, 0x91000000, 0x00000089,
+        0xA7E70000, 0x0000003A, 0x176E1E80, 0xC000000C, 0x03F7BF8F},
+        {0xFFFFFF8E, 0x15FFFFFF, 0xFFFFFF8A, 0xB939FFFF, 0xFFFFFFCD, 0xA2C62EFF,
+        0x7FFFFFF5, 0x212BA4F2},
+        0};
+
+        const ecpoint_fp2 ECFP2_GENERATOR = {{{0x63659E66, 0xAF45AAAF, 0x3D01BC7C,
+        0xBB92F023, 0xDCD46337, 0xEF7AB941, 0x61DF5B55, 0x173F71DE},
+        {0xD0D2F4E7, 0x389BBB43, 0xBC087B6A, 0x413D1E26, 0x7A42E357, 0x1FCE9382,
+        0x6630C4E9, 0x10C76BD0}},
+         {{0x74482015, 0x25D0B136, 0x0C7D1012, 0x5A0FCF13, 0x884B2CC7,
+        0x9215E25E, 0x1C2D120D, 0x182C7A58},
+        {0xFCB5D7AA, 0xFBB0D5E1, 0xA3A25124, 0x6CE6262A, 0x927F8598, 0x1E0D27E0,
+        0x781D1A20, 0x1598CFFE}},
+        0};
    #endif
   #endif
   #elif PRECISION == 160
-    	const structPrime PRIME = {{0x4C50525B, 0x1E2D54A0, 0x394AC09E, 0xAF565BE6, 0x24012003},
-    							   {0xFEEFA5B1, 0xAE2BD718, 0xE27EF696, 0xFC2AEF85, 0x1C38E49A, 0x00000007},
-    							   -1,
-    							   -1};
 
-        const structMontyParam MONTY_PRIME = {{0x9FAF722D, 0xFE5C09D8, 0xFDAAF12F, 0x9B4CE70A, 0xD90C790B},
-        									  {0x4A6D6815, 0x91C315C0, 0xA9801708, 0xC7BCD9EB, 0x12623E47}};
+        const bigint_t PRIME_P = {0x4C50525B, 0x1E2D54A0, 0x394AC09E, 0xAF565BE6, 0x24012003};
+        const word_t   PRIME_MU[FP_WORDS+1] = {0xFEEFA5B1, 0xAE2BD718, 0xE27EF696, 0xFC2AEF85, 0x1C38E49A, 0x00000007};
+        const int PRIME_QNR = -1;
+        const int PRIME_CNR = -1;
 
-        const structGLVParam GLV_PARAM = {{{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        									{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        									{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-        								{{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-          								{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-          								{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000}},
-          								{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000}};
+        const bigint_t MONTY_PRIME_N0 = {0x9FAF722D, 0xFE5C09D8, 0xFDAAF12F, 0x9B4CE70A, 0xD90C790B};
+        const bigint_t MONTY_PRIME_R2 =  {0x4A6D6815, 0x91C315C0, 0xA9801708, 0xC7BCD9EB, 0x12623E47};
 
         const bigint_t OPTATE_LOOP_CONST = {0x030000D4, 0x00000180, 0x00000000, 0x00000000, 0x00000000};
 
@@ -210,12 +211,11 @@
 
         #ifdef MONTGOMERY_ARITHMETIC
 
-        const structECParam EC_PARAM = {{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        								{0xD39B7F06, 0x59855F3B, 0xDDE9775A, 0x6946F968, 0x07F03FCC},
-        								{0x00800023, 0x00000040, 0x00000000, 0x00000000, 0x00000000},
-//        								{0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-        								{0x7A5035A5, 0x9E2B6B9F, 0x394A609C, 0xAF565BE6, 0x24012003},
-        								{0x10F58660, 0xE38E182A, 0xE291EC37, 0xFC2AEF85, 0x1C38E49A, 0x00000007}};
+        const fp_t EC_PARAM_A = {0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+        const fp_t EC_PARAM_B = {0xD39B7F06, 0x59855F3B, 0xDDE9775A, 0x6946F968, 0x07F03FCC};
+        const bigint_t EC_PARAM_X = {0x00800023, 0x00000040, 0x00000000, 0x00000000, 0x00000000};
+        const bigint_t EC_PARAM_N = {0x7A5035A5, 0x9E2B6B9F, 0x394A609C, 0xAF565BE6, 0x24012003};
+        const word_t EC_PARAM_MU_N[FP_WORDS+1] =  {0x10F58660, 0xE38E182A, 0xE291EC37, 0xFC2AEF85, 0x1C38E49A, 0x00000007};
 
         const fp_t EC_PARAM_4B = {0x4E6DFC18, 0x66157CEF, 0x77A5DD69, 0xA51BE5A3, 0x1FC0FF31};
 

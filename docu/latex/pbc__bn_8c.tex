@@ -1,0 +1,552 @@
+\hypertarget{pbc__bn_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/pbc/pbc\-\_\-bn.c File Reference}
+\label{pbc__bn_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/pbc/pbc\-\_\-bn.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/pbc/pbc\-\_\-bn.\-c}}
+}
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp2.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp12.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pbc/pbc.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}param.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pbc__bn_8c_a6cdd9c36e80e1cc68fd725ee07714e35}{pbc\-\_\-eval\-\_\-line\-\_\-function} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} b, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p)
+\begin{DoxyCompactList}\small\item\em Evaluation of the line function. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a81a29a171741a17ff5b4a096cc4276c7}{pbc\-\_\-eval\-\_\-tangent\-\_\-function} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} a, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p)
+\begin{DoxyCompactList}\small\item\em Evaluation of the tangent line function. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a213f28a75ab37646e6782f700ba87052}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q)
+\begin{DoxyCompactList}\small\item\em Optimal Ate Pairing over B\-N curves. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_adc72fbf0ea8a9ef7f8b814eba4241cd8}{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} l, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} t, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} q, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p)
+\begin{DoxyCompactList}\small\item\em Interleaved doubling of an elliptic curve point and evaluation of the tangent line function for computing a pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_aaca3ce024103b3914b115ef895881fda}{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} l, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} t, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} q, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p)
+\begin{DoxyCompactList}\small\item\em Optimized formulas by Costello that interleave the doubling of an elliptic curve point and the evaluation of the tangent line function for computing a pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a36c99fa41096f5a314afce932d5a9b1c}{pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} l, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} t, \hyperlink{types_8h_aee7087230d268cd8b3d46578f2ffebd1}{ecfp2\-\_\-proj\-\_\-pt} r, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p)
+\begin{DoxyCompactList}\small\item\em Optimized formulas by Costello that interleave adding two elliptic curve points and evaluation of the line function for computing a pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a9670766bc7b454355e3149b0935d36e2}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res)
+\begin{DoxyCompactList}\small\item\em Calculates the easy part of the final exponentiation involved in the pairing, i.\-e. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_abf63545b1a9ab804ebc29783a07f8baf}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res)
+\begin{DoxyCompactList}\small\item\em Calculates the final exponentiation of the optimal ate pairing (hard part). \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a532d6270a2df7583a4ac1201912412d2}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Calculates the final exponentiation of the optimal ate pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a20ff3e830ac5bb1aecd27fe51c83f9bd}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q)
+\begin{DoxyCompactList}\small\item\em Calculates the miller loop involved in the optimal ate pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a18ee057ec8bb57c1b85d8ba34b908161}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p1, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q1, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p2, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q2)
+\begin{DoxyCompactList}\small\item\em Computes the Miller loop for the ratio of two pairings. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_ada9663967a24539d4921972b86c1d024}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p1, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q1, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p2, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q2)
+\begin{DoxyCompactList}\small\item\em Computes the Miller loop for the product of two pairings, which is optimized by interleaving such that the squaring steps are shared. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_a68f50c9aca9e5686e2bb6186690e0de8}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q)
+\begin{DoxyCompactList}\small\item\em Computes an optimal Ate pairing. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_afc48d63216c8f96cd438dca02ba609d8}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p1, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q1, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p2, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q2)
+\begin{DoxyCompactList}\small\item\em Computes the product of two optimal Ate pairings. \end{DoxyCompactList}\item 
+void \hyperlink{pbc__bn_8c_af6688d78e8ffbedf9ea347e0cf35e559}{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p1, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q1, \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} p2, \hyperlink{types_8h_ae68ad2f42977dd03c49a060d2e2a1965}{ecfp2\-\_\-pt} q2)
+\begin{DoxyCompactList}\small\item\em Computes the ratio of two optimal Ate pairings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{pbc__bn_8c_a6cdd9c36e80e1cc68fd725ee07714e35}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-eval\-\_\-line\-\_\-function@{pbc\-\_\-eval\-\_\-line\-\_\-function}}
+\index{pbc\-\_\-eval\-\_\-line\-\_\-function@{pbc\-\_\-eval\-\_\-line\-\_\-function}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-eval\-\_\-line\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-eval\-\_\-line\-\_\-function (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{a, }
+\item[{{\bf ecfp2\-\_\-pt}}]{b, }
+\item[{{\bf ecfp\-\_\-pt}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a6cdd9c36e80e1cc68fd725ee07714e35}
+
+
+Evaluation of the line function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the line function evaluation \\
+\hline
+{\em a} & the starting point of the line \\
+\hline
+{\em b} & the ending point of the line \\
+\hline
+{\em p} & the point necessary for evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file pbc\-\_\-bn.\-c.
+
+
+
+References fp12\-\_\-clear, fp2\-\_\-mul, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, fp\-\_\-copy, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{pbc__bn_8c_a81a29a171741a17ff5b4a096cc4276c7}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-eval\-\_\-tangent\-\_\-function@{pbc\-\_\-eval\-\_\-tangent\-\_\-function}}
+\index{pbc\-\_\-eval\-\_\-tangent\-\_\-function@{pbc\-\_\-eval\-\_\-tangent\-\_\-function}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-eval\-\_\-tangent\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-eval\-\_\-tangent\-\_\-function (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{a, }
+\item[{{\bf ecfp\-\_\-pt}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a81a29a171741a17ff5b4a096cc4276c7}
+
+
+Evaluation of the tangent line function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the line function evaluation \\
+\hline
+{\em a} & the point in which the tangent line is placed \\
+\hline
+{\em p} & the point necessary for evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file pbc\-\_\-bn.\-c.
+
+
+
+References fp12\-\_\-clear, fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-mul, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sub, fp\-\_\-clear, fp\-\_\-copy, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-\_\-proj\-::infinity, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{pbc__bn_8c_a18ee057ec8bb57c1b85d8ba34b908161}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p1, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q1, }
+\item[{{\bf ecfp\-\_\-pt}}]{p2, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q2}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a18ee057ec8bb57c1b85d8ba34b908161}
+
+
+Computes the Miller loop for the ratio of two pairings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & elliptic curve point operand of first pairing \\
+\hline
+{\em q1} & elliptic curve point operand (quadratic extension) of first pairing \\
+\hline
+{\em p2} & elliptic curve point operand of second pairing \\
+\hline
+{\em q2} & elliptic curve point operand (quadratic extension) of second pairing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 629 of file pbc\-\_\-bn.\-c.
+
+
+
+References bi\-\_\-add\-\_\-word, bi\-\_\-get\-\_\-msb, bi\-\_\-multiply\-\_\-word, bi\-\_\-subtract\-\_\-word, bi\-\_\-test\-\_\-bit, B\-I\-\_\-\-W\-O\-R\-D\-S, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, ecfp2\-\_\-frobenius\-\_\-map, ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective, ecfp2\-\_\-neg\-\_\-affine, ecfp2\-\_\-neg\-\_\-proj, fp12\-\_\-clear, fp12\-\_\-conjugate, fp12\-\_\-inv, fp12\-\_\-mul\-\_\-mloop, fp12\-\_\-mul\-\_\-sparse, fp12\-\_\-sqr, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-::infinity, O\-P\-T\-A\-T\-E\-\_\-\-L\-O\-O\-P\-\_\-\-C\-O\-N\-S\-T, pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval().
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std().
+
+\hypertarget{pbc__bn_8c_af6688d78e8ffbedf9ea347e0cf35e559}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p1, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q1, }
+\item[{{\bf ecfp\-\_\-pt}}]{p2, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q2}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_af6688d78e8ffbedf9ea347e0cf35e559}
+
+
+Computes the ratio of two optimal Ate pairings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em p1} & elliptic curve point operand of first pairing \\
+\hline
+{\em q1} & elliptic curve point operand (quadratic extension) of first pairing \\
+\hline
+{\em p2} & elliptic curve point operand of second pairing \\
+\hline
+{\em q2} & elliptic curve point operand (quadratic extension) of second pairing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 844 of file pbc\-\_\-bn.\-c.
+
+
+
+References pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes().
+
+\hypertarget{pbc__bn_8c_ada9663967a24539d4921972b86c1d024}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p1, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q1, }
+\item[{{\bf ecfp\-\_\-pt}}]{p2, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q2}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_ada9663967a24539d4921972b86c1d024}
+
+
+Computes the Miller loop for the product of two pairings, which is optimized by interleaving such that the squaring steps are shared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the Miller loop \\
+\hline
+{\em p1} & elliptic curve point operand of first pairing \\
+\hline
+{\em q1} & elliptic curve point operand (quadratic extension) of first pairing \\
+\hline
+{\em p2} & elliptic curve point operand of second pairing \\
+\hline
+{\em q2} & elliptic curve point operand (quadratic extension) of second pairing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 731 of file pbc\-\_\-bn.\-c.
+
+
+
+References bi\-\_\-add\-\_\-word, bi\-\_\-get\-\_\-msb, bi\-\_\-multiply\-\_\-word, bi\-\_\-subtract\-\_\-word, bi\-\_\-test\-\_\-bit, B\-I\-\_\-\-W\-O\-R\-D\-S, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, ecfp2\-\_\-frobenius\-\_\-map, ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective, ecfp2\-\_\-neg\-\_\-affine, ecfp2\-\_\-neg\-\_\-proj, fp12\-\_\-clear, fp12\-\_\-conjugate, fp12\-\_\-mul\-\_\-mloop, fp12\-\_\-mul\-\_\-sparse, fp12\-\_\-sqr, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-::infinity, O\-P\-T\-A\-T\-E\-\_\-\-L\-O\-O\-P\-\_\-\-C\-O\-N\-S\-T, pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval().
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std().
+
+\hypertarget{pbc__bn_8c_afc48d63216c8f96cd438dca02ba609d8}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p1, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q1, }
+\item[{{\bf ecfp\-\_\-pt}}]{p2, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q2}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_afc48d63216c8f96cd438dca02ba609d8}
+
+
+Computes the product of two optimal Ate pairings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em p1} & elliptic curve point operand of first pairing \\
+\hline
+{\em q1} & elliptic curve point operand (quadratic extension) of first pairing \\
+\hline
+{\em p2} & elliptic curve point operand of second pairing \\
+\hline
+{\em q2} & elliptic curve point operand (quadratic extension) of second pairing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 830 of file pbc\-\_\-bn.\-c.
+
+
+
+References pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes().
+
+\hypertarget{pbc__bn_8c_a9670766bc7b454355e3149b0935d36e2}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a9670766bc7b454355e3149b0935d36e2}
+
+
+Calculates the easy part of the final exponentiation involved in the pairing, i.\-e. 
+
+res$^\wedge$\{(p$^\wedge$6-\/1)(p$^\wedge$2+1)\}. 
+\begin{DoxyParams}{Parameters}
+{\em res} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 423 of file pbc\-\_\-bn.\-c.
+
+
+
+References fp12\-\_\-conjugate, fp12\-\_\-frobenius\-\_\-map, fp12\-\_\-inv, and fp12\-\_\-mul.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std().
+
+\hypertarget{pbc__bn_8c_abf63545b1a9ab804ebc29783a07f8baf}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_abf63545b1a9ab804ebc29783a07f8baf}
+
+
+Calculates the final exponentiation of the optimal ate pairing (hard part). 
+
+It calculates a fixed multiple of the actual pairing, which is a valid thing to do. It is a modified version from the final exponentiation presented by Fuentes-\/\-Castaneda which takes one more frobenius action and one more multiplication but saves one temporary variable. 
+\begin{DoxyParams}{Parameters}
+{\em res} & both the input and the output to this exponentiation \\
+\hline
+{\em a} & a temporary variable (reuse of memory) \\
+\hline
+{\em b} & a temporary variable (reuse of memory) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 443 of file pbc\-\_\-bn.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, fp12\-\_\-conjugate, fp12\-\_\-final\-\_\-exp, fp12\-\_\-final\-\_\-mulexp, fp12\-\_\-frobenius\-\_\-map, fp12\-\_\-mul, and fp12\-\_\-sqr\-\_\-cyclotomic.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std().
+
+\hypertarget{pbc__bn_8c_a532d6270a2df7583a4ac1201912412d2}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf fp12\-\_\-t}}]{a, }
+\item[{{\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a532d6270a2df7583a4ac1201912412d2}
+
+
+Calculates the final exponentiation of the optimal ate pairing. 
+
+(as presented by Scott). 
+\begin{DoxyParams}{Parameters}
+{\em res} & both the input and the output to this exponentiation \\
+\hline
+{\em a} & a temporary variable (reuse of memory) \\
+\hline
+{\em b} & a temporary variable (reuse of memory) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 489 of file pbc\-\_\-bn.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, fp12\-\_\-conjugate, fp12\-\_\-final\-\_\-exp, fp12\-\_\-frobenius\-\_\-map, fp12\-\_\-inv, fp12\-\_\-mul, and fp12\-\_\-sqr\-\_\-cyclotomic.
+
+\hypertarget{pbc__bn_8c_a20ff3e830ac5bb1aecd27fe51c83f9bd}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a20ff3e830ac5bb1aecd27fe51c83f9bd}
+
+
+Calculates the miller loop involved in the optimal ate pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting point \\
+\hline
+{\em p} & point from G1 (elliptic curve over prime field) \\
+\hline
+{\em q} & point from G2 (twisted curve over quadratic extension of prime field) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 564 of file pbc\-\_\-bn.\-c.
+
+
+
+References bi\-\_\-add\-\_\-word, bi\-\_\-get\-\_\-msb, bi\-\_\-multiply\-\_\-word, bi\-\_\-subtract\-\_\-word, bi\-\_\-test\-\_\-bit, B\-I\-\_\-\-W\-O\-R\-D\-S, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, ecfp2\-\_\-frobenius\-\_\-map, ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective, ecfp2\-\_\-neg\-\_\-affine, ecfp2\-\_\-neg\-\_\-proj, fp12\-\_\-clear, fp12\-\_\-conjugate, fp12\-\_\-mul\-\_\-mloop, fp12\-\_\-mul\-\_\-sparse, fp12\-\_\-sqr, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-::infinity, O\-P\-T\-A\-T\-E\-\_\-\-L\-O\-O\-P\-\_\-\-C\-O\-N\-S\-T, pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval(), and pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval().
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std().
+
+\hypertarget{pbc__bn_8c_a68f50c9aca9e5686e2bb6186690e0de8}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a68f50c9aca9e5686e2bb6186690e0de8}
+
+
+Computes an optimal Ate pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em p} & elliptic curve point operand of first pairing \\
+\hline
+{\em q} & elliptic curve point operand (quadratic extension) of first pairing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 816 of file pbc\-\_\-bn.\-c.
+
+
+
+References pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-easy(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-final\-\_\-exp\-\_\-fuentes(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std().
+
+\hypertarget{pbc__bn_8c_a213f28a75ab37646e6782f700ba87052}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std}}
+\index{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std@{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf ecfp\-\_\-pt}}]{p, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a213f28a75ab37646e6782f700ba87052}
+
+
+Optimal Ate Pairing over B\-N curves. 
+
+W\-A\-R\-N\-I\-N\-G\-: old implementation with less efficient formulas. Pairing is E(\-F\-\_\-p) x E'(F\-\_\-p2) -\/$>$ F\-\_\-p12 E' denotes the sextic twist of the curve E 
+
+Definition at line 134 of file pbc\-\_\-bn.\-c.
+
+
+
+References bi\-\_\-add\-\_\-word, bi\-\_\-get\-\_\-msb, bi\-\_\-multiply\-\_\-word, bi\-\_\-test\-\_\-bit, B\-I\-\_\-\-W\-O\-R\-D\-S, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-X, ecfp2\-\_\-add\-\_\-proj, ecfp2\-\_\-dbl\-\_\-proj, ecfp2\-\_\-frobenius\-\_\-map, ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective, ecfp2\-\_\-neg\-\_\-affine, fp12\-\_\-clear, fp12\-\_\-exp, fp12\-\_\-frobenius\-\_\-map, fp12\-\_\-inv, fp12\-\_\-mul, fp12\-\_\-sqr, ecpoint\-\_\-fp\-::infinity, ecpoint\-\_\-fp2\-::infinity, O\-P\-T\-A\-T\-E\-\_\-\-L\-O\-O\-P\-\_\-\-C\-O\-N\-S\-T, pbc\-\_\-eval\-\_\-line\-\_\-function(), and pbc\-\_\-eval\-\_\-tangent\-\_\-function().
+
+\hypertarget{pbc__bn_8c_a36c99fa41096f5a314afce932d5a9b1c}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval@{pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval}}
+\index{pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval@{pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-point\-\_\-add\-\_\-line\-\_\-costello\-\_\-eval (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{l, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{t, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{r, }
+\item[{{\bf ecfp2\-\_\-pt}}]{q, }
+\item[{{\bf ecfp\-\_\-pt}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_a36c99fa41096f5a314afce932d5a9b1c}
+
+
+Optimized formulas by Costello that interleave adding two elliptic curve points and evaluation of the line function for computing a pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the result of the line function evaluation \\
+\hline
+{\em t} & the intermediate elliptic curve point that is updated \\
+\hline
+{\em r} & the projective point to be added \\
+\hline
+{\em q} & the affine point to be added \\
+\hline
+{\em p} & the point necessary for line function evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 378 of file pbc\-\_\-bn.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-mul, fp2\-\_\-mulfp, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sub, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp2\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std().
+
+\hypertarget{pbc__bn_8c_aaca3ce024103b3914b115ef895881fda}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval@{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval}}
+\index{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval@{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-costello\-\_\-eval (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{l, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{t, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{q, }
+\item[{{\bf ecfp\-\_\-pt}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_aaca3ce024103b3914b115ef895881fda}
+
+
+Optimized formulas by Costello that interleave the doubling of an elliptic curve point and the evaluation of the tangent line function for computing a pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the result of the tangent line function evaluation \\
+\hline
+{\em t} & the intermediate elliptic curve point that is updated \\
+\hline
+{\em q} & the projective point to be doubled \\
+\hline
+{\em p} & the point necessary for line function evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 314 of file pbc\-\_\-bn.\-c.
+
+
+
+References E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-B, fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-div\-\_\-qnr, fp2\-\_\-mul, fp2\-\_\-mulfp, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sub, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std().
+
+\hypertarget{pbc__bn_8c_adc72fbf0ea8a9ef7f8b814eba4241cd8}{\index{pbc\-\_\-bn.\-c@{pbc\-\_\-bn.\-c}!pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval@{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval}}
+\index{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval@{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval}!pbc_bn.c@{pbc\-\_\-bn.\-c}}
+\subsubsection[{pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval}]{\setlength{\rightskip}{0pt plus 5cm}void pbc\-\_\-point\-\_\-dbl\-\_\-line\-\_\-eval (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{l, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{t, }
+\item[{{\bf ecfp2\-\_\-proj\-\_\-pt}}]{q, }
+\item[{{\bf ecfp\-\_\-pt}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pbc__bn_8c_adc72fbf0ea8a9ef7f8b814eba4241cd8}
+
+
+Interleaved doubling of an elliptic curve point and evaluation of the tangent line function for computing a pairing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the result of the tangent line function evaluation \\
+\hline
+{\em t} & the intermediate elliptic curve point that is updated \\
+\hline
+{\em q} & the projective point to be doubled \\
+\hline
+{\em p} & the point necessary for line function evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file pbc\-\_\-bn.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-copy, fp2\-\_\-dbl, fp2\-\_\-hlv, fp2\-\_\-mul, fp2\-\_\-mulfp, fp2\-\_\-neg, fp2\-\_\-sqr, fp2\-\_\-sub, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-\_\-proj\-::x, ecpoint\-\_\-fp\-::y, ecpoint\-\_\-fp2\-\_\-proj\-::y, and ecpoint\-\_\-fp2\-\_\-proj\-::z.
+

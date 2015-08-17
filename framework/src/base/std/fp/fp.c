@@ -1,11 +1,36 @@
-/*
- * fp.c
- *
- *  Basic implementation of prime field arithmetic.
- *
- *  Created on: Apr 20, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "fp/fp.h"
 #include "bigint/bi.h"
@@ -240,21 +265,6 @@ void fp_rdc_monty_std(fp_t res, word_t *t, const bigint_t mod, const word_t n0)
 	c = bi_subtract(t, t+BI_WORDS, mod);
 	cp = bi_add(res, t+BI_WORDS, mod);
 
-	/*if(c)
-		print("Carry Sub\n");*/
-	/*if(ct) {
-		print("Carry global ");
-		print_value(&ct, 1); print("\n");
-		//print_value(t+BI_WORDS, BI_WORDS); print("\n");
-	}*/
-	/*if (!c && !ct)
-		print("no carry\n");*/
-	//print_value(t, BI_WORDS); print("\n");
-	//print_value(t+BI_WORDS, BI_WORDS); print("\n");
-
-	//if (neg)
-	//	print("Negative\n");
-
 	if (!c) {
 		if (cp)
 			bi_copy(res, res);
@@ -275,9 +285,6 @@ void fp_rdc_monty_std(fp_t res, word_t *t, const bigint_t mod, const word_t n0)
 		carries += bi_subtract(res, res, mod);
 		carries += bi_subtract(res, res, mod);
 		carries += bi_subtract(res, res, mod);
-		/*if (!carries) {
-			bi_subtract(res, res, mod);
-		}*/
 	} else {
 		bi_copy(res, t+BI_WORDS);
 	}
@@ -385,26 +392,11 @@ void fp_mul_monty_fips_std(fp_t res, const fp_t a, const fp_t b, const bigint_t 
  * @param n0 the precomputed constant for montgomery reduction
  */
 void fp_mul_monty_std(fp_t res, const fp_t a, const fp_t b, const bigint_t modulo, const bigint_t n0) {
-	///                             res = a*b*(R^-1) mod modulo.
-	  ///
-	  /// Formulas (R = 2^(WORDS_PER_BIGINT*BITS_PER_WORD)):
-	  /// // 1. Multiplication
-	  /// t = a*b
-	  ///
-	  /// // 2. Montgomery Reduction
-	  /// u = ( t + ((t*n0) mod R)*n ) / R
-	  /// u = u >= n ? u-n : u
-	  //---------------------------------------------------------------------------
 
 	// Montgomery multiplication
 	word_t tmp[2 * FP_WORDS];
 	word_t tmp2[3 * FP_WORDS];
 	word_t tmp3[2 * FP_WORDS];
-
-	// irrelevant
-	//bi_clear_var(tmp, 2 * FP_WORDS);
-	//bi_clear_var(tmp2, 3 * FP_WORDS);
-	//bi_clear_var(tmp3, 2 * FP_WORDS);
 
 	// Multiplication
 	bi_multiply(tmp, a, b); // 2*FP_WORDS
@@ -412,10 +404,6 @@ void fp_mul_monty_std(fp_t res, const fp_t a, const fp_t b, const bigint_t modul
 	// Reduction
 	// t * n0
 	bi_multiply_var(tmp2, tmp, n0, 2 * FP_WORDS, FP_WORDS); // 3*FP_WORDS
-
-	// Modulo by R (mask 1st bigint)
-	// irrelevant
-	//bi_clear_var(tmp2 + FP_WORDS, 2 * FP_WORDS); // FP_WORDS
 
 	// Multiply by n(=modulo)
 	bi_multiply(tmp3, tmp2, modulo); // 2*FP_WORDS
@@ -428,8 +416,6 @@ void fp_mul_monty_std(fp_t res, const fp_t a, const fp_t b, const bigint_t modul
 			2 * FP_WORDS); // FP_WORDS
 
 	if (carry) {
-		// this is not necessary
-		//bi_set_byte_var(tmp3, 2 * FP_WORDS, FP_WORDS, 0x01); // FP_WORDS+1
 		bi_subtract(tmp3, tmp3, modulo);
 	}
 
@@ -566,14 +552,14 @@ void fp_inv_bn(fp_t res, const fp_t a) {
 
 	fp_exp_bn(t1, a, BN_INV_CONST);	// a^{6x-1}
 	fp_mul(t2, t1, a);
-	fp_exp_bn(t2, t2, EC_PARAM.x);
+	fp_exp_bn(t2, t2, EC_PARAM_X);
 	fp_sqr(res, t2);
-	fp_sqr(t2, res);				// a^{24x^2}
+	fp_sqr(t2, res);        				// a^{24x^2}
 	fp_mul(t1, t2, t1);
 	fp_mul(res, res, t2);
-	fp_exp_bn(t2, res, EC_PARAM.x);	// a^{36x^3}
+	fp_exp_bn(t2, res, EC_PARAM_X);	// a^{36x^3}
 	fp_mul(res, t1, t2);
-	fp_exp_bn(t2, t2, EC_PARAM.x);	// a^{36x^4}
+	fp_exp_bn(t2, t2, EC_PARAM_X);	// a^{36x^4}
 	fp_mul(res, res, t2);
 }
 
@@ -687,7 +673,6 @@ void fp_exp_sqrmul_lazy(fp_t res, const fp_t a, const bigint_t b, const bigint_t
  * @param multipleMod a multiple of the modulus for reduction
  */
 void fp_exp_lazy(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	//fp_exp_sqrmul_std(res, a, b, mod);
 	fp_exp_sqrmul_lazy(res, a, b, mod, n0, multipleMod);
 }
 
@@ -771,7 +756,6 @@ void fp_exp_sqrmul(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod,
  * @param n0 the precomputed constant for the Montgomery reduction
  */
 void fp_exp_std(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const word_t n0) {
-	//fp_exp_sqrmul_std(res, a, b, mod);
 	fp_exp_sqrmul(res, a, b, mod, n0);
 }
 
@@ -859,11 +843,6 @@ void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod) {
 		k++;
 	}
 
-	/*if (bi_compare(u, bi_one) != 0) {
-		// not invertible
-		print("Not invertible...");
-	}*/
-
 	if (bi_compare(x1, mod) > 0) {
 		bi_subtract(x1, x1, mod);
 	}
@@ -872,12 +851,12 @@ void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod) {
 
 
 	if (k < BI_BITS) {
-		fp_mul(x2, x1, MONTY_PRIME.r2);
+		fp_mul(x2, x1, MONTY_PRIME_R2);
 		fp_copy(x1, x2);
 		k += BI_BITS;
 	}
 
-	fp_mul(res, x1, MONTY_PRIME.r2);
+	fp_mul(res, x1, MONTY_PRIME_R2);
 	if (k > BI_BITS) {
 		k = 2*BI_BITS - k;
 		bi_clear(u);
@@ -886,60 +865,6 @@ void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod) {
 		fp_copy(res, x1);
 	}
 }
-
-/*void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod) {
-	// simple binary inversion algorithm, will be improved when really needed
-	fp_t u, v;
-	fp_t x1, x2;
-
-	word_t cmp;
-	int carry = 0;
-
-	bi_copy(u, MONTY_PRIME.r2);
-	bi_copy(v, a);
-
-	bi_clear(x1);
-	x1[0] = 1;
-	bi_clear(x2);
-
-	while ((cmp = bi_compare(u, bi_one)) != 0 && bi_compare(v, bi_one) != 0) {
-		while (bi_is_even(u)) { // halve both u and x1
-			bi_shift_right_one(u, u);	// u = u/2
-			carry = 0;
-			if (bi_is_odd(x1)) {
-				carry = bi_add(x1, x1, mod);
-			}
-			bi_shift_right_one(x1, x1);
-			x1[BI_WORDS - 1] |= (carry << (BITS_PER_WORD - 1));	// reintegrate carry
-		}
-		while (bi_is_even(v)) { // halve both v and x2
-			bi_shift_right_one(v, v); // v = v/2;
-			carry = 0;
-			if (bi_is_odd(x2)) {
-				carry = bi_add(x2, x2, mod);
-			}
-			bi_shift_right_one(x2, x2); // x2 = x2/2;
-			// reintegrate carry (which is now possible due to division by 2)
-			x2[BI_WORDS - 1] |= (carry << (BITS_PER_WORD - 1));
-		}
-
-		if (bi_compare(u, v) >= 0) {
-			bi_subtract(u, u, v);
-			fp_sub_var(x1, x1, x2, mod); // x1 is calculated in Fp (see procedure for halving x1)
-		} else {
-			bi_subtract(v, v, u);
-			fp_sub_var(x2, x2, x1, mod);
-		}
-	}
-
-	if (cmp == 0) {
-		bi_copy(res, x1);
-	} else {
-		bi_copy(res, x2);
-	}
-
-	fp_rdc_var(res, mod);	// necessary if fp_sub is used above?
-}*/
 
 #else
 
@@ -979,7 +904,6 @@ void fp_exp_sqrmul(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod,
  * @param mu the precomputed constant for the Barrett reduction
  */
 void fp_exp_std(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const bigint_t mu) {
-	//fp_exp_sqrmul_std(res, a, b, mod);
 	fp_exp_sqrmul(res, a, b, mod, mu);
 }
 
@@ -1022,61 +946,6 @@ int fp_legendre_std(const fp_t a, const bigint_t mod, const bigint_t mu) {
 	return -1;
 }
 
-/**
-void fp_inv_std(fp_t res, const fp_t a, const bigint_t mod) {
-	// simple binary inversion algorithm, will be improved when really needed
-	fp_t u, v;
-	fp_t x1, x2;
-
-	word_t cmp;
-	int carry = 0;
-
-	bi_copy(u, a);
-	bi_copy(v, mod);
-
-	bi_clear(x1);
-	x1[0] = 1;
-	bi_clear(x2);
-
-	while ((cmp = bi_compare(u, bi_one)) != 0 && bi_compare(v, bi_one) != 0) {
-		while (bi_is_even(u)) { // halve both u and x1
-			bi_shift_right_one(u, u);	// u = u/2
-			carry = 0;
-			if (bi_is_odd(x1)) {
-				carry = bi_add(x1, x1, mod);
-			}
-			bi_shift_right_one(x1, x1);
-			x1[BI_WORDS - 1] |= (carry << (BITS_PER_WORD - 1));	// reintegrate carry
-		}
-		while (bi_is_even(v)) { // halve both v and x2
-			bi_shift_right_one(v, v); // v = v/2;
-			carry = 0;
-			if (bi_is_odd(x2)) {
-				carry = bi_add(x2, x2, mod);
-			}
-			bi_shift_right_one(x2, x2); // x2 = x2/2;
-			// reintegrate carry (which is now possible due to division by 2)
-			x2[BI_WORDS - 1] |= (carry << (BITS_PER_WORD - 1));
-		}
-
-		if (bi_compare(u, v) >= 0) {
-			bi_subtract(u, u, v);
-			fp_sub_var(x1, x1, x2, mod); // x1 is calculated in Fp (see procedure for halving x1)
-		} else {
-			bi_subtract(v, v, u);
-			fp_sub_var(x2, x2, x1, mod);
-		}
-	}
-
-	if (cmp == 0) {
-		bi_copy(res, x1);
-	} else {
-		bi_copy(res, x2);
-	}
-
-	fp_rdc_var(res, mod);	// necessary if fp_sub is used above?
-}*/
-
 #endif
 
 /***
@@ -1107,10 +976,6 @@ void fp_rdc_2l_std(word_t *a, const bigint_t mod, const word_t *mu) {
     bi_subtract_var(a, a, q_p, FP_WORDS + 1);
     bi_copy_var(q, mod, FP_WORDS);
     q[FP_WORDS] = 0;
-
-    /*while(bi_compare_var(a, q, FP_WORDS+1) >= 0) {
-        bi_subtract_var(a, a, q, FP_WORDS+1);
-    }*/
 
     // It takes at most two subtractions (this is intended to make it side-channel resistant)
     c1 = bi_subtract_var(q_p, a, q, FP_WORDS+1);
@@ -1150,7 +1015,7 @@ void fp_copy_std(fp_t a, const fp_t b) {
  */
 void fp_to_montgomery_std(fp_t res, const fp_t a) {
 	fp_t t;
-	fp_mul_monty(t, a, MONTY_PRIME.r2);
+	fp_mul_monty(t, a, MONTY_PRIME_R2);
 	fp_copy(res, t);
 }
 

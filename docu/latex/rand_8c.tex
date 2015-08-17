@@ -1,0 +1,133 @@
+\hypertarget{rand_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/rand.c File Reference}
+\label{rand_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/rand.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/rand.\-c}}
+}
+{\ttfamily \#include \char`\"{}hash/sha1.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rand_8c_a7bd83d2c745ff21f64ad12547eb3a32f}{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}~20
+\item 
+\#define \hyperlink{rand_8c_a1c98a0f4b02f4283af4233cf6e3ad121}{H\-A\-S\-H\-\_\-\-L\-E\-N}~20
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rand_8c_adb31257cec10b3899abddaf9a151e3be}{cprng\-\_\-one\-\_\-way\-\_\-func} (\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$hash, \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$msg, \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} len)
+\begin{DoxyCompactList}\small\item\em One-\/way function used to create C\-P\-R\-N\-G. \end{DoxyCompactList}\item 
+void \hyperlink{rand_8c_ab57f6ca8f5878df8349779eca76465fd}{cprng\-\_\-get\-\_\-bytes} (void $\ast$buffer, \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} size)
+\begin{DoxyCompactList}\small\item\em Cryptographically secure pseudo-\/random number generator based on F\-I\-P\-S186-\/2 standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \hyperlink{rand_8c_a42b073733b3d0fd4448703b48e3b1e47}{C\-P\-R\-N\-G\-State} \mbox{[}\hyperlink{rand_8c_a7bd83d2c745ff21f64ad12547eb3a32f}{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rand_8c_a7bd83d2c745ff21f64ad12547eb3a32f}{\index{rand.\-c@{rand.\-c}!C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E@{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}}
+\index{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E@{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}!rand.c@{rand.\-c}}
+\subsubsection[{C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E~20}}\label{rand_8c_a7bd83d2c745ff21f64ad12547eb3a32f}
+
+
+Definition at line 38 of file rand.\-c.
+
+
+
+Referenced by cprng\-\_\-get\-\_\-bytes().
+
+\hypertarget{rand_8c_a1c98a0f4b02f4283af4233cf6e3ad121}{\index{rand.\-c@{rand.\-c}!H\-A\-S\-H\-\_\-\-L\-E\-N@{H\-A\-S\-H\-\_\-\-L\-E\-N}}
+\index{H\-A\-S\-H\-\_\-\-L\-E\-N@{H\-A\-S\-H\-\_\-\-L\-E\-N}!rand.c@{rand.\-c}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-H\-\_\-\-L\-E\-N~20}}\label{rand_8c_a1c98a0f4b02f4283af4233cf6e3ad121}
+
+
+Definition at line 39 of file rand.\-c.
+
+
+
+Referenced by cprng\-\_\-get\-\_\-bytes().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rand_8c_ab57f6ca8f5878df8349779eca76465fd}{\index{rand.\-c@{rand.\-c}!cprng\-\_\-get\-\_\-bytes@{cprng\-\_\-get\-\_\-bytes}}
+\index{cprng\-\_\-get\-\_\-bytes@{cprng\-\_\-get\-\_\-bytes}!rand.c@{rand.\-c}}
+\subsubsection[{cprng\-\_\-get\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}void cprng\-\_\-get\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf length\-\_\-t}}]{size}
+\end{DoxyParamCaption}
+)}}\label{rand_8c_ab57f6ca8f5878df8349779eca76465fd}
+
+
+Cryptographically secure pseudo-\/random number generator based on F\-I\-P\-S186-\/2 standard. 
+
+Returns the specified number of bytes in the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer to be filled with random bytes \\
+\hline
+{\em size} & the size of the buffer in byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file rand.\-c.
+
+
+
+References cprng\-\_\-one\-\_\-way\-\_\-func(), C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E, C\-P\-R\-N\-G\-State, and H\-A\-S\-H\-\_\-\-L\-E\-N.
+
+
+
+Referenced by ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp2\-\_\-rand\-\_\-std(), ecfp\-\_\-get\-\_\-jacobian\-\_\-projective\-\_\-rnd\-\_\-std(), ecfp\-\_\-mul\-\_\-montyladder\-\_\-std(), ecfp\-\_\-rand\-\_\-std(), encapsulate\-\_\-key(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), and hwang\-\_\-sign().
+
+\hypertarget{rand_8c_adb31257cec10b3899abddaf9a151e3be}{\index{rand.\-c@{rand.\-c}!cprng\-\_\-one\-\_\-way\-\_\-func@{cprng\-\_\-one\-\_\-way\-\_\-func}}
+\index{cprng\-\_\-one\-\_\-way\-\_\-func@{cprng\-\_\-one\-\_\-way\-\_\-func}!rand.c@{rand.\-c}}
+\subsubsection[{cprng\-\_\-one\-\_\-way\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void cprng\-\_\-one\-\_\-way\-\_\-func (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} $\ast$}]{hash, }
+\item[{{\bf byte} $\ast$}]{msg, }
+\item[{{\bf length\-\_\-t}}]{len}
+\end{DoxyParamCaption}
+)}}\label{rand_8c_adb31257cec10b3899abddaf9a151e3be}
+
+
+One-\/way function used to create C\-P\-R\-N\-G. 
+
+Delegates to S\-H\-A-\/1. 
+\begin{DoxyParams}{Parameters}
+{\em hash} & the hash resulting from the one-\/way function \\
+\hline
+{\em msg} & the message to be hashed \\
+\hline
+{\em len} & the length of the message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file rand.\-c.
+
+
+
+References sha1\-\_\-init\-\_\-state(), sha1\-\_\-process\-\_\-message\-\_\-final(), and sha1\-\_\-state\-\_\-to\-\_\-byte\-\_\-array().
+
+
+
+Referenced by cprng\-\_\-get\-\_\-bytes().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{rand_8c_a42b073733b3d0fd4448703b48e3b1e47}{\index{rand.\-c@{rand.\-c}!C\-P\-R\-N\-G\-State@{C\-P\-R\-N\-G\-State}}
+\index{C\-P\-R\-N\-G\-State@{C\-P\-R\-N\-G\-State}!rand.c@{rand.\-c}}
+\subsubsection[{C\-P\-R\-N\-G\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte} C\-P\-R\-N\-G\-State\mbox{[}{\bf C\-P\-R\-N\-G\-\_\-\-S\-I\-Z\-E}\mbox{]}}}\label{rand_8c_a42b073733b3d0fd4448703b48e3b1e47}
+
+
+Definition at line 42 of file rand.\-c.
+
+
+
+Referenced by cprng\-\_\-get\-\_\-bytes().
+

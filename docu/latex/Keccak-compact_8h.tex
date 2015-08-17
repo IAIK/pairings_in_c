@@ -1,0 +1,163 @@
+\hypertarget{Keccak-compact_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/\-Keccak-\/compact.h File Reference}
+\label{Keccak-compact_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/\-Keccak-\/compact.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/\-Keccak-\/compact.\-h}}
+}
+{\ttfamily \#include \char`\"{}Keccak-\/compact-\/settings.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhashStateStruct}{hash\-State\-Struct}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Keccak-compact_8h_ae4ff5a07c6ff43ed11a3887ef7d524f2}{A\-L\-I\-G\-N}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{Keccak-compact_8h_ac7449f64e35526a4e70f37cbc40ecc65}{Bit\-Sequence}
+\item 
+typedef unsigned long long \hyperlink{Keccak-compact_8h_aa1c06fb4773a4b043c077daf86fb9d87}{Data\-Length}
+\item 
+typedef \hyperlink{Keccak-compact_8h_ae4ff5a07c6ff43ed11a3887ef7d524f2}{A\-L\-I\-G\-N} struct \\*
+\hyperlink{structhashStateStruct}{hash\-State\-Struct} \hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}{Hash\-Return} \{ \hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44cac7f69f7c9e5aea9b8f54cf02870e2bf8}{S\-U\-C\-C\-E\-S\-S} = 0, 
+\hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44ca936c4a5547a9360243178f726f6b2715}{F\-A\-I\-L} = 1, 
+\hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44caf4c78135fbd21ec54dcd0907004f1040}{B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Keccak-compact_8h_a92cd4d0a323107c62536ab7bba8e5d6e}{crypto\-\_\-hash} (unsigned char $\ast$out, const unsigned char $\ast$in, unsigned long long inlen)
+\item 
+\hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}{Hash\-Return} \hyperlink{Keccak-compact_8h_a1b8c8a006dfc4249184547e855352b24}{Init} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state)
+\item 
+\hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}{Hash\-Return} \hyperlink{Keccak-compact_8h_afdec6f2494afd29ec80747223d1acf73}{Update} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const \hyperlink{Keccak-compact_8h_ac7449f64e35526a4e70f37cbc40ecc65}{Bit\-Sequence} $\ast$data, \hyperlink{Keccak-compact_8h_aa1c06fb4773a4b043c077daf86fb9d87}{Data\-Length} databitlen)
+\item 
+\hyperlink{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}{Hash\-Return} \hyperlink{Keccak-compact_8h_a0bc149d576bf1e0725f19cb49f3e23c0}{Final} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, \hyperlink{Keccak-compact_8h_ac7449f64e35526a4e70f37cbc40ecc65}{Bit\-Sequence} $\ast$hashval, int hashbytelen)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Keccak-compact_8h_ae4ff5a07c6ff43ed11a3887ef7d524f2}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!A\-L\-I\-G\-N@{A\-L\-I\-G\-N}}
+\index{A\-L\-I\-G\-N@{A\-L\-I\-G\-N}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{A\-L\-I\-G\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-I\-G\-N}}\label{Keccak-compact_8h_ae4ff5a07c6ff43ed11a3887ef7d524f2}
+
+
+Definition at line 34 of file Keccak-\/compact.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{Keccak-compact_8h_ac7449f64e35526a4e70f37cbc40ecc65}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Bit\-Sequence@{Bit\-Sequence}}
+\index{Bit\-Sequence@{Bit\-Sequence}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Bit\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf Bit\-Sequence}}}\label{Keccak-compact_8h_ac7449f64e35526a4e70f37cbc40ecc65}
+
+
+Definition at line 25 of file Keccak-\/compact.\-h.
+
+\hypertarget{Keccak-compact_8h_aa1c06fb4773a4b043c077daf86fb9d87}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Data\-Length@{Data\-Length}}
+\index{Data\-Length@{Data\-Length}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Data\-Length}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long long {\bf Data\-Length}}}\label{Keccak-compact_8h_aa1c06fb4773a4b043c077daf86fb9d87}
+
+
+Definition at line 26 of file Keccak-\/compact.\-h.
+
+\hypertarget{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!hash\-State@{hash\-State}}
+\index{hash\-State@{hash\-State}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{hash\-State}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\-L\-I\-G\-N} struct {\bf hash\-State\-Struct}  {\bf hash\-State}}}\label{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Hash\-Return@{Hash\-Return}}
+\index{Hash\-Return@{Hash\-Return}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Hash\-Return}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Hash\-Return}}}\label{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-U\-C\-C\-E\-S\-S@{S\-U\-C\-C\-E\-S\-S}!Keccak-\/compact.\-h@{Keccak-\/compact.\-h}}\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!S\-U\-C\-C\-E\-S\-S@{S\-U\-C\-C\-E\-S\-S}}\item[{\em 
+\hypertarget{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44cac7f69f7c9e5aea9b8f54cf02870e2bf8}{S\-U\-C\-C\-E\-S\-S}\label{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44cac7f69f7c9e5aea9b8f54cf02870e2bf8}
+}]\index{F\-A\-I\-L@{F\-A\-I\-L}!Keccak-\/compact.\-h@{Keccak-\/compact.\-h}}\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!F\-A\-I\-L@{F\-A\-I\-L}}\item[{\em 
+\hypertarget{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44ca936c4a5547a9360243178f726f6b2715}{F\-A\-I\-L}\label{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44ca936c4a5547a9360243178f726f6b2715}
+}]\index{B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N@{B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N}!Keccak-\/compact.\-h@{Keccak-\/compact.\-h}}\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N@{B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N}}\item[{\em 
+\hypertarget{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44caf4c78135fbd21ec54dcd0907004f1040}{B\-A\-D\-\_\-\-H\-A\-S\-H\-L\-E\-N}\label{Keccak-compact_8h_a8291024a9e890d5d4d60dc3c76d2b44caf4c78135fbd21ec54dcd0907004f1040}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 27 of file Keccak-\/compact.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Keccak-compact_8h_a92cd4d0a323107c62536ab7bba8e5d6e}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!crypto\-\_\-hash@{crypto\-\_\-hash}}
+\index{crypto\-\_\-hash@{crypto\-\_\-hash}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{crypto\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}int crypto\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{out, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned long long}]{inlen}
+\end{DoxyParamCaption}
+)}}\label{Keccak-compact_8h_a92cd4d0a323107c62536ab7bba8e5d6e}
+
+
+Definition at line 66 of file Keccak-\/compact.\-c.
+
+
+
+References c\-Keccak\-R\-\_\-\-Size\-In\-Bytes, crypto\-\_\-hash\-\_\-\-B\-Y\-T\-E\-S, Keccak\-F(), and temp.
+
+\hypertarget{Keccak-compact_8h_a0bc149d576bf1e0725f19cb49f3e23c0}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Final@{Final}}
+\index{Final@{Final}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Final}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\-Return} Final (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state, }
+\item[{{\bf Bit\-Sequence} $\ast$}]{hashval, }
+\item[{int}]{hashbytelen}
+\end{DoxyParamCaption}
+)}}\label{Keccak-compact_8h_a0bc149d576bf1e0725f19cb49f3e23c0}
+
+
+Definition at line 289 of file Keccak-\/compact.\-c.
+
+
+
+References c\-Keccak\-R\-\_\-\-Size\-In\-Bytes, F\-A\-I\-L, Keccak\-F(), generate\-Multiply\-Caching\-::offset, and S\-U\-C\-C\-E\-S\-S.
+
+\hypertarget{Keccak-compact_8h_a1b8c8a006dfc4249184547e855352b24}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Init@{Init}}
+\index{Init@{Init}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\-Return} Init (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{Keccak-compact_8h_a1b8c8a006dfc4249184547e855352b24}
+
+
+Definition at line 239 of file Keccak-\/compact.\-c.
+
+
+
+References S\-U\-C\-C\-E\-S\-S.
+
+\hypertarget{Keccak-compact_8h_afdec6f2494afd29ec80747223d1acf73}{\index{Keccak-\/compact.\-h@{Keccak-\/compact.\-h}!Update@{Update}}
+\index{Update@{Update}!Keccak-compact.h@{Keccak-\/compact.\-h}}
+\subsubsection[{Update}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\-Return} Update (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state, }
+\item[{const {\bf Bit\-Sequence} $\ast$}]{data, }
+\item[{{\bf Data\-Length}}]{databitlen}
+\end{DoxyParamCaption}
+)}}\label{Keccak-compact_8h_afdec6f2494afd29ec80747223d1acf73}
+
+
+Definition at line 248 of file Keccak-\/compact.\-c.
+
+
+
+References c\-Keccak\-R, c\-Keccak\-R\-\_\-\-Size\-In\-Bytes, F\-A\-I\-L, Keccak\-F(), and S\-U\-C\-C\-E\-S\-S.
+

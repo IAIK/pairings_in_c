@@ -1,12 +1,37 @@
-/*
- * ecfp2.c
- *
- * Basic implementation of arithmetic in a group defined on an elliptic
- * curve over the quadratic extension of a prime field.
- *
- *  Created on: Apr 24, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
+
 
 #include "ec/ec.h"
 #include "fp/fp2.h"
@@ -115,7 +140,7 @@ void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt
 
 	fp2_t t0, t1, t2, t3;
 
-	fp2_sqr(t0, (const fp_t*) a->z);			// t0 = z²
+	fp2_sqr(t0, (const fp_t*) a->z);			                // t0 = z²
 	fp2_mul(t1, (const fp_t*) t0, (const fp_t*) a->z);		// t1 = z³
 
 	fp2_mul(t2, (const fp_t*) t0, (const fp_t*) b->x);		// t2 = b->x*z²
@@ -128,7 +153,7 @@ void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt
 		if (bi_compare(t1[1], bi_zero) == 0 && bi_compare(t1[1], bi_zero) == 0) {
 			// point a is equal to point b (doubling!)
 			ecfp2_dbl_proj(res, a);
-		} else {							// otherwise its point (1,1,0) -> infinity
+		} else {							                              // otherwise its point (1,1,0) -> infinity
 			res->infinity = 1;
 		}
 		return;
@@ -138,20 +163,20 @@ void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt
 
 	fp2_mul(res->z, (const fp_t*) t0, (const fp_t*) a->z);	// res->z = (b->x*z² - a->x) * a->z
 
-	fp2_add(t2, (const fp_t*) t2, (const fp_t*) a->x);		// t2 = b->x * z² + a->x
-	fp2_sqr(t3, (const fp_t*) t0);							// t3 = (b->x*z² - a->x)²
-	fp2_mul(t2, (const fp_t*) t2, (const fp_t*) t3);		// t2 = (b->x*z² - a->x)² * (b->x * z² + a->x)
-	fp2_mul(t0, (const fp_t*) t0, (const fp_t*) t3);		// t0 = (b->x*z² - a->x)³
-	fp2_mul(t0, (const fp_t*) t0, (const fp_t*) a->y);		// t0 = a->y * (b->x*z² - a->x)³
-	fp2_mul(t3, (const fp_t*) t3, (const fp_t*) a->x);		// t3 = a->x * (b->x*z² - a->x)²
+	fp2_add(t2, (const fp_t*) t2, (const fp_t*) a->x);		  // t2 = b->x * z² + a->x
+	fp2_sqr(t3, (const fp_t*) t0);							            // t3 = (b->x*z² - a->x)²
+	fp2_mul(t2, (const fp_t*) t2, (const fp_t*) t3);		    // t2 = (b->x*z² - a->x)² * (b->x * z² + a->x)
+	fp2_mul(t0, (const fp_t*) t0, (const fp_t*) t3);		    // t0 = (b->x*z² - a->x)³
+	fp2_mul(t0, (const fp_t*) t0, (const fp_t*) a->y);		  // t0 = a->y * (b->x*z² - a->x)³
+	fp2_mul(t3, (const fp_t*) t3, (const fp_t*) a->x);		  // t3 = a->x * (b->x*z² - a->x)²
 
-	fp2_sqr(res->x, (const fp_t*) t1);							// res->x = (b->y*z³ - a->y)²
-	fp2_sub(res->x, (const fp_t*) res->x, (const fp_t*) t2);	// res->x = (b->y*z³ - a->y)² -
-																// (b->x*z² - a->x)² * (b->x * z² + a->x)
+	fp2_sqr(res->x, (const fp_t*) t1);							        // res->x = (b->y*z³ - a->y)²
+	fp2_sub(res->x, (const fp_t*) res->x, (const fp_t*) t2);// res->x = (b->y*z³ - a->y)² -
+																                          // (b->x*z² - a->x)² * (b->x * z² + a->x)
 	fp2_sub(t3, (const fp_t*) t3, (const fp_t*) res->x);		//	a->x * (b->x*z² - a->x)² - res->x
 	fp2_mul(t3, (const fp_t*) t3, (const fp_t*) t1);
 	fp2_sub(res->y, (const fp_t*) t3, (const fp_t*) t0);		// (b->y*z³ - a->y)(a->x * (b->x*z² - a->x)² - res->x) -
-																// a->y * (b->x*z² - a->x)³
+																                          // a->y * (b->x*z² - a->x)³
 }
 
 /**
@@ -191,7 +216,7 @@ void ecfp2_dbl_affine_direct_std(ecfp2_pt res, const ecfp2_pt a) {
 
 #ifndef OPTIMIZE_ZERO_A
 	fp_clear(t2[1]);							// calc a' of twisted curve
-	fp_copy(t2[0], EC_PARAM.a);
+	fp_copy(t2[0], EC_PARAM_A);
 	fp2_div_qnr(t2, (const fp_t*) t2);
 	fp2_add(t0, t0, t2);
 #endif
@@ -235,40 +260,40 @@ void ecfp2_dbl_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a) {
 
 #ifdef OPTIMIZE_ZERO_A
 	fp2_dbl(t1, (const fp_t*) t0);
-	fp2_add(t1, (const fp_t*) t1, (const fp_t*) t0);			// t1 = a*z⁴ + 3x²
+	fp2_add(t1, (const fp_t*) t1, (const fp_t*) t0);			  // t1 = a*z⁴ + 3x²
 #else
 	fp2_sqr(t1, a->z);
-	fp2_sqr(t1, (const fp_t*) t1);				// t1 = z⁴
+	fp2_sqr(t1, (const fp_t*) t1);				                  // t1 = z⁴
 
-	fp_clear(t2[1]);							// calc a' of twisted curve
-	fp_copy(t2[0], EC_PARAM.a);
+	fp_clear(t2[1]);							                          // calc a' of twisted curve
+	fp_copy(t2[0], EC_PARAM_A);
 	fp2_div_qnr(t2, (const fp_t*) t2);
-	fp2_mul(t1, t1, t2);						// t1 = a*z⁴
+	fp2_mul(t1, t1, t2);						                        // t1 = a*z⁴
 
 	fp2_add(t1, t1, t0);
 	fp2_add(t1, t1, t0);
-	fp2_add(t1, t1, t0);						// t1 = a*z⁴ + 3x²
+	fp2_add(t1, t1, t0);						                        // t1 = a*z⁴ + 3x²
 #endif
 
-	fp2_dbl(t0, (const fp_t*) a->y);							// t0 = 2 * y
-	fp2_mul(res->z, (const fp_t*) t0, (const fp_t*) a->z);		// res->z = 2*y*z
+	fp2_dbl(t0, (const fp_t*) a->y);							          // t0 = 2 * y
+	fp2_mul(res->z, (const fp_t*) t0, (const fp_t*) a->z);  // res->z = 2*y*z
 
-	fp2_sqr(t0, (const fp_t*) t0);								// t0 = 4 * y²
-	fp2_mul(t2, (const fp_t*) t0, (const fp_t*) a->x);			// t2 = 4*x*y²
+	fp2_sqr(t0, (const fp_t*) t0);								          // t0 = 4 * y²
+	fp2_mul(t2, (const fp_t*) t0, (const fp_t*) a->x);		  // t2 = 4*x*y²
 
-	fp2_copy(res->y, (const fp_t*) t1);							// res->y = (3x² + az⁴)
-	fp2_dbl(t1, (const fp_t*) t2);								// t1 = 8*x*y²
+	fp2_copy(res->y, (const fp_t*) t1);							        // res->y = (3x² + az⁴)
+	fp2_dbl(t1, (const fp_t*) t2);								          // t1 = 8*x*y²
 
-	fp2_sqr(res->x, (const fp_t*) res->y);						// res->x = (3x² + az⁴)²
-	fp2_sub(res->x, (const fp_t*) res->x, (const fp_t*) t1);	// res->x = (3x² + az⁴)² - 8*x*y²
+	fp2_sqr(res->x, (const fp_t*) res->y);						      // res->x = (3x² + az⁴)²
+	fp2_sub(res->x, (const fp_t*) res->x, (const fp_t*) t1);// res->x = (3x² + az⁴)² - 8*x*y²
 
 	fp2_sub(t2, (const fp_t*) t2, (const fp_t*) res->x);		// 4xy² - res->x
-	fp2_mul(res->y, (const fp_t*) res->y, (const fp_t*) t2);	// res->y = (3x² + az⁴)(4xy² - res->x)
+	fp2_mul(res->y, (const fp_t*) res->y, (const fp_t*) t2);// res->y = (3x² + az⁴)(4xy² - res->x)
 
 	fp2_sqr(t0, (const fp_t*) t0);
-	fp2_hlv(t0, (const fp_t*) t0);								// t0 = 8 * y⁴
+	fp2_hlv(t0, (const fp_t*) t0);								          // t0 = 8 * y⁴
 
-	fp2_sub(res->y, (const fp_t*) res->y, (const fp_t*) t0);	// res->y = (3x² + az⁴)(4xy² - res->x) - 8y⁴
+	fp2_sub(res->y, (const fp_t*) res->y, (const fp_t*) t0);// res->y = (3x² + az⁴)(4xy² - res->x) - 8y⁴
 }
 
 /**
@@ -437,7 +462,7 @@ void ecfp2_recover_full_coord_coz_std(fp2_t x1, fp2_t x2, fp2_t z, const fp2_t x
 	fp_copy(r3[0], EC_PARAM_A);
 	fp2_div_qnr(r3, (const fp_t*) r3);
 
-	//fp2_mul(r3, EC_PARAM.a, x2);
+	//fp2_mul(r3, EC_PARAM_A, x2);
 	fp2_mul(r3, r3, x2);
 	fp2_add(r2, r2, r3);
 #endif
@@ -486,7 +511,7 @@ int ecfp2_verify_coordinates(fp2_t x, fp2_t y)  {
 #endif
 
 	fp_clear(r0[1]);							// calc b' of twisted curve
-	fp_copy(r0[0], EC_PARAM.b);
+	fp_copy(r0[0], EC_PARAM_B);
 	fp2_div_qnr(r0, (const fp_t*) r0);
 	fp2_add(r1, (const fp_t*) r1, (const fp_t*) r0);
 
@@ -515,7 +540,7 @@ int ecfp2_verify_homogeneous_projective_coordinates(fp2_t x, fp2_t y, fp2_t z) {
 
 
 	fp_clear(r3[1]);							// calc b' of twisted curve
-	fp_copy(r3[0], EC_PARAM.b);
+	fp_copy(r3[0], EC_PARAM_B);
 	fp2_div_qnr(r0, (const fp_t*) r3);
 	fp2_mul(r0, (const fp_t*) r0, (const fp_t*) r2);
 	fp2_mul(r0, (const fp_t*) r0, (const fp_t*) (const fp_t*) z);
@@ -669,17 +694,6 @@ void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ec
 	fp_rdc(projective->z[1]);
 #endif
 
-	/*fp_t t0, t1;
-
-	fp_clear(t0);
-	fp_clear(t1);
-	cprng_get_bytes(t0, FP_BYTES-1);
-	cprng_get_bytes(t1, FP_BYTES-1);
-	fp_mul(projective->z[0], t0, t1);
-	cprng_get_bytes(t0, FP_BYTES-1);
-	cprng_get_bytes(t1, FP_BYTES-1);
-	fp_mul(projective->z[1], t0, t1);*/
-
 	// adapt x and y coordinates appropriately
 	fp2_mul(projective->x, (const fp_t*) affine->x, (const fp_t*) projective->z);
 	fp2_mul(projective->y, (const fp_t*) affine->y, (const fp_t*) projective->z);
@@ -750,7 +764,7 @@ void ecfp2_frobenius_map_std(ecfp2_pt res, const ecfp2_pt a, const word_t i) {
 	fp_copy(q[0], FP_ONE);
 	fp_clear(q[1]);
 	fp2_mul_qnr(q2, (const fp_t*) q);
-	bi_copy(e, PRIME.p);
+	bi_copy(e, PRIME_P);
 	bi_subtract(e, e, bi_one);
 	bi_div3(e,e);
 	bi_shift_right_one(e,e);
@@ -814,7 +828,7 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
 	fp_add(w[0], w[0], FP_ONE);
 
 	fp_clear(t0[1]);				// calc b' of twisted curve
-	fp_copy(t0[0], EC_PARAM.b);
+	fp_copy(t0[0], EC_PARAM_B);
 	fp2_div_qnr(t0, (const fp_t*) t0);
 
 	fp2_add(w, (const fp_t*) w, (const fp_t*) t0);
@@ -835,9 +849,6 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
 	fp_clear(x[1][1]);
 	fp_neg(x[1][0], FP_ONE);
 	fp2_sub(x[1], (const fp_t*) x[1], (const fp_t*) x[0]);
-
-	// TODO: it may be advantageous to combine sqrt and legrende calculations as they
-	// use the same exponentiations
 
 	// implementation without blinding (as suggested by Fouque, Tibouchi)
 	fp2_sqr(w, (const fp_t*) x[0]);
@@ -868,7 +879,7 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
 
 	// Secondly: multiply by cofactor to have correct order
 
-    ecfp2_mul(&px, res, EC_PARAM.x);
+    ecfp2_mul(&px, res, EC_PARAM_X);
 #ifdef NEGATIVE_PARAM_X
     ecfp2_neg_affine(&px);
 #endif
@@ -920,6 +931,5 @@ void ecfp2_rand_std(ecfp2_pt res) {
     do {
       cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
     } while (bi_compare(r, bi_zero) == 0);
-
   ecfp2_mul(res, (const ecfp2_pt) &ECFP2_GENERATOR, r);
 }

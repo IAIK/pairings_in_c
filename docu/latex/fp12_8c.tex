@@ -1,0 +1,945 @@
+\hypertarget{fp12_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp12.c File Reference}
+\label{fp12_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp12.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/fp/fp12.\-c}}
+}
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp12.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp4.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp2.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}param.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fp12_8c_abfcf542d4f917dc28a6052a339b8d88f}{fp12\-\_\-add\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Adds two elements in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_af1b8dde57a791f3310117e44e06a154a}{fp12\-\_\-sub\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Subtracts two elements in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_aeb55581777a73bb70176f5f9fe09451a}{fp12\-\_\-neg\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Negates one element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ac02b326ce33ae049a59ee142e21e170e}{fp12\-\_\-hlv\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Halves one element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ad4b870edc337d4d528f75ae8594465d8}{fp12\-\_\-mul\-\_\-sparse\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} b0, const \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} b10)
+\begin{DoxyCompactList}\small\item\em Performs a multiplication of one element in Fp12 with a sparse element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a3dd0db0e491aaeb1bee5ab38275a03c4}{fp12\-\_\-sqr\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Squares one element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ae310cfe0ace14f58a6d7bcd252386976}{fp12\-\_\-decompress\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Decompression from Karabina in \char`\"{}\-Squaring in cyclotomic subgroups\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a76a90b18d87d90c487691b9345e0a7b4}{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Compressed squaring as presented by Karabina in \char`\"{}\-Squaring in Cyclotomic Subgroups\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a251b50d548d980e8c4c53e68940eca52}{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Squares one element of cyclotomic subgroup in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a5eac8fce7524697a89603ea0b5112e4d}{fp12\-\_\-mul\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Simple multiplication in Fp12 using an extended Karatsuba method. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ac59c0408b53249bd1910b614d078a0ed}{fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Multiplication of two elements from the extension field Fp12, which uses less memory. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_acb91ac3d24537d17a398a1dff3324030}{fp12\-\_\-mul\-\_\-tk3\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Multiplication based on the Toom-\/\-Cook Method, but with the result being factored by 6. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ad16ddea7a7576e5e2348972a2f9fd83b}{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation in the cyclotomic subgroup of Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_af8a23e735eba537666e7bb440596fd7b}{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation in the cyclotomic subgroup of Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ae0857b8001eff9ed650db8424245286c}{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation in the cyclotomic subgroup of Fp12, which is not secured against any attack, but uses dummy operations. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a604f9064e9ea13bd839c000b49a02c5a}{fp12\-\_\-exp\-\_\-montyladder\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation of elements in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a2bb10021116a28d7c5663fec581e9848}{fp12\-\_\-exp\-\_\-masked\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation of elements in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_aed6983251f5c60adca7d49ae04ab1836}{fp12\-\_\-exp\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiation of elements in Fp12, which is not secured against any attack, but uses dummy operations. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a7493599f1bcc921e0628003bcdd5636f}{fp12\-\_\-final\-\_\-exp\-\_\-bn254} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Performs an exponentiation involved in the final exponentiation of the pairing. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a76cf4ca2431c6bee70197e39798b8309}{fp12\-\_\-final\-\_\-exp\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Performs an exponentiation involved in the final exponentiation of the pairing. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a42ae6437398bfcb327b06a910e795d70}{fp12\-\_\-final\-\_\-mulexp\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Exponentiates a by b and directly multiplies the result with the result. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ae173f2fdf6ad3ec16f7c54f95300ac99}{fp12\-\_\-inv\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Inversion of an element in Fp12 using direct inversion formulas. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a8fa5629aec6e25c43f0438d31125a402}{fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of an element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_aebd5bab585755a50551d8257d48e272b}{fp12\-\_\-frobenius\-\_\-map\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of an element in Fp12. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ac5ed7a67c34ebf9aa941807394e3be36}{fp12\-\_\-conjugate\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the conjugate of an element in Fp12, which are special cases of the frobenius operation. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ae12cd050f2024dd50b4c18c89d1814f2}{fp12\-\_\-clear\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Clears one Fp12 element. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a5ff13e7a43d8918bb315335da49fb97b}{fp12\-\_\-copy\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Copies one Fp12 element. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_ae0dadc59fc62fdb969ae2d0a0fd701c5}{fp12\-\_\-rdc\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Reduces an element in Fp12 with the fixed modulus. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_af1920999e342bc32cb7905da6dcfc47d}{fp12\-\_\-to\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Converts an element in Fp12 to the Montgomery domain. \end{DoxyCompactList}\item 
+void \hyperlink{fp12_8c_a45fe74b342573fdd7e048fa062ceff54}{fp12\-\_\-from\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} res, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Converts an element in Fp12 (Montgomery domain) back to normal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fp12_8c_abfcf542d4f917dc28a6052a339b8d88f}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-add\-\_\-std@{fp12\-\_\-add\-\_\-std}}
+\index{fp12\-\_\-add\-\_\-std@{fp12\-\_\-add\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-add\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-add\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_abfcf542d4f917dc28a6052a339b8d88f}
+
+
+Adds two elements in Fp12. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the sum \\
+\hline
+{\em a} & first operand \\
+\hline
+{\em b} & second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add.
+
+\hypertarget{fp12_8c_ae12cd050f2024dd50b4c18c89d1814f2}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-clear\-\_\-std@{fp12\-\_\-clear\-\_\-std}}
+\index{fp12\-\_\-clear\-\_\-std@{fp12\-\_\-clear\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-clear\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-clear\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ae12cd050f2024dd50b4c18c89d1814f2}
+
+
+Clears one Fp12 element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the element to be set to zero \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 925 of file fp12.\-c.
+
+
+
+References fp4\-\_\-clear.
+
+\hypertarget{fp12_8c_ac5ed7a67c34ebf9aa941807394e3be36}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-conjugate\-\_\-std@{fp12\-\_\-conjugate\-\_\-std}}
+\index{fp12\-\_\-conjugate\-\_\-std@{fp12\-\_\-conjugate\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-conjugate\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-conjugate\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ac5ed7a67c34ebf9aa941807394e3be36}
+
+
+Computes the conjugate of an element in Fp12, which are special cases of the frobenius operation. 
+
+The function uses precomputed roots of the quadratic non-\/residue in Fp2. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the conjugate \\
+\hline
+{\em a} & the input element \\
+\hline
+{\em i} & the order of the conjugate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 906 of file fp12.\-c.
+
+
+
+References fp2\-\_\-copy, and fp2\-\_\-neg.
+
+\hypertarget{fp12_8c_a5ff13e7a43d8918bb315335da49fb97b}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-copy\-\_\-std@{fp12\-\_\-copy\-\_\-std}}
+\index{fp12\-\_\-copy\-\_\-std@{fp12\-\_\-copy\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-copy\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-copy\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a5ff13e7a43d8918bb315335da49fb97b}
+
+
+Copies one Fp12 element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination \\
+\hline
+{\em a} & the source \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 936 of file fp12.\-c.
+
+
+
+References fp4\-\_\-copy.
+
+\hypertarget{fp12_8c_ae310cfe0ace14f58a6d7bcd252386976}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-decompress\-\_\-std@{fp12\-\_\-decompress\-\_\-std}}
+\index{fp12\-\_\-decompress\-\_\-std@{fp12\-\_\-decompress\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-decompress\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-decompress\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ae310cfe0ace14f58a6d7bcd252386976}
+
+
+Decompression from Karabina in \char`\"{}\-Squaring in cyclotomic subgroups\char`\"{}. 
+
+Warning\-: zero case probably not tested!! Warning\-: not side-\/channel secure 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file fp12.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-zero, fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-inv, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, fp2\-\_\-sqr, fp2\-\_\-sub, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_ad16ddea7a7576e5e2348972a2f9fd83b}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ad16ddea7a7576e5e2348972a2f9fd83b}
+
+
+Exponentiation in the cyclotomic subgroup of Fp12. 
+
+The exponentiation uses masking mechanisms that counteract timing attacks. W\-A\-R\-N\-I\-N\-G\-: this masking mechanism makes some trouble on some architectures. An array indexing approach would fix this! 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 502 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, fp12\-\_\-sqr\-\_\-cyclotomic, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_af8a23e735eba537666e7bb440596fd7b}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_af8a23e735eba537666e7bb440596fd7b}
+
+
+Exponentiation in the cyclotomic subgroup of Fp12. 
+
+The exponentiation uses a Montgomery ladder to prevent timing, S\-P\-A, and some fault attacks. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 530 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-copy, fp12\-\_\-mul, fp12\-\_\-sqr\-\_\-cyclotomic, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_ae0857b8001eff9ed650db8424245286c}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std@{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ae0857b8001eff9ed650db8424245286c}
+
+
+Exponentiation in the cyclotomic subgroup of Fp12, which is not secured against any attack, but uses dummy operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 563 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, fp12\-\_\-sqr\-\_\-cyclotomic, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_a2bb10021116a28d7c5663fec581e9848}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-masked\-\_\-std@{fp12\-\_\-exp\-\_\-masked\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-masked\-\_\-std@{fp12\-\_\-exp\-\_\-masked\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-masked\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-masked\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a2bb10021116a28d7c5663fec581e9848}
+
+
+Exponentiation of elements in Fp12. 
+
+The exponentiation uses masking mechanisms that counteract timing attacks. W\-A\-R\-N\-I\-N\-G\-: this masking mechanism makes some trouble on some architectures. An array indexing approach would fix this! 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 626 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, fp12\-\_\-sqr, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_a604f9064e9ea13bd839c000b49a02c5a}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-montyladder\-\_\-std@{fp12\-\_\-exp\-\_\-montyladder\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-montyladder\-\_\-std@{fp12\-\_\-exp\-\_\-montyladder\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-montyladder\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-montyladder\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a604f9064e9ea13bd839c000b49a02c5a}
+
+
+Exponentiation of elements in Fp12. 
+
+The exponentiation uses a Montgomery ladder to prevent timing, S\-P\-A, and some fault attacks. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 591 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-copy, fp12\-\_\-mul, fp12\-\_\-sqr, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_aed6983251f5c60adca7d49ae04ab1836}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-exp\-\_\-std@{fp12\-\_\-exp\-\_\-std}}
+\index{fp12\-\_\-exp\-\_\-std@{fp12\-\_\-exp\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_aed6983251f5c60adca7d49ae04ab1836}
+
+
+Exponentiation of elements in Fp12, which is not secured against any attack, but uses dummy operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the exponent b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 654 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, fp12\-\_\-sqr, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+
+
+Referenced by hwang\-\_\-verify().
+
+\hypertarget{fp12_8c_a7493599f1bcc921e0628003bcdd5636f}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-final\-\_\-exp\-\_\-bn254@{fp12\-\_\-final\-\_\-exp\-\_\-bn254}}
+\index{fp12\-\_\-final\-\_\-exp\-\_\-bn254@{fp12\-\_\-final\-\_\-exp\-\_\-bn254}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-final\-\_\-exp\-\_\-bn254}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-final\-\_\-exp\-\_\-bn254 (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a7493599f1bcc921e0628003bcdd5636f}
+
+
+Performs an exponentiation involved in the final exponentiation of the pairing. 
+
+It is specialized for B\-N254, i.\-e. the exponent is always 2$^\wedge$62+2$^\wedge$55+1 Must N\-O\-T be used with Fuentes final exponentiation method as memory locations would overlap and cause failure. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the exponentiation \\
+\hline
+{\em a} & the value to be exponentiated \\
+\hline
+{\em b} & the exponent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 685 of file fp12.\-c.
+
+
+
+References fp12\-\_\-decompress, fp12\-\_\-mul, fp12\-\_\-sqr\-\_\-cyclotomic, and fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed().
+
+\hypertarget{fp12_8c_a76cf4ca2431c6bee70197e39798b8309}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-final\-\_\-exp\-\_\-std@{fp12\-\_\-final\-\_\-exp\-\_\-std}}
+\index{fp12\-\_\-final\-\_\-exp\-\_\-std@{fp12\-\_\-final\-\_\-exp\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-final\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-final\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a76cf4ca2431c6bee70197e39798b8309}
+
+
+Performs an exponentiation involved in the final exponentiation of the pairing. 
+
+The exponent is a constant, therefore it is safe to skip the side-\/channel dummy or a Montgomery ladder implementation. W\-A\-R\-N\-I\-N\-G\-: To safe memory, the parameter a must not overlap with the result. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the exponentiation \\
+\hline
+{\em a} & the value to be exponentiated \\
+\hline
+{\em b} & the exponent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 717 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, fp12\-\_\-sqr\-\_\-cyclotomic, fp2\-\_\-clear, fp4\-\_\-clear, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp12_8c_a42ae6437398bfcb327b06a910e795d70}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-final\-\_\-mulexp\-\_\-std@{fp12\-\_\-final\-\_\-mulexp\-\_\-std}}
+\index{fp12\-\_\-final\-\_\-mulexp\-\_\-std@{fp12\-\_\-final\-\_\-mulexp\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-final\-\_\-mulexp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-final\-\_\-mulexp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{{\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a42ae6437398bfcb327b06a910e795d70}
+
+
+Exponentiates a by b and directly multiplies the result with the result. 
+
+This function is intended to be used from within the final exponentiation of the pairing calculation and can help to reduce memory requirements. The exponent is known beforehand and hence we do not need care about side-\/channel resistance. W\-A\-R\-N\-I\-N\-G\-: res and a must not overlap. 
+\begin{DoxyParams}{Parameters}
+{\em res} & \\
+\hline
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 746 of file fp12.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp12\-\_\-mul, and fp12\-\_\-sqr\-\_\-cyclotomic.
+
+\hypertarget{fp12_8c_a8fa5629aec6e25c43f0438d31125a402}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}}
+\index{fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a8fa5629aec6e25c43f0438d31125a402}
+
+
+Computes the frobenius map of an element in Fp12. 
+
+The function uses precomputed roots of the quadratic non-\/residue in Fp2. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the frobenius map \\
+\hline
+{\em a} & the input element \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 815 of file fp12.\-c.
+
+
+
+References fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, and R\-O\-O\-T\-\_\-\-R\-E\-S\-I\-D\-U\-E\-\_\-\-F\-P4.
+
+\hypertarget{fp12_8c_aebd5bab585755a50551d8257d48e272b}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-frobenius\-\_\-map\-\_\-std@{fp12\-\_\-frobenius\-\_\-map\-\_\-std}}
+\index{fp12\-\_\-frobenius\-\_\-map\-\_\-std@{fp12\-\_\-frobenius\-\_\-map\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-frobenius\-\_\-map\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-frobenius\-\_\-map\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_aebd5bab585755a50551d8257d48e272b}
+
+
+Computes the frobenius map of an element in Fp12. 
+
+The function computes everything from scratch. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the frobenius map \\
+\hline
+{\em a} & the input element \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 848 of file fp12.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-div3, bi\-\_\-one, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-subtract, fp2\-\_\-clear, fp2\-\_\-exp, fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, fp2\-\_\-sqr, and P\-R\-I\-M\-E\-\_\-\-P.
+
+\hypertarget{fp12_8c_a45fe74b342573fdd7e048fa062ceff54}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-from\-\_\-montgomery\-\_\-std@{fp12\-\_\-from\-\_\-montgomery\-\_\-std}}
+\index{fp12\-\_\-from\-\_\-montgomery\-\_\-std@{fp12\-\_\-from\-\_\-montgomery\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-from\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-from\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a45fe74b342573fdd7e048fa062ceff54}
+
+
+Converts an element in Fp12 (Montgomery domain) back to normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting normal value \\
+\hline
+{\em a} & the value in Montgomery domain to be converted back \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 971 of file fp12.\-c.
+
+
+
+References fp2\-\_\-from\-\_\-montgomery.
+
+\hypertarget{fp12_8c_ac02b326ce33ae049a59ee142e21e170e}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-hlv\-\_\-std@{fp12\-\_\-hlv\-\_\-std}}
+\index{fp12\-\_\-hlv\-\_\-std@{fp12\-\_\-hlv\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-hlv\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-hlv\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ac02b326ce33ae049a59ee142e21e170e}
+
+
+Halves one element in Fp12. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination for the result \\
+\hline
+{\em a} & the value to be halved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file fp12.\-c.
+
+
+
+References fp4\-\_\-hlv.
+
+\hypertarget{fp12_8c_ae173f2fdf6ad3ec16f7c54f95300ac99}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-inv\-\_\-std@{fp12\-\_\-inv\-\_\-std}}
+\index{fp12\-\_\-inv\-\_\-std@{fp12\-\_\-inv\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-inv\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-inv\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ae173f2fdf6ad3ec16f7c54f95300ac99}
+
+
+Inversion of an element in Fp12 using direct inversion formulas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting inverse \\
+\hline
+{\em a} & the element to be inverted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 760 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add, fp4\-\_\-inv, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, fp4\-\_\-sqr, and fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_ac59c0408b53249bd1910b614d078a0ed}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std@{fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std}}
+\index{fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std@{fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ac59c0408b53249bd1910b614d078a0ed}
+
+
+Multiplication of two elements from the extension field Fp12, which uses less memory. 
+
+W\-A\-R\-N\-I\-N\-G\-: b must N\-O\-T be the same as res, otherwise it will end in a false result. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the operand b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 375 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add, fp4\-\_\-copy, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, and fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_ad4b870edc337d4d528f75ae8594465d8}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-mul\-\_\-sparse\-\_\-std@{fp12\-\_\-mul\-\_\-sparse\-\_\-std}}
+\index{fp12\-\_\-mul\-\_\-sparse\-\_\-std@{fp12\-\_\-mul\-\_\-sparse\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-mul\-\_\-sparse\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-mul\-\_\-sparse\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp4\-\_\-t}}]{b0, }
+\item[{const {\bf fp2\-\_\-t}}]{b10}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ad4b870edc337d4d528f75ae8594465d8}
+
+
+Performs a multiplication of one element in Fp12 with a sparse element in Fp12. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the non-\/sparse operand \\
+\hline
+{\em b0} & Fp4 part of the sparse operand (least significant Fp4 element) \\
+\hline
+{\em b10} & Fp2 part of the sparse operand (least significant Fp2 element of the second Fp4 element) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file fp12.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-copy, fp4\-\_\-add, fp4\-\_\-copy, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, fp4\-\_\-mulfp2, and fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_a5eac8fce7524697a89603ea0b5112e4d}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-mul\-\_\-std@{fp12\-\_\-mul\-\_\-std}}
+\index{fp12\-\_\-mul\-\_\-std@{fp12\-\_\-mul\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-mul\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-mul\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a5eac8fce7524697a89603ea0b5112e4d}
+
+
+Simple multiplication in Fp12 using an extended Karatsuba method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add, fp4\-\_\-copy, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, and fp4\-\_\-sub.
+
+
+
+Referenced by hwang\-\_\-verify().
+
+\hypertarget{fp12_8c_acb91ac3d24537d17a398a1dff3324030}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-mul\-\_\-tk3\-\_\-std@{fp12\-\_\-mul\-\_\-tk3\-\_\-std}}
+\index{fp12\-\_\-mul\-\_\-tk3\-\_\-std@{fp12\-\_\-mul\-\_\-tk3\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-mul\-\_\-tk3\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-mul\-\_\-tk3\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_acb91ac3d24537d17a398a1dff3324030}
+
+
+Multiplication based on the Toom-\/\-Cook Method, but with the result being factored by 6. 
+
+Can be used in the pairing process during the Miller loops since constant multiples vanish in the final exponentiation. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the operand a \\
+\hline
+{\em b} & the operand b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 426 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add, fp4\-\_\-dbl, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, and fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_aeb55581777a73bb70176f5f9fe09451a}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-neg\-\_\-std@{fp12\-\_\-neg\-\_\-std}}
+\index{fp12\-\_\-neg\-\_\-std@{fp12\-\_\-neg\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-neg\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-neg\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_aeb55581777a73bb70176f5f9fe09451a}
+
+
+Negates one element in Fp12. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the negative a \\
+\hline
+{\em a} & the value to be negated \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file fp12.\-c.
+
+
+
+References fp4\-\_\-neg.
+
+\hypertarget{fp12_8c_ae0dadc59fc62fdb969ae2d0a0fd701c5}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-rdc\-\_\-std@{fp12\-\_\-rdc\-\_\-std}}
+\index{fp12\-\_\-rdc\-\_\-std@{fp12\-\_\-rdc\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-rdc\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-rdc\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_ae0dadc59fc62fdb969ae2d0a0fd701c5}
+
+
+Reduces an element in Fp12 with the fixed modulus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 946 of file fp12.\-c.
+
+
+
+References fp4\-\_\-rdc.
+
+\hypertarget{fp12_8c_a76a90b18d87d90c487691b9345e0a7b4}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed@{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed}}
+\index{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed@{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-compressed (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a76a90b18d87d90c487691b9345e0a7b4}
+
+
+Compressed squaring as presented by Karabina in \char`\"{}\-Squaring in Cyclotomic Subgroups\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & \\
+\hline
+{\em a} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file fp12.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, and fp2\-\_\-sub.
+
+
+
+Referenced by fp12\-\_\-final\-\_\-exp\-\_\-bn254().
+
+\hypertarget{fp12_8c_a251b50d548d980e8c4c53e68940eca52}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std@{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std}}
+\index{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std@{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a251b50d548d980e8c4c53e68940eca52}
+
+
+Squares one element of cyclotomic subgroup in Fp12. 
+
+Uses the specialized formulas by Granger and Scott. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination for the result \\
+\hline
+{\em a} & the element to be squared \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 271 of file fp12.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-mul\-\_\-qnr, fp2\-\_\-neg, and fp4\-\_\-sqr.
+
+\hypertarget{fp12_8c_a3dd0db0e491aaeb1bee5ab38275a03c4}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-sqr\-\_\-std@{fp12\-\_\-sqr\-\_\-std}}
+\index{fp12\-\_\-sqr\-\_\-std@{fp12\-\_\-sqr\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-sqr\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-sqr\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_a3dd0db0e491aaeb1bee5ab38275a03c4}
+
+
+Squares one element in Fp12. 
+
+Uses the complex squaring by Chung-\/\-Hasan. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination for the result \\
+\hline
+{\em a} & the element to be squared \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file fp12.\-c.
+
+
+
+References fp4\-\_\-add, fp4\-\_\-dbl, fp4\-\_\-hlv, fp4\-\_\-mul, fp4\-\_\-mul\-\_\-adj\-\_\-root, fp4\-\_\-sqr, and fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_af1b8dde57a791f3310117e44e06a154a}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-sub\-\_\-std@{fp12\-\_\-sub\-\_\-std}}
+\index{fp12\-\_\-sub\-\_\-std@{fp12\-\_\-sub\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-sub\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-sub\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a, }
+\item[{const {\bf fp12\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_af1b8dde57a791f3310117e44e06a154a}
+
+
+Subtracts two elements in Fp12. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the sum \\
+\hline
+{\em a} & first operand \\
+\hline
+{\em b} & second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file fp12.\-c.
+
+
+
+References fp4\-\_\-sub.
+
+\hypertarget{fp12_8c_af1920999e342bc32cb7905da6dcfc47d}{\index{fp12.\-c@{fp12.\-c}!fp12\-\_\-to\-\_\-montgomery\-\_\-std@{fp12\-\_\-to\-\_\-montgomery\-\_\-std}}
+\index{fp12\-\_\-to\-\_\-montgomery\-\_\-std@{fp12\-\_\-to\-\_\-montgomery\-\_\-std}!fp12.c@{fp12.\-c}}
+\subsubsection[{fp12\-\_\-to\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp12\-\_\-to\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp12\-\_\-t}}]{res, }
+\item[{const {\bf fp12\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp12_8c_af1920999e342bc32cb7905da6dcfc47d}
+
+
+Converts an element in Fp12 to the Montgomery domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting value in Montgomery form \\
+\hline
+{\em a} & the value to be converted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 957 of file fp12.\-c.
+
+
+
+References fp2\-\_\-to\-\_\-montgomery.
+

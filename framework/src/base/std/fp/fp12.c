@@ -1,11 +1,36 @@
-/*
- * fp12.c
- *
- * Basic implementation of arithmetic in a 12th extension field.
- *
- *  Created on: Apr 24, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "fp/fp.h"
 #include "fp/fp12.h"
@@ -298,15 +323,15 @@ void fp12_sqr_cyclotomic_std(fp12_t res, const fp12_t a) {
 void fp12_mul_std(fp12_t res, const fp12_t a, const fp12_t b) {
 	fp4_t d0, d1, d2;
 	fp4_t t0;
-    fp4_t v0;
+  fp4_t v0;
 
-    /*
-     * Formulas
-     * D0 = a0 b0 , D1 = a1 b1 , D2 = a2 b2
-     * D0,1 = (a0 +	fp4_mul(d1, a[1], b[1]); a1 )(b0 + b1 ), D0,2 = (a0 + a2 )(b0 + b2 ), D1,2 = (a1 + a2 )(b1 + b2 )
-	 * C(x) = D2 x4 + (D1,2 - D1 - D2 )x3 + (D0,2 - D2 - D0 + D1 )x2 + (D0,1 - D1 - D0 )x + D0
-	 *
-     */
+  /*
+   * Formulas
+   * D0 = a0 b0 , D1 = a1 b1 , D2 = a2 b2
+   * D0,1 = (a0 +	fp4_mul(d1, a[1], b[1]); a1 )(b0 + b1 ), D0,2 = (a0 + a2 )(b0 + b2 ), D1,2 = (a1 + a2 )(b1 + b2 )
+   * C(x) = D2 x4 + (D1,2 - D1 - D2 )x3 + (D0,2 - D2 - D0 + D1 )x2 + (D0,1 - D1 - D0 )x + D0
+   *
+   */
 
 	fp4_mul(d0, a[0], b[0]);
 	fp4_mul(d1, a[1], b[1]);
@@ -317,7 +342,7 @@ void fp12_mul_std(fp12_t res, const fp12_t a, const fp12_t b) {
 	fp4_mul(v0, (const fp2_t*)t0, (const fp2_t*)v0);
 	fp4_sub(v0, (const fp2_t*)v0, (const fp2_t*)d1);
 	fp4_sub(v0, (const fp2_t*)v0, (const fp2_t*)d2);
-	fp4_mul_adj_root(v0, (const fp2_t*)v0);	// mult res[0] with qnr
+	fp4_mul_adj_root(v0, (const fp2_t*)v0);	    // mult res[0] with qnr
 	fp4_add(v0,(const fp2_t*) d0, (const fp2_t*)v0);
 
 	fp4_add(t0, b[0], b[1]);
@@ -351,13 +376,13 @@ void fp12_mul_distinct_b_std(fp12_t res, const fp12_t a, const fp12_t b) {
 	fp4_t d0, d1, d2;
 	fp4_t t0;
 
-    /*
-     * Formulas
-     * D0 = a0 b0 , D1 = a1 b1 , D2 = a2 b2
-     * D0,1 = (a0 +	a1 )(b0 + b1 ), D0,2 = (a0 + a2 )(b0 + b2 ), D1,2 = (a1 + a2 )(b1 + b2 )
+  /*
+   * Formulas
+   * D0 = a0 b0 , D1 = a1 b1 , D2 = a2 b2
+   * D0,1 = (a0 +	a1 )(b0 + b1 ), D0,2 = (a0 + a2 )(b0 + b2 ), D1,2 = (a1 + a2 )(b1 + b2 )
 	 * C(x) = D2 x4 + (D1,2 - D1 - D2 )x3 + (D0,2 - D2 - D0 + D1 )x2 + (D0,1 - D1 - D0 )x + D0
-     *
-     */
+   *
+   */
 
 	// trying to use less memory
 	fp4_mul(d0, a[0], b[0]);
@@ -455,7 +480,6 @@ void fp12_mul_tk3_std(fp12_t res, const fp12_t a, const fp12_t b) {
 
 	fp4_add(res[2], (const fp2_t*) res[2], (const fp2_t*) v2);	// 3v1 - 6v4 - 6v0 + 3v2
 
-	// todo: maybe extract 12v4 as it is needed twice
 	fp4_mul_adj_root(res[1], (const fp2_t*) c);
 	fp4_add(res[1], (const fp2_t*) res[1], (const fp2_t*) c);
 	fp4_add(res[1], (const fp2_t*) res[1], (const fp2_t*) c);
@@ -828,7 +852,7 @@ void fp12_frobenius_map_std(fp12_t res, const fp12_t a, const word_t i) {
 	fp2_clear(q);
 	q[0][0] = 1;
 	fp2_mul_qnr(q2, (const fp_t*) q);
-	bi_copy(e, PRIME.p);
+	bi_copy(e, PRIME_P);
 	bi_subtract(e, e, bi_one);
 	bi_div3(e,e);
 	bi_shift_right_one(e,e);
@@ -880,7 +904,6 @@ void fp12_frobenius_map_std(fp12_t res, const fp12_t a, const word_t i) {
  * @param i the order of the conjugate
  */
 void fp12_conjugate_std(fp12_t res, const fp12_t a, const word_t i) {
-	//fp2_t tmp;
 
 	if (i != 3)
 		return;
@@ -893,44 +916,6 @@ void fp12_conjugate_std(fp12_t res, const fp12_t a, const word_t i) {
 	fp2_copy(res[1][1], a[1][1]);
 	fp2_neg(res[2][1], a[2][1]);
 
-	/*
-	// valid for residues sqrt(-1) and 1+i
-	switch (i) {
-	case 1:	// Frb(2)
-		fp2_copy(res[0][0], a[0][0]);
-
-		fp2_frobenius_map(tmp, ROOT_RESIDUE_FP4[0], 1);
-		fp2_mul(tmp, (const fp_t*) tmp, ROOT_RESIDUE_FP4[0]);
-		fp2_mul(res[1][0], a[1][0], (const fp_t*) tmp);
-
-		fp2_frobenius_map(tmp, ROOT_RESIDUE_FP4[1], 1);
-		fp2_mul(tmp, (const fp_t*) tmp, ROOT_RESIDUE_FP4[1]);
-		fp2_mul(res[2][0], a[2][0], (const fp_t*) tmp);
-
-		fp2_frobenius_map(tmp, ROOT_RESIDUE_FP4[2], 1);
-		fp2_mul(tmp, (const fp_t*) tmp, ROOT_RESIDUE_FP4[2]);
-		fp2_mul(res[0][1], a[0][1], (const fp_t*) tmp);
-
-		fp2_frobenius_map(tmp, ROOT_RESIDUE_FP4[3], 1);
-		fp2_mul(tmp, (const fp_t*) tmp, ROOT_RESIDUE_FP4[3]);
-		fp2_mul(res[1][1], a[1][1], (const fp_t*) tmp);
-
-		fp2_frobenius_map(tmp, ROOT_RESIDUE_FP4[4], 1);
-		fp2_mul(tmp, (const fp_t*) tmp, ROOT_RESIDUE_FP4[4]);
-		fp2_mul(res[2][1], a[2][1], (const fp_t*) tmp);
-
-		break;
-	case 3:	// Frb(6)
-		fp2_copy(res[0][0], a[0][0]);
-		fp2_neg(res[1][0], a[1][0]);
-		fp2_copy(res[2][0], a[2][0]);
-		fp2_neg(res[0][1], a[0][1]);
-		fp2_copy(res[1][1], a[1][1]);
-		fp2_neg(res[2][1], a[2][1]);
-		break;
-	default:
-		break;
-	}*/
 }
 
 /**

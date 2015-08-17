@@ -1,0 +1,207 @@
+\hypertarget{assert_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/assert.h File Reference}
+\label{assert_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/assert.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/assert.\-h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{assert_8h_a4a01f952be4d58f7bcbcbd9c428a03a5}{assert\-\_\-true} (const int c, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Verifies that the parameter is not equal zero (= true) \end{DoxyCompactList}\item 
+int \hyperlink{assert_8h_a7f7aeb15976056f0188bbd8a35691e18}{assert\-\_\-bytearr\-\_\-equal} (const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$ex, const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$tst, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} bytes, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Verifies that two byte arrays are equal. \end{DoxyCompactList}\item 
+int \hyperlink{assert_8h_ad55678cf4c4d271078f29e75328e470a}{assert\-\_\-bi\-\_\-equal} (const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} ex, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} tst, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Verifies that two big integers are equal. \end{DoxyCompactList}\item 
+int \hyperlink{assert_8h_a63dc578203399ec431feaeee78842b9b}{assert\-\_\-bi\-\_\-equal\-\_\-var} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$ex, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$tst, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} len, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Verifies that two big integers of defined length are equal. \end{DoxyCompactList}\item 
+int \hyperlink{assert_8h_adc080f1207d23de4e1790edc91690aad}{assert\-\_\-equal} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} ex, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} tst, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Verifies that two processor words are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{assert_8h_ad55678cf4c4d271078f29e75328e470a}{\index{assert.\-h@{assert.\-h}!assert\-\_\-bi\-\_\-equal@{assert\-\_\-bi\-\_\-equal}}
+\index{assert\-\_\-bi\-\_\-equal@{assert\-\_\-bi\-\_\-equal}!assert.h@{assert.\-h}}
+\subsubsection[{assert\-\_\-bi\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int assert\-\_\-bi\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf bigint\-\_\-t}}]{ex, }
+\item[{const {\bf bigint\-\_\-t}}]{tst, }
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{assert_8h_ad55678cf4c4d271078f29e75328e470a}
+
+
+Verifies that two big integers are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & the expected big integer \\
+\hline
+{\em tst} & the tested big integer \\
+\hline
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 on failure 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file assert.\-c.
+
+
+
+References bi\-\_\-compare, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-xor, print(), and print\-\_\-value().
+
+
+
+Referenced by main().
+
+\hypertarget{assert_8h_a63dc578203399ec431feaeee78842b9b}{\index{assert.\-h@{assert.\-h}!assert\-\_\-bi\-\_\-equal\-\_\-var@{assert\-\_\-bi\-\_\-equal\-\_\-var}}
+\index{assert\-\_\-bi\-\_\-equal\-\_\-var@{assert\-\_\-bi\-\_\-equal\-\_\-var}!assert.h@{assert.\-h}}
+\subsubsection[{assert\-\_\-bi\-\_\-equal\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}int assert\-\_\-bi\-\_\-equal\-\_\-var (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{ex, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{tst, }
+\item[{const {\bf length\-\_\-t}}]{len, }
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{assert_8h_a63dc578203399ec431feaeee78842b9b}
+
+
+Verifies that two big integers of defined length are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & the expected big integer \\
+\hline
+{\em tst} & the tested big integer \\
+\hline
+{\em len} & the length of the two big integers \\
+\hline
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file assert.\-c.
+
+
+
+References bi\-\_\-compare\-\_\-var, bi\-\_\-xor\-\_\-var, print(), and print\-\_\-value().
+
+
+
+Referenced by main().
+
+\hypertarget{assert_8h_a7f7aeb15976056f0188bbd8a35691e18}{\index{assert.\-h@{assert.\-h}!assert\-\_\-bytearr\-\_\-equal@{assert\-\_\-bytearr\-\_\-equal}}
+\index{assert\-\_\-bytearr\-\_\-equal@{assert\-\_\-bytearr\-\_\-equal}!assert.h@{assert.\-h}}
+\subsubsection[{assert\-\_\-bytearr\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int assert\-\_\-bytearr\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf byte} $\ast$}]{ex, }
+\item[{const {\bf byte} $\ast$}]{tst, }
+\item[{const {\bf length\-\_\-t}}]{length, }
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{assert_8h_a7f7aeb15976056f0188bbd8a35691e18}
+
+
+Verifies that two byte arrays are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & the expected array \\
+\hline
+{\em tst} & the tested array \\
+\hline
+{\em length} & the length of the two arrays \\
+\hline
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 on failure 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file assert.\-c.
+
+
+
+References compare\-\_\-bytes(), print(), and print\-\_\-bytes().
+
+
+
+Referenced by main().
+
+\hypertarget{assert_8h_adc080f1207d23de4e1790edc91690aad}{\index{assert.\-h@{assert.\-h}!assert\-\_\-equal@{assert\-\_\-equal}}
+\index{assert\-\_\-equal@{assert\-\_\-equal}!assert.h@{assert.\-h}}
+\subsubsection[{assert\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int assert\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t}}]{ex, }
+\item[{{\bf word\-\_\-t}}]{tst, }
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{assert_8h_adc080f1207d23de4e1790edc91690aad}
+
+
+Verifies that two processor words are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & the expected word \\
+\hline
+{\em tst} & the tested word \\
+\hline
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file assert.\-c.
+
+
+
+References print(), and print\-\_\-value().
+
+
+
+Referenced by main().
+
+\hypertarget{assert_8h_a4a01f952be4d58f7bcbcbd9c428a03a5}{\index{assert.\-h@{assert.\-h}!assert\-\_\-true@{assert\-\_\-true}}
+\index{assert\-\_\-true@{assert\-\_\-true}!assert.h@{assert.\-h}}
+\subsubsection[{assert\-\_\-true}]{\setlength{\rightskip}{0pt plus 5cm}int assert\-\_\-true (
+\begin{DoxyParamCaption}
+\item[{const int}]{c, }
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{assert_8h_a4a01f952be4d58f7bcbcbd9c428a03a5}
+
+
+Verifies that the parameter is not equal zero (= true) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the parameter that is checked to be true \\
+\hline
+{\em msg} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the parameter is true, 1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file assert.\-c.
+
+
+
+References print().
+
+
+
+Referenced by main().
+

@@ -1,0 +1,592 @@
+\hypertarget{ec_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/ec/ec.h File Reference}
+\label{ec_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/ec/ec.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/ec/ec.\-h}}
+}
+{\ttfamily \#include \char`\"{}ec/ecfp2\-\_\-std.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ecfp\-\_\-std.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ec_8h_abc8e10bdf8dda6f8efe7bff67ec4df06}{ecfp\-\_\-add\-\_\-proj}(res, a, b)~\hyperlink{ecfp_8c_a744ef4d681f7b594ec23c69a5e1e181a}{ecfp\-\_\-add\-\_\-proj\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{ec_8h_a93a8e84b640e52fd431e3139adf0ed82}{ecfp\-\_\-dbl\-\_\-proj}(res, a)~\hyperlink{ecfp_8c_a76538a876fca55d1a1f2f4d9effcb189}{ecfp\-\_\-dbl\-\_\-proj\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_ad5006c451acb94be2993da0b83f46fdb}{ecfp\-\_\-add\-\_\-affine}(res, a, b)~\hyperlink{ecfp_8c_a720ad168d33d94500f66e320d8dcf34e}{ecfp\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{ec_8h_a2bc59726afa8061ed72528c7d13b00aa}{ecfp\-\_\-dbl\-\_\-affine}(res, a)~\hyperlink{ecfp_8c_af5f3918fb134394b362ac12dabe620a9}{ecfp\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a662a79c858b238c4df6ee039ff66a75e}{ecfp\-\_\-mul}(res, a, k)~\hyperlink{ecfp_8c_a2930ee16463b16d69363d40738e72f26}{ecfp\-\_\-mul\-\_\-montyladder\-\_\-std}(res, a, k)
+\item 
+\#define \hyperlink{ec_8h_ab9082a2c1dee852d698fe800a980fbf7}{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}(a, p)~\hyperlink{ecfp_8c_acd9612945032dffb7bb8dae994bc0127}{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}(a, p)
+\item 
+\#define \hyperlink{ec_8h_a1ef2607b097619c4248f0eb5d98c379c}{ecfp\-\_\-get\-\_\-jacobian\-\_\-projective}(p, a)~\hyperlink{ecfp_8c_a16eb65ddb663f1dba0df6500318edb8b}{ecfp\-\_\-get\-\_\-projective\-\_\-std}(p, a)
+\item 
+\#define \hyperlink{ec_8h_ab592920954d796f450285074a39ae557}{ecfp\-\_\-neg\-\_\-affine}(a)~\hyperlink{ecfp_8c_a0e658f43ba1fb834757c96443c66debe}{ecfp\-\_\-neg\-\_\-affine\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_ade267d677ca662149a151e961ea47047}{ecfp\-\_\-neg\-\_\-proj}(a)~\hyperlink{ecfp_8c_a0c6c9537681dce4f99490a9f18e89f7b}{ecfp\-\_\-neg\-\_\-proj\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_a538c803171c93303a299be0ccdd2994a}{ecfp\-\_\-copy}(res, a)~\hyperlink{ecfp_8c_ac157d9e3a19b1a3b8d58ad2ac71d56f5}{ecfp\-\_\-copy\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a1137faa60b6634a60c6bf688a68178b6}{ecfp\-\_\-clear}(a)~\hyperlink{ecfp_8c_a33b4505665cc025ffeae8c06dded4e4d}{ecfp\-\_\-clear\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_a1d63d053cf19d0c7536db6e95aad5eff}{ecfp\-\_\-hash\-\_\-to\-\_\-point}(res, t)~\hyperlink{ecfp_8c_ae26687a02370b212653c81d8437dbed8}{ecfp\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}(res, t)
+\item 
+\#define \hyperlink{ec_8h_a6ea9f8b4d6aec54b9e829c6d9c9dc29d}{ecfp\-\_\-to\-\_\-montgomery}(res, a)~\hyperlink{ecfp_8c_a35b8756864ba88317fe673a6cd010276}{ecfp\-\_\-to\-\_\-montgomery\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_ab3f0ac50057f62834a36b3949bedc4ca}{ecfp\-\_\-from\-\_\-montgomery}(res, a)~\hyperlink{ecfp_8c_acb1ed1114b37d79e48aac56fef5060ec}{ecfp\-\_\-from\-\_\-montgomery\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a8823590b3b631dc2babf00ffc11d5571}{ecfp\-\_\-rand}(res)~\hyperlink{ecfp_8c_ac04f948f39b5a4288641da18cf13db8c}{ecfp\-\_\-rand\-\_\-std}(res)
+\item 
+\#define \hyperlink{ec_8h_a744b16b78d78f612ffef88d63b94ba5d}{ecfp2\-\_\-add\-\_\-proj}(res, a, b)~\hyperlink{ecfp2_8c_a2c9eaf7306dc226ae9c589a241d07e6a}{ecfp2\-\_\-add\-\_\-proj\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{ec_8h_aa467878636b989bab267bfcc28337715}{ecfp2\-\_\-dbl\-\_\-proj}(res, a)~\hyperlink{ecfp2_8c_a0a18498cc280ad0b9439b914dc7a19cf}{ecfp2\-\_\-dbl\-\_\-proj\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a2c0cf86b353340732505e34a8618b76c}{ecfp2\-\_\-add\-\_\-affine}(res, a, b)~\hyperlink{ecfp2_8c_abda40df811cd5a2bd144f9d3760f2c32}{ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{ec_8h_ac5d47b585528a8eb63027dee012948f2}{ecfp2\-\_\-dbl\-\_\-affine}(res, a)~\hyperlink{ecfp2_8c_aedff7216035a04cf6892340bdbbdb4ef}{ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a18a985dc689be8e0afa47ce5856e61de}{ecfp2\-\_\-mul}(res, a, k)~\hyperlink{ecfp2_8c_a4c83f9c185f0ac8e00b6d59e6a59deb1}{ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std}(res, a, k)
+\item 
+\#define \hyperlink{ec_8h_af283727569c04e4718e1dacae0fbd1c0}{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}(a, p)~\hyperlink{ecfp2_8c_a6c3e60f2872d2ada353e61a0297ca584}{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}(a, p)
+\item 
+\#define \hyperlink{ec_8h_aefe991424209da25ac00d24f26b48920}{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective}(p, a)~\hyperlink{ecfp2_8c_a61767bbe6ec5b3bc1e9f4857159f149d}{ecfp2\-\_\-get\-\_\-projective\-\_\-std}(p, a)
+\item 
+\#define \hyperlink{ec_8h_a87b688aa626f18c2a9a41a241428f46f}{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective}(p, a)~\hyperlink{ecfp2_8c_a61767bbe6ec5b3bc1e9f4857159f149d}{ecfp2\-\_\-get\-\_\-projective\-\_\-std}(p, a)
+\item 
+\#define \hyperlink{ec_8h_a29dcf3605ef5d2ec274f75b7e5b04d5b}{ecfp2\-\_\-neg\-\_\-affine}(a)~\hyperlink{ecfp2_8c_acaf2d2eb698a39e792ff7c5ecdc155fe}{ecfp2\-\_\-neg\-\_\-affine\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_a69c146e9a45262cd7c18a3c3a76be56e}{ecfp2\-\_\-neg\-\_\-proj}(a)~\hyperlink{ecfp2_8c_a564405ab3e614d64520958163de8e932}{ecfp2\-\_\-neg\-\_\-proj\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_a18b842c6dbe3ef4e7452eab26ce07dc8}{ecfp2\-\_\-copy}(res, a)~\hyperlink{ecfp2_8c_a70d878bd0ac88540b2ba343af75733fe}{ecfp2\-\_\-copy\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a477d96c6bf7e79783207faf08e139c7a}{ecfp2\-\_\-clear}(a)~\hyperlink{ecfp2_8c_ae7a30654619f8312b237c5bfae4eb684}{ecfp2\-\_\-clear\-\_\-std}(a)
+\item 
+\#define \hyperlink{ec_8h_a78ba2e68c84bfa05c82ffcea84656cc2}{ecfp2\-\_\-frobenius\-\_\-map}(res, a, i)~\hyperlink{ecfp2_8c_a9b626a9c9b63adf41bc300f3b6b4d2bd}{ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}(res, a, i)
+\item 
+\#define \hyperlink{ec_8h_a8ce3fb4905773dce82f05489514dcfed}{ecfp2\-\_\-compare}(a, b)~\hyperlink{ecfp2_8c_a6cb1faf66b7f90b7e442ff9add319f4e}{ecfp2\-\_\-compare\-\_\-std}(a, b)
+\item 
+\#define \hyperlink{ec_8h_ab7161e620fe853ff51c3a6bc9d604ecf}{ecfp2\-\_\-hash\-\_\-to\-\_\-point}(res, t)~\hyperlink{ecfp2_8c_a407c55c384aeefd9a9f8b3757465173e}{ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}(res, t)
+\item 
+\#define \hyperlink{ec_8h_afcd4f2d069a670a385acfacd104fbfee}{ecfp2\-\_\-to\-\_\-montgomery}(res, a)~\hyperlink{ecfp2_8c_a28151c277e807b3e5271ced265814b0c}{ecfp2\-\_\-to\-\_\-montgomery\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a742582b63da5e75eac351adbf0b58af3}{ecfp2\-\_\-from\-\_\-montgomery}(res, a)~\hyperlink{ecfp2_8c_a25563af6eea069306c8d7cb1276d6367}{ecfp2\-\_\-from\-\_\-montgomery\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{ec_8h_a86686048ddfc6f4792569fd64acbe522}{ecfp2\-\_\-rand}(res)~\hyperlink{ecfp2_8c_ad6b8fc7bb8e9600fbb84fb3931e85238}{ecfp2\-\_\-rand\-\_\-std}(res);
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ec_8h_a2c0cf86b353340732505e34a8618b76c}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-add\-\_\-affine@{ecfp2\-\_\-add\-\_\-affine}}
+\index{ecfp2\-\_\-add\-\_\-affine@{ecfp2\-\_\-add\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-add\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}(res, a, b)}}\label{ec_8h_a2c0cf86b353340732505e34a8618b76c}
+
+
+Definition at line 64 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), and main().
+
+\hypertarget{ec_8h_a744b16b78d78f612ffef88d63b94ba5d}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-add\-\_\-proj@{ecfp2\-\_\-add\-\_\-proj}}
+\index{ecfp2\-\_\-add\-\_\-proj@{ecfp2\-\_\-add\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-add\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-add\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-add\-\_\-proj\-\_\-std}(res, a, b)}}\label{ec_8h_a744b16b78d78f612ffef88d63b94ba5d}
+
+
+Definition at line 62 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std(), main(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{ec_8h_a477d96c6bf7e79783207faf08e139c7a}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-clear@{ecfp2\-\_\-clear}}
+\index{ecfp2\-\_\-clear@{ecfp2\-\_\-clear}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-clear\-\_\-std}(a)}}\label{ec_8h_a477d96c6bf7e79783207faf08e139c7a}
+
+
+Definition at line 79 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a8ce3fb4905773dce82f05489514dcfed}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-compare@{ecfp2\-\_\-compare}}
+\index{ecfp2\-\_\-compare@{ecfp2\-\_\-compare}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-compare(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-compare\-\_\-std}(a, b)}}\label{ec_8h_a8ce3fb4905773dce82f05489514dcfed}
+
+
+Definition at line 81 of file ec.\-h.
+
+\hypertarget{ec_8h_a18b842c6dbe3ef4e7452eab26ce07dc8}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-copy@{ecfp2\-\_\-copy}}
+\index{ecfp2\-\_\-copy@{ecfp2\-\_\-copy}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-copy\-\_\-std}(res, a)}}\label{ec_8h_a18b842c6dbe3ef4e7452eab26ce07dc8}
+
+
+Definition at line 78 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std(), ecfp2\-\_\-frobenius\-\_\-map\-\_\-std(), and main().
+
+\hypertarget{ec_8h_ac5d47b585528a8eb63027dee012948f2}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-dbl\-\_\-affine@{ecfp2\-\_\-dbl\-\_\-affine}}
+\index{ecfp2\-\_\-dbl\-\_\-affine@{ecfp2\-\_\-dbl\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-dbl\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-dbl\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}(res, a)}}\label{ec_8h_ac5d47b585528a8eb63027dee012948f2}
+
+
+Definition at line 65 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), and main().
+
+\hypertarget{ec_8h_aa467878636b989bab267bfcc28337715}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-dbl\-\_\-proj@{ecfp2\-\_\-dbl\-\_\-proj}}
+\index{ecfp2\-\_\-dbl\-\_\-proj@{ecfp2\-\_\-dbl\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-dbl\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-dbl\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-dbl\-\_\-proj\-\_\-std}(res, a)}}\label{ec_8h_aa467878636b989bab267bfcc28337715}
+
+
+Definition at line 63 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-proj\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-std(), ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std(), main(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{ec_8h_a78ba2e68c84bfa05c82ffcea84656cc2}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-frobenius\-\_\-map@{ecfp2\-\_\-frobenius\-\_\-map}}
+\index{ecfp2\-\_\-frobenius\-\_\-map@{ecfp2\-\_\-frobenius\-\_\-map}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-frobenius\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-frobenius\-\_\-map(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}(res, a, i)}}\label{ec_8h_a78ba2e68c84bfa05c82ffcea84656cc2}
+
+
+Definition at line 80 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{ec_8h_a742582b63da5e75eac351adbf0b58af3}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-from\-\_\-montgomery@{ecfp2\-\_\-from\-\_\-montgomery}}
+\index{ecfp2\-\_\-from\-\_\-montgomery@{ecfp2\-\_\-from\-\_\-montgomery}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-from\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-from\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-from\-\_\-montgomery\-\_\-std}(res, a)}}\label{ec_8h_a742582b63da5e75eac351adbf0b58af3}
+
+
+Definition at line 84 of file ec.\-h.
+
+\hypertarget{ec_8h_af283727569c04e4718e1dacae0fbd1c0}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian@{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}}
+\index{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian@{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}(a, p)}}\label{ec_8h_af283727569c04e4718e1dacae0fbd1c0}
+
+
+Definition at line 68 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-std(), ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), and ecfp2\-\_\-mul\-\_\-l2rb\-\_\-std().
+
+\hypertarget{ec_8h_aefe991424209da25ac00d24f26b48920}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective@{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective}}
+\index{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective@{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-get\-\_\-homogeneous\-\_\-projective(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-get\-\_\-projective\-\_\-std}(p, a)}}\label{ec_8h_aefe991424209da25ac00d24f26b48920}
+
+
+Definition at line 73 of file ec.\-h.
+
+
+
+Referenced by pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{ec_8h_a87b688aa626f18c2a9a41a241428f46f}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective@{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective}}
+\index{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective@{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-get\-\_\-jacobian\-\_\-projective(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-get\-\_\-projective\-\_\-std}(p, a)}}\label{ec_8h_a87b688aa626f18c2a9a41a241428f46f}
+
+
+Definition at line 74 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-add\-\_\-affine\-\_\-std(), ecfp2\-\_\-dbl\-\_\-affine\-\_\-std(), and ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std().
+
+\hypertarget{ec_8h_ab7161e620fe853ff51c3a6bc9d604ecf}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-hash\-\_\-to\-\_\-point@{ecfp2\-\_\-hash\-\_\-to\-\_\-point}}
+\index{ecfp2\-\_\-hash\-\_\-to\-\_\-point@{ecfp2\-\_\-hash\-\_\-to\-\_\-point}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-hash\-\_\-to\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-hash\-\_\-to\-\_\-point(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}(res, t)}}\label{ec_8h_ab7161e620fe853ff51c3a6bc9d604ecf}
+
+
+Definition at line 82 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a18a985dc689be8e0afa47ce5856e61de}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-mul@{ecfp2\-\_\-mul}}
+\index{ecfp2\-\_\-mul@{ecfp2\-\_\-mul}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-mul}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-mul(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{k}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-mul\-\_\-montyladder\-\_\-std}(res, a, k)}}\label{ec_8h_a18a985dc689be8e0afa47ce5856e61de}
+
+
+Definition at line 67 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), ecfp2\-\_\-rand\-\_\-std(), hwang\-\_\-init\-\_\-parameters(), and main().
+
+\hypertarget{ec_8h_a29dcf3605ef5d2ec274f75b7e5b04d5b}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-neg\-\_\-affine@{ecfp2\-\_\-neg\-\_\-affine}}
+\index{ecfp2\-\_\-neg\-\_\-affine@{ecfp2\-\_\-neg\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-neg\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-neg\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-neg\-\_\-affine\-\_\-std}(a)}}\label{ec_8h_a29dcf3605ef5d2ec274f75b7e5b04d5b}
+
+
+Definition at line 76 of file ec.\-h.
+
+
+
+Referenced by ecfp2\-\_\-hash\-\_\-to\-\_\-point\-\_\-std(), main(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-std().
+
+\hypertarget{ec_8h_a69c146e9a45262cd7c18a3c3a76be56e}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-neg\-\_\-proj@{ecfp2\-\_\-neg\-\_\-proj}}
+\index{ecfp2\-\_\-neg\-\_\-proj@{ecfp2\-\_\-neg\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-neg\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-neg\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-neg\-\_\-proj\-\_\-std}(a)}}\label{ec_8h_a69c146e9a45262cd7c18a3c3a76be56e}
+
+
+Definition at line 77 of file ec.\-h.
+
+
+
+Referenced by main(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div\-\_\-miller\-\_\-std(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul\-\_\-miller\-\_\-std(), and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-optimized\-\_\-miller\-\_\-std().
+
+\hypertarget{ec_8h_a86686048ddfc6f4792569fd64acbe522}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-rand@{ecfp2\-\_\-rand}}
+\index{ecfp2\-\_\-rand@{ecfp2\-\_\-rand}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-rand(
+\begin{DoxyParamCaption}
+\item[{}]{res}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-rand\-\_\-std}(res);}}\label{ec_8h_a86686048ddfc6f4792569fd64acbe522}
+
+
+Definition at line 86 of file ec.\-h.
+
+
+
+Referenced by hwang\-\_\-init\-\_\-parameters().
+
+\hypertarget{ec_8h_afcd4f2d069a670a385acfacd104fbfee}{\index{ec.\-h@{ec.\-h}!ecfp2\-\_\-to\-\_\-montgomery@{ecfp2\-\_\-to\-\_\-montgomery}}
+\index{ecfp2\-\_\-to\-\_\-montgomery@{ecfp2\-\_\-to\-\_\-montgomery}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp2\-\_\-to\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp2\-\_\-to\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp2\-\_\-to\-\_\-montgomery\-\_\-std}(res, a)}}\label{ec_8h_afcd4f2d069a670a385acfacd104fbfee}
+
+
+Definition at line 83 of file ec.\-h.
+
+\hypertarget{ec_8h_ad5006c451acb94be2993da0b83f46fdb}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-add\-\_\-affine@{ecfp\-\_\-add\-\_\-affine}}
+\index{ecfp\-\_\-add\-\_\-affine@{ecfp\-\_\-add\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-add\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-add\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std}(res, a, b)}}\label{ec_8h_ad5006c451acb94be2993da0b83f46fdb}
+
+
+Definition at line 43 of file ec.\-h.
+
+
+
+Referenced by encapsulate\-\_\-key(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-sign(), hwang\-\_\-verify(), and main().
+
+\hypertarget{ec_8h_abc8e10bdf8dda6f8efe7bff67ec4df06}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-add\-\_\-proj@{ecfp\-\_\-add\-\_\-proj}}
+\index{ecfp\-\_\-add\-\_\-proj@{ecfp\-\_\-add\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-add\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-add\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-add\-\_\-proj\-\_\-std}(res, a, b)}}\label{ec_8h_abc8e10bdf8dda6f8efe7bff67ec4df06}
+
+
+Definition at line 41 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-add\-\_\-affine\-\_\-std(), ecfp\-\_\-mul\-\_\-l2rb\-\_\-std(), and main().
+
+\hypertarget{ec_8h_a1137faa60b6634a60c6bf688a68178b6}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-clear@{ecfp\-\_\-clear}}
+\index{ecfp\-\_\-clear@{ecfp\-\_\-clear}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-clear\-\_\-std}(a)}}\label{ec_8h_a1137faa60b6634a60c6bf688a68178b6}
+
+
+Definition at line 55 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a538c803171c93303a299be0ccdd2994a}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-copy@{ecfp\-\_\-copy}}
+\index{ecfp\-\_\-copy@{ecfp\-\_\-copy}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-copy\-\_\-std}(res, a)}}\label{ec_8h_a538c803171c93303a299be0ccdd2994a}
+
+
+Definition at line 54 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a2bc59726afa8061ed72528c7d13b00aa}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-dbl\-\_\-affine@{ecfp\-\_\-dbl\-\_\-affine}}
+\index{ecfp\-\_\-dbl\-\_\-affine@{ecfp\-\_\-dbl\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-dbl\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-dbl\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-dbl\-\_\-affine\-\_\-direct\-\_\-std}(res, a)}}\label{ec_8h_a2bc59726afa8061ed72528c7d13b00aa}
+
+
+Definition at line 44 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-add\-\_\-affine\-\_\-direct\-\_\-std(), and main().
+
+\hypertarget{ec_8h_a93a8e84b640e52fd431e3139adf0ed82}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-dbl\-\_\-proj@{ecfp\-\_\-dbl\-\_\-proj}}
+\index{ecfp\-\_\-dbl\-\_\-proj@{ecfp\-\_\-dbl\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-dbl\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-dbl\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-dbl\-\_\-proj\-\_\-std}(res, a)}}\label{ec_8h_a93a8e84b640e52fd431e3139adf0ed82}
+
+
+Definition at line 42 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-add\-\_\-proj\-\_\-std(), ecfp\-\_\-dbl\-\_\-affine\-\_\-std(), ecfp\-\_\-mul\-\_\-l2rb\-\_\-std(), and main().
+
+\hypertarget{ec_8h_ab3f0ac50057f62834a36b3949bedc4ca}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-from\-\_\-montgomery@{ecfp\-\_\-from\-\_\-montgomery}}
+\index{ecfp\-\_\-from\-\_\-montgomery@{ecfp\-\_\-from\-\_\-montgomery}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-from\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-from\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-from\-\_\-montgomery\-\_\-std}(res, a)}}\label{ec_8h_ab3f0ac50057f62834a36b3949bedc4ca}
+
+
+Definition at line 58 of file ec.\-h.
+
+
+
+Referenced by encapsulate\-\_\-key().
+
+\hypertarget{ec_8h_ab9082a2c1dee852d698fe800a980fbf7}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian@{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}}
+\index{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian@{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-get\-\_\-affine\-\_\-from\-\_\-jacobian\-\_\-std}(a, p)}}\label{ec_8h_ab9082a2c1dee852d698fe800a980fbf7}
+
+
+Definition at line 46 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-add\-\_\-affine\-\_\-std(), ecfp\-\_\-dbl\-\_\-affine\-\_\-std(), and ecfp\-\_\-mul\-\_\-l2rb\-\_\-std().
+
+\hypertarget{ec_8h_a1ef2607b097619c4248f0eb5d98c379c}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-get\-\_\-jacobian\-\_\-projective@{ecfp\-\_\-get\-\_\-jacobian\-\_\-projective}}
+\index{ecfp\-\_\-get\-\_\-jacobian\-\_\-projective@{ecfp\-\_\-get\-\_\-jacobian\-\_\-projective}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-get\-\_\-jacobian\-\_\-projective}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-get\-\_\-jacobian\-\_\-projective(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-get\-\_\-projective\-\_\-std}(p, a)}}\label{ec_8h_a1ef2607b097619c4248f0eb5d98c379c}
+
+
+Definition at line 50 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-add\-\_\-affine\-\_\-std(), and ecfp\-\_\-dbl\-\_\-affine\-\_\-std().
+
+\hypertarget{ec_8h_a1d63d053cf19d0c7536db6e95aad5eff}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-hash\-\_\-to\-\_\-point@{ecfp\-\_\-hash\-\_\-to\-\_\-point}}
+\index{ecfp\-\_\-hash\-\_\-to\-\_\-point@{ecfp\-\_\-hash\-\_\-to\-\_\-point}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-hash\-\_\-to\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-hash\-\_\-to\-\_\-point(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-hash\-\_\-to\-\_\-point\-\_\-std}(res, t)}}\label{ec_8h_a1d63d053cf19d0c7536db6e95aad5eff}
+
+
+Definition at line 56 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a662a79c858b238c4df6ee039ff66a75e}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-mul@{ecfp\-\_\-mul}}
+\index{ecfp\-\_\-mul@{ecfp\-\_\-mul}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-mul}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-mul(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{k}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-mul\-\_\-montyladder\-\_\-std}(res, a, k)}}\label{ec_8h_a662a79c858b238c4df6ee039ff66a75e}
+
+
+Definition at line 45 of file ec.\-h.
+
+
+
+Referenced by ecfp\-\_\-rand\-\_\-std(), encapsulate\-\_\-key(), hwang\-\_\-generate\-\_\-usk(), hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), hwang\-\_\-verify(), and main().
+
+\hypertarget{ec_8h_ab592920954d796f450285074a39ae557}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-neg\-\_\-affine@{ecfp\-\_\-neg\-\_\-affine}}
+\index{ecfp\-\_\-neg\-\_\-affine@{ecfp\-\_\-neg\-\_\-affine}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-neg\-\_\-affine}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-neg\-\_\-affine(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-neg\-\_\-affine\-\_\-std}(a)}}\label{ec_8h_ab592920954d796f450285074a39ae557}
+
+
+Definition at line 52 of file ec.\-h.
+
+
+
+Referenced by decapsulate\-\_\-key(), and main().
+
+\hypertarget{ec_8h_ade267d677ca662149a151e961ea47047}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-neg\-\_\-proj@{ecfp\-\_\-neg\-\_\-proj}}
+\index{ecfp\-\_\-neg\-\_\-proj@{ecfp\-\_\-neg\-\_\-proj}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-neg\-\_\-proj}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-neg\-\_\-proj(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-neg\-\_\-proj\-\_\-std}(a)}}\label{ec_8h_ade267d677ca662149a151e961ea47047}
+
+
+Definition at line 53 of file ec.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{ec_8h_a8823590b3b631dc2babf00ffc11d5571}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-rand@{ecfp\-\_\-rand}}
+\index{ecfp\-\_\-rand@{ecfp\-\_\-rand}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-rand(
+\begin{DoxyParamCaption}
+\item[{}]{res}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-rand\-\_\-std}(res)}}\label{ec_8h_a8823590b3b631dc2babf00ffc11d5571}
+
+
+Definition at line 60 of file ec.\-h.
+
+
+
+Referenced by hwang\-\_\-init\-\_\-parameters().
+
+\hypertarget{ec_8h_a6ea9f8b4d6aec54b9e829c6d9c9dc29d}{\index{ec.\-h@{ec.\-h}!ecfp\-\_\-to\-\_\-montgomery@{ecfp\-\_\-to\-\_\-montgomery}}
+\index{ecfp\-\_\-to\-\_\-montgomery@{ecfp\-\_\-to\-\_\-montgomery}!ec.h@{ec.\-h}}
+\subsubsection[{ecfp\-\_\-to\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define ecfp\-\_\-to\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf ecfp\-\_\-to\-\_\-montgomery\-\_\-std}(res, a)}}\label{ec_8h_a6ea9f8b4d6aec54b9e829c6d9c9dc29d}
+
+
+Definition at line 57 of file ec.\-h.
+
+
+
+Referenced by decapsulate\-\_\-key().
+

@@ -1,0 +1,312 @@
+\hypertarget{fp4_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4.h File Reference}
+\label{fp4_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4.\-h}}
+}
+{\ttfamily \#include \char`\"{}fp/fp4\-\_\-std.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fp4_8h_a662b61065b92980fe0fa1a5e1a86b403}{fp4\-\_\-add}(res, a, b)~\hyperlink{fp4_8c_aeca9ec62c504aa956e76d135159c34d8}{fp4\-\_\-add\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp4_8h_ad2485f1247b5415d6ee431d29cb98829}{fp4\-\_\-dbl}(res, a)~\hyperlink{fp4_8c_aeca9ec62c504aa956e76d135159c34d8}{fp4\-\_\-add\-\_\-std}(res, a, a)
+\item 
+\#define \hyperlink{fp4_8h_a2447c11e19481481f2f12aa1883261a1}{fp4\-\_\-sub}(res, a, b)~\hyperlink{fp4_8c_a263d4120971c70ac38851144cb43c580}{fp4\-\_\-sub\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp4_8h_a88922c027b8172ea2901985bdd234c96}{fp4\-\_\-neg}(res, a)~\hyperlink{fp4_8c_a05e0870b615d1653080c6e258d083f86}{fp4\-\_\-neg\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp4_8h_aa5c93a3766a81cf47b7ed7ed270d76fd}{fp4\-\_\-mul}(res, a, b)~\hyperlink{fp4_8c_a5993110716286bb142946ab3c8b81d07}{fp4\-\_\-mul\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp4_8h_ade79fa833b4c6a0b6626e1f78a4a96fa}{fp4\-\_\-mulfp2}(res, a, b)~\hyperlink{fp4_8c_a44f02711b6fe2523fdcd71a8efe0c886}{fp4\-\_\-mulfp2\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp4_8h_ab9e1e99fe253a2397e84b7eb934d8f36}{fp4\-\_\-sqr}(res, a)~\hyperlink{fp4_8c_a18d122a39265c397528705c6d0b44045}{fp4\-\_\-sqr\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp4_8h_a2313d8bfaf17585cbbd7a6d7bf3b247c}{fp4\-\_\-inv}(res, a)~\hyperlink{fp4_8c_acc2d615f002fd34a797200f0fe0ce9b1}{fp4\-\_\-inv\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp4_8h_aabda907d0f20aca6fb50cf89ca8abae0}{fp4\-\_\-hlv}(res, a)~\hyperlink{fp4_8c_a25891149aca07e0a47b4668424b41b0b}{fp4\-\_\-hlv\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp4_8h_aae15fdedcfe33281bbf5b3b9489cd44e}{fp4\-\_\-exp}(res, a, b)~\hyperlink{fp4_8c_acb0d422213e33956070054627915f4a8}{fp4\-\_\-exp\-\_\-std}(res, a, b)
+\item 
+\#define \hyperlink{fp4_8h_ab0527ec421056390f751fd6e3cf8d1bd}{fp4\-\_\-frobenius\-\_\-map}(res, a, i)~\hyperlink{fp4_8c_af6bf1b32f4630072d10f7ae0085260af}{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}(res, a, i)
+\item 
+\#define \hyperlink{fp4_8h_a55333d9fb7860706c6e8abdeec387359}{fp4\-\_\-mul\-\_\-adj\-\_\-root}(res, a)~\hyperlink{fp4_8c_a27e67f57f62b17775693d4e8ab940184}{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std}(res, a)
+\item 
+\#define \hyperlink{fp4_8h_a09cd891b913ec733cacc91e89b012f9e}{fp4\-\_\-to\-\_\-montgomery}(r, a)~\hyperlink{fp4_8c_ab001b7b14dd4ae2a515f345c7efca74a}{fp4\-\_\-to\-\_\-montgomery\-\_\-std}(r, a)
+\item 
+\#define \hyperlink{fp4_8h_ad8b3524783742f0dadae80d5927889da}{fp4\-\_\-from\-\_\-montgomery}(r, a)~\hyperlink{fp4_8c_a901efbddf319bd3d0b4805e599f2ba02}{fp4\-\_\-from\-\_\-montgomery\-\_\-std}(r, a)
+\item 
+\#define \hyperlink{fp4_8h_a3b0e211bf2626a613a889d38bd0528f0}{fp4\-\_\-rdc}(a)~\hyperlink{fp4_8c_a9fa84d0947017afdcf71da31943b3aff}{fp4\-\_\-rdc\-\_\-std}(a)
+\item 
+\#define \hyperlink{fp4_8h_aa892eba51069de2de0fe1b5457ceeec8}{fp4\-\_\-clear}(a)~\hyperlink{fp4_8c_a917f5a5ee3cca9082c3f4be2ec1be620}{fp4\-\_\-clear\-\_\-std}(a)
+\item 
+\#define \hyperlink{fp4_8h_ad5bb6fc3f712b9474068a6cc42595686}{fp4\-\_\-copy}(res, a)~\hyperlink{fp4_8c_aec3e2e8265002c10a801f642ff75038a}{fp4\-\_\-copy\-\_\-std}(res,a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{fp4_8h_a662b61065b92980fe0fa1a5e1a86b403}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-add@{fp4\-\_\-add}}
+\index{fp4\-\_\-add@{fp4\-\_\-add}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-add(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-add\-\_\-std}(res, a, b)}}\label{fp4_8h_a662b61065b92980fe0fa1a5e1a86b403}
+
+
+Definition at line 40 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-add\-\_\-std(), fp12\-\_\-inv\-\_\-std(), fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-mul\-\_\-std(), fp12\-\_\-mul\-\_\-tk3\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_aa892eba51069de2de0fe1b5457ceeec8}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-clear@{fp4\-\_\-clear}}
+\index{fp4\-\_\-clear@{fp4\-\_\-clear}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-clear\-\_\-std}(a)}}\label{fp4_8h_aa892eba51069de2de0fe1b5457ceeec8}
+
+
+Definition at line 58 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-clear\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-cyclotomic\-\_\-std(), fp12\-\_\-exp\-\_\-masked\-\_\-std(), fp12\-\_\-exp\-\_\-montyladder\-\_\-std(), fp12\-\_\-exp\-\_\-std(), fp12\-\_\-final\-\_\-exp\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_ad5bb6fc3f712b9474068a6cc42595686}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-copy@{fp4\-\_\-copy}}
+\index{fp4\-\_\-copy@{fp4\-\_\-copy}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-copy\-\_\-std}(res,a)}}\label{fp4_8h_ad5bb6fc3f712b9474068a6cc42595686}
+
+
+Definition at line 59 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-copy\-\_\-std(), fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-mul\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_ad2485f1247b5415d6ee431d29cb98829}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-dbl@{fp4\-\_\-dbl}}
+\index{fp4\-\_\-dbl@{fp4\-\_\-dbl}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-dbl}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-dbl(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-add\-\_\-std}(res, a, a)}}\label{fp4_8h_ad2485f1247b5415d6ee431d29cb98829}
+
+
+Definition at line 41 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-mul\-\_\-tk3\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_aae15fdedcfe33281bbf5b3b9489cd44e}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-exp@{fp4\-\_\-exp}}
+\index{fp4\-\_\-exp@{fp4\-\_\-exp}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-exp}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-exp(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-exp\-\_\-std}(res, a, b)}}\label{fp4_8h_aae15fdedcfe33281bbf5b3b9489cd44e}
+
+
+Definition at line 49 of file fp4.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{fp4_8h_ab0527ec421056390f751fd6e3cf8d1bd}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-frobenius\-\_\-map@{fp4\-\_\-frobenius\-\_\-map}}
+\index{fp4\-\_\-frobenius\-\_\-map@{fp4\-\_\-frobenius\-\_\-map}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-frobenius\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-frobenius\-\_\-map(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}(res, a, i)}}\label{fp4_8h_ab0527ec421056390f751fd6e3cf8d1bd}
+
+
+Definition at line 50 of file fp4.\-h.
+
+
+
+Referenced by main().
+
+\hypertarget{fp4_8h_ad8b3524783742f0dadae80d5927889da}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-from\-\_\-montgomery@{fp4\-\_\-from\-\_\-montgomery}}
+\index{fp4\-\_\-from\-\_\-montgomery@{fp4\-\_\-from\-\_\-montgomery}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-from\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-from\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-from\-\_\-montgomery\-\_\-std}(r, a)}}\label{fp4_8h_ad8b3524783742f0dadae80d5927889da}
+
+
+Definition at line 54 of file fp4.\-h.
+
+\hypertarget{fp4_8h_aabda907d0f20aca6fb50cf89ca8abae0}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-hlv@{fp4\-\_\-hlv}}
+\index{fp4\-\_\-hlv@{fp4\-\_\-hlv}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-hlv}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-hlv(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-hlv\-\_\-std}(res, a)}}\label{fp4_8h_aabda907d0f20aca6fb50cf89ca8abae0}
+
+
+Definition at line 48 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-hlv\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_a2313d8bfaf17585cbbd7a6d7bf3b247c}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-inv@{fp4\-\_\-inv}}
+\index{fp4\-\_\-inv@{fp4\-\_\-inv}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-inv}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-inv(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-inv\-\_\-std}(res, a)}}\label{fp4_8h_a2313d8bfaf17585cbbd7a6d7bf3b247c}
+
+
+Definition at line 47 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-inv\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_aa5c93a3766a81cf47b7ed7ed270d76fd}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-mul@{fp4\-\_\-mul}}
+\index{fp4\-\_\-mul@{fp4\-\_\-mul}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-mul}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-mul(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-mul\-\_\-std}(res, a, b)}}\label{fp4_8h_aa5c93a3766a81cf47b7ed7ed270d76fd}
+
+
+Definition at line 44 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-inv\-\_\-std(), fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-mul\-\_\-std(), fp12\-\_\-mul\-\_\-tk3\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), fp4\-\_\-exp\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_a55333d9fb7860706c6e8abdeec387359}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-mul\-\_\-adj\-\_\-root@{fp4\-\_\-mul\-\_\-adj\-\_\-root}}
+\index{fp4\-\_\-mul\-\_\-adj\-\_\-root@{fp4\-\_\-mul\-\_\-adj\-\_\-root}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-mul\-\_\-adj\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-mul\-\_\-adj\-\_\-root(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std}(res, a)}}\label{fp4_8h_a55333d9fb7860706c6e8abdeec387359}
+
+
+Definition at line 51 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-inv\-\_\-std(), fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-mul\-\_\-std(), fp12\-\_\-mul\-\_\-tk3\-\_\-std(), and fp12\-\_\-sqr\-\_\-std().
+
+\hypertarget{fp4_8h_ade79fa833b4c6a0b6626e1f78a4a96fa}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-mulfp2@{fp4\-\_\-mulfp2}}
+\index{fp4\-\_\-mulfp2@{fp4\-\_\-mulfp2}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-mulfp2}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-mulfp2(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-mulfp2\-\_\-std}(res, a, b)}}\label{fp4_8h_ade79fa833b4c6a0b6626e1f78a4a96fa}
+
+
+Definition at line 45 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-mul\-\_\-sparse\-\_\-std().
+
+\hypertarget{fp4_8h_a88922c027b8172ea2901985bdd234c96}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-neg@{fp4\-\_\-neg}}
+\index{fp4\-\_\-neg@{fp4\-\_\-neg}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-neg}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-neg(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-neg\-\_\-std}(res, a)}}\label{fp4_8h_a88922c027b8172ea2901985bdd234c96}
+
+
+Definition at line 43 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-neg\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_a3b0e211bf2626a613a889d38bd0528f0}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-rdc@{fp4\-\_\-rdc}}
+\index{fp4\-\_\-rdc@{fp4\-\_\-rdc}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-rdc}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-rdc(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-rdc\-\_\-std}(a)}}\label{fp4_8h_a3b0e211bf2626a613a889d38bd0528f0}
+
+
+Definition at line 56 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-rdc\-\_\-std().
+
+\hypertarget{fp4_8h_ab9e1e99fe253a2397e84b7eb934d8f36}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-sqr@{fp4\-\_\-sqr}}
+\index{fp4\-\_\-sqr@{fp4\-\_\-sqr}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-sqr}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-sqr(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-sqr\-\_\-std}(res, a)}}\label{fp4_8h_ab9e1e99fe253a2397e84b7eb934d8f36}
+
+
+Definition at line 46 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-inv\-\_\-std(), fp12\-\_\-sqr\-\_\-cyclotomic\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), fp4\-\_\-exp\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_a2447c11e19481481f2f12aa1883261a1}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-sub@{fp4\-\_\-sub}}
+\index{fp4\-\_\-sub@{fp4\-\_\-sub}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-sub(
+\begin{DoxyParamCaption}
+\item[{}]{res, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-sub\-\_\-std}(res, a, b)}}\label{fp4_8h_a2447c11e19481481f2f12aa1883261a1}
+
+
+Definition at line 42 of file fp4.\-h.
+
+
+
+Referenced by fp12\-\_\-inv\-\_\-std(), fp12\-\_\-mul\-\_\-distinct\-\_\-b\-\_\-std(), fp12\-\_\-mul\-\_\-sparse\-\_\-std(), fp12\-\_\-mul\-\_\-std(), fp12\-\_\-mul\-\_\-tk3\-\_\-std(), fp12\-\_\-sqr\-\_\-std(), fp12\-\_\-sub\-\_\-std(), and main().
+
+\hypertarget{fp4_8h_a09cd891b913ec733cacc91e89b012f9e}{\index{fp4.\-h@{fp4.\-h}!fp4\-\_\-to\-\_\-montgomery@{fp4\-\_\-to\-\_\-montgomery}}
+\index{fp4\-\_\-to\-\_\-montgomery@{fp4\-\_\-to\-\_\-montgomery}!fp4.h@{fp4.\-h}}
+\subsubsection[{fp4\-\_\-to\-\_\-montgomery}]{\setlength{\rightskip}{0pt plus 5cm}\#define fp4\-\_\-to\-\_\-montgomery(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf fp4\-\_\-to\-\_\-montgomery\-\_\-std}(r, a)}}\label{fp4_8h_a09cd891b913ec733cacc91e89b012f9e}
+
+
+Definition at line 53 of file fp4.\-h.
+

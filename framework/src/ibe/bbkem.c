@@ -1,11 +1,36 @@
-/*
- * bbkem.c
- *
- * Implementation of the BB1 IBE KEM
- *
- *  Created on: May 23, 2013
- *      Author: Thomas Unterluggauer
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "ibe/bbkem.h"
 #include "ec/ec.h"
@@ -35,12 +60,12 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 
 	cprng_get_bytes(s, BI_BYTES);
 
-	fp_rdc_n(s);		// reduce random number s by group order (constant time!)
+	fp_rdc_n(s);		                          // reduce random number s by group order (constant time!)
 
 	hash_id(id_bi, id);
 
 	// this multiplication needs to have constant runtime
-	fp_mul_barett_var(factor, id_bi, s, EC_PARAM.n, EC_PARAM.mu_n);
+	fp_mul_barett_var(factor, id_bi, s, EC_PARAM_N, EC_PARAM_MU_N);
 
 	// s*g3 + factor*g1 ... => interleaved calculation?
 	ecfp_mul(&(cipher->c1), (const ecfp_pt) &(BB1_PUBLIC.g3), s);
@@ -75,7 +100,6 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
  * @param id		the identity string used
  */
 void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
-	// TODO: id is not used currently. later we may need an indexed access to private keys associated with their ids
 	fp12_t p_res;
 
 #ifdef MONTGOMERY_ARITHMETIC
@@ -83,7 +107,6 @@ void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 
 	ecfp_to_montgomery(&c0, &(cipher->c0));
 	ecfp_to_montgomery(&c1, &(cipher->c1));
-	// 	pbc_map_opt_ate_div(p_res, &c0, &(BB1_PK.d0), &c1, &(BB1_PK.d1));
 	ecfp_neg_affine(&c1);
 	pbc_map_opt_ate_mul(p_res, &c0, &(BB1_PK.d0), &c1, &(BB1_PK.d1));
 	fp12_from_montgomery(p_res, (const fp4_t*) p_res);

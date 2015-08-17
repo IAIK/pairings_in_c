@@ -1,0 +1,118 @@
+\hypertarget{bbkem_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/ibe/bbkem.c File Reference}
+\label{bbkem_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/ibe/bbkem.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/ibe/bbkem.\-c}}
+}
+{\ttfamily \#include \char`\"{}ibe/bbkem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}param.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rand.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp12.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash/hashing.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pbc/pbc.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bbkem_8c_a3aa5ada46b525951d5d44b5ecdfc930d}{encapsulate\-\_\-key} (\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$key, \hyperlink{structbbkem__ciphertext}{bbkem\-\_\-ciphertext} $\ast$cipher, const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Encapsulation routine of the B\-B1 I\-B\-E K\-E\-M. \end{DoxyCompactList}\item 
+void \hyperlink{bbkem_8c_a10a0138b2c8dfa04f2fa3faf8c21648f}{decapsulate\-\_\-key} (\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} $\ast$key, \hyperlink{structbbkem__ciphertext}{bbkem\-\_\-ciphertext} $\ast$cipher, const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Decapsulation routine of the B\-B1 I\-B\-E K\-E\-M. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structbbkem__pk}{bbkem\-\_\-pk} \hyperlink{bbkem_8c_a2320c3b65c5d5107e5a3654bcb5d29ae}{B\-B1\-\_\-\-P\-K}
+\item 
+const \hyperlink{structbbkem__public}{bbkem\-\_\-public} \hyperlink{bbkem_8c_a443e92cbd38a934625e5dab153147595}{B\-B1\-\_\-\-P\-U\-B\-L\-I\-C}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bbkem_8c_a10a0138b2c8dfa04f2fa3faf8c21648f}{\index{bbkem.\-c@{bbkem.\-c}!decapsulate\-\_\-key@{decapsulate\-\_\-key}}
+\index{decapsulate\-\_\-key@{decapsulate\-\_\-key}!bbkem.c@{bbkem.\-c}}
+\subsubsection[{decapsulate\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}void decapsulate\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} $\ast$}]{key, }
+\item[{{\bf bbkem\-\_\-ciphertext} $\ast$}]{cipher, }
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{bbkem_8c_a10a0138b2c8dfa04f2fa3faf8c21648f}
+
+
+Decapsulation routine of the B\-B1 I\-B\-E K\-E\-M. 
+
+Decapsulates the key that is contained by the ciphertext.
+
+Takes the identity's private key and the received ciphertext to compute the session key to be used. Note that the current implementation does not use the identity string, but always takes the same private key. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the resulting session key \\
+\hline
+{\em cipher} & the ciphertext to be decrypted \\
+\hline
+{\em id} & the identity string used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file bbkem.\-c.
+
+
+
+References bbkem\-\_\-ciphertext\-::c0, bbkem\-\_\-ciphertext\-::c1, bbkem\-\_\-pk\-::d0, bbkem\-\_\-pk\-::d1, ecfp\-\_\-neg\-\_\-affine, ecfp\-\_\-to\-\_\-montgomery, fp12\-\_\-from\-\_\-montgomery, fp12\-\_\-rdc, hash\-\_\-key(), pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-div, and pbc\-\_\-map\-\_\-opt\-\_\-ate\-\_\-mul.
+
+
+
+Referenced by main().
+
+\hypertarget{bbkem_8c_a3aa5ada46b525951d5d44b5ecdfc930d}{\index{bbkem.\-c@{bbkem.\-c}!encapsulate\-\_\-key@{encapsulate\-\_\-key}}
+\index{encapsulate\-\_\-key@{encapsulate\-\_\-key}!bbkem.c@{bbkem.\-c}}
+\subsubsection[{encapsulate\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}void encapsulate\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf byte} $\ast$}]{key, }
+\item[{{\bf bbkem\-\_\-ciphertext} $\ast$}]{cipher, }
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{bbkem_8c_a3aa5ada46b525951d5d44b5ecdfc930d}
+
+
+Encapsulation routine of the B\-B1 I\-B\-E K\-E\-M. 
+
+Generates and encapsulates a 128-\/bit key based on the B\-B1-\/\-K\-E\-M scheme as proposed in the I\-E\-E\-E P1363.\-3 draft standard.
+
+Uses the recipient's identity string to establish a session key and a ciphertext decryptable only by the intended recipient. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the resulting session key \\
+\hline
+{\em cipher} & the resulting ciphertext \\
+\hline
+{\em id} & the identity string of the recipient \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file bbkem.\-c.
+
+
+
+References B\-I\-\_\-\-B\-Y\-T\-E\-S, bbkem\-\_\-ciphertext\-::c0, bbkem\-\_\-ciphertext\-::c1, cprng\-\_\-get\-\_\-bytes(), E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-U\-\_\-\-N, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-N, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-from\-\_\-montgomery, ecfp\-\_\-mul, fp12\-\_\-exp\-\_\-cyclotomic, fp12\-\_\-from\-\_\-montgomery, fp12\-\_\-rdc, fp\-\_\-mul\-\_\-barett\-\_\-var, fp\-\_\-rdc\-\_\-n, bbkem\-\_\-public\-::g, bbkem\-\_\-public\-::g1, bbkem\-\_\-public\-::g3, hash\-\_\-id(), hash\-\_\-key(), and bbkem\-\_\-public\-::v0.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{bbkem_8c_a2320c3b65c5d5107e5a3654bcb5d29ae}{\index{bbkem.\-c@{bbkem.\-c}!B\-B1\-\_\-\-P\-K@{B\-B1\-\_\-\-P\-K}}
+\index{B\-B1\-\_\-\-P\-K@{B\-B1\-\_\-\-P\-K}!bbkem.c@{bbkem.\-c}}
+\subsubsection[{B\-B1\-\_\-\-P\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf bbkem\-\_\-pk} B\-B1\-\_\-\-P\-K}}\label{bbkem_8c_a2320c3b65c5d5107e5a3654bcb5d29ae}
+
+
+Definition at line 113 of file bbkem\-\_\-param.\-c.
+
+\hypertarget{bbkem_8c_a443e92cbd38a934625e5dab153147595}{\index{bbkem.\-c@{bbkem.\-c}!B\-B1\-\_\-\-P\-U\-B\-L\-I\-C@{B\-B1\-\_\-\-P\-U\-B\-L\-I\-C}}
+\index{B\-B1\-\_\-\-P\-U\-B\-L\-I\-C@{B\-B1\-\_\-\-P\-U\-B\-L\-I\-C}!bbkem.c@{bbkem.\-c}}
+\subsubsection[{B\-B1\-\_\-\-P\-U\-B\-L\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf bbkem\-\_\-public} B\-B1\-\_\-\-P\-U\-B\-L\-I\-C}}\label{bbkem_8c_a443e92cbd38a934625e5dab153147595}
+
+
+Definition at line 84 of file bbkem\-\_\-param.\-c.
+

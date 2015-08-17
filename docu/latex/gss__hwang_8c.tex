@@ -1,0 +1,59 @@
+\hypertarget{gss__hwang_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/gss/gss\-\_\-hwang.c File Reference}
+\label{gss__hwang_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/gss/gss\-\_\-hwang.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/gss/gss\-\_\-hwang.\-c}}
+}
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rand.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pbc/pbc.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fp/fp12.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gss/gss\-\_\-hwang.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash/hash\-\_\-function.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_ae1e823357de7a263f2ed95e66b14e66c}{sbyte} \hyperlink{gss__hwang_8c_a07e069d6b71f2621bfb1fc1553b00bb2}{hwang\-\_\-sign} (\hyperlink{gss__hwang_8h_a8b2bf681e03a008deb9632a75143fd84}{hwang\-\_\-signature\-\_\-ptr} sig, \hyperlink{gss__hwang_8h_af489725283a217696811c1ea7072d7f8}{hwang\-\_\-public\-\_\-parameters\-\_\-ptr} data, \hyperlink{gss__hwang_8h_a9fb82923594c2981cea0ac048ce8f1de}{hwang\-\_\-signing\-\_\-key\-\_\-ptr} usk)
+\begin{DoxyCompactList}\small\item\em Generates a signature according to the scheme of H\-W\-A\-N\-G. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{gss__hwang_8c_a07e069d6b71f2621bfb1fc1553b00bb2}{\index{gss\-\_\-hwang.\-c@{gss\-\_\-hwang.\-c}!hwang\-\_\-sign@{hwang\-\_\-sign}}
+\index{hwang\-\_\-sign@{hwang\-\_\-sign}!gss_hwang.c@{gss\-\_\-hwang.\-c}}
+\subsubsection[{hwang\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sbyte} hwang\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf hwang\-\_\-signature\-\_\-ptr}}]{sig, }
+\item[{{\bf hwang\-\_\-public\-\_\-parameters\-\_\-ptr}}]{data, }
+\item[{{\bf hwang\-\_\-signing\-\_\-key\-\_\-ptr}}]{usk}
+\end{DoxyParamCaption}
+)}}\label{gss__hwang_8c_a07e069d6b71f2621bfb1fc1553b00bb2}
+
+
+Generates a signature according to the scheme of H\-W\-A\-N\-G. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sig} & \mbox{[}out\mbox{]} computed signature. \\
+\hline
+{\em data} & \mbox{[}in\mbox{]} public data of H\-W\-A\-N\-G scheme. \\
+\hline
+{\em usk} & \mbox{[}in\mbox{]} user secret key to generate a valid signature.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; -\/1 on E\-R\-R\-O\-R; 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file gss\-\_\-hwang.\-c.
+
+
+
+References hwang\-\_\-signing\-\_\-key\-\_\-s\-::\-A, bi\-\_\-add, B\-I\-\_\-\-B\-Y\-T\-E\-S, bi\-\_\-clear\-\_\-var\-\_\-std(), bi\-\_\-compare, bi\-\_\-copy\-\_\-var, bi\-\_\-copy\-\_\-var\-\_\-std(), bi\-\_\-multiply, bi\-\_\-subtract, bi\-\_\-subtract\-\_\-dbl\-\_\-len, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-zero, hwang\-\_\-signature\-\_\-s\-::c, cprng\-\_\-get\-\_\-bytes(), hwang\-\_\-public\-\_\-parameters\-\_\-s\-::d, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-1, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-2, hwang\-\_\-signature\-\_\-s\-::\-D\-\_\-3, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-U\-\_\-\-N, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-N, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-mul, fp12\-\_\-mul, fp\-\_\-rdc\-\_\-2l\-\_\-var, fp\-\_\-rdc\-\_\-n, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::g, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::g2, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::h1, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::h\-\_\-theta, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, hash\-\_\-final, hash\-\_\-init, hash\-\_\-update, hash\-\_\-update\-\_\-\-G1(), hash\-\_\-update\-\_\-\-G\-T(), hwang\-\_\-public\-\_\-parameters\-\_\-s\-::order\-\_\-p, pbc\-\_\-map\-\_\-opt\-\_\-ate, print(), P\-R\-I\-N\-T\-\_\-\-B\-I\-G\-I\-N\-T, P\-R\-I\-N\-T\-\_\-\-G1, P\-R\-I\-N\-T\-\_\-\-G\-T, hwang\-\_\-signature\-\_\-s\-::s\-\_\-alpha, hwang\-\_\-signature\-\_\-s\-::s\-\_\-gamma, hwang\-\_\-signature\-\_\-s\-::s\-\_\-x, hwang\-\_\-signature\-\_\-s\-::s\-\_\-y, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::u, hwang\-\_\-public\-\_\-parameters\-\_\-s\-::w, hwang\-\_\-signing\-\_\-key\-\_\-s\-::x, hwang\-\_\-signing\-\_\-key\-\_\-s\-::y, and hwang\-\_\-signing\-\_\-key\-\_\-s\-::z.
+
+
+
+Referenced by main().
+

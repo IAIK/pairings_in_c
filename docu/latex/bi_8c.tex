@@ -1,0 +1,849 @@
+\hypertarget{bi_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/bigint/bi.c File Reference}
+\label{bi_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/bigint/bi.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/base/std/bigint/bi.\-c}}
+}
+{\ttfamily \#include \char`\"{}bigint/bi.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bi_8c_afdde22888ebf7acb6e5bf1c1def62ab1}{bi\-\_\-get\-\_\-nafw\-\_\-std} (\hyperlink{types_8h_ae1e823357de7a263f2ed95e66b14e66c}{sbyte} $\ast$nafw, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} width)
+\begin{DoxyCompactList}\small\item\em Returns a w-\/bit N\-A\-F representation of the input, where w is specified by the parameter width. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_a47e9a9efc6cf8044c65a664c539a7fe1}{bi\-\_\-get\-\_\-nafb\-\_\-std} (\hyperlink{types_8h_ae1e823357de7a263f2ed95e66b14e66c}{sbyte} $\ast$naf, \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Returns a binary N\-A\-F representation of the input. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_aaf932a213e27cd20fba2358aa46a1114}{bi\-\_\-add\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Adds two big integers of specified length, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_ad199fd67684859c3f5a106b99e6211d8}{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const int cin, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Adds two big integers of specified length and an additional carry, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_afb065e889c57553459521975a8d71eeb}{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Adds a single word to an big integer of specified length, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_a6f12c7326292227d8788ebd51d53be11}{bi\-\_\-subtract\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Subtracts two big integers of specified length, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_a8045740b6f35dd53588e2d10f873a40c}{bi\-\_\-subtract\-\_\-vl\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-b)
+\begin{DoxyCompactList}\small\item\em Subtracts two big integers of different length, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_aced3e1ee5a515797ae7cfe6c9b0bd03f}{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Subtracts a single word from an big integer of specified length, i.\-e. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_ab8f4e154c6cf109a174045d738f8e926}{bi\-\_\-clear\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Sets each element of the big integer to zero. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a8e8316ef6b78615b75ea1b667ef23f8d}{bi\-\_\-xor\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Performs an X\-O\-R operation on two big integers, i.\-e. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_ad5c2b7db053a13be0cad8d1dd35393c4}{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} right, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Shifts an big integer to the right by the specified amount of bits. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a16b1d17fe4a67b4457a8ce31fc31cf1f}{bi\-\_\-div3\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Performs a division by 3. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a6046ec47d71e30a03efe1418cea6be09}{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Shifts a big integer right by one bit. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a0acbebc0971af6906ae0544a7b1cc5cf}{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Shifts a big integer left by one bit. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_af3fd5b2e4ba367afd30f10b03413bf4b}{bi\-\_\-compare\-\_\-var\-\_\-std} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Compares two values, a and b, and returns 0 if equal, 1 if a $>$ b, and -\/1 otherwise. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_aa0d41e5b08ad4db2f52172e218070c68}{bi\-\_\-compare\-\_\-vl\-\_\-std} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-b)
+\begin{DoxyCompactList}\small\item\em Compares two values, a and b, of different length. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{bi\-\_\-multiply\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$result, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-b)
+\begin{DoxyCompactList}\small\item\em Multiplies two values a and b, i.\-e. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a2dadd8872caea962f9d439a3a390dd84}{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$result, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} b, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length\-\_\-a)
+\begin{DoxyCompactList}\small\item\em Multiplies a big integer with a single word, i.\-e. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a4abe007654e9cfe32edab93a43dc97fc}{bi\-\_\-copy\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$dest, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$source, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Copies a big integer. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_ab9721a6b67568c8411b4a495fdc1b808}{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} bit, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Sets a single bit in a big integer. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_a5aeb7985ba5b5e863b4f618f83976598}{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} bit, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Tests whether a bit is set, i.\-e. \end{DoxyCompactList}\item 
+int \hyperlink{bi_8c_afa1c8fddc51c53b112a79b8ea71d4a1f}{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Returns the index of the most significant bit set. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} \hyperlink{bi_8c_a436b9d7a754277e553b6cf836330d30e}{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std} (const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length, const \hyperlink{types_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} index)
+\begin{DoxyCompactList}\small\item\em Returns the byte of the given big integer at the specified index. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_a6ecbc36c5e703d2c0dda37736ff2d6b5}{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length, const \hyperlink{types_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} index, const \hyperlink{types_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte} value)
+\begin{DoxyCompactList}\small\item\em Sets the byte of the given big integer at the specified index. \end{DoxyCompactList}\item 
+void \hyperlink{bi_8c_ab889cf3ebd4fdde3861c455ef126f56e}{bi\-\_\-negate\-\_\-var\-\_\-std} (\hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$res, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} $\ast$a, const \hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} length)
+\begin{DoxyCompactList}\small\item\em Negates a big integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bi_8c_ad199fd67684859c3f5a106b99e6211d8}{\index{bi.\-c@{bi.\-c}!bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std}}
+\index{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-add\-\_\-carry\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const int}]{cin, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_ad199fd67684859c3f5a106b99e6211d8}
+
+
+Adds two big integers of specified length and an additional carry, i.\-e. 
+
+res = a + b + cin. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result (sum) of the addition \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em cin} & carry input \\
+\hline
+{\em length} & length of a, b, and res \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+carry 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file bi.\-c.
+
+\hypertarget{bi_8c_aaf932a213e27cd20fba2358aa46a1114}{\index{bi.\-c@{bi.\-c}!bi\-\_\-add\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-var\-\_\-std}}
+\index{bi\-\_\-add\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-add\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-add\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_aaf932a213e27cd20fba2358aa46a1114}
+
+
+Adds two big integers of specified length, i.\-e. 
+
+res = a + b. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result (sum) of the addition \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em length} & length of a, b, and res \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+carry 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file bi.\-c.
+
+\hypertarget{bi_8c_afb065e889c57553459521975a8d71eeb}{\index{bi.\-c@{bi.\-c}!bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std}}
+\index{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-add\-\_\-word\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t}}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_afb065e889c57553459521975a8d71eeb}
+
+
+Adds a single word to an big integer of specified length, i.\-e. 
+
+res = a + b. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the addition (big integer) \\
+\hline
+{\em a} & operand a (big integer) \\
+\hline
+{\em b} & operand b (single word) \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+carry 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file bi.\-c.
+
+\hypertarget{bi_8c_ab8f4e154c6cf109a174045d738f8e926}{\index{bi.\-c@{bi.\-c}!bi\-\_\-clear\-\_\-var\-\_\-std@{bi\-\_\-clear\-\_\-var\-\_\-std}}
+\index{bi\-\_\-clear\-\_\-var\-\_\-std@{bi\-\_\-clear\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-clear\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-clear\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_ab8f4e154c6cf109a174045d738f8e926}
+
+
+Sets each element of the big integer to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the big integer to be reset \\
+\hline
+{\em length} & length of a \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file bi.\-c.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{bi_8c_af3fd5b2e4ba367afd30f10b03413bf4b}{\index{bi.\-c@{bi.\-c}!bi\-\_\-compare\-\_\-var\-\_\-std@{bi\-\_\-compare\-\_\-var\-\_\-std}}
+\index{bi\-\_\-compare\-\_\-var\-\_\-std@{bi\-\_\-compare\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-compare\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-compare\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_af3fd5b2e4ba367afd30f10b03413bf4b}
+
+
+Compares two values, a and b, and returns 0 if equal, 1 if a $>$ b, and -\/1 otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & parameter a \\
+\hline
+{\em b} & parameter b \\
+\hline
+{\em length} & length of a and b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if equal, 1 if a $>$ b, -\/1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 390 of file bi.\-c.
+
+\hypertarget{bi_8c_aa0d41e5b08ad4db2f52172e218070c68}{\index{bi.\-c@{bi.\-c}!bi\-\_\-compare\-\_\-vl\-\_\-std@{bi\-\_\-compare\-\_\-vl\-\_\-std}}
+\index{bi\-\_\-compare\-\_\-vl\-\_\-std@{bi\-\_\-compare\-\_\-vl\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-compare\-\_\-vl\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-compare\-\_\-vl\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-a, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_aa0d41e5b08ad4db2f52172e218070c68}
+
+
+Compares two values, a and b, of different length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & parameter a \\
+\hline
+{\em b} & parameter b \\
+\hline
+{\em length\-\_\-a} & length of big integer a \\
+\hline
+{\em length\-\_\-b} & length of big integer b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if equal, 1 if a $>$ b, -\/1 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 412 of file bi.\-c.
+
+\hypertarget{bi_8c_a4abe007654e9cfe32edab93a43dc97fc}{\index{bi.\-c@{bi.\-c}!bi\-\_\-copy\-\_\-var\-\_\-std@{bi\-\_\-copy\-\_\-var\-\_\-std}}
+\index{bi\-\_\-copy\-\_\-var\-\_\-std@{bi\-\_\-copy\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-copy\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-copy\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{dest, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{source, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a4abe007654e9cfe32edab93a43dc97fc}
+
+
+Copies a big integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination \\
+\hline
+{\em source} & source \\
+\hline
+{\em length} & length of source and destination \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 481 of file bi.\-c.
+
+
+
+Referenced by hwang\-\_\-init\-\_\-parameters(), hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{bi_8c_a16b1d17fe4a67b4457a8ce31fc31cf1f}{\index{bi.\-c@{bi.\-c}!bi\-\_\-div3\-\_\-var\-\_\-std@{bi\-\_\-div3\-\_\-var\-\_\-std}}
+\index{bi\-\_\-div3\-\_\-var\-\_\-std@{bi\-\_\-div3\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-div3\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-div3\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{{\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a16b1d17fe4a67b4457a8ce31fc31cf1f}
+
+
+Performs a division by 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & result of the division \\
+\hline
+{\em a} & value to be divided \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 325 of file bi.\-c.
+
+
+
+References bi\-\_\-copy\-\_\-var, and bi\-\_\-multiply\-\_\-var.
+
+\hypertarget{bi_8c_a436b9d7a754277e553b6cf836330d30e}{\index{bi.\-c@{bi.\-c}!bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std@{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}}
+\index{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std@{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte} bi\-\_\-get\-\_\-byte\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length, }
+\item[{const {\bf uint}}]{index}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a436b9d7a754277e553b6cf836330d30e}
+
+
+Returns the byte of the given big integer at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the big integer \\
+\hline
+{\em length} & length of a \\
+\hline
+{\em index} & the index of the byte to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the byte at the specified index 
+\end{DoxyReturn}
+
+
+Definition at line 551 of file bi.\-c.
+
+
+
+References B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and L\-D\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_afa1c8fddc51c53b112a79b8ea71d4a1f}{\index{bi.\-c@{bi.\-c}!bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std@{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}}
+\index{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std@{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-get\-\_\-msb\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_afa1c8fddc51c53b112a79b8ea71d4a1f}
+
+
+Returns the index of the most significant bit set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & parameter where the M\-S\-B is to be determined \\
+\hline
+{\em length} & length of a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the M\-S\-B, -\/1 if a is 0 
+\end{DoxyReturn}
+
+
+Definition at line 527 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a47e9a9efc6cf8044c65a664c539a7fe1}{\index{bi.\-c@{bi.\-c}!bi\-\_\-get\-\_\-nafb\-\_\-std@{bi\-\_\-get\-\_\-nafb\-\_\-std}}
+\index{bi\-\_\-get\-\_\-nafb\-\_\-std@{bi\-\_\-get\-\_\-nafb\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-get\-\_\-nafb\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-get\-\_\-nafb\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf sbyte} $\ast$}]{naf, }
+\item[{{\bf word\-\_\-t} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a47e9a9efc6cf8044c65a664c539a7fe1}
+
+
+Returns a binary N\-A\-F representation of the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em naf} & an array for the resulting N\-A\-F representation \\
+\hline
+{\em a} & the value to be converted into N\-A\-F \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of elements in the N\-A\-F representation 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file bi.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-is\-\_\-odd, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-zero, and B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_afdde22888ebf7acb6e5bf1c1def62ab1}{\index{bi.\-c@{bi.\-c}!bi\-\_\-get\-\_\-nafw\-\_\-std@{bi\-\_\-get\-\_\-nafw\-\_\-std}}
+\index{bi\-\_\-get\-\_\-nafw\-\_\-std@{bi\-\_\-get\-\_\-nafw\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-get\-\_\-nafw\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-get\-\_\-nafw\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf sbyte} $\ast$}]{nafw, }
+\item[{{\bf word\-\_\-t} $\ast$}]{a, }
+\item[{{\bf word\-\_\-t}}]{width}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_afdde22888ebf7acb6e5bf1c1def62ab1}
+
+
+Returns a w-\/bit N\-A\-F representation of the input, where w is specified by the parameter width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nafw} & an array for the resulting N\-A\-F representation \\
+\hline
+{\em a} & the value to be converted into N\-A\-F \\
+\hline
+{\em width} & the N\-A\-F-\/width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of elements in the N\-A\-F representation 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file bi.\-c.
+
+
+
+References bi\-\_\-compare, bi\-\_\-is\-\_\-odd, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-zero, and B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a675a571527982debd654a1f1cc1ecf9f}{\index{bi.\-c@{bi.\-c}!bi\-\_\-multiply\-\_\-var\-\_\-std@{bi\-\_\-multiply\-\_\-var\-\_\-std}}
+\index{bi\-\_\-multiply\-\_\-var\-\_\-std@{bi\-\_\-multiply\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-multiply\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-multiply\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{result, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-a, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a675a571527982debd654a1f1cc1ecf9f}
+
+
+Multiplies two values a and b, i.\-e. 
+
+res = a $\ast$ b. Beware that $\vert$res$\vert$ $>$= length\-\_\-a + length\-\_\-b 
+\begin{DoxyParams}{Parameters}
+{\em result} & the product of a and b \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em length\-\_\-a} & length of a \\
+\hline
+{\em length\-\_\-b} & length of b \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 442 of file bi.\-c.
+
+
+
+References bi\-\_\-clear\-\_\-var, and B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a2dadd8872caea962f9d439a3a390dd84}{\index{bi.\-c@{bi.\-c}!bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std}}
+\index{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-multiply\-\_\-word\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{result, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t}}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-a}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a2dadd8872caea962f9d439a3a390dd84}
+
+
+Multiplies a big integer with a single word, i.\-e. 
+
+res = a $\ast$ b. Beware that $\vert$res$\vert$ $>$= length\-\_\-a + 1. 
+\begin{DoxyParams}{Parameters}
+{\em result} & the resulting product (big integer) \\
+\hline
+{\em a} & parameter a (big integer) \\
+\hline
+{\em b} & parameter b (word) \\
+\hline
+{\em length\-\_\-a} & length of big integer a \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 471 of file bi.\-c.
+
+
+
+References bi\-\_\-multiply\-\_\-var.
+
+\hypertarget{bi_8c_ab889cf3ebd4fdde3861c455ef126f56e}{\index{bi.\-c@{bi.\-c}!bi\-\_\-negate\-\_\-var\-\_\-std@{bi\-\_\-negate\-\_\-var\-\_\-std}}
+\index{bi\-\_\-negate\-\_\-var\-\_\-std@{bi\-\_\-negate\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-negate\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-negate\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_ab889cf3ebd4fdde3861c455ef126f56e}
+
+
+Negates a big integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the negate of a \\
+\hline
+{\em a} & the big integer to be negated \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 590 of file bi.\-c.
+
+
+
+References bi\-\_\-add\-\_\-var, and bi\-\_\-one.
+
+\hypertarget{bi_8c_ab9721a6b67568c8411b4a495fdc1b808}{\index{bi.\-c@{bi.\-c}!bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std@{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}}
+\index{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std@{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-set\-\_\-bit\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf uint}}]{bit, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_ab9721a6b67568c8411b4a495fdc1b808}
+
+
+Sets a single bit in a big integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the big integer to be manipulated \\
+\hline
+{\em bit} & the number of the bit to be set \\
+\hline
+{\em length} & length of a \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 494 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and L\-D\-\_\-\-B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a6ecbc36c5e703d2c0dda37736ff2d6b5}{\index{bi.\-c@{bi.\-c}!bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std@{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}}
+\index{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std@{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-set\-\_\-byte\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length, }
+\item[{const {\bf uint}}]{index, }
+\item[{const {\bf byte}}]{value}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a6ecbc36c5e703d2c0dda37736ff2d6b5}
+
+
+Sets the byte of the given big integer at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the big integer \\
+\hline
+{\em length} & lenght of a \\
+\hline
+{\em index} & the index of the byte to be written \\
+\hline
+{\em value} & the value to be written at the specified index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 571 of file bi.\-c.
+
+
+
+References B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and L\-D\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a0acbebc0971af6906ae0544a7b1cc5cf}{\index{bi.\-c@{bi.\-c}!bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std}}
+\index{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-shift\-\_\-left\-\_\-one\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a0acbebc0971af6906ae0544a7b1cc5cf}
+
+
+Shifts a big integer left by one bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the shift operation \\
+\hline
+{\em a} & the value to be shifted \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a6046ec47d71e30a03efe1418cea6be09}{\index{bi.\-c@{bi.\-c}!bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}}
+\index{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-shift\-\_\-right\-\_\-one\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a6046ec47d71e30a03efe1418cea6be09}
+
+
+Shifts a big integer right by one bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the shift operation \\
+\hline
+{\em a} & the value to be shifted \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 357 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_ad5c2b7db053a13be0cad8d1dd35393c4}{\index{bi.\-c@{bi.\-c}!bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}}
+\index{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std@{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-shift\-\_\-right\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf uint}}]{right, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_ad5c2b7db053a13be0cad8d1dd35393c4}
+
+
+Shifts an big integer to the right by the specified amount of bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the shift operation \\
+\hline
+{\em a} & the value to be shifted \\
+\hline
+{\em right} & number of bits to shift \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 295 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and L\-D\-\_\-\-B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a6f12c7326292227d8788ebd51d53be11}{\index{bi.\-c@{bi.\-c}!bi\-\_\-subtract\-\_\-var\-\_\-std@{bi\-\_\-subtract\-\_\-var\-\_\-std}}
+\index{bi\-\_\-subtract\-\_\-var\-\_\-std@{bi\-\_\-subtract\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-subtract\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-subtract\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a6f12c7326292227d8788ebd51d53be11}
+
+
+Subtracts two big integers of specified length, i.\-e. 
+
+res = a -\/ b. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result (difference) of the subtraction \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em length} & length of a, b, and res \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+carry 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file bi.\-c.
+
+\hypertarget{bi_8c_a8045740b6f35dd53588e2d10f873a40c}{\index{bi.\-c@{bi.\-c}!bi\-\_\-subtract\-\_\-vl\-\_\-std@{bi\-\_\-subtract\-\_\-vl\-\_\-std}}
+\index{bi\-\_\-subtract\-\_\-vl\-\_\-std@{bi\-\_\-subtract\-\_\-vl\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-subtract\-\_\-vl\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-subtract\-\_\-vl\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-a, }
+\item[{const {\bf length\-\_\-t}}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a8045740b6f35dd53588e2d10f873a40c}
+
+
+Subtracts two big integers of different length, i.\-e. 
+
+res = a -\/ b. Beware that $\vert$res$\vert$ $>$= M\-A\-X(length\-\_\-a, length\-\_\-b) 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the subtraction \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em length\-\_\-a} & length of a \\
+\hline
+{\em length\-\_\-b} & lenght of b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 217 of file bi.\-c.
+
+\hypertarget{bi_8c_aced3e1ee5a515797ae7cfe6c9b0bd03f}{\index{bi.\-c@{bi.\-c}!bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std}}
+\index{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std@{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-subtract\-\_\-word\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t}}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_aced3e1ee5a515797ae7cfe6c9b0bd03f}
+
+
+Subtracts a single word from an big integer of specified length, i.\-e. 
+
+res = a -\/ b. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the subtraction (big integer) \\
+\hline
+{\em a} & operand a (big integer) \\
+\hline
+{\em b} & operand b (single word) \\
+\hline
+{\em length} & length of a and res \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+carry 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file bi.\-c.
+
+\hypertarget{bi_8c_a5aeb7985ba5b5e863b4f618f83976598}{\index{bi.\-c@{bi.\-c}!bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std@{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}}
+\index{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std@{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}int bi\-\_\-test\-\_\-bit\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf uint}}]{bit, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a5aeb7985ba5b5e863b4f618f83976598}
+
+
+Tests whether a bit is set, i.\-e. 
+
+returns 1 if the specified bit is set, 0 otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em a} & big integer that is to be tested \\
+\hline
+{\em bit} & number of the bit to be tested \\
+\hline
+{\em length} & length of parameter a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if set, 0 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 511 of file bi.\-c.
+
+
+
+References B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D, and L\-D\-\_\-\-B\-I\-T\-S\-\_\-\-P\-E\-R\-\_\-\-W\-O\-R\-D.
+
+\hypertarget{bi_8c_a8e8316ef6b78615b75ea1b667ef23f8d}{\index{bi.\-c@{bi.\-c}!bi\-\_\-xor\-\_\-var\-\_\-std@{bi\-\_\-xor\-\_\-var\-\_\-std}}
+\index{bi\-\_\-xor\-\_\-var\-\_\-std@{bi\-\_\-xor\-\_\-var\-\_\-std}!bi.c@{bi.\-c}}
+\subsubsection[{bi\-\_\-xor\-\_\-var\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void bi\-\_\-xor\-\_\-var\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf word\-\_\-t} $\ast$}]{res, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{a, }
+\item[{const {\bf word\-\_\-t} $\ast$}]{b, }
+\item[{const {\bf length\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{bi_8c_a8e8316ef6b78615b75ea1b667ef23f8d}
+
+
+Performs an X\-O\-R operation on two big integers, i.\-e. 
+
+res = a X\-O\-R b. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & operand a \\
+\hline
+{\em b} & operand b \\
+\hline
+{\em length} & length of a, b, and res \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 281 of file bi.\-c.
+

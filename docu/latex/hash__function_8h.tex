@@ -1,0 +1,141 @@
+\hypertarget{hash__function_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/hash\-\_\-function.h File Reference}
+\label{hash__function_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/hash\-\_\-function.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/hash/hash\-\_\-function.\-h}}
+}
+{\ttfamily \#include \char`\"{}hash/\-Keccak-\/compact.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hash__function_8h_a21fc7d3d70cddc3c867a3001c74702e9}{K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A}
+\item 
+\#define \hyperlink{hash__function_8h_ab0bc977d3fec2517ebda1a77e1cfaecc}{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}~\hyperlink{Keccak-compact-settings_8h_a8707bae80e8f7d66d208a01107024b9e}{c\-Keccak\-Fixed\-Output\-Length\-In\-Bytes}$\ast$8
+\item 
+\#define \hyperlink{hash__function_8h_ab1bd99f08570919c80e3f5a868355245}{H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S}~\hyperlink{Keccak-compact-settings_8h_a8707bae80e8f7d66d208a01107024b9e}{c\-Keccak\-Fixed\-Output\-Length\-In\-Bytes}
+\item 
+\#define \hyperlink{hash__function_8h_ae96335422d5878278a5665b1e731d45f}{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}~\hyperlink{Keccak-compact-settings_8h_aadd233299e8a09d586ace2b1e0a35723}{c\-Keccak\-B}
+\item 
+\#define \hyperlink{hash__function_8h_a07fd4cae5a72a9fc6a34aebe25e61082}{B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S}~(\hyperlink{hash__function_8h_ae96335422d5878278a5665b1e731d45f}{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}/8)
+\item 
+\#define \hyperlink{hash__function_8h_a55ccf4c210531c9ab9e0f81a2d2d6b80}{hash\-\_\-function}(dest, msg, length)~\hyperlink{Keccak-compact_8c_a92cd4d0a323107c62536ab7bba8e5d6e}{crypto\-\_\-hash}(dest, msg, length)
+\item 
+\#define \hyperlink{hash__function_8h_a0c2075d806a89ceed841896e74f91164}{hash\-\_\-init}(state)~\hyperlink{Keccak-compact_8c_a1b8c8a006dfc4249184547e855352b24}{Init}(state)
+\item 
+\#define \hyperlink{hash__function_8h_a987c9b484d696c824529acde2bdd064c}{hash\-\_\-update}(state, data, databitlen)~\hyperlink{Keccak-compact_8c_afdec6f2494afd29ec80747223d1acf73}{Update}(state, data, databitlen)
+\item 
+\#define \hyperlink{hash__function_8h_a222c7b8b00c16e182586509154a3521d}{hash\-\_\-final}(state, hashval, hashbytelen)~\hyperlink{Keccak-compact_8c_a0bc149d576bf1e0725f19cb49f3e23c0}{Final}(state, hashval, hashbytelen)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{hash__function_8h_ae96335422d5878278a5665b1e731d45f}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S@{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}}
+\index{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S@{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S~{\bf c\-Keccak\-B}}}\label{hash__function_8h_ae96335422d5878278a5665b1e731d45f}
+
+
+Definition at line 44 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hash\-\_\-update\-\_\-\-G1(), and hash\-\_\-update\-\_\-\-G\-T().
+
+\hypertarget{hash__function_8h_a07fd4cae5a72a9fc6a34aebe25e61082}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S@{B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S}}
+\index{B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S@{B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S~({\bf B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S}/8)}}\label{hash__function_8h_a07fd4cae5a72a9fc6a34aebe25e61082}
+
+
+Definition at line 45 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hash\-\_\-update\-\_\-\-G1(), and hash\-\_\-update\-\_\-\-G\-T().
+
+\hypertarget{hash__function_8h_ab0bc977d3fec2517ebda1a77e1cfaecc}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}}
+\index{H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-H\-\_\-\-B\-I\-T\-S~{\bf c\-Keccak\-Fixed\-Output\-Length\-In\-Bytes}$\ast$8}}\label{hash__function_8h_ab0bc977d3fec2517ebda1a77e1cfaecc}
+
+
+Definition at line 42 of file hash\-\_\-function.\-h.
+
+\hypertarget{hash__function_8h_ab1bd99f08570919c80e3f5a868355245}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S@{H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S}}
+\index{H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S@{H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S~{\bf c\-Keccak\-Fixed\-Output\-Length\-In\-Bytes}}}\label{hash__function_8h_ab1bd99f08570919c80e3f5a868355245}
+
+
+Definition at line 43 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hash\-\_\-id(), hash\-\_\-key(), hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{hash__function_8h_a222c7b8b00c16e182586509154a3521d}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!hash\-\_\-final@{hash\-\_\-final}}
+\index{hash\-\_\-final@{hash\-\_\-final}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{hash\-\_\-final}]{\setlength{\rightskip}{0pt plus 5cm}\#define hash\-\_\-final(
+\begin{DoxyParamCaption}
+\item[{}]{state, }
+\item[{}]{hashval, }
+\item[{}]{hashbytelen}
+\end{DoxyParamCaption}
+)~{\bf Final}(state, hashval, hashbytelen)}}\label{hash__function_8h_a222c7b8b00c16e182586509154a3521d}
+
+
+Definition at line 51 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{hash__function_8h_a55ccf4c210531c9ab9e0f81a2d2d6b80}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!hash\-\_\-function@{hash\-\_\-function}}
+\index{hash\-\_\-function@{hash\-\_\-function}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{hash\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}\#define hash\-\_\-function(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{msg, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)~{\bf crypto\-\_\-hash}(dest, msg, length)}}\label{hash__function_8h_a55ccf4c210531c9ab9e0f81a2d2d6b80}
+
+
+Definition at line 48 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hash\-\_\-id(), and hash\-\_\-key().
+
+\hypertarget{hash__function_8h_a0c2075d806a89ceed841896e74f91164}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!hash\-\_\-init@{hash\-\_\-init}}
+\index{hash\-\_\-init@{hash\-\_\-init}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{hash\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}\#define hash\-\_\-init(
+\begin{DoxyParamCaption}
+\item[{}]{state}
+\end{DoxyParamCaption}
+)~{\bf Init}(state)}}\label{hash__function_8h_a0c2075d806a89ceed841896e74f91164}
+
+
+Definition at line 49 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{hash__function_8h_a987c9b484d696c824529acde2bdd064c}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!hash\-\_\-update@{hash\-\_\-update}}
+\index{hash\-\_\-update@{hash\-\_\-update}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{hash\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}\#define hash\-\_\-update(
+\begin{DoxyParamCaption}
+\item[{}]{state, }
+\item[{}]{data, }
+\item[{}]{databitlen}
+\end{DoxyParamCaption}
+)~{\bf Update}(state, data, databitlen)}}\label{hash__function_8h_a987c9b484d696c824529acde2bdd064c}
+
+
+Definition at line 50 of file hash\-\_\-function.\-h.
+
+
+
+Referenced by hash\-\_\-update\-\_\-\-G1(), hash\-\_\-update\-\_\-\-G\-T(), hwang\-\_\-sign(), and hwang\-\_\-verify().
+
+\hypertarget{hash__function_8h_a21fc7d3d70cddc3c867a3001c74702e9}{\index{hash\-\_\-function.\-h@{hash\-\_\-function.\-h}!K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A@{K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A}}
+\index{K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A@{K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A}!hash_function.h@{hash\-\_\-function.\-h}}
+\subsubsection[{K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-C\-C\-A\-K\-\_\-\-S\-H\-A}}\label{hash__function_8h_a21fc7d3d70cddc3c867a3001c74702e9}
+
+
+Definition at line 40 of file hash\-\_\-function.\-h.
+

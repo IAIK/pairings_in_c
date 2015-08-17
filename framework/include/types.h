@@ -1,9 +1,36 @@
-/*
- * types.h
- *
- *  Created on: Apr 19, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #ifndef TYPES_H_
 #define TYPES_H_
@@ -77,20 +104,6 @@ typedef fp_t	fp2_t[2];
 typedef fp2_t 	fp4_t[2];
 typedef fp4_t	fp12_t[3];
 
-/** Structure to keep information on the prime number used. */
-typedef struct {
-	bigint_t 	p;					// prime
-	word_t		mu[FP_WORDS+1];		// constant for barrett multiplication
-	int			qnr;		// qnr of prime, i.e. x^2 = qnr mod p is unsolvable
-	int			cnr;		// cnr of prime, i.e. x^3 = cnr mod p is unsolvable
-} structPrime;
-
-/** Structure for Montgomery parameters. */
-typedef struct {
-	bigint_t	n0;			// n0 = -p^{-1} mod R, to be used for the Montgomery reduction
-	bigint_t	r2;			// r2 = R² mod p, to be used for transformation to Montgomery domain
-} structMontyParam;
-
 /** Elliptic curve point. */
 
 typedef struct {
@@ -126,25 +139,5 @@ typedef struct {
 } ecpoint_fp2_proj;
 
 typedef ecpoint_fp2_proj *ecfp2_proj_pt;
-
-/** Structure for elliptic curve parameters. */
-
-typedef struct {
-	// y² = x³ + ax + b
-	fp_t a;
-	fp_t b;
-	bigint_t x;		// parameter for parameterized curve
-	//bigint_t t;		// trace
-	bigint_t n;		// group order
-	word_t mu_n[FP_WORDS+1];	// mu for reducing modulo group order
-} structECParam;
-
-typedef struct {
-	// vectors for decomposing factor k: (-b1/n, a1,b1), (b2/n, a2,b2);
-	bigint_t v1[3];
-	bigint_t v2[3];
-	// beta (endomorphism: lambda*P = (beta*x, y))
-	bigint_t beta;
-} structGLVParam;
 
 #endif /* TYPES_H_ */

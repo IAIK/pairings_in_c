@@ -1,0 +1,518 @@
+\hypertarget{fp4__std_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4\-\_\-std.h File Reference}
+\label{fp4__std_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4\-\_\-std.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/fp/fp4\-\_\-std.\-h}}
+}
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fp4__std_8h_aeca9ec62c504aa956e76d135159c34d8}{fp4\-\_\-add\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Adds two elements in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a263d4120971c70ac38851144cb43c580}{fp4\-\_\-sub\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Subtracts two elements in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a05e0870b615d1653080c6e258d083f86}{fp4\-\_\-neg\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Negates one element in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a5993110716286bb142946ab3c8b81d07}{fp4\-\_\-mul\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Simple multiplication in Fp4 using Karatsuba method. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a18d122a39265c397528705c6d0b44045}{fp4\-\_\-sqr\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Squares one element in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a44f02711b6fe2523fdcd71a8efe0c886}{fp4\-\_\-mulfp2\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_a8d7302536c911390e7ed2a57092e6bf0}{fp2\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Multiplies one element in Fp4 with one element in Fp2. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_acc2d615f002fd34a797200f0fe0ce9b1}{fp4\-\_\-inv\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Inversion of an element in Fp4 using direct inversion formulas. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_acb0d422213e33956070054627915f4a8}{fp4\-\_\-exp\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_a7ae8816fa287bc4a98dec462acd2ad28}{bigint\-\_\-t} b)
+\begin{DoxyCompactList}\small\item\em Performs non-\/\-S\-C\-A-\/secure square-\/and-\/multiply exponentiation in Fp4 that includes dummy operations. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a25891149aca07e0a47b4668424b41b0b}{fp4\-\_\-hlv\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Halves one element in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a5f37bee8a6fd0f3d0dfed1252794b143}{fp4\-\_\-frobenius\-\_\-map\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of an element in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_af6bf1b32f4630072d10f7ae0085260af}{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a, const \hyperlink{types_8h_a0d6e15925ab5714ba968ef10ca73e04e}{word\-\_\-t} i)
+\begin{DoxyCompactList}\small\item\em Computes the frobenius map of an element in Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a27e67f57f62b17775693d4e8ab940184}{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Multiplies an element in Fp4 with the root of the quadratic non-\/residue in Fp2 that was adjoined to define Fp4. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_ab001b7b14dd4ae2a515f345c7efca74a}{fp4\-\_\-to\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Converts an element in Fp4 to the Montgomery domain. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a901efbddf319bd3d0b4805e599f2ba02}{fp4\-\_\-from\-\_\-montgomery\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Converts an element in Fp4 (Montgomery domain) back to normal. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a9fa84d0947017afdcf71da31943b3aff}{fp4\-\_\-rdc\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Reduces an element in Fp4 with the fixed modulus. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_a917f5a5ee3cca9082c3f4be2ec1be620}{fp4\-\_\-clear\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Clears one Fp4 element. \end{DoxyCompactList}\item 
+void \hyperlink{fp4__std_8h_aec3e2e8265002c10a801f642ff75038a}{fp4\-\_\-copy\-\_\-std} (\hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} res, const \hyperlink{types_8h_ad238823e943acd7c4a5aca22f7dc73af}{fp4\-\_\-t} a)
+\begin{DoxyCompactList}\small\item\em Copies one Fp4 element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fp4__std_8h_aeca9ec62c504aa956e76d135159c34d8}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-add\-\_\-std@{fp4\-\_\-add\-\_\-std}}
+\index{fp4\-\_\-add\-\_\-std@{fp4\-\_\-add\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-add\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-add\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf fp4\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_aeca9ec62c504aa956e76d135159c34d8}
+
+
+Adds two elements in Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the sum \\
+\hline
+{\em a} & first operand \\
+\hline
+{\em b} & second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file fp4.\-c.
+
+
+
+References fp2\-\_\-add.
+
+\hypertarget{fp4__std_8h_a917f5a5ee3cca9082c3f4be2ec1be620}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-clear\-\_\-std@{fp4\-\_\-clear\-\_\-std}}
+\index{fp4\-\_\-clear\-\_\-std@{fp4\-\_\-clear\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-clear\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-clear\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a917f5a5ee3cca9082c3f4be2ec1be620}
+
+
+Clears one Fp4 element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the element to be set to zero \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file fp4.\-c.
+
+
+
+References fp2\-\_\-clear.
+
+\hypertarget{fp4__std_8h_aec3e2e8265002c10a801f642ff75038a}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-copy\-\_\-std@{fp4\-\_\-copy\-\_\-std}}
+\index{fp4\-\_\-copy\-\_\-std@{fp4\-\_\-copy\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-copy\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-copy\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_aec3e2e8265002c10a801f642ff75038a}
+
+
+Copies one Fp4 element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination \\
+\hline
+{\em a} & the source \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 283 of file fp4.\-c.
+
+
+
+References fp2\-\_\-copy.
+
+\hypertarget{fp4__std_8h_acb0d422213e33956070054627915f4a8}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-exp\-\_\-std@{fp4\-\_\-exp\-\_\-std}}
+\index{fp4\-\_\-exp\-\_\-std@{fp4\-\_\-exp\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-exp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-exp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf bigint\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_acb0d422213e33956070054627915f4a8}
+
+
+Performs non-\/\-S\-C\-A-\/secure square-\/and-\/multiply exponentiation in Fp4 that includes dummy operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result \\
+\hline
+{\em a} & the operand to be exponentiated \\
+\hline
+{\em b} & the exponent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file fp4.\-c.
+
+
+
+References bi\-\_\-get\-\_\-msb, bi\-\_\-test\-\_\-bit, fp2\-\_\-clear, fp4\-\_\-mul, fp4\-\_\-sqr, fp\-\_\-clear, fp\-\_\-copy, and F\-P\-\_\-\-O\-N\-E.
+
+\hypertarget{fp4__std_8h_af6bf1b32f4630072d10f7ae0085260af}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}}
+\index{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std@{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-frobenius\-\_\-map\-\_\-precomp\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_af6bf1b32f4630072d10f7ae0085260af}
+
+
+Computes the frobenius map of an element in Fp4. 
+
+The function uses precomputed roots of the quadratic non-\/residue in Fp2. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the frobenius map \\
+\hline
+{\em a} & the input element \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file fp4.\-c.
+
+
+
+References fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, and R\-O\-O\-T\-\_\-\-R\-E\-S\-I\-D\-U\-E\-\_\-\-F\-P4.
+
+\hypertarget{fp4__std_8h_a5f37bee8a6fd0f3d0dfed1252794b143}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-frobenius\-\_\-map\-\_\-std@{fp4\-\_\-frobenius\-\_\-map\-\_\-std}}
+\index{fp4\-\_\-frobenius\-\_\-map\-\_\-std@{fp4\-\_\-frobenius\-\_\-map\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-frobenius\-\_\-map\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-frobenius\-\_\-map\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf word\-\_\-t}}]{i}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a5f37bee8a6fd0f3d0dfed1252794b143}
+
+
+Computes the frobenius map of an element in Fp4. 
+
+The function computes everything from scratch. 
+\begin{DoxyParams}{Parameters}
+{\em res} & the result of the frobenius map \\
+\hline
+{\em a} & the input element \\
+\hline
+{\em i} & the order of frobenius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file fp4.\-c.
+
+
+
+References bi\-\_\-copy, bi\-\_\-one, bi\-\_\-shift\-\_\-right\-\_\-one, bi\-\_\-subtract, fp2\-\_\-clear, fp2\-\_\-exp, fp2\-\_\-frobenius\-\_\-map, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, and P\-R\-I\-M\-E\-\_\-\-P.
+
+\hypertarget{fp4__std_8h_a901efbddf319bd3d0b4805e599f2ba02}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-from\-\_\-montgomery\-\_\-std@{fp4\-\_\-from\-\_\-montgomery\-\_\-std}}
+\index{fp4\-\_\-from\-\_\-montgomery\-\_\-std@{fp4\-\_\-from\-\_\-montgomery\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-from\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-from\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a901efbddf319bd3d0b4805e599f2ba02}
+
+
+Converts an element in Fp4 (Montgomery domain) back to normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting normal value \\
+\hline
+{\em a} & the value in Montgomery domain to be converted back \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file fp4.\-c.
+
+
+
+References fp2\-\_\-from\-\_\-montgomery.
+
+\hypertarget{fp4__std_8h_a25891149aca07e0a47b4668424b41b0b}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-hlv\-\_\-std@{fp4\-\_\-hlv\-\_\-std}}
+\index{fp4\-\_\-hlv\-\_\-std@{fp4\-\_\-hlv\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-hlv\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-hlv\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a25891149aca07e0a47b4668424b41b0b}
+
+
+Halves one element in Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination for the result \\
+\hline
+{\em a} & the value to be halved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file fp4.\-c.
+
+
+
+References fp2\-\_\-hlv.
+
+\hypertarget{fp4__std_8h_acc2d615f002fd34a797200f0fe0ce9b1}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-inv\-\_\-std@{fp4\-\_\-inv\-\_\-std}}
+\index{fp4\-\_\-inv\-\_\-std@{fp4\-\_\-inv\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-inv\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-inv\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_acc2d615f002fd34a797200f0fe0ce9b1}
+
+
+Inversion of an element in Fp4 using direct inversion formulas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting inverse \\
+\hline
+{\em a} & the element to be inverted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file fp4.\-c.
+
+
+
+References fp2\-\_\-inv, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, fp2\-\_\-neg, fp2\-\_\-sqr, and fp2\-\_\-sub.
+
+\hypertarget{fp4__std_8h_a27e67f57f62b17775693d4e8ab940184}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std@{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std}}
+\index{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std@{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-mul\-\_\-adj\-\_\-root\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a27e67f57f62b17775693d4e8ab940184}
+
+
+Multiplies an element in Fp4 with the root of the quadratic non-\/residue in Fp2 that was adjoined to define Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 258 of file fp4.\-c.
+
+
+
+References fp2\-\_\-copy, and fp2\-\_\-mul\-\_\-qnr.
+
+\hypertarget{fp4__std_8h_a5993110716286bb142946ab3c8b81d07}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-mul\-\_\-std@{fp4\-\_\-mul\-\_\-std}}
+\index{fp4\-\_\-mul\-\_\-std@{fp4\-\_\-mul\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-mul\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-mul\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf fp4\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a5993110716286bb142946ab3c8b81d07}
+
+
+Simple multiplication in Fp4 using Karatsuba method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting product \\
+\hline
+{\em a} & the first operand \\
+\hline
+{\em b} & the second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file fp4.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, and fp2\-\_\-sub.
+
+\hypertarget{fp4__std_8h_a44f02711b6fe2523fdcd71a8efe0c886}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-mulfp2\-\_\-std@{fp4\-\_\-mulfp2\-\_\-std}}
+\index{fp4\-\_\-mulfp2\-\_\-std@{fp4\-\_\-mulfp2\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-mulfp2\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-mulfp2\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf fp2\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a44f02711b6fe2523fdcd71a8efe0c886}
+
+
+Multiplies one element in Fp4 with one element in Fp2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the result (Fp4) \\
+\hline
+{\em a} & the first factor (Fp4) \\
+\hline
+{\em b} & the second factor (Fp2) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file fp4.\-c.
+
+
+
+References fp2\-\_\-mul.
+
+\hypertarget{fp4__std_8h_a05e0870b615d1653080c6e258d083f86}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-neg\-\_\-std@{fp4\-\_\-neg\-\_\-std}}
+\index{fp4\-\_\-neg\-\_\-std@{fp4\-\_\-neg\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-neg\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-neg\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a05e0870b615d1653080c6e258d083f86}
+
+
+Negates one element in Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the negative a \\
+\hline
+{\em a} & the value to be negated \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file fp4.\-c.
+
+
+
+References fp2\-\_\-neg.
+
+\hypertarget{fp4__std_8h_a9fa84d0947017afdcf71da31943b3aff}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-rdc\-\_\-std@{fp4\-\_\-rdc\-\_\-std}}
+\index{fp4\-\_\-rdc\-\_\-std@{fp4\-\_\-rdc\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-rdc\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-rdc\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a9fa84d0947017afdcf71da31943b3aff}
+
+
+Reduces an element in Fp4 with the fixed modulus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 292 of file fp4.\-c.
+
+
+
+References fp2\-\_\-rdc.
+
+\hypertarget{fp4__std_8h_a18d122a39265c397528705c6d0b44045}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-sqr\-\_\-std@{fp4\-\_\-sqr\-\_\-std}}
+\index{fp4\-\_\-sqr\-\_\-std@{fp4\-\_\-sqr\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-sqr\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-sqr\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a18d122a39265c397528705c6d0b44045}
+
+
+Squares one element in Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination for the result \\
+\hline
+{\em a} & the element to be squared \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file fp4.\-c.
+
+
+
+References fp2\-\_\-add, fp2\-\_\-dbl, fp2\-\_\-mul, fp2\-\_\-mul\-\_\-qnr, and fp2\-\_\-sub.
+
+\hypertarget{fp4__std_8h_a263d4120971c70ac38851144cb43c580}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-sub\-\_\-std@{fp4\-\_\-sub\-\_\-std}}
+\index{fp4\-\_\-sub\-\_\-std@{fp4\-\_\-sub\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-sub\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-sub\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a, }
+\item[{const {\bf fp4\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_a263d4120971c70ac38851144cb43c580}
+
+
+Subtracts two elements in Fp4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the destination of the difference. \\
+\hline
+{\em a} & first operand \\
+\hline
+{\em b} & second operand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file fp4.\-c.
+
+
+
+References fp2\-\_\-sub.
+
+\hypertarget{fp4__std_8h_ab001b7b14dd4ae2a515f345c7efca74a}{\index{fp4\-\_\-std.\-h@{fp4\-\_\-std.\-h}!fp4\-\_\-to\-\_\-montgomery\-\_\-std@{fp4\-\_\-to\-\_\-montgomery\-\_\-std}}
+\index{fp4\-\_\-to\-\_\-montgomery\-\_\-std@{fp4\-\_\-to\-\_\-montgomery\-\_\-std}!fp4_std.h@{fp4\-\_\-std.\-h}}
+\subsubsection[{fp4\-\_\-to\-\_\-montgomery\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}void fp4\-\_\-to\-\_\-montgomery\-\_\-std (
+\begin{DoxyParamCaption}
+\item[{{\bf fp4\-\_\-t}}]{res, }
+\item[{const {\bf fp4\-\_\-t}}]{a}
+\end{DoxyParamCaption}
+)}}\label{fp4__std_8h_ab001b7b14dd4ae2a515f345c7efca74a}
+
+
+Converts an element in Fp4 to the Montgomery domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the resulting value in Montgomery form \\
+\hline
+{\em a} & the value to be converted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 302 of file fp4.\-c.
+
+
+
+References fp2\-\_\-to\-\_\-montgomery.
+

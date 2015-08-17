@@ -1,0 +1,140 @@
+\hypertarget{bench__util_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bench\-\_\-util.h File Reference}
+\label{bench__util_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bench\-\_\-util.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/bench\-\_\-util.\-h}}
+}
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long long \hyperlink{bench__util_8h_abfce4794bf36225ea602632899d7cf35}{bm\-\_\-time\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}{benchmark\-\_\-start} ()
+\begin{DoxyCompactList}\small\item\em Start a benchmark. \end{DoxyCompactList}\item 
+void \hyperlink{bench__util_8h_a7a85288b0e9bc5b94e29e62ae3e3cc5c}{benchmark\-\_\-stop} ()
+\begin{DoxyCompactList}\small\item\em Stop a benchmark. \end{DoxyCompactList}\item 
+void \hyperlink{bench__util_8h_acf7bdafd732694735660f1e4fadf747a}{benchmark\-\_\-compute} (int iterations)
+\begin{DoxyCompactList}\small\item\em Compute the mean of all benchmarks for a given count of iterations. \end{DoxyCompactList}\item 
+void \hyperlink{bench__util_8h_a1cce11f793fd9164a8bc71eb76ad9e3d}{benchmark\-\_\-compute\-\_\-single} ()
+\begin{DoxyCompactList}\small\item\em Computes the result of the previously executed benchmark. \end{DoxyCompactList}\item 
+void \hyperlink{bench__util_8h_ad58b720ea22f8ec80db8400402cdb517}{benchmark\-\_\-print} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Print the result of the recent benchmark. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{bench__util_8h_abfce4794bf36225ea602632899d7cf35}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!bm\-\_\-time\-\_\-t@{bm\-\_\-time\-\_\-t}}
+\index{bm\-\_\-time\-\_\-t@{bm\-\_\-time\-\_\-t}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{bm\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long long {\bf bm\-\_\-time\-\_\-t}}}\label{bench__util_8h_abfce4794bf36225ea602632899d7cf35}
+
+
+Definition at line 41 of file bench\-\_\-util.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{bench__util_8h_acf7bdafd732694735660f1e4fadf747a}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!benchmark\-\_\-compute@{benchmark\-\_\-compute}}
+\index{benchmark\-\_\-compute@{benchmark\-\_\-compute}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{benchmark\-\_\-compute}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\-\_\-compute (
+\begin{DoxyParamCaption}
+\item[{int}]{iterations}
+\end{DoxyParamCaption}
+)}}\label{bench__util_8h_acf7bdafd732694735660f1e4fadf747a}
+
+
+Compute the mean of all benchmarks for a given count of iterations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & the number of benchmark iterations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file bench\-\_\-util.\-c.
+
+
+
+References B\-E\-N\-C\-H\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D, bm\-\_\-result, bm\-\_\-start, and bm\-\_\-stop.
+
+\hypertarget{bench__util_8h_a1cce11f793fd9164a8bc71eb76ad9e3d}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!benchmark\-\_\-compute\-\_\-single@{benchmark\-\_\-compute\-\_\-single}}
+\index{benchmark\-\_\-compute\-\_\-single@{benchmark\-\_\-compute\-\_\-single}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{benchmark\-\_\-compute\-\_\-single}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\-\_\-compute\-\_\-single (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{bench__util_8h_a1cce11f793fd9164a8bc71eb76ad9e3d}
+
+
+Computes the result of the previously executed benchmark. 
+
+
+
+Definition at line 88 of file bench\-\_\-util.\-c.
+
+
+
+References B\-E\-N\-C\-H\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D, bm\-\_\-result, bm\-\_\-start, and bm\-\_\-stop.
+
+\hypertarget{bench__util_8h_ad58b720ea22f8ec80db8400402cdb517}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!benchmark\-\_\-print@{benchmark\-\_\-print}}
+\index{benchmark\-\_\-print@{benchmark\-\_\-print}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{benchmark\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{bench__util_8h_ad58b720ea22f8ec80db8400402cdb517}
+
+
+Print the result of the recent benchmark. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & a message to be additionally printed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file bench\-\_\-util.\-c.
+
+
+
+References bm\-\_\-result, and print().
+
+\hypertarget{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!benchmark\-\_\-start@{benchmark\-\_\-start}}
+\index{benchmark\-\_\-start@{benchmark\-\_\-start}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{benchmark\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\-\_\-start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{bench__util_8h_a3f6d40c087e7c500ca76ffe783ab7e9c}
+
+
+Start a benchmark. 
+
+
+
+Definition at line 52 of file bench\-\_\-util.\-c.
+
+
+
+References bm\-\_\-start, and get\-\_\-cycles().
+
+\hypertarget{bench__util_8h_a7a85288b0e9bc5b94e29e62ae3e3cc5c}{\index{bench\-\_\-util.\-h@{bench\-\_\-util.\-h}!benchmark\-\_\-stop@{benchmark\-\_\-stop}}
+\index{benchmark\-\_\-stop@{benchmark\-\_\-stop}!bench_util.h@{bench\-\_\-util.\-h}}
+\subsubsection[{benchmark\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\-\_\-stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{bench__util_8h_a7a85288b0e9bc5b94e29e62ae3e3cc5c}
+
+
+Stop a benchmark. 
+
+
+
+Definition at line 63 of file bench\-\_\-util.\-c.
+
+
+
+References bm\-\_\-stop, and get\-\_\-cycles().
+

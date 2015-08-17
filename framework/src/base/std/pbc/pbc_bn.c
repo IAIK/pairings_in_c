@@ -1,11 +1,36 @@
-/*
- * pbc_bn.c
- *
- *  Basic implementation of pairing arithmetic.
- *
- *  Created on: Apr 24, 2013
- *      Author: thomas
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "bigint/bi.h"
 #include "fp/fp.h"
@@ -41,14 +66,12 @@ void pbc_eval_line_function(fp12_t res, ecfp2_proj_pt a, ecfp2_pt b, ecfp_pt p) 
 		fp2_mul(n, (const fp_t*) b->y, (const fp_t*) az3);
 		fp2_sub(n, (const fp_t*) n, (const fp_t*) a->y);
 
-		// todo look for optimization potential, check formula on paper
 		fp_clear(t[1]);
 		fp_copy(t[0], p->y);
 		fp2_neg(t, (const fp_t*) t);
 		fp2_mul(res[0][0], (const fp_t*) d, (const fp_t*) t);
 		fp2_mul(res[0][0], (const fp_t*) res[0][0], (const fp_t*) az3);
 
-		//fp_clear(t, t);
 		fp_copy(t[0], p->x);
 		fp2_mul(res[1][0], (const fp_t*) t, (const fp_t*) n);
 		fp2_mul(res[1][0], (const fp_t*) res[1][0], (const fp_t*) az3);
@@ -85,14 +108,12 @@ void pbc_eval_tangent_function(fp12_t res, ecfp2_proj_pt a, ecfp_pt p) {
 		fp2_dbl(d, (const fp_t*) a->y);
 		fp2_mul(d, (const fp_t*) d, (const fp_t*) a->z);
 
-		// todo look for optimization potential, check formula on paper
 		fp_clear(t[1]);
 		fp_copy(t[0], p->y);
 		fp2_neg(t, (const fp_t*) t);
 		fp2_mul(res[0][0], (const fp_t*) d, (const fp_t*) t);
 		fp2_mul(res[0][0], (const fp_t*) res[0][0], (const fp_t*) az3);
 
-		//fp_clear(t, t);
 		fp_copy(t[0], p->x);
 		fp2_mul(res[1][0], (const fp_t*) t, (const fp_t*) n);
 		fp2_mul(res[1][0], (const fp_t*) res[1][0], (const fp_t*) az3);
@@ -129,7 +150,7 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	const word_t	*s 			= OPTATE_LOOP_CONST;
 #else
 	word_t				s[BI_WORDS+1];
-	bi_multiply_word(s, EC_PARAM.x, 6);
+	bi_multiply_word(s, EC_PARAM_X, 6);
 	bi_add_word(s, s, 2);
 #endif
 
@@ -142,37 +163,11 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 			pbc_eval_tangent_function(tmp, &t, p);
 			fp12_mul(res, (const fp4_t*) res, (const fp4_t*) tmp);
 
-			/*print_value(res[0][0][0], BI_WORDS); print("\n");
-			print_value(res[0][0][1], BI_WORDS); print("\n");
-			print_value(res[0][1][0], BI_WORDS); print("\n");
-			print_value(res[0][1][1], BI_WORDS); print("\n");
-			print_value(res[1][0][0], BI_WORDS); print("\n");
-			print_value(res[1][0][1], BI_WORDS); print("\n");
-			print_value(res[1][1][0], BI_WORDS); print("\n");
-			print_value(res[1][1][1], BI_WORDS); print("\n");
-			print_value(res[2][0][0], BI_WORDS); print("\n");
-			print_value(res[2][0][1], BI_WORDS); print("\n");
-			print_value(res[2][1][0], BI_WORDS); print("\n");
-			print_value(res[2][1][1], BI_WORDS); print("\n\n");*/
-
 			ecfp2_dbl_proj(&t, &t);
 
 			if (bi_test_bit(s, i)) {
 				pbc_eval_line_function(tmp, &t, q, p);
 				fp12_mul(res, (const fp4_t*) res, (const fp4_t*) tmp);
-
-				/*print_value(res[0][0][0], BI_WORDS); print("\n");
-				print_value(res[0][0][1], BI_WORDS); print("\n");
-				print_value(res[0][1][0], BI_WORDS); print("\n");
-				print_value(res[0][1][1], BI_WORDS); print("\n");
-				print_value(res[1][0][0], BI_WORDS); print("\n");
-				print_value(res[1][0][1], BI_WORDS); print("\n");
-				print_value(res[1][1][0], BI_WORDS); print("\n");
-				print_value(res[1][1][1], BI_WORDS); print("\n");
-				print_value(res[2][0][0], BI_WORDS); print("\n");
-				print_value(res[2][0][1], BI_WORDS); print("\n");
-				print_value(res[2][1][0], BI_WORDS); print("\n");
-				print_value(res[2][1][1], BI_WORDS); print("\n\n");*/
 
 				ecfp2_add_proj(&t, &t, q);
 			}
@@ -193,7 +188,7 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 
 	// easy part
 	fp12_inv(tmp, (const fp4_t*) res);
-	fp12_frobenius_map(res, (const fp4_t*)res, 6);	// res^{p^6}		// TODO: replace with conjugate
+	fp12_frobenius_map(res, (const fp4_t*)res, 6);	          // res^{p^6}
 	fp12_mul(res, (const fp4_t*)res, (const fp4_t*)tmp);			// res^{p^6 - 1}
 	fp12_frobenius_map(tmp, (const fp4_t*)res, 2);
 	fp12_mul(res, (const fp4_t*)res, (const fp4_t*)tmp);			// res^{(p^6-1)(p^2+1}
@@ -205,9 +200,9 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	fp12_t y0, y1, y2, y3, y4, y5, y6;
 	fp12_t t0, t1;
 
-	fp12_exp(ft1, (const fp4_t*)res, EC_PARAM.x);
-	fp12_exp(ft2, (const fp4_t*)ft1, EC_PARAM.x);
-	fp12_exp(ft3, (const fp4_t*)ft2, EC_PARAM.x);
+	fp12_exp(ft1, (const fp4_t*)res, EC_PARAM_X);
+	fp12_exp(ft2, (const fp4_t*)ft1, EC_PARAM_X);
+	fp12_exp(ft3, (const fp4_t*)ft2, EC_PARAM_X);
 
 	fp12_frobenius_map(fp1, (const fp4_t*)res, 1);
 	fp12_frobenius_map(fp2, (const fp4_t*)fp1, 1);
@@ -216,17 +211,17 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	fp12_mul(y0, (const fp4_t*)fp1, (const fp4_t*)fp2);
 	fp12_mul(y0, (const fp4_t*)y0, (const fp4_t*)fp3);
 
-	fp12_frobenius_map(y1, (const fp4_t*)res, 6);		// TODO: replace with conjugate
+	fp12_frobenius_map(y1, (const fp4_t*)res, 6);
 	fp12_frobenius_map(y2, (const fp4_t*)ft2, 2);
 	fp12_frobenius_map(y3, (const fp4_t*)ft1, 1);
-	fp12_frobenius_map(y3, (const fp4_t*)y3, 6);		// TODO: conjugate
+	fp12_frobenius_map(y3, (const fp4_t*)y3, 6);
 	fp12_frobenius_map(y4, (const fp4_t*)ft2, 1);
 	fp12_mul(y4, (const fp4_t*)y4, (const fp4_t*)ft1);
-	fp12_frobenius_map(y4, (const fp4_t*)y4, 6);		// TODO: conjugate
-	fp12_frobenius_map(y5, (const fp4_t*)ft2, 6);		// TODO: conjugate
+	fp12_frobenius_map(y4, (const fp4_t*)y4, 6);
+	fp12_frobenius_map(y5, (const fp4_t*)ft2, 6);
 	fp12_frobenius_map(y6, (const fp4_t*)ft3, 1);
 	fp12_mul(y6, (const fp4_t*)y6, (const fp4_t*)ft3);
-	fp12_frobenius_map(y6, (const fp4_t*)y6, 6);		// TODO: conjugate
+	fp12_frobenius_map(y6, (const fp4_t*)y6, 6);
 
 	fp12_sqr(t0, (const fp4_t*)y6);
 	fp12_mul(t0, (const fp4_t*)t0, (const fp4_t*)y4);
@@ -264,27 +259,27 @@ void pbc_point_dbl_line_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q, ecfp_pt
 	fp2_sqr(t0, (const fp_t*) q->x);
 	fp2_copy(t4, (const fp_t*) t0);
 	fp2_dbl(t1, (const fp_t*) t0);
-	fp2_add(t1, (const fp_t*) t1, (const fp_t*) t0);		// t1 = 3x²
+	fp2_add(t1, (const fp_t*) t1, (const fp_t*) t0);	  	// t1 = 3x²
 	fp2_copy(t3, (const fp_t*) t1);
 
-	fp2_dbl(t0, (const fp_t*) q->y);						// t0 = 2 * y
+	fp2_dbl(t0, (const fp_t*) q->y);						          // t0 = 2 * y
 	fp2_mul(t->z, (const fp_t*) t0, (const fp_t*) q->z);	// res->z = 2*y*z
 
-	fp2_sqr(t0, (const fp_t*) t0);							// t0 = 4 * y²
+	fp2_sqr(t0, (const fp_t*) t0);							          // t0 = 4 * y²
 	fp2_copy(t5, (const fp_t*) t0);
 	fp2_mul(t2, (const fp_t*) t0, (const fp_t*) q->x);		// t2 = 4*x*y²
 
-	fp2_copy(t->y, (const fp_t*) t1);						// res->y = (3x² + az⁴)
-	fp2_dbl(t1, (const fp_t*) t2);							// t1 = 8*x*y²
+	fp2_copy(t->y, (const fp_t*) t1);						          // res->y = (3x² + az⁴)
+	fp2_dbl(t1, (const fp_t*) t2);							          // t1 = 8*x*y²
 
-	fp2_sqr(t->x, (const fp_t*) t->y);						// res->x = (3x² + az⁴)²
+	fp2_sqr(t->x, (const fp_t*) t->y);						        // res->x = (3x² + az⁴)²
 	fp2_sub(t->x, (const fp_t*) t->x, (const fp_t*) t1);	// res->x = (3x² + az⁴)² - 8*x*y²
 
 	fp2_sub(t2, (const fp_t*) t2, (const fp_t*) t->x);		// 4xy² - res->x
 	fp2_mul(t->y, (const fp_t*) t->y, (const fp_t*) t2);	// res->y = (3x² + az⁴)(4xy² - res->x)
 
 	fp2_sqr(t0, (const fp_t*) t0);
-	fp2_hlv(t0, (const fp_t*) t0);							// t0 = 8 * y⁴
+	fp2_hlv(t0, (const fp_t*) t0);							          // t0 = 8 * y⁴
 
 	fp2_sub(t->y, (const fp_t*) t->y, (const fp_t*) t0);	// res->y = (3x² + az⁴)(4xy² - res->x) - 8y⁴
 
@@ -347,7 +342,7 @@ void pbc_point_dbl_line_costello_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q
 
 	fp2_dbl(h, (const fp_t*) c);
 	fp2_add(c, (const fp_t*) h, (const fp_t*) c);
-	fp2_mulfp(c, (const fp_t*) c, EC_PARAM.b);
+	fp2_mulfp(c, (const fp_t*) c, EC_PARAM_B);
 	fp2_div_qnr(c, (const fp_t*) c);
 
 	fp2_dbl(h, (const fp_t*) c);
@@ -393,7 +388,7 @@ void pbc_point_add_line_costello_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt r
 	// l01 = b
 	// l10 = -a
 
-	fp2_mulfp(l[0][0], (const fp_t*) b, (const word_t*) p->y);				// l01
+	fp2_mulfp(l[0][0], (const fp_t*) b, (const word_t*) p->y);			  	// l01
 	fp2_mul(l[0][1], (const fp_t*) b, (const fp_t*) q->y);
 	fp2_mul(l[1][0], (const fp_t*) a, (const fp_t*) q->x);
 	fp2_sub(l[0][1], (const fp_t*) l[1][0], (const fp_t*) l[0][1]);			// l00
@@ -430,10 +425,9 @@ void pbc_map_opt_ate_optimized_final_exp_easy(fp12_t res) {
 
 	fp12_inv(a, (const fp4_t*) res);
 	fp12_conjugate(res, (const fp4_t*) res, 3);						// res^{p^6}
-	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);			// res^{p^6 - 1}
-	//fp12_conjugate(a, (const fp4_t*) res, 1);						// replaced conjugate with frobenius map - saves memory
+	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);	// res^{p^6 - 1}
 	fp12_frobenius_map(a, (const fp4_t*) res, 2);
-	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);			// res^{(p^6-1)(p^2+1}
+	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);	// res^{(p^6-1)(p^2+1}
 }
 
 /**
@@ -450,33 +444,31 @@ void pbc_map_opt_ate_optimized_final_exp_fuentes(fp12_t res) {
 	fp12_t t0, a, b;
 
 	// hard part
-	fp12_frobenius_map(t0, (const fp4_t*) res, 1);					// (f)^p
+	fp12_frobenius_map(t0, (const fp4_t*) res, 1);					  // (f)^p
 
-	fp12_final_exp(b, (const fp4_t*) res, EC_PARAM.x);				// f^(x)
+	fp12_final_exp(b, (const fp4_t*) res, EC_PARAM_X);				// f^(x)
 #ifdef NEGATIVE_PARAM_X
 	fp12_conjugate(b, (const fp4_t*) b, 3);
 #endif
-	fp12_sqr_cyclotomic(b, (const fp4_t*) b);						// f^(2x)
-	fp12_sqr_cyclotomic(a, (const fp4_t*) b);						// f^(4x)
-	fp12_mul(a, (const fp4_t*) a, (const fp4_t*) b);				// f^(6x)
-	fp12_mul(b, (const fp4_t*)b, (const fp4_t*) res);				// f^2x * f
-	fp12_conjugate(b, (const fp4_t*)b, 3);							// f^(-2x) * f^(-1)
+	fp12_sqr_cyclotomic(b, (const fp4_t*) b);						      // f^(2x)
+	fp12_sqr_cyclotomic(a, (const fp4_t*) b);						      // f^(4x)
+	fp12_mul(a, (const fp4_t*) a, (const fp4_t*) b);				  // f^(6x)
+	fp12_mul(b, (const fp4_t*)b, (const fp4_t*) res);				  // f^2x * f
+	fp12_conjugate(b, (const fp4_t*)b, 3);							      // f^(-2x) * f^(-1)
 
 	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) t0);			// f * (f^2)^p
-	fp12_final_exp(t0, (const fp4_t*) a, EC_PARAM.x);				// f^{6x^2}
+	fp12_final_exp(t0, (const fp4_t*) a, EC_PARAM_X);	  			// f^{6x^2}
 #ifdef NEGATIVE_PARAM_X
 	fp12_conjugate(t0, (const fp4_t*) t0, 3);
 #endif
 	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) t0);			// f^{6x^2} * f * (f^2)^p
 	fp12_mul(a, (const fp4_t*) a, (const fp4_t*) t0);
-	fp12_sqr_cyclotomic(t0, (const fp4_t*) t0);						// f^{12x^2}
+	fp12_sqr_cyclotomic(t0, (const fp4_t*) t0);				    		// f^{12x^2}
 #ifdef NEGATIVE_PARAM_X
 	fp12_conjugate(t0, (const fp4_t*) t0, 3);
 #endif
-	//fp12_final_exp(t0, (const fp4_t*) t0, EC_PARAM.x);			// f^{12x^3}
-	//fp12_mul(a, (const fp4_t*) a, (const fp4_t*) t0);
-	fp12_final_mulexp(a, t0, EC_PARAM.x);
-	fp12_mul(b, (const fp4_t*) b, (const fp4_t*) a);				// a * f^(-2x) * f^(-1)
+	fp12_final_mulexp(a, t0, EC_PARAM_X);
+	fp12_mul(b, (const fp4_t*) b, (const fp4_t*) a);		  		// a * f^(-2x) * f^(-1)
 
 	fp12_frobenius_map(t0, (const fp4_t*) b, 1);
 	fp12_mul(t0, (const fp4_t*) t0, (const fp4_t*) a);
@@ -500,7 +492,7 @@ void pbc_map_opt_ate_optimized_final_exp_std(fp12_t res, fp12_t a, fp12_t b) {
 
 	// easy part
 	fp12_inv(a, (const fp4_t*) res);
-	fp12_conjugate(res, (const fp4_t*) res, 3);						// res^{p^6}
+	fp12_conjugate(res, (const fp4_t*) res, 3);				    		// res^{p^6}
 	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);			// res^{p^6 - 1}
 	fp12_conjugate(a, (const fp4_t*) res, 1);
 	fp12_mul(res, (const fp4_t*) res, (const fp4_t*) a);			// res^{(p^6-1)(p^2+1}
@@ -508,15 +500,15 @@ void pbc_map_opt_ate_optimized_final_exp_std(fp12_t res, fp12_t a, fp12_t b) {
 	// hard part
 #ifdef NEGATIVE_PARAM_X
 	fp12_conjugate(t0, (const fp4_t*) res, 3);
-	fp12_final_exp(a, (const fp4_t*) t0, EC_PARAM.x);
+	fp12_final_exp(a, (const fp4_t*) t0, EC_PARAM_X);
 	fp12_conjugate(t0, (const fp4_t*) a, 3);
-	fp12_final_exp(b, (const fp4_t*) t0, EC_PARAM.x);
+	fp12_final_exp(b, (const fp4_t*) t0, EC_PARAM_X);
 	fp12_conjugate(t0, (const fp4_t*) b, 3);
-	fp12_final_exp(c, (const fp4_t*) t0, EC_PARAM.x);
+	fp12_final_exp(c, (const fp4_t*) t0, EC_PARAM_X);
 #else
-	fp12_final_exp(a, (const fp4_t*) res, EC_PARAM.x);
-	fp12_final_exp(b, (const fp4_t*) a, EC_PARAM.x);
-	fp12_final_exp(c, (const fp4_t*) b, EC_PARAM.x);
+	fp12_final_exp(a, (const fp4_t*) res, EC_PARAM_X);
+	fp12_final_exp(b, (const fp4_t*) a, EC_PARAM_X);
+	fp12_final_exp(c, (const fp4_t*) b, EC_PARAM_X);
 #endif
 
 	fp12_frobenius_map(t0, (const fp4_t*) c, 1);
@@ -526,7 +518,7 @@ void pbc_map_opt_ate_optimized_final_exp_std(fp12_t res, fp12_t a, fp12_t b) {
 	fp12_sqr_cyclotomic(t0, (const fp4_t*) t0);
 
 	fp12_frobenius_map(c, (const fp4_t*) b, 1);						// ft2
-	fp12_mul(c, (const fp4_t*) c, (const fp4_t*) a);				// ft1
+	fp12_mul(c, (const fp4_t*) c, (const fp4_t*) a);			// ft1
 	fp12_conjugate(c, (const fp4_t*) c, 3);
 
 	fp12_mul(t0, (const fp4_t*) t0, (const fp4_t*)c);
@@ -534,14 +526,14 @@ void pbc_map_opt_ate_optimized_final_exp_std(fp12_t res, fp12_t a, fp12_t b) {
 	fp12_frobenius_map(a, (const fp4_t*) a, 1);						// ft1
 	fp12_conjugate(a, (const fp4_t*) a, 3);
 
-	fp12_conjugate(c, (const fp4_t*) b, 3);							// ft2
+	fp12_conjugate(c, (const fp4_t*) b, 3);						  	// ft2
 
 	fp12_mul(t0, (const fp4_t*) t0, (const fp4_t*) c);
 
 	fp12_mul(a, (const fp4_t*) a, (const fp4_t*) c);
 	fp12_mul(a, (const fp4_t*) a, (const fp4_t*) t0);
 
-	fp12_conjugate(c, (const fp4_t*) b, 1);							// ft2
+	fp12_conjugate(c, (const fp4_t*) b, 1);						  	// ft2
 	fp12_mul(t0, (const fp4_t*) t0, (const fp4_t*) c);
 
 	fp12_sqr_cyclotomic(a, (const fp4_t*) a);
@@ -587,7 +579,7 @@ void pbc_map_opt_ate_optimized_miller_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
 	const word_t	*s 			= OPTATE_LOOP_CONST;
 #else
 	word_t				s[BI_WORDS+1];
-	bi_multiply_word(s, EC_PARAM.x, 6);
+	bi_multiply_word(s, EC_PARAM_X, 6);
   #ifdef NEGATIVE_PARAM_X
 	bi_subtract_word(s, s, 2);
   #else
@@ -649,7 +641,7 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	const word_t	*s 			= OPTATE_LOOP_CONST;
 #else
 	word_t				s[BI_WORDS+1];
-	bi_multiply_word(s, EC_PARAM.x, 6);
+	bi_multiply_word(s, EC_PARAM_X, 6);
   #ifdef NEGATIVE_PARAM_X
 	bi_subtract_word(s, s, 2);
   #else
@@ -664,7 +656,6 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 
 	// len is the msb -> -1 instead of -2
 	if (!p1->infinity && !q1->infinity) {
-		// len is the msb -> -1 instead of -2
 		for (i = len - 1; i >= 0; i--) {	// interleaved evaluation according to Castello et.al.
 			fp12_sqr(res, (const fp4_t*) res);
 			pbc_point_dbl_line_costello_eval(a, &t, &t, p1);
@@ -697,7 +688,6 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 
 	// len is the msb -> -1 instead of -2
 	if (!p2->infinity && !q1->infinity) {
-		// len is the msb -> -1 instead of -2
 		for (i = len - 1; i >= 0; i--) {	// interleaved evaluation according to Castello et.al.
 			fp12_sqr(r2, (const fp4_t*) r2);
 			pbc_point_dbl_line_costello_eval(a, &t, &t, p2);
@@ -757,7 +747,7 @@ void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	const word_t	*s 			= OPTATE_LOOP_CONST;
 #else
 	word_t				s[BI_WORDS+1];
-	bi_multiply_word(s, EC_PARAM.x, 6);
+	bi_multiply_word(s, EC_PARAM_X, 6);
   #ifdef NEGATIVE_PARAM_X
 	bi_subtract_word(s, s, 2);
   #else
@@ -795,8 +785,6 @@ void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
 	ecfp2_neg_proj(&t1);
 	ecfp2_neg_proj(&t2);
 #endif
-
-	//print_value(res[0][0][0], BI_WORDS); print("\n"); print("\n");
 
 	// final steps of optimal ate pairing
 	ecfp2_frobenius_map(&q_f1, q1, 1);

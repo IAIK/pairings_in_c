@@ -1,0 +1,125 @@
+\hypertarget{namespacegenerateMultiplyKaratsuba}{\section{generate\-Multiply\-Karatsuba Namespace Reference}
+\label{namespacegenerateMultiplyKaratsuba}\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacegenerateMultiplyKaratsuba_aaa206e11f0f45153917f72fb6d0817bb}{high\-Part}
+\item 
+def \hyperlink{namespacegenerateMultiplyKaratsuba_a31fa7db3e2d022cbf01057b00a8303a8}{low\-Part}
+\item 
+def \hyperlink{namespacegenerateMultiplyKaratsuba_a2d70b912e7bd1e678fa9569af39db5f5}{middle\-Part}
+\item 
+def \hyperlink{namespacegenerateMultiplyKaratsuba_a9c2319ce795bbe3b7dea6da9dce2f449}{propagate\-Accumulator}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespacegenerateMultiplyKaratsuba_ab6c894a2bd1e37f98c052afdbaa246db}{total\-\_\-words} = 8
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacegenerateMultiplyKaratsuba_aaa206e11f0f45153917f72fb6d0817bb}{\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}!high\-Part@{high\-Part}}
+\index{high\-Part@{high\-Part}!generateMultiplyKaratsuba@{generate\-Multiply\-Karatsuba}}
+\subsubsection[{high\-Part}]{\setlength{\rightskip}{0pt plus 5cm}def generate\-Multiply\-Karatsuba.\-high\-Part (
+\begin{DoxyParamCaption}
+\item[{}]{reg\-A, }
+\item[{}]{reg\-B, }
+\item[{}]{words, }
+\item[{}]{offset}
+\end{DoxyParamCaption}
+)}}\label{namespacegenerateMultiplyKaratsuba_aaa206e11f0f45153917f72fb6d0817bb}
+
+
+Definition at line 3 of file generate\-Multiply\-Karatsuba.\-py.
+
+
+
+References print().
+
+
+
+Referenced by propagate\-Accumulator().
+
+\hypertarget{namespacegenerateMultiplyKaratsuba_a31fa7db3e2d022cbf01057b00a8303a8}{\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}!low\-Part@{low\-Part}}
+\index{low\-Part@{low\-Part}!generateMultiplyKaratsuba@{generate\-Multiply\-Karatsuba}}
+\subsubsection[{low\-Part}]{\setlength{\rightskip}{0pt plus 5cm}def generate\-Multiply\-Karatsuba.\-low\-Part (
+\begin{DoxyParamCaption}
+\item[{}]{reg\-A, }
+\item[{}]{reg\-B, }
+\item[{}]{reg\-Dst0, }
+\item[{}]{reg\-Dst1, }
+\item[{}]{words, }
+\item[{}]{offset}
+\end{DoxyParamCaption}
+)}}\label{namespacegenerateMultiplyKaratsuba_a31fa7db3e2d022cbf01057b00a8303a8}
+
+
+Definition at line 49 of file generate\-Multiply\-Karatsuba.\-py.
+
+
+
+References print().
+
+
+
+Referenced by propagate\-Accumulator().
+
+\hypertarget{namespacegenerateMultiplyKaratsuba_a2d70b912e7bd1e678fa9569af39db5f5}{\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}!middle\-Part@{middle\-Part}}
+\index{middle\-Part@{middle\-Part}!generateMultiplyKaratsuba@{generate\-Multiply\-Karatsuba}}
+\subsubsection[{middle\-Part}]{\setlength{\rightskip}{0pt plus 5cm}def generate\-Multiply\-Karatsuba.\-middle\-Part (
+\begin{DoxyParamCaption}
+\item[{}]{reg\-A, }
+\item[{}]{reg\-B, }
+\item[{}]{reg\-Al, }
+\item[{}]{reg\-Bl, }
+\item[{}]{reg\-Res, }
+\item[{}]{reg\-Carry\-A, }
+\item[{}]{reg\-Carry\-B, }
+\item[{}]{words, }
+\item[{}]{offset\-Reg\-A, }
+\item[{}]{offset\-Reg\-B, }
+\item[{}]{offset\-High}
+\end{DoxyParamCaption}
+)}}\label{namespacegenerateMultiplyKaratsuba_a2d70b912e7bd1e678fa9569af39db5f5}
+
+
+Definition at line 99 of file generate\-Multiply\-Karatsuba.\-py.
+
+
+
+References print().
+
+
+
+Referenced by propagate\-Accumulator().
+
+\hypertarget{namespacegenerateMultiplyKaratsuba_a9c2319ce795bbe3b7dea6da9dce2f449}{\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}!propagate\-Accumulator@{propagate\-Accumulator}}
+\index{propagate\-Accumulator@{propagate\-Accumulator}!generateMultiplyKaratsuba@{generate\-Multiply\-Karatsuba}}
+\subsubsection[{propagate\-Accumulator}]{\setlength{\rightskip}{0pt plus 5cm}def generate\-Multiply\-Karatsuba.\-propagate\-Accumulator (
+\begin{DoxyParamCaption}
+\item[{}]{reg\-Res, }
+\item[{}]{reg\-Al, }
+\item[{}]{words, }
+\item[{}]{offset16}
+\end{DoxyParamCaption}
+)}}\label{namespacegenerateMultiplyKaratsuba_a9c2319ce795bbe3b7dea6da9dce2f449}
+
+
+Definition at line 134 of file generate\-Multiply\-Karatsuba.\-py.
+
+
+
+References high\-Part(), low\-Part(), middle\-Part(), and print().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacegenerateMultiplyKaratsuba_ab6c894a2bd1e37f98c052afdbaa246db}{\index{generate\-Multiply\-Karatsuba@{generate\-Multiply\-Karatsuba}!total\-\_\-words@{total\-\_\-words}}
+\index{total\-\_\-words@{total\-\_\-words}!generateMultiplyKaratsuba@{generate\-Multiply\-Karatsuba}}
+\subsubsection[{total\-\_\-words}]{\setlength{\rightskip}{0pt plus 5cm}int generate\-Multiply\-Karatsuba.\-total\-\_\-words = 8}}\label{namespacegenerateMultiplyKaratsuba_ab6c894a2bd1e37f98c052afdbaa246db}
+
+
+Definition at line 1 of file generate\-Multiply\-Karatsuba.\-py.
+

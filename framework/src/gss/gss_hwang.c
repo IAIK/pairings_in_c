@@ -1,11 +1,36 @@
-/*
- * gss_hwang.c
- *
- * Implementation of group-signature scheme by Hwang, Lee, Chung, Cho, and Nyang.
- *
- *  Created on: Mar 10, 2014
- *      Author: Raphael Spreitzer
- */
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "types.h"
 #include "rand.h"
@@ -16,7 +41,7 @@
 #include "pbc/pbc.h"
 #include "fp/fp12.h"
 #include "gss/gss_hwang.h"
-#include "hash/sha256.h"
+#include "hash/hash_function.h"
 #include <string.h>
 
 /**
@@ -29,21 +54,20 @@
  */
 sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwang_signing_key_ptr usk)
 {
-  sha256_ctx_t ctx;
+  hashState state;
   unsigned char block[64];
-  unsigned char hash[SHA256_HASH_BYTES];
+  unsigned char hash[HASH_BYTES];
   unsigned char msg[1] = {0x01};
 
   bigint_t alpha, r_alpha, r_gamma, r_x, r_y;
   word_t bigint_tmp_dbl[2*BI_WORDS], bigint_tmp_dbl2[2*BI_WORDS];
 
-  bigint_t gamma, bi_tmp;  //TODO: instead of bi_tmp we might use the larger bigints from above?!
+  bigint_t gamma, bi_tmp;
 
   ecpoint_fp G1_tmp1, G1_tmp2, R_1, R_3;
 
   fp12_t R_2, GT_tmp1;
 
-  //TODO: shall we initialize all variables to zero?
   bi_clear_var_std(bigint_tmp_dbl, 2*BI_WORDS); bi_clear_var_std(bigint_tmp_dbl2, 2*BI_WORDS);
 
   // Generate blinding values.
@@ -69,36 +93,29 @@ sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwan
 
 #if DEBUG_PRINT == 1
   PRINT_BIGINT("alpha: ", alpha);
-  PRINT_BIGINT("order: ", EC_PARAM.n);
+  PRINT_BIGINT("order: ", EC_PARAM_N);
   PRINT_BIGINT("r_alpha: ", r_alpha);
   PRINT_BIGINT("r_gamma: ", r_gamma);
   PRINT_BIGINT("r_x: ", r_x);
   PRINT_BIGINT("r_y: ", r_y);
 #endif
 
-//  bi_multiply(gamma, usk->x, alpha); //bi_subtract(gamma, gamma, usk->z); fp_rdc_n(gamma);
   bi_copy_var(bigint_tmp_dbl2, usk->z, BI_WORDS);
-  bi_multiply(bigint_tmp_dbl, usk->x, alpha); //bi_subtract(bigint_tmp, bigint_tmp, usk->z); fp_rdc_n(bigint_tmp);
+  bi_multiply(bigint_tmp_dbl, usk->x, alpha);
   bi_subtract_dbl_len(bigint_tmp_dbl, bigint_tmp_dbl, bigint_tmp_dbl2);
-  fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(gamma, bigint_tmp_dbl, BI_WORDS);
 
-  //TODO: test if gamma is negative -> then add the order (EC_PARAM.n?)
-   /* if (gamma->sign == BN_NEG)
-            bn_add(gamma, gamma, data->order_p);
-    else
-            bn_mod(gamma, gamma, data->order_p); // gamma = x * alpha - z (mod p);*/
+  ecfp_mul(&sig->D_1, &data->u, alpha);             // D1 = u^{alpha}
 
-  ecfp_mul(&sig->D_1, &data->u, alpha);    // D1 = u^{alpha}
+  ecfp_mul(&sig->D_2, &data->w, alpha);
+  ecfp_add_affine(&sig->D_2, &sig->D_2, &usk->A);   // D2 = A * w^{alpha}
 
-  ecfp_mul(&sig->D_2, &data->w, alpha); ecfp_add_affine(&sig->D_2, &sig->D_2, &usk->A); // D2 = A * w^{alpha}
-
-
-  ecfp_mul(&sig->D_3, &data->g, usk->y);   // D3 = g^y
-  ecfp_mul(&G1_tmp1, &data->d, alpha);     // tmp = d^{alpha}
+  ecfp_mul(&sig->D_3, &data->g, usk->y);            // D3 = g^y
+  ecfp_mul(&G1_tmp1, &data->d, alpha);              // tmp = d^{alpha}
   ecfp_add_affine(&sig->D_3, &sig->D_3, &G1_tmp1);  // D3 = g^y * d^{alpha]}
 
-  ecfp_mul(&R_1, &data->u, r_alpha); // R1 = u^{r_alpha}
+  ecfp_mul(&R_1, &data->u, r_alpha);                // R1 = u^{r_alpha}
 
 #if DEBUG_PRINT == 1
   PRINT_G1("[sign] R_1: ", R_1);
@@ -107,7 +124,8 @@ sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwan
   // R_2 = e(D_2^{r_x} * w^{-r_{gamma}} * g_2^{r_y}, h_1) * e(w^{-r_{alpha}}, h_{theta});
   bi_subtract(bi_tmp, data->order_p, r_gamma);
 
-  ecfp_mul(&G1_tmp1, &sig->D_2, r_x); ecfp_mul(&G1_tmp2, &data->w, bi_tmp);
+  ecfp_mul(&G1_tmp1, &sig->D_2, r_x);
+  ecfp_mul(&G1_tmp2, &data->w, bi_tmp);
   ecfp_add_affine(&G1_tmp1, &G1_tmp1, &G1_tmp2);
 
   ecfp_mul(&G1_tmp2, &data->g2, r_y);
@@ -120,7 +138,6 @@ sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwan
 
   pbc_map_opt_ate(GT_tmp1, &G1_tmp1, &data->h_theta);
 
-  //TODO: I guess the computation of R_2 can be performed easier with pbc_map_opt_ate_mul()
   fp12_mul(R_2, R_2, GT_tmp1);
 
 #if DEBUG_PRINT == 1
@@ -136,64 +153,50 @@ sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwan
   PRINT_G1("[sign] R_3: ", R_3);
 #endif
 
-  sha256_init(&ctx);
+  hash_init(&state);
 
   // hash message M
-  memset(block, 0, 64); memcpy(block, msg, 1); sha256_nextBlock(&ctx, block);
+  memset(block, 0, 64); memcpy(block, msg, 1); hash_update(&state, block, 64);
 
   // hash D1
-  // TODO: we do not hash the infinity byte - however this should not be relevant.
-  sha256_update_G1(&ctx, &sig->D_1);
+  hash_update_G1(&state, &sig->D_1);
 
   // hash D2
-  sha256_update_G1(&ctx, &sig->D_2);
+  hash_update_G1(&state, &sig->D_2);
 
   // hash D3
-  sha256_update_G1(&ctx, &sig->D_3);
+  hash_update_G1(&state, &sig->D_3);
 
   // hash R1
-  sha256_update_G1(&ctx, &R_1);
+  hash_update_G1(&state, &R_1);
 
   // hash R2
-  sha256_update_GT(&ctx, R_2);
+  hash_update_GT(&state, R_2);
 
   // hash R3
-  sha256_update_G1(&ctx, &R_3);
+  hash_update_G1(&state, &R_3);
 
-  // finalize and generate bigint mod order from hash
-  sha256_ctx2hash(hash, &ctx);
+  hash_final(&state , hash, HASH_BYTES);
 
-  bi_clear_var_std(bigint_tmp_dbl, 2*BI_WORDS); bi_copy_var_std(bigint_tmp_dbl, (const word_t *) hash, SHA256_HASH_BYTES);
-  fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  bi_clear_var_std(bigint_tmp_dbl, 2*BI_WORDS); bi_copy_var_std(bigint_tmp_dbl, (const word_t *) hash, HASH_BYTES);
+  fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(sig->c, bigint_tmp_dbl, BI_WORDS);
 
 
-  bi_multiply(bigint_tmp_dbl, sig->c, alpha); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  bi_multiply(bigint_tmp_dbl, sig->c, alpha); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(sig->s_alpha, bigint_tmp_dbl, BI_WORDS);
-  bi_add(sig->s_alpha, sig->s_alpha, r_alpha); fp_rdc_n(sig->s_alpha); // s_alpha = c * alpha + r_alpha
-  // bn_mul(sig->s_alpha, sig->c, alpha); bn_mod(sig->s_alpha, sig->s_alpha, data->order_p);
-  // bn_add(sig->s_alpha, sig->s_alpha, r_alpha); bn_mod(sig->s_alpha, sig->s_alpha, data->order_p);// s_alpha = c * alpha + r_alpha
+  bi_add(sig->s_alpha, sig->s_alpha, r_alpha); fp_rdc_n(sig->s_alpha);
 
-
-  bi_multiply(bigint_tmp_dbl, sig->c, usk->x); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  bi_multiply(bigint_tmp_dbl, sig->c, usk->x); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(sig->s_x, bigint_tmp_dbl, BI_WORDS);
-  bi_add(sig->s_x, sig->s_x, r_x); fp_rdc_n(sig->s_x); // s_x = c * x + r_x
-  // bn_mul(sig->s_x, sig->c, usk->x); bn_mod(sig->s_x, sig->s_x, data->order_p);
-  // bn_add(sig->s_x, sig->s_x, r_x);  bn_mod(sig->s_x, sig->s_x, data->order_p);   // s_x = c * x + r_x
+  bi_add(sig->s_x, sig->s_x, r_x); fp_rdc_n(sig->s_x);
 
-  bi_multiply(bigint_tmp_dbl, sig->c, gamma); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  bi_multiply(bigint_tmp_dbl, sig->c, gamma); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(sig->s_gamma, bigint_tmp_dbl, BI_WORDS);
-  bi_add(sig->s_gamma, sig->s_gamma, r_gamma); fp_rdc_n(sig->s_gamma); // s_gamma = c * gamma + r_gamma
-   // bn_mul(sig->s_gamma, sig->c, gamma); bn_mod(sig->s_gamma, sig->s_gamma, data->order_p);
-   // bn_add(sig->s_gamma, sig->s_gamma, r_gamma); bn_mod(sig->s_gamma, sig->s_gamma, data->order_p);    // s_gamma = c * gamma + r_gamma
-
-  bi_multiply(bigint_tmp_dbl, sig->c, usk->y); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM.mu_n);
+  bi_add(sig->s_gamma, sig->s_gamma, r_gamma); fp_rdc_n(sig->s_gamma);
+  bi_multiply(bigint_tmp_dbl, sig->c, usk->y); fp_rdc_2l_var(bigint_tmp_dbl, data->order_p, EC_PARAM_MU_N);
   bi_copy_var_std(sig->s_y, bigint_tmp_dbl, BI_WORDS);
-  bi_add(sig->s_y, sig->s_y, r_y); fp_rdc_n(sig->s_y); // s_y = c * y + r_y
-  // bn_mul(sig->s_y, sig->c, usk->y); bn_mod(sig->s_y, sig->s_y, data->order_p);
-  // bn_add(sig->s_y, sig->s_y, r_y);  bn_mod(sig->s_y, sig->s_y, data->order_p); // s_y = c * y + r_y
-
-
+  bi_add(sig->s_y, sig->s_y, r_y); fp_rdc_n(sig->s_y);
 
 #if DEBUG_PRINT == 1
    print(" --------- Signature --------- \n");

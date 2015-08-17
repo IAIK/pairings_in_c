@@ -1,12 +1,36 @@
-/*
- * fp4.c
- *
- *  Basic implementation of arithmetic in a quartic extension field.
- *
- *  Created on: Apr 24, 2013
- *      Author: thomas
- */
-
+/****************************************************************************
+**
+** Copyright (C) 2015 Stiftung Secure Information and
+**                    Communication Technologies SIC and
+**                    Graz University of Technology
+** Contact: http://opensource.iaik.tugraz.at
+**
+**
+** Commercial License Usage
+** Licensees holding valid commercial licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and SIC. For further information
+** contact us at http://opensource.iaik.tugraz.at.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** This software is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this software. If not, see http://www.gnu.org/licenses/.
+**
+**
+****************************************************************************/
 
 #include "fp/fp.h"
 #include "fp/fp4.h"
@@ -94,12 +118,12 @@ void fp4_mul_std(fp4_t res, const fp4_t a, const fp4_t b) {
 	// zeta: a quadratic non-residue in F_{p^2} used to construct F_{p^4} towering F_{p^2}
 	//       by defining F_{p^2}[Y]/(Y^2 + zeta)
 
-	fp2_add(x, a[1], a[0]);			// x = a1 + a0
-	fp2_add(y, b[1], b[0]); 		// y = b1 + b0
+	fp2_add(x, a[1], a[0]);			                        // x = a1 + a0
+	fp2_add(y, b[1], b[0]); 		                        // y = b1 + b0
 	fp2_mul(y, (const fp_t*) x, (const fp_t*) y);				// y = x * y = (a1+a0)(b1+b0)
 
-	fp2_mul(res[0], a[0], b[0]);	// res0 = a0*b0
-	fp2_mul(x, a[1], b[1]);			// x = a1*b1
+	fp2_mul(res[0], a[0], b[0]);	                      // res0 = a0*b0
+	fp2_mul(x, a[1], b[1]);			                        // x = a1*b1
 
 	fp2_sub(res[1], (const fp_t*) y, (const fp_t*) res[0]);		// res1 = y - res0 = (a1+a0)(b1+b0) - a0*b0
 	fp2_sub(res[1], (const fp_t*) res[1], (const fp_t*) x);		// res1 = res1 - x = (a1+a0)(b1+b0) - a0*b0 - a1*b1
@@ -129,7 +153,6 @@ void fp4_exp_std(fp4_t res, const fp4_t a, const bigint_t b) {
 	fp4_t tmp;
 	int i;
 
-
 	fp2_clear(res[1]);
 	fp_clear(res[0][1]);
 	fp_copy(res[0][0], FP_ONE);
@@ -153,8 +176,8 @@ void fp4_inv_std(fp4_t res, const fp4_t a) {
 	fp2_t t0, t1;
 
 	// formulas: 	res0 = 	a0 / (a0^2 - p0*a1^2)
-	// 				res1 = -a1 / (a0^2 - p0*a1^2)
-	//				for: P(x) = x² - p0
+	// 				    res1 = -a1 / (a0^2 - p0*a1^2)
+	//				    for: P(x) = x² - p0
 
 	fp2_sqr(t0, a[0]);
 	fp2_sqr(t1, a[1]);
@@ -205,7 +228,7 @@ void fp4_frobenius_map_std(fp4_t res, const fp4_t a, const word_t i) {
 	fp2_clear(q);
 	q[0][0] = 1;
 	fp2_mul_qnr(q, (const fp_t*) q);
-	bi_copy(e, PRIME.p);
+	bi_copy(e, PRIME_P);
 	bi_subtract(e, e, bi_one);
 	bi_shift_right_one(e, e);
 	fp2_exp(q_exp, (const fp_t*) q, (const word_t*) e);			// qnr^{(p-1)/2} (maybe frobenius, inverse + root is cheaper?)

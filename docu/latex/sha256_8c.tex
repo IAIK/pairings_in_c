@@ -1,0 +1,236 @@
+\hypertarget{sha256_8c}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha256.c File Reference}
+\label{sha256_8c}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha256.\-c@{/home/work/workspace/bipair\-\_\-in\-\_\-c/src/hash/sha256.\-c}}
+}
+
+
+S\-H\-A-\/256 implementation.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}hash/sha2\-\_\-small\-\_\-common.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash/sha256.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sha256_8c_a8782a401fbf55261460863fc2f8df1ce}{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sha256_8c_ae436d07e4a6f3e8eeab60a8c2a0cf472}{sha256\-\_\-init} (\hyperlink{sha256_8h_a4fc1ed5343abc3c5f41898f4d5116dbc}{sha256\-\_\-ctx\-\_\-t} $\ast$state)
+\begin{DoxyCompactList}\small\item\em {\ttfamily sh256\-\_\-init} initialises a sha256 context for hashing. \end{DoxyCompactList}\item 
+void \hyperlink{sha256_8c_a33a5ddbbf0f2cb105a2191a72624138d}{sha256\-\_\-next\-Block} (\hyperlink{sha256_8h_a4fc1ed5343abc3c5f41898f4d5116dbc}{sha256\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block)
+\begin{DoxyCompactList}\small\item\em update the context with a given block \end{DoxyCompactList}\item 
+void \hyperlink{sha256_8c_a157d06e953ba0312ea075666785af2d5}{sha256\-\_\-last\-Block} (\hyperlink{sha256_8h_a4fc1ed5343abc3c5f41898f4d5116dbc}{sha256\-\_\-ctx\-\_\-t} $\ast$state, const void $\ast$block, uint16\-\_\-t length\-\_\-b)
+\begin{DoxyCompactList}\small\item\em finalize the context with the given block \end{DoxyCompactList}\item 
+void \hyperlink{sha256_8c_a939ae08637e354e553f25a5837c78234}{sha256} (void $\ast$dest, const void $\ast$msg, uint32\-\_\-t length\-\_\-b)
+\begin{DoxyCompactList}\small\item\em function to process the last block being hashed \end{DoxyCompactList}\item 
+void \hyperlink{sha256_8c_a23e7767e1a5b30132315da4aab1cd1b3}{sha256\-\_\-ctx2hash} (void $\ast$dest, const \hyperlink{sha256_8h_a4fc1ed5343abc3c5f41898f4d5116dbc}{sha256\-\_\-ctx\-\_\-t} $\ast$state)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\-\_\-t \hyperlink{sha256_8c_a21a5f3048d8f2a5ff70168981f775451}{sha256\-\_\-init\-\_\-vector} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-H\-A-\/256 implementation. \begin{DoxyAuthor}{Author}
+Daniel Otte 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16.\-05.\-2006
+\end{DoxyDate}
+\begin{DoxyParagraph}{License\-:}
+G\-P\-L 
+\end{DoxyParagraph}
+
+
+Definition in file \hyperlink{sha256_8c_source}{sha256.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sha256_8c_a8782a401fbf55261460863fc2f8df1ce}{\index{sha256.\-c@{sha256.\-c}!L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N@{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}}
+\index{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N@{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}!sha256.c@{sha256.\-c}}
+\subsubsection[{L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}}\label{sha256_8c_a8782a401fbf55261460863fc2f8df1ce}
+
+
+Definition at line 37 of file sha256.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sha256_8c_a939ae08637e354e553f25a5837c78234}{\index{sha256.\-c@{sha256.\-c}!sha256@{sha256}}
+\index{sha256@{sha256}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256}]{\setlength{\rightskip}{0pt plus 5cm}void sha256 (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{dest, }
+\item[{const void $\ast$}]{msg, }
+\item[{uint32\-\_\-t}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{sha256_8c_a939ae08637e354e553f25a5837c78234}
+
+
+function to process the last block being hashed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the context in which this block should be processed. \\
+\hline
+{\em block} & Pointer to the message wich should be hashed. \\
+\hline
+{\em length} & is the length of only T\-H\-I\-S block in B\-I\-T\-S not in bytes! bits are big endian, meaning high bits come first. if you have a message with bits at the end, the byte must be padded with zeros \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file sha256.\-c.
+
+
+
+References S\-H\-A256\-\_\-\-B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, sha256\-\_\-ctx2hash(), sha256\-\_\-init(), sha256\-\_\-last\-Block(), and sha256\-\_\-next\-Block().
+
+
+
+Referenced by hash\-\_\-id(), and hash\-\_\-key().
+
+\hypertarget{sha256_8c_a23e7767e1a5b30132315da4aab1cd1b3}{\index{sha256.\-c@{sha256.\-c}!sha256\-\_\-ctx2hash@{sha256\-\_\-ctx2hash}}
+\index{sha256\-\_\-ctx2hash@{sha256\-\_\-ctx2hash}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256\-\_\-ctx2hash}]{\setlength{\rightskip}{0pt plus 5cm}void sha256\-\_\-ctx2hash (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{dest, }
+\item[{const {\bf sha256\-\_\-ctx\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{sha256_8c_a23e7767e1a5b30132315da4aab1cd1b3}
+
+
+Definition at line 108 of file sha256.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::h.
+
+
+
+Referenced by hwang\-\_\-sign(), hwang\-\_\-verify(), and sha256().
+
+\hypertarget{sha256_8c_ae436d07e4a6f3e8eeab60a8c2a0cf472}{\index{sha256.\-c@{sha256.\-c}!sha256\-\_\-init@{sha256\-\_\-init}}
+\index{sha256\-\_\-init@{sha256\-\_\-init}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sha256\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf sha256\-\_\-ctx\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{sha256_8c_ae436d07e4a6f3e8eeab60a8c2a0cf472}
+
+
+{\ttfamily sh256\-\_\-init} initialises a sha256 context for hashing. 
+
+initialize a S\-H\-A-\/256 context
+
+{\ttfamily sh256\-\_\-init} c initialises the given sha256 context for hashing 
+\begin{DoxyParams}{Parameters}
+{\em state} & pointer to a sha256 context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file sha256.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::h, sha2\-\_\-small\-\_\-common\-\_\-ctx\-\_\-t\-::length, and sha256\-\_\-init\-\_\-vector.
+
+
+
+Referenced by hwang\-\_\-sign(), hwang\-\_\-verify(), and sha256().
+
+\hypertarget{sha256_8c_a157d06e953ba0312ea075666785af2d5}{\index{sha256.\-c@{sha256.\-c}!sha256\-\_\-last\-Block@{sha256\-\_\-last\-Block}}
+\index{sha256\-\_\-last\-Block@{sha256\-\_\-last\-Block}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256\-\_\-last\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha256\-\_\-last\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha256\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block, }
+\item[{uint16\-\_\-t}]{length\-\_\-b}
+\end{DoxyParamCaption}
+)}}\label{sha256_8c_a157d06e953ba0312ea075666785af2d5}
+
+
+finalize the context with the given block 
+
+This function finalizes the S\-H\-A-\/256 hash context by processing the given block of variable length. 
+\begin{DoxyParams}{Parameters}
+{\em state} & pointer to the S\-H\-A-\/256 hash context \\
+\hline
+{\em block} & pointer to the block of fixed length (512 bit = 64 byte) \\
+\hline
+{\em length\-\_\-b} & the length of the block in bits \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file sha256.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-last\-Block().
+
+
+
+Referenced by sha256().
+
+\hypertarget{sha256_8c_a33a5ddbbf0f2cb105a2191a72624138d}{\index{sha256.\-c@{sha256.\-c}!sha256\-\_\-next\-Block@{sha256\-\_\-next\-Block}}
+\index{sha256\-\_\-next\-Block@{sha256\-\_\-next\-Block}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256\-\_\-next\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void sha256\-\_\-next\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf sha256\-\_\-ctx\-\_\-t} $\ast$}]{state, }
+\item[{const void $\ast$}]{block}
+\end{DoxyParamCaption}
+)}}\label{sha256_8c_a33a5ddbbf0f2cb105a2191a72624138d}
+
+
+update the context with a given block 
+
+This function updates the S\-H\-A-\/256 hash context by processing the given block of fixed length. 
+\begin{DoxyParams}{Parameters}
+{\em state} & pointer to the S\-H\-A-\/256 hash context \\
+\hline
+{\em block} & pointer to the block of fixed length (512 bit = 64 byte) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file sha256.\-c.
+
+
+
+References sha2\-\_\-small\-\_\-common\-\_\-next\-Block().
+
+
+
+Referenced by hwang\-\_\-sign(), hwang\-\_\-verify(), sha256(), sha256\-\_\-update\-\_\-\-G1(), and sha256\-\_\-update\-\_\-\-G\-T().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sha256_8c_a21a5f3048d8f2a5ff70168981f775451}{\index{sha256.\-c@{sha256.\-c}!sha256\-\_\-init\-\_\-vector@{sha256\-\_\-init\-\_\-vector}}
+\index{sha256\-\_\-init\-\_\-vector@{sha256\-\_\-init\-\_\-vector}!sha256.c@{sha256.\-c}}
+\subsubsection[{sha256\-\_\-init\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\-\_\-t sha256\-\_\-init\-\_\-vector\mbox{[}$\,$\mbox{]}}}\label{sha256_8c_a21a5f3048d8f2a5ff70168981f775451}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{
+    0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A,
+    0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19 \}
+\end{DoxyCode}
+
+
+Definition at line 49 of file sha256.\-c.
+
+
+
+Referenced by sha256\-\_\-init().
+
