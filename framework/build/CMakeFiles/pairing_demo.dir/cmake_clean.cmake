@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/pairing_demo.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/pairing_demo.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/pairing_demo.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/pairing_demo.dir/src/sdh/sdh_zk.c.o"
   "out/bin/pairing_demo.pdb"
   "out/bin/pairing_demo"
 )

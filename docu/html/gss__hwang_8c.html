@@ -71,8 +71,82 @@ Functions</h2></td></tr>
 <tr class="memitem:a07e069d6b71f2621bfb1fc1553b00bb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#ae1e823357de7a263f2ed95e66b14e66c">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gss__hwang_8c.html#a07e069d6b71f2621bfb1fc1553b00bb2">hwang_sign</a> (<a class="el" href="gss__hwang_8h.html#a8b2bf681e03a008deb9632a75143fd84">hwang_signature_ptr</a> sig, <a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a> data, <a class="el" href="gss__hwang_8h.html#a9fb82923594c2981cea0ac048ce8f1de">hwang_signing_key_ptr</a> usk)</td></tr>
 <tr class="memdesc:a07e069d6b71f2621bfb1fc1553b00bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a signature according to the scheme of HWANG.  <a href="#a07e069d6b71f2621bfb1fc1553b00bb2">More...</a><br/></td></tr>
 <tr class="separator:a07e069d6b71f2621bfb1fc1553b00bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864394e30842fa07b1c84deb73b44d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gss__hwang_8c.html#a864394e30842fa07b1c84deb73b44d16">hwang_init_parameters</a> (<a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a> data)</td></tr>
+<tr class="memdesc:a864394e30842fa07b1c84deb73b44d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the public parameters, the master issuing key (MIK), the master opening key (MOK), and the master linking key (MLK).  <a href="#a864394e30842fa07b1c84deb73b44d16">More...</a><br/></td></tr>
+<tr class="separator:a864394e30842fa07b1c84deb73b44d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab01fc08360c0a3b42e6bcd9155644a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gss__hwang_8c.html#a0ab01fc08360c0a3b42e6bcd9155644a">hwang_generate_usk</a> (<a class="el" href="gss__hwang_8h.html#a9fb82923594c2981cea0ac048ce8f1de">hwang_signing_key_ptr</a> usk, <a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a> data)</td></tr>
+<tr class="memdesc:a0ab01fc08360c0a3b42e6bcd9155644a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a tuple (x, y, z, A) &mdash; with x, y, z  {Z}_p^* and A  {G}_1 &mdash; that acts as a user's signing key.  <a href="#a0ab01fc08360c0a3b42e6bcd9155644a">More...</a><br/></td></tr>
+<tr class="separator:a0ab01fc08360c0a3b42e6bcd9155644a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d66ffe4bfb175147030948e8e0f076"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#ae1e823357de7a263f2ed95e66b14e66c">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gss__hwang_8c.html#ad1d66ffe4bfb175147030948e8e0f076">hwang_verify</a> (<a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a> data, <a class="el" href="gss__hwang_8h.html#a8b2bf681e03a008deb9632a75143fd84">hwang_signature_ptr</a> sig)</td></tr>
+<tr class="memdesc:ad1d66ffe4bfb175147030948e8e0f076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a group signature.  <a href="#ad1d66ffe4bfb175147030948e8e0f076">More...</a><br/></td></tr>
+<tr class="separator:ad1d66ffe4bfb175147030948e8e0f076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a0ab01fc08360c0a3b42e6bcd9155644a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hwang_generate_usk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gss__hwang_8h.html#a9fb82923594c2981cea0ac048ce8f1de">hwang_signing_key_ptr</a>&#160;</td>
+          <td class="paramname"><em>usk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a>&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a tuple (x, y, z, A) &mdash; with x, y, z  {Z}_p^* and A  {G}_1 &mdash; that acts as a user's signing key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usk</td><td>[out] the generated signing key for one user. </td></tr>
+    <tr><td class="paramname">data</td><td>[in] the public parameters. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="gss__hwang_8c_source.html#l00285">285</a> of file <a class="el" href="gss__hwang_8c_source.html">gss_hwang.c</a>.</p>
+
+<p>References <a class="el" href="gss__hwang_8h_source.html#l00083">hwang_signing_key_s::A</a>, <a class="el" href="bigint_2bi_8h_source.html#l00044">bi_add</a>, <a class="el" href="types_8h_source.html#l00092">BI_BYTES</a>, <a class="el" href="bigint_2bi_8h_source.html#l00064">bi_compare</a>, <a class="el" href="bigint_2bi_8h_source.html#l00048">bi_subtract</a>, <a class="el" href="types_8h_source.html#l00091">BI_WORDS</a>, <a class="el" href="bigint_2bi_8h.html#ae17ebabb8f6e58c8c803d47bc3b425e5">bi_zero</a>, <a class="el" href="rand_8c_source.html#l00064">cprng_get_bytes()</a>, <a class="el" href="ec_8h_source.html#l00043">ecfp_add_affine</a>, <a class="el" href="ec_8h_source.html#l00045">ecfp_mul</a>, <a class="el" href="fp_2fp_8h_source.html#l00068">fp_inv_n</a>, <a class="el" href="fp_2fp_8h_source.html#l00125">fp_rdc_n</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g1</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g2</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::order_p</a>, <a class="el" href="util_8c_source.html#l00057">print()</a>, <a class="el" href="gss__hwang_8h_source.html#l00045">PRINT_BIGINT</a>, <a class="el" href="gss__hwang_8h_source.html#l00049">PRINT_G1</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::theta</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::w</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::x</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::y</a>, and <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::z</a>.</p>
+
+<p>Referenced by <a class="el" href="gss__hwang__demo_8c_source.html#l00043">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a864394e30842fa07b1c84deb73b44d16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hwang_init_parameters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a>&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the public parameters, the master issuing key (MIK), the master opening key (MOK), and the master linking key (MLK). </p>
+
+<p>Definition at line <a class="el" href="gss__hwang_8c_source.html#l00223">223</a> of file <a class="el" href="gss__hwang_8c_source.html">gss_hwang.c</a>.</p>
+
+<p>References <a class="el" href="types_8h_source.html#l00092">BI_BYTES</a>, <a class="el" href="bigint_2bi_8h_source.html#l00064">bi_compare</a>, <a class="el" href="bi_8c_source.html#l00480">bi_copy_var_std()</a>, <a class="el" href="types_8h_source.html#l00091">BI_WORDS</a>, <a class="el" href="bigint_2bi_8h.html#ae17ebabb8f6e58c8c803d47bc3b425e5">bi_zero</a>, <a class="el" href="rand_8c_source.html#l00064">cprng_get_bytes()</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::d</a>, <a class="el" href="param_8h.html#adee09025486dd953c9f29cbfa42ae75b">EC_PARAM_N</a>, <a class="el" href="ec_8h_source.html#l00067">ecfp2_mul</a>, <a class="el" href="ec_8h_source.html#l00086">ecfp2_rand</a>, <a class="el" href="ec_8h_source.html#l00045">ecfp_mul</a>, <a class="el" href="ec_8h_source.html#l00060">ecfp_rand</a>, <a class="el" href="fp_2fp_8h_source.html#l00125">fp_rdc_n</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g1</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g2</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h1</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h_theta</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::order_p</a>, <a class="el" href="util_8c_source.html#l00057">print()</a>, <a class="el" href="gss__hwang_8h_source.html#l00045">PRINT_BIGINT</a>, <a class="el" href="gss__hwang_8h_source.html#l00049">PRINT_G1</a>, <a class="el" href="gss__hwang_8h_source.html#l00055">PRINT_G2</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::theta</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::u</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::U</a>, and <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::w</a>.</p>
+
+<p>Referenced by <a class="el" href="gss__hwang__demo_8c_source.html#l00043">main()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a07e069d6b71f2621bfb1fc1553b00bb2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -116,16 +190,58 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="gss__hwang_8c_source.html#l00055">55</a> of file <a class="el" href="gss__hwang_8c_source.html">gss_hwang.c</a>.</p>
 
-<p>References <a class="el" href="gss__hwang_8h_source.html#l00083">hwang_signing_key_s::A</a>, <a class="el" href="bigint_2bi_8h_source.html#l00044">bi_add</a>, <a class="el" href="types_8h_source.html#l00092">BI_BYTES</a>, <a class="el" href="bi_8c_source.html#l00267">bi_clear_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00064">bi_compare</a>, <a class="el" href="bigint_2bi_8h_source.html#l00073">bi_copy_var</a>, <a class="el" href="bi_8c_source.html#l00481">bi_copy_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00068">bi_multiply</a>, <a class="el" href="bigint_2bi_8h_source.html#l00048">bi_subtract</a>, <a class="el" href="bigint_2bi_8h_source.html#l00052">bi_subtract_dbl_len</a>, <a class="el" href="types_8h_source.html#l00091">BI_WORDS</a>, <a class="el" href="bigint_2bi_8h.html#ae17ebabb8f6e58c8c803d47bc3b425e5">bi_zero</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::c</a>, <a class="el" href="rand_8c_source.html#l00064">cprng_get_bytes()</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::d</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_1</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_2</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_3</a>, <a class="el" href="param_8h.html#aa8300511974667a9414217f4620b767d">EC_PARAM_MU_N</a>, <a class="el" href="param_8h.html#adee09025486dd953c9f29cbfa42ae75b">EC_PARAM_N</a>, <a class="el" href="ec_8h_source.html#l00043">ecfp_add_affine</a>, <a class="el" href="ec_8h_source.html#l00045">ecfp_mul</a>, <a class="el" href="fp12_8h_source.html#l00044">fp12_mul</a>, <a class="el" href="fp_2fp_8h_source.html#l00121">fp_rdc_2l_var</a>, <a class="el" href="fp_2fp_8h_source.html#l00125">fp_rdc_n</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g2</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h1</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h_theta</a>, <a class="el" href="hash__function_8h_source.html#l00043">HASH_BYTES</a>, <a class="el" href="hash__function_8h_source.html#l00051">hash_final</a>, <a class="el" href="hash__function_8h_source.html#l00049">hash_init</a>, <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>, <a class="el" href="hashing_8c_source.html#l00070">hash_update_G1()</a>, <a class="el" href="hashing_8c_source.html#l00105">hash_update_GT()</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::order_p</a>, <a class="el" href="pbc_8h_source.html#l00038">pbc_map_opt_ate</a>, <a class="el" href="util_8c_source.html#l00057">print()</a>, <a class="el" href="gss__hwang_8h_source.html#l00045">PRINT_BIGINT</a>, <a class="el" href="gss__hwang_8h_source.html#l00049">PRINT_G1</a>, <a class="el" href="gss__hwang_8h_source.html#l00063">PRINT_GT</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_alpha</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_gamma</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_x</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_y</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::u</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::w</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::x</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::y</a>, and <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::z</a>.</p>
+<p>References <a class="el" href="gss__hwang_8h_source.html#l00083">hwang_signing_key_s::A</a>, <a class="el" href="bigint_2bi_8h_source.html#l00044">bi_add</a>, <a class="el" href="types_8h_source.html#l00092">BI_BYTES</a>, <a class="el" href="bi_8c_source.html#l00266">bi_clear_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00064">bi_compare</a>, <a class="el" href="bigint_2bi_8h_source.html#l00073">bi_copy_var</a>, <a class="el" href="bi_8c_source.html#l00480">bi_copy_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00068">bi_multiply</a>, <a class="el" href="bigint_2bi_8h_source.html#l00048">bi_subtract</a>, <a class="el" href="bigint_2bi_8h_source.html#l00052">bi_subtract_dbl_len</a>, <a class="el" href="types_8h_source.html#l00091">BI_WORDS</a>, <a class="el" href="bigint_2bi_8h.html#ae17ebabb8f6e58c8c803d47bc3b425e5">bi_zero</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::c</a>, <a class="el" href="rand_8c_source.html#l00064">cprng_get_bytes()</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::d</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_1</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_2</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_3</a>, <a class="el" href="param_8h.html#aa8300511974667a9414217f4620b767d">EC_PARAM_MU_N</a>, <a class="el" href="param_8h.html#adee09025486dd953c9f29cbfa42ae75b">EC_PARAM_N</a>, <a class="el" href="ec_8h_source.html#l00043">ecfp_add_affine</a>, <a class="el" href="ec_8h_source.html#l00045">ecfp_mul</a>, <a class="el" href="fp12_8h_source.html#l00044">fp12_mul</a>, <a class="el" href="fp_2fp_8h_source.html#l00121">fp_rdc_2l_var</a>, <a class="el" href="fp_2fp_8h_source.html#l00125">fp_rdc_n</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g2</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h1</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h_theta</a>, <a class="el" href="hash__function_8h_source.html#l00043">HASH_BYTES</a>, <a class="el" href="hash__function_8h_source.html#l00051">hash_final</a>, <a class="el" href="hash__function_8h_source.html#l00049">hash_init</a>, <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>, <a class="el" href="hashing_8c_source.html#l00098">hash_update_G1()</a>, <a class="el" href="hashing_8c_source.html#l00133">hash_update_GT()</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::order_p</a>, <a class="el" href="pbc_8h_source.html#l00038">pbc_map_opt_ate</a>, <a class="el" href="util_8c_source.html#l00057">print()</a>, <a class="el" href="gss__hwang_8h_source.html#l00045">PRINT_BIGINT</a>, <a class="el" href="gss__hwang_8h_source.html#l00049">PRINT_G1</a>, <a class="el" href="gss__hwang_8h_source.html#l00063">PRINT_GT</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_alpha</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_gamma</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_x</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_y</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::u</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::w</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::x</a>, <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::y</a>, and <a class="el" href="gss__hwang_8h_source.html#l00082">hwang_signing_key_s::z</a>.</p>
 
-<p>Referenced by <a class="el" href="gss__hwang__demo_8c_source.html#l00263">main()</a>.</p>
+<p>Referenced by <a class="el" href="gss__hwang__demo_8c_source.html#l00043">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1d66ffe4bfb175147030948e8e0f076"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#ae1e823357de7a263f2ed95e66b14e66c">sbyte</a> hwang_verify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gss__hwang_8h.html#af489725283a217696811c1ea7072d7f8">hwang_public_parameters_ptr</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gss__hwang_8h.html#a8b2bf681e03a008deb9632a75143fd84">hwang_signature_ptr</a>&#160;</td>
+          <td class="paramname"><em>sig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify a group signature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the parameters of the group-signature scheme. </td></tr>
+    <tr><td class="paramname">sig</td><td>the generated signature to be verified.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the signature is VALID; -1 otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="gss__hwang_8c_source.html#l00339">339</a> of file <a class="el" href="gss__hwang_8c_source.html">gss_hwang.c</a>.</p>
+
+<p>References <a class="el" href="bi_8c_source.html#l00266">bi_clear_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00064">bi_compare</a>, <a class="el" href="bi_8c_source.html#l00480">bi_copy_var_std()</a>, <a class="el" href="bigint_2bi_8h_source.html#l00048">bi_subtract</a>, <a class="el" href="types_8h_source.html#l00091">BI_WORDS</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::c</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::d</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_1</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_2</a>, <a class="el" href="gss__hwang_8h_source.html#l00093">hwang_signature_s::D_3</a>, <a class="el" href="param_8h.html#aa8300511974667a9414217f4620b767d">EC_PARAM_MU_N</a>, <a class="el" href="ec_8h_source.html#l00043">ecfp_add_affine</a>, <a class="el" href="ec_8h_source.html#l00045">ecfp_mul</a>, <a class="el" href="fp12_8c_source.html#l00654">fp12_exp_std()</a>, <a class="el" href="fp12_8c_source.html#l00323">fp12_mul_std()</a>, <a class="el" href="fp_2fp_8h_source.html#l00121">fp_rdc_2l_var</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g1</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::g2</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h1</a>, <a class="el" href="gss__hwang_8h_source.html#l00104">hwang_public_parameters_s::h_theta</a>, <a class="el" href="hash__function_8h_source.html#l00043">HASH_BYTES</a>, <a class="el" href="hash__function_8h_source.html#l00051">hash_final</a>, <a class="el" href="hash__function_8h_source.html#l00049">hash_init</a>, <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>, <a class="el" href="hashing_8c_source.html#l00098">hash_update_G1()</a>, <a class="el" href="hashing_8c_source.html#l00133">hash_update_GT()</a>, <a class="el" href="gss__hwang_8h_source.html#l00102">hwang_public_parameters_s::order_p</a>, <a class="el" href="pbc_8h_source.html#l00040">pbc_map_opt_ate_div</a>, <a class="el" href="pbc_8h_source.html#l00039">pbc_map_opt_ate_mul</a>, <a class="el" href="gss__hwang_8h_source.html#l00045">PRINT_BIGINT</a>, <a class="el" href="gss__hwang_8h_source.html#l00049">PRINT_G1</a>, <a class="el" href="gss__hwang_8h_source.html#l00063">PRINT_GT</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_alpha</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_gamma</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_x</a>, <a class="el" href="gss__hwang_8h_source.html#l00092">hwang_signature_s::s_y</a>, <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::u</a>, and <a class="el" href="gss__hwang_8h_source.html#l00103">hwang_public_parameters_s::w</a>.</p>
+
+<p>Referenced by <a class="el" href="gss__hwang__demo_8c_source.html#l00043">main()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 10:14:22 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 4 2015 10:58:58 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

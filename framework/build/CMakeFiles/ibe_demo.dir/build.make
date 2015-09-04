@@ -532,6 +532,29 @@ CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o.provides: CMakeFiles/ibe_demo.dir/
 
 CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o.provides.build: CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o
 
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o: CMakeFiles/ibe_demo.dir/flags.make
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o   -c /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c
+
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c > CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.i
+
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c -o CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.s
+
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.requires:
+.PHONY : CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.requires
+
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.provides: CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.requires
+	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.provides.build
+.PHONY : CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.provides
+
+CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.provides.build: CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o
+
 # Object files for target ibe_demo
 ibe_demo_OBJECTS = \
 "CMakeFiles/ibe_demo.dir/demo/ibe_demo.c.o" \
@@ -554,7 +577,8 @@ ibe_demo_OBJECTS = \
 "CMakeFiles/ibe_demo.dir/src/hash/Keccak-compact.c.o" \
 "CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.o" \
 "CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.o" \
-"CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o"
+"CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o" \
+"CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o"
 
 # External object files for target ibe_demo
 ibe_demo_EXTERNAL_OBJECTS =
@@ -580,6 +604,7 @@ out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/src/hash/Keccak-compact.c.o
 out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.o
 out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.o
 out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o
+out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o
 out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/build.make
 out/bin/ibe_demo: CMakeFiles/ibe_demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable out/bin/ibe_demo"
@@ -610,6 +635,7 @@ CMakeFiles/ibe_demo.dir/requires: CMakeFiles/ibe_demo.dir/src/hash/Keccak-compac
 CMakeFiles/ibe_demo.dir/requires: CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.o.requires
 CMakeFiles/ibe_demo.dir/requires: CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.o.requires
 CMakeFiles/ibe_demo.dir/requires: CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o.requires
+CMakeFiles/ibe_demo.dir/requires: CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o.requires
 .PHONY : CMakeFiles/ibe_demo.dir/requires
 
 CMakeFiles/ibe_demo.dir/clean:

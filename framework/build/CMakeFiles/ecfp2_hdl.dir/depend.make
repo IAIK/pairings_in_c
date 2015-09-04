@@ -229,6 +229,29 @@ CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/config.h
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../src/rand.c
 
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/arch.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/bi.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/fp.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi_std.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/config.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/ec/ec.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp2_std.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp_std.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12_std.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp_std.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact-settings.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/hash/hash_function.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/hash/hashing.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/param.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/pbc/pbc.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/sdh/sdh_zk.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../include/types.h
+CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+
 CMakeFiles/ecfp2_hdl.dir/src/util.c.o: ../include/arch.h
 CMakeFiles/ecfp2_hdl.dir/src/util.c.o: ../include/config.h
 CMakeFiles/ecfp2_hdl.dir/src/util.c.o: ../include/types.h

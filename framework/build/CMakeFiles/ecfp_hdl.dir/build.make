@@ -532,6 +532,29 @@ CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o.provides: CMakeFiles/ecfp_hdl.dir/
 
 CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o.provides.build: CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o
 
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o: CMakeFiles/ecfp_hdl.dir/flags.make
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o   -c /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c
+
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c > CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.i
+
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c -o CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.s
+
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.requires:
+.PHONY : CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.requires
+
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.provides: CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.requires
+	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.provides.build
+.PHONY : CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.provides
+
+CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.provides.build: CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o
+
 # Object files for target ecfp_hdl
 ecfp_hdl_OBJECTS = \
 "CMakeFiles/ecfp_hdl.dir/test/ecfp_hdl.c.o" \
@@ -554,7 +577,8 @@ ecfp_hdl_OBJECTS = \
 "CMakeFiles/ecfp_hdl.dir/src/hash/Keccak-compact.c.o" \
 "CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem.c.o" \
 "CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem_param.c.o" \
-"CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o"
+"CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o" \
+"CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o"
 
 # External object files for target ecfp_hdl
 ecfp_hdl_EXTERNAL_OBJECTS =
@@ -580,6 +604,7 @@ out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/src/hash/Keccak-compact.c.o
 out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem.c.o
 out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem_param.c.o
 out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o
+out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o
 out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/build.make
 out/bin/ecfp_hdl: CMakeFiles/ecfp_hdl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable out/bin/ecfp_hdl"
@@ -610,6 +635,7 @@ CMakeFiles/ecfp_hdl.dir/requires: CMakeFiles/ecfp_hdl.dir/src/hash/Keccak-compac
 CMakeFiles/ecfp_hdl.dir/requires: CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem.c.o.requires
 CMakeFiles/ecfp_hdl.dir/requires: CMakeFiles/ecfp_hdl.dir/src/ibe/bbkem_param.c.o.requires
 CMakeFiles/ecfp_hdl.dir/requires: CMakeFiles/ecfp_hdl.dir/src/gss/gss_hwang.c.o.requires
+CMakeFiles/ecfp_hdl.dir/requires: CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o.requires
 .PHONY : CMakeFiles/ecfp_hdl.dir/requires
 
 CMakeFiles/ecfp_hdl.dir/clean:

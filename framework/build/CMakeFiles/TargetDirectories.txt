@@ -7,6 +7,7 @@
 /home/work/workspace/bipair_in_c/build/CMakeFiles/gss_hwang_demo.dir
 /home/work/workspace/bipair_in_c/build/CMakeFiles/ibe_demo.dir
 /home/work/workspace/bipair_in_c/build/CMakeFiles/pairing_demo.dir
+/home/work/workspace/bipair_in_c/build/CMakeFiles/sdh_zk_demo.dir
 /home/work/workspace/bipair_in_c/build/CMakeFiles/test_bbkem.dir
 /home/work/workspace/bipair_in_c/build/CMakeFiles/test_bigint.dir
 /home/work/workspace/bipair_in_c/build/CMakeFiles/test_ecfp.dir

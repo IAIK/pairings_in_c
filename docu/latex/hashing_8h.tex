@@ -13,7 +13,9 @@ void \hyperlink{hashing_8h_a2c6c0499723183914b4b611d62424bf4}{hash\-\_\-id} (\hy
 void \hyperlink{hashing_8h_ac52b47c17da178cdef7a16a14b775abb}{hash\-\_\-update\-\_\-\-G1} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const \hyperlink{types_8h_a0d9eca1fb2603ce0b4b6613b4f686a06}{ecfp\-\_\-pt} g1)
 \begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given element in \{G\}\-\_\-1. \end{DoxyCompactList}\item 
 void \hyperlink{hashing_8h_ad341f9926d028e196f7cc256b7774d12}{hash\-\_\-update\-\_\-\-G\-T} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const \hyperlink{types_8h_a1ec717386a6f4c8c019b5c6d651a2196}{fp12\-\_\-t} gt)
-\begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given element in \{G\}\-\_\-\-T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given element in \{G\}\-\_\-\-T. \end{DoxyCompactList}\item 
+void \hyperlink{hashing_8h_a7f90649b60cd306fbaa8cac4afa27ab7}{hash\-\_\-update\-\_\-message} (\hyperlink{Keccak-compact_8h_a6cd75f9e7106362b1576ff73d4cc6a3b}{hash\-State} $\ast$state, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Updates the given Hash state with the given message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -81,7 +83,7 @@ Updates the given Hash state with the given element in \{G\}\-\_\-1.
 \end{DoxyParams}
 
 
-Definition at line 70 of file hashing.\-c.
+Definition at line 98 of file hashing.\-c.
 
 
 
@@ -89,7 +91,7 @@ References B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S, 
 
 
 
-Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+Referenced by hwang\-\_\-sign(), hwang\-\_\-verify(), sgs\-\_\-sign(), and sgs\-\_\-verify().
 
 \hypertarget{hashing_8h_ad341f9926d028e196f7cc256b7774d12}{\index{hashing.\-h@{hashing.\-h}!hash\-\_\-update\-\_\-\-G\-T@{hash\-\_\-update\-\_\-\-G\-T}}
 \index{hash\-\_\-update\-\_\-\-G\-T@{hash\-\_\-update\-\_\-\-G\-T}!hashing.h@{hashing.\-h}}
@@ -112,7 +114,7 @@ Updates the given Hash state with the given element in \{G\}\-\_\-\-T.
 \end{DoxyParams}
 
 
-Definition at line 105 of file hashing.\-c.
+Definition at line 133 of file hashing.\-c.
 
 
 
@@ -120,5 +122,36 @@ References B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S, 
 
 
 
-Referenced by hwang\-\_\-sign(), and hwang\-\_\-verify().
+Referenced by hwang\-\_\-sign(), hwang\-\_\-verify(), sgs\-\_\-sign(), and sgs\-\_\-verify().
+
+\hypertarget{hashing_8h_a7f90649b60cd306fbaa8cac4afa27ab7}{\index{hashing.\-h@{hashing.\-h}!hash\-\_\-update\-\_\-message@{hash\-\_\-update\-\_\-message}}
+\index{hash\-\_\-update\-\_\-message@{hash\-\_\-update\-\_\-message}!hashing.h@{hashing.\-h}}
+\subsubsection[{hash\-\_\-update\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void hash\-\_\-update\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf hash\-State} $\ast$}]{state, }
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{hashing_8h_a7f90649b60cd306fbaa8cac4afa27ab7}
+
+
+Updates the given Hash state with the given message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the Hash state to be used. \\
+\hline
+{\em message} & the message to be hashed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file hashing.\-c.
+
+
+
+References B\-L\-O\-C\-K\-\_\-\-B\-I\-T\-S, B\-L\-O\-C\-K\-\_\-\-B\-Y\-T\-E\-S, and hash\-\_\-update.
+
+
+
+Referenced by sgs\-\_\-sign(), and sgs\-\_\-verify().
 

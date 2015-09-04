@@ -532,6 +532,29 @@ CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o.provides: CMakeFiles/all_in
 
 CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o.provides.build: CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o
 
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o: CMakeFiles/all_in_one_demo.dir/flags.make
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o   -c /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c
+
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c > CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.i
+
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c -o CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.s
+
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.requires:
+.PHONY : CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.requires
+
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.provides: CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.requires
+	$(MAKE) -f CMakeFiles/all_in_one_demo.dir/build.make CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.provides.build
+.PHONY : CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.provides
+
+CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.provides.build: CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o
+
 # Object files for target all_in_one_demo
 all_in_one_demo_OBJECTS = \
 "CMakeFiles/all_in_one_demo.dir/demo/all_in_one_demo.c.o" \
@@ -554,7 +577,8 @@ all_in_one_demo_OBJECTS = \
 "CMakeFiles/all_in_one_demo.dir/src/hash/Keccak-compact.c.o" \
 "CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem.c.o" \
 "CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem_param.c.o" \
-"CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o"
+"CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o" \
+"CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o"
 
 # External object files for target all_in_one_demo
 all_in_one_demo_EXTERNAL_OBJECTS =
@@ -580,6 +604,7 @@ out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/src/hash/Keccak-compact.
 out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem.c.o
 out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem_param.c.o
 out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o
+out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o
 out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/build.make
 out/bin/all_in_one_demo: CMakeFiles/all_in_one_demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable out/bin/all_in_one_demo"
@@ -610,6 +635,7 @@ CMakeFiles/all_in_one_demo.dir/requires: CMakeFiles/all_in_one_demo.dir/src/hash
 CMakeFiles/all_in_one_demo.dir/requires: CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem.c.o.requires
 CMakeFiles/all_in_one_demo.dir/requires: CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem_param.c.o.requires
 CMakeFiles/all_in_one_demo.dir/requires: CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o.requires
+CMakeFiles/all_in_one_demo.dir/requires: CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o.requires
 .PHONY : CMakeFiles/all_in_one_demo.dir/requires
 
 CMakeFiles/all_in_one_demo.dir/clean:

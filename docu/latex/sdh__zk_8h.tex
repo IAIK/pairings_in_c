@@ -1,0 +1,218 @@
+\hypertarget{sdh__zk_8h}{\section{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/sdh/sdh\-\_\-zk.h File Reference}
+\label{sdh__zk_8h}\index{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/sdh/sdh\-\_\-zk.\-h@{/home/work/workspace/bipair\-\_\-in\-\_\-c/include/sdh/sdh\-\_\-zk.\-h}}
+}
+{\ttfamily \#include \char`\"{}types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ec/ec.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgroup__public__key__s}{group\-\_\-public\-\_\-key\-\_\-s}
+\item 
+struct \hyperlink{structgroup__secret__key__s}{group\-\_\-secret\-\_\-key\-\_\-s}
+\item 
+struct \hyperlink{structgroup__master__secret__key__s}{group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s}
+\item 
+struct \hyperlink{structsdh__signiture__s}{sdh\-\_\-signiture\-\_\-s}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structgroup__public__key__s}{group\-\_\-public\-\_\-key\-\_\-s} \hyperlink{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}{group\-\_\-public\-\_\-key}
+\item 
+typedef struct \hyperlink{structgroup__secret__key__s}{group\-\_\-secret\-\_\-key\-\_\-s} \hyperlink{sdh__zk_8h_a4f51fd72cb675798c6426feeec987314}{group\-\_\-secret\-\_\-key}
+\item 
+typedef struct \\*
+\hyperlink{structgroup__master__secret__key__s}{group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s} \hyperlink{sdh__zk_8h_a52eedcb0ff227d3e5640a428ac05829d}{group\-\_\-master\-\_\-secret\-\_\-key}
+\item 
+typedef struct \hyperlink{structsdh__signiture__s}{sdh\-\_\-signiture\-\_\-s} \hyperlink{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}{sdh\-\_\-signiture}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sdh__zk_8h_a4fb3bf4d20dbf93381a56e10433ec17e}{sgs\-\_\-init} (\hyperlink{types_8h_a8013770f3a4a04d759b9fada0332869d}{length\-\_\-t} number\-\_\-of\-\_\-members, \hyperlink{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}{group\-\_\-public\-\_\-key} $\ast$gpk, \hyperlink{sdh__zk_8h_a52eedcb0ff227d3e5640a428ac05829d}{group\-\_\-master\-\_\-secret\-\_\-key} $\ast$gmsk, \hyperlink{sdh__zk_8h_a4f51fd72cb675798c6426feeec987314}{group\-\_\-secret\-\_\-key} $\ast$gsk)
+\begin{DoxyCompactList}\small\item\em Generates the keys according to the scheme of short group signature. \end{DoxyCompactList}\item 
+void \hyperlink{sdh__zk_8h_a76e15bb324c4f634845d7c713559317c}{sgs\-\_\-sign} (\hyperlink{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}{group\-\_\-public\-\_\-key} gpk, \hyperlink{sdh__zk_8h_a4f51fd72cb675798c6426feeec987314}{group\-\_\-secret\-\_\-key} gsk, \hyperlink{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}{sdh\-\_\-signiture} $\ast$sig, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Generates a signature according to the scheme of short group signature. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_ae1e823357de7a263f2ed95e66b14e66c}{sbyte} \hyperlink{sdh__zk_8h_a5faf08640953e5c213ff2310eb2d658d}{sgs\-\_\-verify} (\hyperlink{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}{group\-\_\-public\-\_\-key} gpk, \hyperlink{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}{sdh\-\_\-signiture} sig, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Verifies a signature according to the scheme of short group signature. \end{DoxyCompactList}\item 
+void \hyperlink{sdh__zk_8h_a5aa5f364d0d178a2207c9e6ba8163f19}{sgs\-\_\-open} (\hyperlink{sdh__zk_8h_a52eedcb0ff227d3e5640a428ac05829d}{group\-\_\-master\-\_\-secret\-\_\-key} gmsk, \hyperlink{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}{sdh\-\_\-signiture} sig, \hyperlink{structecpoint__fp}{ecpoint\-\_\-fp} $\ast$A)
+\begin{DoxyCompactList}\small\item\em Trace a signature to a signer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sdh__zk_8h_a52eedcb0ff227d3e5640a428ac05829d}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!group\-\_\-master\-\_\-secret\-\_\-key@{group\-\_\-master\-\_\-secret\-\_\-key}}
+\index{group\-\_\-master\-\_\-secret\-\_\-key@{group\-\_\-master\-\_\-secret\-\_\-key}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{group\-\_\-master\-\_\-secret\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s} {\bf group\-\_\-master\-\_\-secret\-\_\-key}}}\label{sdh__zk_8h_a52eedcb0ff227d3e5640a428ac05829d}
+
+
+Definition at line 63 of file sdh\-\_\-zk.\-h.
+
+\hypertarget{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!group\-\_\-public\-\_\-key@{group\-\_\-public\-\_\-key}}
+\index{group\-\_\-public\-\_\-key@{group\-\_\-public\-\_\-key}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{group\-\_\-public\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf group\-\_\-public\-\_\-key\-\_\-s} {\bf group\-\_\-public\-\_\-key}}}\label{sdh__zk_8h_ab9b9d409b08651a370a4819610b20d8e}
+
+
+Definition at line 61 of file sdh\-\_\-zk.\-h.
+
+\hypertarget{sdh__zk_8h_a4f51fd72cb675798c6426feeec987314}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!group\-\_\-secret\-\_\-key@{group\-\_\-secret\-\_\-key}}
+\index{group\-\_\-secret\-\_\-key@{group\-\_\-secret\-\_\-key}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{group\-\_\-secret\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf group\-\_\-secret\-\_\-key\-\_\-s} {\bf group\-\_\-secret\-\_\-key}}}\label{sdh__zk_8h_a4f51fd72cb675798c6426feeec987314}
+
+
+Definition at line 62 of file sdh\-\_\-zk.\-h.
+
+\hypertarget{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!sdh\-\_\-signiture@{sdh\-\_\-signiture}}
+\index{sdh\-\_\-signiture@{sdh\-\_\-signiture}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{sdh\-\_\-signiture}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf sdh\-\_\-signiture\-\_\-s} {\bf sdh\-\_\-signiture}}}\label{sdh__zk_8h_a1761f980a526434d9d19ccc5381e0c06}
+
+
+Definition at line 64 of file sdh\-\_\-zk.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sdh__zk_8h_a4fb3bf4d20dbf93381a56e10433ec17e}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!sgs\-\_\-init@{sgs\-\_\-init}}
+\index{sgs\-\_\-init@{sgs\-\_\-init}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{sgs\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sgs\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf length\-\_\-t}}]{number\-\_\-of\-\_\-members, }
+\item[{{\bf group\-\_\-public\-\_\-key} $\ast$}]{gpk, }
+\item[{{\bf group\-\_\-master\-\_\-secret\-\_\-key} $\ast$}]{gmsk, }
+\item[{{\bf group\-\_\-secret\-\_\-key} $\ast$}]{gsk}
+\end{DoxyParamCaption}
+)}}\label{sdh__zk_8h_a4fb3bf4d20dbf93381a56e10433ec17e}
+
+
+Generates the keys according to the scheme of short group signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\-\_\-of\-\_\-members} & \mbox{[}in\mbox{]} number of secret keys that should be generated. \\
+\hline
+{\em gpk} & \mbox{[}out\mbox{]} public key of sgs scheme. \\
+\hline
+{\em gsk} & \mbox{[}out\mbox{]} different user secret keys to generate a valid signatures. \\
+\hline
+{\em gmsk} & \mbox{[}out\mbox{]} group master secret key to trace a valid signature. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file sdh\-\_\-zk.\-c.
+
+
+
+References bi\-\_\-add, B\-I\-\_\-\-B\-Y\-T\-E\-S, bi\-\_\-compare, bi\-\_\-one, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-zero, cprng\-\_\-get\-\_\-bytes(), ecfp2\-\_\-copy\-\_\-std(), E\-C\-F\-P2\-\_\-\-G\-E\-N\-E\-R\-A\-T\-O\-R, ecfp2\-\_\-mul, ecfp\-\_\-copy\-\_\-std(), E\-C\-F\-P\-\_\-\-G\-E\-N\-E\-R\-A\-T\-O\-R, ecfp\-\_\-mul, fp\-\_\-inv\-\_\-n, fp\-\_\-rdc\-\_\-n, group\-\_\-public\-\_\-key\-\_\-s\-::g1, group\-\_\-public\-\_\-key\-\_\-s\-::g2, group\-\_\-public\-\_\-key\-\_\-s\-::h, print(), print\-\_\-value(), group\-\_\-public\-\_\-key\-\_\-s\-::u, group\-\_\-public\-\_\-key\-\_\-s\-::v, group\-\_\-public\-\_\-key\-\_\-s\-::w, ecpoint\-\_\-fp\-::x, ecpoint\-\_\-fp2\-::x, group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s\-::xi1, group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s\-::xi2, ecpoint\-\_\-fp\-::y, and ecpoint\-\_\-fp2\-::y.
+
+
+
+Referenced by main().
+
+\hypertarget{sdh__zk_8h_a5aa5f364d0d178a2207c9e6ba8163f19}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!sgs\-\_\-open@{sgs\-\_\-open}}
+\index{sgs\-\_\-open@{sgs\-\_\-open}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{sgs\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}void sgs\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf group\-\_\-master\-\_\-secret\-\_\-key}}]{gmsk, }
+\item[{{\bf sdh\-\_\-signiture}}]{sig, }
+\item[{{\bf ecpoint\-\_\-fp} $\ast$}]{A}
+\end{DoxyParamCaption}
+)}}\label{sdh__zk_8h_a5aa5f364d0d178a2207c9e6ba8163f19}
+
+
+Trace a signature to a signer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gmsk} & \mbox{[}in\mbox{]} group master secret key to trace a valid signature. \\
+\hline
+{\em sig} & \mbox{[}in\mbox{]} computed signature. \\
+\hline
+{\em A} & \mbox{[}in\mbox{]} part of user secret key. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 405 of file sdh\-\_\-zk.\-c.
+
+
+
+References ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-mul, ecfp\-\_\-neg\-\_\-affine, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-1, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-2, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-3, group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s\-::xi1, and group\-\_\-master\-\_\-secret\-\_\-key\-\_\-s\-::xi2.
+
+
+
+Referenced by main().
+
+\hypertarget{sdh__zk_8h_a76e15bb324c4f634845d7c713559317c}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!sgs\-\_\-sign@{sgs\-\_\-sign}}
+\index{sgs\-\_\-sign@{sgs\-\_\-sign}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{sgs\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}void sgs\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf group\-\_\-public\-\_\-key}}]{gpk, }
+\item[{{\bf group\-\_\-secret\-\_\-key}}]{gsk, }
+\item[{{\bf sdh\-\_\-signiture} $\ast$}]{sig, }
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{sdh__zk_8h_a76e15bb324c4f634845d7c713559317c}
+
+
+Generates a signature according to the scheme of short group signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpk} & \mbox{[}in\mbox{]} public key of sgs scheme. \\
+\hline
+{\em gsk} & \mbox{[}in\mbox{]} user secret key to generate a valid signature. \\
+\hline
+{\em sig} & \mbox{[}out\mbox{]} computed signature. \\
+\hline
+{\em message} & \mbox{[}in\mbox{]} the message for signature generation . \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file sdh\-\_\-zk.\-c.
+
+
+
+References group\-\_\-secret\-\_\-key\-\_\-s\-::\-A, bi\-\_\-add, B\-I\-\_\-\-B\-Y\-T\-E\-S, bi\-\_\-clear\-\_\-var\-\_\-std(), bi\-\_\-compare, bi\-\_\-copy\-\_\-var\-\_\-std(), bi\-\_\-multiply, bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, bi\-\_\-zero, sdh\-\_\-signiture\-\_\-s\-::c, cprng\-\_\-get\-\_\-bytes(), E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-U\-\_\-\-N, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-N, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-mul, fp12\-\_\-mul, fp\-\_\-rdc\-\_\-2l\-\_\-var, fp\-\_\-rdc\-\_\-n, group\-\_\-public\-\_\-key\-\_\-s\-::g2, group\-\_\-public\-\_\-key\-\_\-s\-::h, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, hash\-\_\-final, hash\-\_\-init, hash\-\_\-update\-\_\-\-G1(), hash\-\_\-update\-\_\-\-G\-T(), hash\-\_\-update\-\_\-message(), pbc\-\_\-map\-\_\-opt\-\_\-ate, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-alpha, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-beta, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-delta1, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-delta2, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-x, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-1, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-2, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-3, group\-\_\-public\-\_\-key\-\_\-s\-::u, group\-\_\-public\-\_\-key\-\_\-s\-::v, group\-\_\-public\-\_\-key\-\_\-s\-::w, and group\-\_\-secret\-\_\-key\-\_\-s\-::x.
+
+
+
+Referenced by main().
+
+\hypertarget{sdh__zk_8h_a5faf08640953e5c213ff2310eb2d658d}{\index{sdh\-\_\-zk.\-h@{sdh\-\_\-zk.\-h}!sgs\-\_\-verify@{sgs\-\_\-verify}}
+\index{sgs\-\_\-verify@{sgs\-\_\-verify}!sdh_zk.h@{sdh\-\_\-zk.\-h}}
+\subsubsection[{sgs\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sbyte} sgs\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf group\-\_\-public\-\_\-key}}]{gpk, }
+\item[{{\bf sdh\-\_\-signiture}}]{sig, }
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{sdh__zk_8h_a5faf08640953e5c213ff2310eb2d658d}
+
+
+Verifies a signature according to the scheme of short group signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpk} & \mbox{[}in\mbox{]} public key of sgs scheme. \\
+\hline
+{\em sig} & \mbox{[}in\mbox{]} computed signature. \\
+\hline
+{\em message} & \mbox{[}in\mbox{]} the message for signature generation .\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on valid signature; -\/1 on invalid signature; 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file sdh\-\_\-zk.\-c.
+
+
+
+References bi\-\_\-add, bi\-\_\-clear\-\_\-var\-\_\-std(), bi\-\_\-copy\-\_\-var\-\_\-std(), bi\-\_\-subtract, B\-I\-\_\-\-W\-O\-R\-D\-S, sdh\-\_\-signiture\-\_\-s\-::c, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-U\-\_\-\-N, E\-C\-\_\-\-P\-A\-R\-A\-M\-\_\-\-N, ecfp\-\_\-add\-\_\-affine, ecfp\-\_\-mul, fp12\-\_\-inv, fp12\-\_\-mul\-\_\-std(), fp\-\_\-rdc\-\_\-2l\-\_\-var, fp\-\_\-rdc\-\_\-n, group\-\_\-public\-\_\-key\-\_\-s\-::g1, group\-\_\-public\-\_\-key\-\_\-s\-::g2, group\-\_\-public\-\_\-key\-\_\-s\-::h, H\-A\-S\-H\-\_\-\-B\-Y\-T\-E\-S, hash\-\_\-final, hash\-\_\-init, hash\-\_\-update\-\_\-\-G1(), hash\-\_\-update\-\_\-\-G\-T(), hash\-\_\-update\-\_\-message(), pbc\-\_\-map\-\_\-opt\-\_\-ate, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-alpha, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-beta, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-delta1, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-delta2, sdh\-\_\-signiture\-\_\-s\-::s\-\_\-x, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-1, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-2, sdh\-\_\-signiture\-\_\-s\-::\-T\-\_\-3, group\-\_\-public\-\_\-key\-\_\-s\-::u, group\-\_\-public\-\_\-key\-\_\-s\-::v, and group\-\_\-public\-\_\-key\-\_\-s\-::w.
+
+
+
+Referenced by main().
+

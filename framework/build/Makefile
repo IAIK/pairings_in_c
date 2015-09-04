@@ -216,6 +216,19 @@ pairing_demo/fast:
 .PHONY : pairing_demo/fast
 
 #=============================================================================
+# Target rules for targets named sdh_zk_demo
+
+# Build rule for target.
+sdh_zk_demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sdh_zk_demo
+.PHONY : sdh_zk_demo
+
+# fast build rule for target.
+sdh_zk_demo/fast:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/build
+.PHONY : sdh_zk_demo/fast
+
+#=============================================================================
 # Target rules for targets named test_bbkem
 
 # Build rule for target.
@@ -465,6 +478,30 @@ demo/pairing_demo.c.s:
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/demo/pairing_demo.c.s
 .PHONY : demo/pairing_demo.c.s
 
+demo/sdh_zk_demo.o: demo/sdh_zk_demo.c.o
+.PHONY : demo/sdh_zk_demo.o
+
+# target to build an object file
+demo/sdh_zk_demo.c.o:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/demo/sdh_zk_demo.c.o
+.PHONY : demo/sdh_zk_demo.c.o
+
+demo/sdh_zk_demo.i: demo/sdh_zk_demo.c.i
+.PHONY : demo/sdh_zk_demo.i
+
+# target to preprocess a source file
+demo/sdh_zk_demo.c.i:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/demo/sdh_zk_demo.c.i
+.PHONY : demo/sdh_zk_demo.c.i
+
+demo/sdh_zk_demo.s: demo/sdh_zk_demo.c.s
+.PHONY : demo/sdh_zk_demo.s
+
+# target to generate assembly for a file
+demo/sdh_zk_demo.c.s:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/demo/sdh_zk_demo.c.s
+.PHONY : demo/sdh_zk_demo.c.s
+
 src/assert.o: src/assert.c.o
 .PHONY : src/assert.o
 
@@ -479,6 +516,7 @@ src/assert.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/assert.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/assert.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/assert.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/assert.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/assert.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/assert.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/assert.c.o
@@ -505,6 +543,7 @@ src/assert.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/assert.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/assert.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/assert.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/assert.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/assert.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/assert.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/assert.c.i
@@ -531,6 +570,7 @@ src/assert.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/assert.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/assert.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/assert.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/assert.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/assert.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/assert.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/assert.c.s
@@ -557,6 +597,7 @@ src/base/std/bigint/bi.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi.c.o
@@ -583,6 +624,7 @@ src/base/std/bigint/bi.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi.c.i
@@ -609,6 +651,7 @@ src/base/std/bigint/bi.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi.c.s
@@ -635,6 +678,7 @@ src/base/std/bigint/bi_const.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi_const.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi_const.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi_const.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi_const.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi_const.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi_const.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi_const.c.o
@@ -661,6 +705,7 @@ src/base/std/bigint/bi_const.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi_const.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi_const.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi_const.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi_const.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi_const.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi_const.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi_const.c.i
@@ -687,6 +732,7 @@ src/base/std/bigint/bi_const.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/bigint/bi_const.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/bigint/bi_const.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/bigint/bi_const.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/bigint/bi_const.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/bigint/bi_const.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/bigint/bi_const.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/bigint/bi_const.c.s
@@ -713,6 +759,7 @@ src/base/std/ec/ecfp.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp.c.o
@@ -739,6 +786,7 @@ src/base/std/ec/ecfp.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp.c.i
@@ -765,6 +813,7 @@ src/base/std/ec/ecfp.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp.c.s
@@ -791,6 +840,7 @@ src/base/std/ec/ecfp2.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp2.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp2.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp2.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp2.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp2.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp2.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp2.c.o
@@ -817,6 +867,7 @@ src/base/std/ec/ecfp2.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp2.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp2.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp2.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp2.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp2.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp2.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp2.c.i
@@ -843,6 +894,7 @@ src/base/std/ec/ecfp2.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/ec/ecfp2.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/ec/ecfp2.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/ec/ecfp2.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/ec/ecfp2.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/ec/ecfp2.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/ec/ecfp2.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/ec/ecfp2.c.s
@@ -869,6 +921,7 @@ src/base/std/fp/fp.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp.c.o
@@ -895,6 +948,7 @@ src/base/std/fp/fp.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp.c.i
@@ -921,6 +975,7 @@ src/base/std/fp/fp.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp.c.s
@@ -947,6 +1002,7 @@ src/base/std/fp/fp12.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp12.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp12.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp12.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp12.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp12.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp12.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp12.c.o
@@ -973,6 +1029,7 @@ src/base/std/fp/fp12.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp12.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp12.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp12.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp12.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp12.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp12.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp12.c.i
@@ -999,6 +1056,7 @@ src/base/std/fp/fp12.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp12.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp12.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp12.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp12.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp12.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp12.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp12.c.s
@@ -1025,6 +1083,7 @@ src/base/std/fp/fp2.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp2.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp2.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp2.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp2.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp2.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp2.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp2.c.o
@@ -1051,6 +1110,7 @@ src/base/std/fp/fp2.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp2.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp2.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp2.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp2.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp2.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp2.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp2.c.i
@@ -1077,6 +1137,7 @@ src/base/std/fp/fp2.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp2.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp2.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp2.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp2.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp2.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp2.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp2.c.s
@@ -1103,6 +1164,7 @@ src/base/std/fp/fp4.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp4.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp4.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp4.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp4.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp4.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp4.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp4.c.o
@@ -1129,6 +1191,7 @@ src/base/std/fp/fp4.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp4.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp4.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp4.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp4.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp4.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp4.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp4.c.i
@@ -1155,6 +1218,7 @@ src/base/std/fp/fp4.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/fp/fp4.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/fp/fp4.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/fp/fp4.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/fp/fp4.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/fp/fp4.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/fp/fp4.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/fp/fp4.c.s
@@ -1181,6 +1245,7 @@ src/base/std/pbc/pbc_bn.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/pbc/pbc_bn.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/pbc/pbc_bn.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/pbc/pbc_bn.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/pbc/pbc_bn.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/pbc/pbc_bn.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/pbc/pbc_bn.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/pbc/pbc_bn.c.o
@@ -1207,6 +1272,7 @@ src/base/std/pbc/pbc_bn.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/pbc/pbc_bn.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/pbc/pbc_bn.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/pbc/pbc_bn.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/pbc/pbc_bn.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/pbc/pbc_bn.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/pbc/pbc_bn.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/pbc/pbc_bn.c.i
@@ -1233,6 +1299,7 @@ src/base/std/pbc/pbc_bn.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/base/std/pbc/pbc_bn.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/base/std/pbc/pbc_bn.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/base/std/pbc/pbc_bn.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/base/std/pbc/pbc_bn.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/base/std/pbc/pbc_bn.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/base/std/pbc/pbc_bn.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/base/std/pbc/pbc_bn.c.s
@@ -1259,6 +1326,7 @@ src/bench_util.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/bench_util.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/bench_util.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/bench_util.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/bench_util.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/bench_util.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/bench_util.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/bench_util.c.o
@@ -1285,6 +1353,7 @@ src/bench_util.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/bench_util.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/bench_util.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/bench_util.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/bench_util.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/bench_util.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/bench_util.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/bench_util.c.i
@@ -1311,6 +1380,7 @@ src/bench_util.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/bench_util.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/bench_util.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/bench_util.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/bench_util.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/bench_util.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/bench_util.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/bench_util.c.s
@@ -1337,6 +1407,7 @@ src/gss/gss_hwang.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/gss/gss_hwang.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/gss/gss_hwang.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/gss/gss_hwang.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/gss/gss_hwang.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/gss/gss_hwang.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/gss/gss_hwang.c.o
@@ -1363,6 +1434,7 @@ src/gss/gss_hwang.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/gss/gss_hwang.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/gss/gss_hwang.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/gss/gss_hwang.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/gss/gss_hwang.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/gss/gss_hwang.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/gss/gss_hwang.c.i
@@ -1389,6 +1461,7 @@ src/gss/gss_hwang.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/gss/gss_hwang.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/gss/gss_hwang.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/gss/gss_hwang.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/gss/gss_hwang.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/gss/gss_hwang.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/gss/gss_hwang.c.s
@@ -1415,6 +1488,7 @@ src/hash/Keccak-compact.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/Keccak-compact.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/Keccak-compact.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/Keccak-compact.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/Keccak-compact.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/Keccak-compact.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/Keccak-compact.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/Keccak-compact.c.o
@@ -1441,6 +1515,7 @@ src/hash/Keccak-compact.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/Keccak-compact.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/Keccak-compact.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/Keccak-compact.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/Keccak-compact.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/Keccak-compact.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/Keccak-compact.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/Keccak-compact.c.i
@@ -1467,6 +1542,7 @@ src/hash/Keccak-compact.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/Keccak-compact.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/Keccak-compact.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/Keccak-compact.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/Keccak-compact.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/Keccak-compact.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/Keccak-compact.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/Keccak-compact.c.s
@@ -1493,6 +1569,7 @@ src/hash/hashing.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/hashing.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/hashing.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/hashing.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/hashing.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/hashing.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/hashing.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/hashing.c.o
@@ -1519,6 +1596,7 @@ src/hash/hashing.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/hashing.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/hashing.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/hashing.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/hashing.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/hashing.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/hashing.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/hashing.c.i
@@ -1545,6 +1623,7 @@ src/hash/hashing.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/hashing.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/hashing.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/hashing.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/hashing.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/hashing.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/hashing.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/hashing.c.s
@@ -1571,6 +1650,7 @@ src/hash/sha1.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/sha1.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/sha1.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/sha1.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/sha1.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/sha1.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/sha1.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/sha1.c.o
@@ -1597,6 +1677,7 @@ src/hash/sha1.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/sha1.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/sha1.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/sha1.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/sha1.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/sha1.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/sha1.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/sha1.c.i
@@ -1623,6 +1704,7 @@ src/hash/sha1.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/hash/sha1.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/hash/sha1.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/hash/sha1.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/hash/sha1.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/hash/sha1.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/hash/sha1.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/hash/sha1.c.s
@@ -1649,6 +1731,7 @@ src/ibe/bbkem.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem.c.o
@@ -1675,6 +1758,7 @@ src/ibe/bbkem.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem.c.i
@@ -1701,6 +1785,7 @@ src/ibe/bbkem.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem.c.s
@@ -1727,6 +1812,7 @@ src/ibe/bbkem_param.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem_param.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem_param.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem_param.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem_param.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem_param.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem_param.c.o
@@ -1753,6 +1839,7 @@ src/ibe/bbkem_param.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem_param.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem_param.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem_param.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem_param.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem_param.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem_param.c.i
@@ -1779,6 +1866,7 @@ src/ibe/bbkem_param.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/ibe/bbkem_param.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/ibe/bbkem_param.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/ibe/bbkem_param.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/ibe/bbkem_param.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/ibe/bbkem_param.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/ibe/bbkem_param.c.s
@@ -1805,6 +1893,7 @@ src/param.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/param.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/param.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/param.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/param.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/param.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/param.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/param.c.o
@@ -1831,6 +1920,7 @@ src/param.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/param.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/param.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/param.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/param.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/param.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/param.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/param.c.i
@@ -1857,6 +1947,7 @@ src/param.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/param.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/param.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/param.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/param.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/param.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/param.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/param.c.s
@@ -1883,6 +1974,7 @@ src/rand.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/rand.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/rand.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/rand.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/rand.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/rand.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/rand.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/rand.c.o
@@ -1909,6 +2001,7 @@ src/rand.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/rand.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/rand.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/rand.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/rand.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/rand.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/rand.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/rand.c.i
@@ -1935,6 +2028,7 @@ src/rand.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/rand.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/rand.c.s
@@ -1946,6 +2040,87 @@ src/rand.c.s:
 	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/src/rand.c.s
 	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/src/rand.c.s
 .PHONY : src/rand.c.s
+
+src/sdh/sdh_zk.o: src/sdh/sdh_zk.c.o
+.PHONY : src/sdh/sdh_zk.o
+
+# target to build an object file
+src/sdh/sdh_zk.c.o:
+	$(MAKE) -f CMakeFiles/all_in_one_demo.dir/build.make CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/bench.dir/build.make CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/ecfp2_hdl.dir/build.make CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/experiment.dir/build.make CMakeFiles/experiment.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/fp_hdl.dir/build.make CMakeFiles/fp_hdl.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_ecfp2.dir/build.make CMakeFiles/test_ecfp2.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_fp.dir/build.make CMakeFiles/test_fp.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_fp12.dir/build.make CMakeFiles/test_fp12.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_fp2.dir/build.make CMakeFiles/test_fp2.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_fp4.dir/build.make CMakeFiles/test_fp4.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/src/sdh/sdh_zk.c.o
+	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o
+.PHONY : src/sdh/sdh_zk.c.o
+
+src/sdh/sdh_zk.i: src/sdh/sdh_zk.c.i
+.PHONY : src/sdh/sdh_zk.i
+
+# target to preprocess a source file
+src/sdh/sdh_zk.c.i:
+	$(MAKE) -f CMakeFiles/all_in_one_demo.dir/build.make CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/bench.dir/build.make CMakeFiles/bench.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/ecfp2_hdl.dir/build.make CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/experiment.dir/build.make CMakeFiles/experiment.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/fp_hdl.dir/build.make CMakeFiles/fp_hdl.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_ecfp2.dir/build.make CMakeFiles/test_ecfp2.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_fp.dir/build.make CMakeFiles/test_fp.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_fp12.dir/build.make CMakeFiles/test_fp12.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_fp2.dir/build.make CMakeFiles/test_fp2.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_fp4.dir/build.make CMakeFiles/test_fp4.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/src/sdh/sdh_zk.c.i
+	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.i
+.PHONY : src/sdh/sdh_zk.c.i
+
+src/sdh/sdh_zk.s: src/sdh/sdh_zk.c.s
+.PHONY : src/sdh/sdh_zk.s
+
+# target to generate assembly for a file
+src/sdh/sdh_zk.c.s:
+	$(MAKE) -f CMakeFiles/all_in_one_demo.dir/build.make CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/bench.dir/build.make CMakeFiles/bench.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/ecfp2_hdl.dir/build.make CMakeFiles/ecfp2_hdl.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/experiment.dir/build.make CMakeFiles/experiment.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/fp_hdl.dir/build.make CMakeFiles/fp_hdl.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_ecfp2.dir/build.make CMakeFiles/test_ecfp2.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_fp.dir/build.make CMakeFiles/test_fp.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_fp12.dir/build.make CMakeFiles/test_fp12.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_fp2.dir/build.make CMakeFiles/test_fp2.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_fp4.dir/build.make CMakeFiles/test_fp4.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/src/sdh/sdh_zk.c.s
+	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.s
+.PHONY : src/sdh/sdh_zk.c.s
 
 src/util.o: src/util.c.o
 .PHONY : src/util.o
@@ -1961,6 +2136,7 @@ src/util.c.o:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/util.c.o
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/util.c.o
@@ -1987,6 +2163,7 @@ src/util.c.i:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/util.c.i
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/util.c.i
@@ -2013,6 +2190,7 @@ src/util.c.s:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/src/util.c.s
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/src/util.c.s
@@ -2378,6 +2556,7 @@ help:
 	@echo "... ibe_demo"
 	@echo "... pairing_demo"
 	@echo "... rebuild_cache"
+	@echo "... sdh_zk_demo"
 	@echo "... test_bbkem"
 	@echo "... test_bigint"
 	@echo "... test_ecfp"
@@ -2403,6 +2582,9 @@ help:
 	@echo "... demo/pairing_demo.o"
 	@echo "... demo/pairing_demo.i"
 	@echo "... demo/pairing_demo.s"
+	@echo "... demo/sdh_zk_demo.o"
+	@echo "... demo/sdh_zk_demo.i"
+	@echo "... demo/sdh_zk_demo.s"
 	@echo "... src/assert.o"
 	@echo "... src/assert.i"
 	@echo "... src/assert.s"
@@ -2460,6 +2642,9 @@ help:
 	@echo "... src/rand.o"
 	@echo "... src/rand.i"
 	@echo "... src/rand.s"
+	@echo "... src/sdh/sdh_zk.o"
+	@echo "... src/sdh/sdh_zk.i"
+	@echo "... src/sdh/sdh_zk.s"
 	@echo "... src/util.o"
 	@echo "... src/util.i"
 	@echo "... src/util.s"

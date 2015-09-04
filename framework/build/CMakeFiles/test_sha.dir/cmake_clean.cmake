@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/test_sha.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/test_sha.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/test_sha.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o"
   "out/bin/test_sha.pdb"
   "out/bin/test_sha"
 )

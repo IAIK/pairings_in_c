@@ -86,36 +86,39 @@
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hashing_8h.html">hash/hashing.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">   38</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="types_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> var_res[16];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a> var_res_bi;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#if PRECISION == 256</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *var_a = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a> var_expected = {0x5CA5CEA3, 0x32449FFD, 0xE39A3FAD, 0x12AE7336, 0xD1665F66, 0xF51AA150, 0x7F7C004E, 0xA6C9F726};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="hashing_8h.html#a2c6c0499723183914b4b611d62424bf4">hash_id</a>(var_res_bi, var_a);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="assert_8h.html#ad55678cf4c4d271078f29e75328e470a">assert_bi_equal</a>(var_expected, var_res_bi, <span class="stringliteral">&quot;hash_id 1 hash&quot;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bigint_2bi_8h.html">bigint/bi.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">   40</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="types_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> var_res[16];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a> var_res_bi;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if PRECISION == 256</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *var_a = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a> var_expected = {0x5CA5CEA3, 0x32449FFD, 0xE39A3FAD, 0x12AE7336, 0xD1665F66, 0xF51AA150, 0x7F7C004E, 0xA6C9F726};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="hashing_8h.html#a2c6c0499723183914b4b611d62424bf4">hash_id</a>(var_res_bi, var_a);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="assert_8h.html#ad55678cf4c4d271078f29e75328e470a">assert_bi_equal</a>(var_expected, var_res_bi, <span class="stringliteral">&quot;hash_id 1 hash&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="ttc" id="types_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 <div class="ttc" id="types_8h_html_a0c8186d9b9b7880309c27230bbb5e69d"><div class="ttname"><a href="types_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00062">types.h:62</a></div></div>
-<div class="ttc" id="test__sha_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition:</b> <a href="test__sha_8c_source.html#l00038">test_sha.c:38</a></div></div>
+<div class="ttc" id="test__sha_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="test__sha_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition:</b> <a href="test__sha_8c_source.html#l00040">test_sha.c:40</a></div></div>
 <div class="ttc" id="hashing_8h_html"><div class="ttname"><a href="hashing_8h.html">hashing.h</a></div></div>
 <div class="ttc" id="types_8h_html_a7ae8816fa287bc4a98dec462acd2ad28"><div class="ttname"><a href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a></div><div class="ttdeci">word_t bigint_t[BI_WORDS]</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00099">types.h:99</a></div></div>
 <div class="ttc" id="hashing_8h_html_a2c6c0499723183914b4b611d62424bf4"><div class="ttname"><a href="hashing_8h.html#a2c6c0499723183914b4b611d62424bf4">hash_id</a></div><div class="ttdeci">void hash_id(bigint_t bi, const char *text)</div></div>
 <div class="ttc" id="assert_8h_html_ad55678cf4c4d271078f29e75328e470a"><div class="ttname"><a href="assert_8h.html#ad55678cf4c4d271078f29e75328e470a">assert_bi_equal</a></div><div class="ttdeci">int assert_bi_equal(const bigint_t ex, const bigint_t tst, const char *msg)</div><div class="ttdoc">Verifies that two big integers are equal. </div><div class="ttdef"><b>Definition:</b> <a href="assert_8c_source.html#l00086">assert.c:86</a></div></div>
+<div class="ttc" id="bigint_2bi_8h_html"><div class="ttname"><a href="bigint_2bi_8h.html">bi.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 10:14:22 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 4 2015 10:58:57 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

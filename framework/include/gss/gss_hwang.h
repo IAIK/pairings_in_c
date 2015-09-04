@@ -99,9 +99,9 @@ typedef struct hwang_signature_s *hwang_signature_ptr;
 /** Public parameters. */
 
 struct hwang_public_parameters_s {
-  bigint_t order_p, theta;   //TODO: theta is not required on TAG
+  bigint_t order_p, theta;
   ecpoint_fp g, u, w, d, g1, g2;
-  ecpoint_fp2 h1, h_theta, U; //TODO: U is not required on TAG
+  ecpoint_fp2 h1, h_theta, U;
 };
 typedef struct hwang_public_parameters_s hwang_public_parameters;
 typedef struct hwang_public_parameters_s *hwang_public_parameters_ptr;
@@ -115,5 +115,30 @@ typedef struct hwang_public_parameters_s *hwang_public_parameters_ptr;
  * @return       1 on success; -1 on ERROR;
  */
 sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwang_signing_key_ptr usk);
+
+/**
+ * Verify a group signature.
+ *
+ * @param data the parameters of the group-signature scheme.
+ * @param sig the generated signature to be verified.
+ *
+ * @return 1 if the signature is VALID; -1 otherwise.
+ */
+sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig);
+
+/**
+ * Generates a tuple (x, y, z, A) --- with x, y, z \in \mathbb{Z}_p^*
+ * and A \in \mathbb{G}_1 --- that acts as a user's signing key.
+ * @param usk  [out] the generated signing key for one user.
+ * @param data [in] the public parameters.
+ */
+void hwang_generate_usk(hwang_signing_key_ptr usk, hwang_public_parameters_ptr data);
+
+/**
+ * Initializes the public parameters, the master issuing key (MIK),
+ * the master opening key (MOK), and the master linking key (MLK).
+ *
+ */
+void hwang_init_parameters(hwang_public_parameters_ptr data);
 
 #endif /* GSS_HWANG_H_ */

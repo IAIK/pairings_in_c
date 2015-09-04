@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/ibe_demo.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/ibe_demo.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/ibe_demo.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/ibe_demo.dir/src/sdh/sdh_zk.c.o"
   "out/bin/ibe_demo.pdb"
   "out/bin/ibe_demo"
 )

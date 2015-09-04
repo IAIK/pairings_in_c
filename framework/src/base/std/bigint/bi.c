@@ -129,7 +129,6 @@ int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, const length_t
 		*res = r + carry;
 		carry = (*(res++) < r) | c;
 	}
-
 	return carry;
 }
 

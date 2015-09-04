@@ -66,6 +66,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a92c81e4be5d86120a6bd729dd95d34a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashing_8c.html#a92c81e4be5d86120a6bd729dd95d34a0">hash_id</a> (<a class="el" href="types_8h.html#a7ae8816fa287bc4a98dec462acd2ad28">bigint_t</a> res, char *id)</td></tr>
 <tr class="memdesc:a92c81e4be5d86120a6bd729dd95d34a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash a an identity string to a big integer.  <a href="#a92c81e4be5d86120a6bd729dd95d34a0">More...</a><br/></td></tr>
 <tr class="separator:a92c81e4be5d86120a6bd729dd95d34a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f90649b60cd306fbaa8cac4afa27ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashing_8c.html#a7f90649b60cd306fbaa8cac4afa27ab7">hash_update_message</a> (<a class="el" href="Keccak-compact_8h.html#a6cd75f9e7106362b1576ff73d4cc6a3b">hashState</a> *state, const char *message)</td></tr>
+<tr class="memdesc:a7f90649b60cd306fbaa8cac4afa27ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the given Hash state with the given message.  <a href="#a7f90649b60cd306fbaa8cac4afa27ab7">More...</a><br/></td></tr>
+<tr class="separator:a7f90649b60cd306fbaa8cac4afa27ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac52b47c17da178cdef7a16a14b775abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashing_8c.html#ac52b47c17da178cdef7a16a14b775abb">hash_update_G1</a> (<a class="el" href="Keccak-compact_8h.html#a6cd75f9e7106362b1576ff73d4cc6a3b">hashState</a> *state, const <a class="el" href="types_8h.html#a0d9eca1fb2603ce0b4b6613b4f686a06">ecfp_pt</a> g1)</td></tr>
 <tr class="memdesc:ac52b47c17da178cdef7a16a14b775abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the given Hash state with the given element in {G}_1.  <a href="#ac52b47c17da178cdef7a16a14b775abb">More...</a><br/></td></tr>
 <tr class="separator:ac52b47c17da178cdef7a16a14b775abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,11 +191,11 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="hashing_8c_source.html#l00070">70</a> of file <a class="el" href="hashing_8c_source.html">hashing.c</a>.</p>
+<p>Definition at line <a class="el" href="hashing_8c_source.html#l00098">98</a> of file <a class="el" href="hashing_8c_source.html">hashing.c</a>.</p>
 
 <p>References <a class="el" href="hash__function_8h_source.html#l00044">BLOCK_BITS</a>, <a class="el" href="hash__function_8h_source.html#l00045">BLOCK_BYTES</a>, <a class="el" href="types_8h_source.html#l00089">FP_BYTES</a>, <a class="el" href="types_8h_source.html#l00090">FP_WORDS</a>, <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>, <a class="el" href="util_8c_source.html#l00108">print_value()</a>, <a class="el" href="types_8h_source.html#l00110">ecpoint_fp::x</a>, and <a class="el" href="types_8h_source.html#l00111">ecpoint_fp::y</a>.</p>
 
-<p>Referenced by <a class="el" href="gss__hwang_8c_source.html#l00055">hwang_sign()</a>, and <a class="el" href="gss__hwang__demo_8c_source.html#l00163">hwang_verify()</a>.</p>
+<p>Referenced by <a class="el" href="gss__hwang_8c_source.html#l00055">hwang_sign()</a>, <a class="el" href="gss__hwang_8c_source.html#l00339">hwang_verify()</a>, <a class="el" href="sdh__zk_8c_source.html#l00127">sgs_sign()</a>, and <a class="el" href="sdh__zk_8c_source.html#l00292">sgs_verify()</a>.</p>
 
 </div>
 </div>
@@ -229,18 +232,59 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="hashing_8c_source.html#l00105">105</a> of file <a class="el" href="hashing_8c_source.html">hashing.c</a>.</p>
+<p>Definition at line <a class="el" href="hashing_8c_source.html#l00133">133</a> of file <a class="el" href="hashing_8c_source.html">hashing.c</a>.</p>
 
 <p>References <a class="el" href="hash__function_8h_source.html#l00044">BLOCK_BITS</a>, <a class="el" href="hash__function_8h_source.html#l00045">BLOCK_BYTES</a>, <a class="el" href="types_8h_source.html#l00089">FP_BYTES</a>, and <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>.</p>
 
-<p>Referenced by <a class="el" href="gss__hwang_8c_source.html#l00055">hwang_sign()</a>, and <a class="el" href="gss__hwang__demo_8c_source.html#l00163">hwang_verify()</a>.</p>
+<p>Referenced by <a class="el" href="gss__hwang_8c_source.html#l00055">hwang_sign()</a>, <a class="el" href="gss__hwang_8c_source.html#l00339">hwang_verify()</a>, <a class="el" href="sdh__zk_8c_source.html#l00127">sgs_sign()</a>, and <a class="el" href="sdh__zk_8c_source.html#l00292">sgs_verify()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f90649b60cd306fbaa8cac4afa27ab7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hash_update_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Keccak-compact_8h.html#a6cd75f9e7106362b1576ff73d4cc6a3b">hashState</a> *&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the given Hash state with the given message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the Hash state to be used. </td></tr>
+    <tr><td class="paramname">message</td><td>the message to be hashed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="hashing_8c_source.html#l00070">70</a> of file <a class="el" href="hashing_8c_source.html">hashing.c</a>.</p>
+
+<p>References <a class="el" href="hash__function_8h_source.html#l00044">BLOCK_BITS</a>, <a class="el" href="hash__function_8h_source.html#l00045">BLOCK_BYTES</a>, and <a class="el" href="hash__function_8h_source.html#l00050">hash_update</a>.</p>
+
+<p>Referenced by <a class="el" href="sdh__zk_8c_source.html#l00127">sgs_sign()</a>, and <a class="el" href="sdh__zk_8c_source.html#l00292">sgs_verify()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 10:14:22 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 4 2015 10:58:58 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

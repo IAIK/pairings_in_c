@@ -164,7 +164,7 @@ clean: CMakeFiles/ecfp2_hdl.dir/clean
 CMakeFiles/ecfp_hdl.dir/all:
 	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/depend
 	$(MAKE) -f CMakeFiles/ecfp_hdl.dir/build.make CMakeFiles/ecfp_hdl.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  16 17 18 19 20 21
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  16 17 18 19 20
 	@echo "Built target ecfp_hdl"
 .PHONY : CMakeFiles/ecfp_hdl.dir/all
 
@@ -174,7 +174,7 @@ all: CMakeFiles/ecfp_hdl.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ecfp_hdl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ecfp_hdl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/ecfp_hdl.dir/rule
@@ -199,7 +199,7 @@ clean: CMakeFiles/ecfp_hdl.dir/clean
 CMakeFiles/experiment.dir/all:
 	$(MAKE) -f CMakeFiles/experiment.dir/build.make CMakeFiles/experiment.dir/depend
 	$(MAKE) -f CMakeFiles/experiment.dir/build.make CMakeFiles/experiment.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  22 23 24 25 26
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  21 22 23 24 25
 	@echo "Built target experiment"
 .PHONY : CMakeFiles/experiment.dir/all
 
@@ -234,7 +234,7 @@ clean: CMakeFiles/experiment.dir/clean
 CMakeFiles/fp_hdl.dir/all:
 	$(MAKE) -f CMakeFiles/fp_hdl.dir/build.make CMakeFiles/fp_hdl.dir/depend
 	$(MAKE) -f CMakeFiles/fp_hdl.dir/build.make CMakeFiles/fp_hdl.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  27 28 29 30 31
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  26 27 28 29 30
 	@echo "Built target fp_hdl"
 .PHONY : CMakeFiles/fp_hdl.dir/all
 
@@ -269,7 +269,7 @@ clean: CMakeFiles/fp_hdl.dir/clean
 CMakeFiles/gss_hwang_demo.dir/all:
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/depend
 	$(MAKE) -f CMakeFiles/gss_hwang_demo.dir/build.make CMakeFiles/gss_hwang_demo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  32 33 34 35 36
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  31 32 33 34 35
 	@echo "Built target gss_hwang_demo"
 .PHONY : CMakeFiles/gss_hwang_demo.dir/all
 
@@ -304,7 +304,7 @@ clean: CMakeFiles/gss_hwang_demo.dir/clean
 CMakeFiles/ibe_demo.dir/all:
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/depend
 	$(MAKE) -f CMakeFiles/ibe_demo.dir/build.make CMakeFiles/ibe_demo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  37 38 39 40 41 42
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  36 37 38 39 40
 	@echo "Built target ibe_demo"
 .PHONY : CMakeFiles/ibe_demo.dir/all
 
@@ -314,7 +314,7 @@ all: CMakeFiles/ibe_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ibe_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ibe_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/ibe_demo.dir/rule
@@ -339,7 +339,7 @@ clean: CMakeFiles/ibe_demo.dir/clean
 CMakeFiles/pairing_demo.dir/all:
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/depend
 	$(MAKE) -f CMakeFiles/pairing_demo.dir/build.make CMakeFiles/pairing_demo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  43 44 45 46 47
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  41 42 43 44 45
 	@echo "Built target pairing_demo"
 .PHONY : CMakeFiles/pairing_demo.dir/all
 
@@ -368,13 +368,48 @@ clean: CMakeFiles/pairing_demo.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sdh_zk_demo.dir
+
+# All Build rule for target.
+CMakeFiles/sdh_zk_demo.dir/all:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/depend
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  46 47 48 49 50
+	@echo "Built target sdh_zk_demo"
+.PHONY : CMakeFiles/sdh_zk_demo.dir/all
+
+# Include target in all.
+all: CMakeFiles/sdh_zk_demo.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sdh_zk_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sdh_zk_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
+.PHONY : CMakeFiles/sdh_zk_demo.dir/rule
+
+# Convenience name for target.
+sdh_zk_demo: CMakeFiles/sdh_zk_demo.dir/rule
+.PHONY : sdh_zk_demo
+
+# clean rule for target.
+CMakeFiles/sdh_zk_demo.dir/clean:
+	$(MAKE) -f CMakeFiles/sdh_zk_demo.dir/build.make CMakeFiles/sdh_zk_demo.dir/clean
+.PHONY : CMakeFiles/sdh_zk_demo.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sdh_zk_demo.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_bbkem.dir
 
 # All Build rule for target.
 CMakeFiles/test_bbkem.dir/all:
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/depend
 	$(MAKE) -f CMakeFiles/test_bbkem.dir/build.make CMakeFiles/test_bbkem.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  48 49 50 51 52
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  51 52 53 54 55
 	@echo "Built target test_bbkem"
 .PHONY : CMakeFiles/test_bbkem.dir/all
 
@@ -409,7 +444,7 @@ clean: CMakeFiles/test_bbkem.dir/clean
 CMakeFiles/test_bigint.dir/all:
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/depend
 	$(MAKE) -f CMakeFiles/test_bigint.dir/build.make CMakeFiles/test_bigint.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  53 54 55 56 57
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  56 57 58 59 60
 	@echo "Built target test_bigint"
 .PHONY : CMakeFiles/test_bigint.dir/all
 
@@ -444,7 +479,7 @@ clean: CMakeFiles/test_bigint.dir/clean
 CMakeFiles/test_ecfp.dir/all:
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/depend
 	$(MAKE) -f CMakeFiles/test_ecfp.dir/build.make CMakeFiles/test_ecfp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  58 59 60 61 62 63
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  61 62 63 64 65
 	@echo "Built target test_ecfp"
 .PHONY : CMakeFiles/test_ecfp.dir/all
 
@@ -454,7 +489,7 @@ all: CMakeFiles/test_ecfp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_ecfp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_ecfp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_ecfp.dir/rule
@@ -479,7 +514,7 @@ clean: CMakeFiles/test_ecfp.dir/clean
 CMakeFiles/test_ecfp2.dir/all:
 	$(MAKE) -f CMakeFiles/test_ecfp2.dir/build.make CMakeFiles/test_ecfp2.dir/depend
 	$(MAKE) -f CMakeFiles/test_ecfp2.dir/build.make CMakeFiles/test_ecfp2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  64 65 66 67 68
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  66 67 68 69 70
 	@echo "Built target test_ecfp2"
 .PHONY : CMakeFiles/test_ecfp2.dir/all
 
@@ -514,7 +549,7 @@ clean: CMakeFiles/test_ecfp2.dir/clean
 CMakeFiles/test_fp.dir/all:
 	$(MAKE) -f CMakeFiles/test_fp.dir/build.make CMakeFiles/test_fp.dir/depend
 	$(MAKE) -f CMakeFiles/test_fp.dir/build.make CMakeFiles/test_fp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  69 70 71 72 73
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  71 72 73 74 75
 	@echo "Built target test_fp"
 .PHONY : CMakeFiles/test_fp.dir/all
 
@@ -549,7 +584,7 @@ clean: CMakeFiles/test_fp.dir/clean
 CMakeFiles/test_fp12.dir/all:
 	$(MAKE) -f CMakeFiles/test_fp12.dir/build.make CMakeFiles/test_fp12.dir/depend
 	$(MAKE) -f CMakeFiles/test_fp12.dir/build.make CMakeFiles/test_fp12.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  74 75 76 77 78
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  76 77 78 79 80
 	@echo "Built target test_fp12"
 .PHONY : CMakeFiles/test_fp12.dir/all
 
@@ -584,7 +619,7 @@ clean: CMakeFiles/test_fp12.dir/clean
 CMakeFiles/test_fp2.dir/all:
 	$(MAKE) -f CMakeFiles/test_fp2.dir/build.make CMakeFiles/test_fp2.dir/depend
 	$(MAKE) -f CMakeFiles/test_fp2.dir/build.make CMakeFiles/test_fp2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  79 80 81 82 83 84
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  81 82 83 84 85
 	@echo "Built target test_fp2"
 .PHONY : CMakeFiles/test_fp2.dir/all
 
@@ -594,7 +629,7 @@ all: CMakeFiles/test_fp2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_fp2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_fp2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_fp2.dir/rule
@@ -619,7 +654,7 @@ clean: CMakeFiles/test_fp2.dir/clean
 CMakeFiles/test_fp4.dir/all:
 	$(MAKE) -f CMakeFiles/test_fp4.dir/build.make CMakeFiles/test_fp4.dir/depend
 	$(MAKE) -f CMakeFiles/test_fp4.dir/build.make CMakeFiles/test_fp4.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  85 86 87 88 89
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  86 87 88 89 90
 	@echo "Built target test_fp4"
 .PHONY : CMakeFiles/test_fp4.dir/all
 
@@ -654,7 +689,7 @@ clean: CMakeFiles/test_fp4.dir/clean
 CMakeFiles/test_optate_pairing.dir/all:
 	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/depend
 	$(MAKE) -f CMakeFiles/test_optate_pairing.dir/build.make CMakeFiles/test_optate_pairing.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  90 91 92 93 94
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  91 92 93 94 95
 	@echo "Built target test_optate_pairing"
 .PHONY : CMakeFiles/test_optate_pairing.dir/all
 
@@ -689,7 +724,7 @@ clean: CMakeFiles/test_optate_pairing.dir/clean
 CMakeFiles/test_sha.dir/all:
 	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/depend
 	$(MAKE) -f CMakeFiles/test_sha.dir/build.make CMakeFiles/test_sha.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  95 96 97 98 99 100
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles  96 97 98 99 100
 	@echo "Built target test_sha"
 .PHONY : CMakeFiles/test_sha.dir/all
 
@@ -699,7 +734,7 @@ all: CMakeFiles/test_sha.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_sha.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_sha.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/work/workspace/bipair_in_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_sha.dir/rule

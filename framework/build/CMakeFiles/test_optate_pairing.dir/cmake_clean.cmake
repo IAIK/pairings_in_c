@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/test_optate_pairing.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/test_optate_pairing.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/test_optate_pairing.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/test_optate_pairing.dir/src/sdh/sdh_zk.c.o"
   "out/bin/test_optate_pairing.pdb"
   "out/bin/test_optate_pairing"
 )

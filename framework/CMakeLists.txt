@@ -52,7 +52,7 @@ INCLUDE_DIRECTORIES("include")
 # build all source files into the target
 #-----------------------------------------
 FILE(GLOB CSources "src/*.c" "src/base/std/bigint/*.c" "src/base/std/fp/*.c" "src/base/std/ec/*.c"
-                   "src/base/std/pbc/*.c" "src/hash/*.c" "src/aes/*.c" "src/ibe/*.c" "src/gss/*.c")               
+                   "src/base/std/pbc/*.c" "src/hash/*.c" "src/aes/*.c" "src/ibe/*.c" "src/gss/*.c" "src/sdh/*.c")               
 FILE(GLOB ASMSources "src/${ASM_ARCH_DIR}/*.S" "src/${ASM_ARCH_DIR}/*/*.S")
 #FILE(GLOB ASMSources "src/bi/${ASM_ARCH_DIR}/*.S"   "src/bi/${ASM_ARCH_DIR}/*.asm"
 #                     "src/gfp/${ASM_ARCH_DIR}/*.S"  "src/gfp/${ASM_ARCH_DIR}/*.asm"

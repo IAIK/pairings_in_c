@@ -251,6 +251,29 @@ CMakeFiles/bench.dir/src/rand.c.o: ../include/config.h
 CMakeFiles/bench.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/bench.dir/src/rand.c.o: ../src/rand.c
 
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/arch.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/bi.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/fp.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi_std.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/config.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/ec/ec.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp2_std.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp_std.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12_std.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp_std.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact-settings.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/hash/hash_function.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/hash/hashing.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/param.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/pbc/pbc.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/sdh/sdh_zk.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../include/types.h
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+
 CMakeFiles/bench.dir/src/util.c.o: ../include/arch.h
 CMakeFiles/bench.dir/src/util.c.o: ../include/config.h
 CMakeFiles/bench.dir/src/util.c.o: ../include/types.h

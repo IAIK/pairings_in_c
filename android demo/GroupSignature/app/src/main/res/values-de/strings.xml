@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Gruppensignatur</string>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="select">Ok</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="choose_function">Wählen Sie ihre Funktionalität aus:</string>
+    <string name="send_button">Nachricht senden</string>
+
+    <string-array name="items">
+        <item>Verifizierer</item>
+        <item>Signierer</item>
+    </string-array>
+
+    <string-array name="options">
+        <item>Signatur 1</item>
+        <item>Signatur 2</item>
+        <item>Signatur 3</item>
+        <item>Signatur 4</item>
+        <item>Falsche Signatur</item>
+        <item>Falsche Nachricht</item>
+    </string-array>
+    <string name="not_supporting_NFC">Dieses Gerät unterstüzt NFC nicht.</string>
+    <string name="sig_from_user">Die Signatur ist vom Benutzer </string>
+    <string name="nfc_enabled">NFC ist eingeschaltet.</string>
+    <string name="nfc_disabled">NFC ist ausgeschaltet.</string>
+    <string name="message">Nachricht: </string>
+    <string name="sig_valid">Signatur ist VALID</string>
+    <string name="sig_invalid">Signatur ist INVALID</string>
+    <string name="open_button">Öffne Signatur</string>
+    <string name="verifier">Verifier</string>
+    <string name="group_master">GroupMaster</string>
+</resources>

@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/fp_hdl.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/fp_hdl.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/fp_hdl.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/fp_hdl.dir/src/sdh/sdh_zk.c.o"
   "out/bin/fp_hdl.pdb"
   "out/bin/fp_hdl"
 )

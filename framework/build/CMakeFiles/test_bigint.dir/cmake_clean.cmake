@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/test_bigint.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/test_bigint.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/test_bigint.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/test_bigint.dir/src/sdh/sdh_zk.c.o"
   "out/bin/test_bigint.pdb"
   "out/bin/test_bigint"
 )

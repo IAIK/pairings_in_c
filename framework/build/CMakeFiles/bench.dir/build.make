@@ -532,6 +532,29 @@ CMakeFiles/bench.dir/src/gss/gss_hwang.c.o.provides: CMakeFiles/bench.dir/src/gs
 
 CMakeFiles/bench.dir/src/gss/gss_hwang.c.o.provides.build: CMakeFiles/bench.dir/src/gss/gss_hwang.c.o
 
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: CMakeFiles/bench.dir/flags.make
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/work/workspace/bipair_in_c/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o   -c /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c
+
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bench.dir/src/sdh/sdh_zk.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c > CMakeFiles/bench.dir/src/sdh/sdh_zk.c.i
+
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bench.dir/src/sdh/sdh_zk.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c -o CMakeFiles/bench.dir/src/sdh/sdh_zk.c.s
+
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.requires:
+.PHONY : CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.requires
+
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.provides: CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.requires
+	$(MAKE) -f CMakeFiles/bench.dir/build.make CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.provides.build
+.PHONY : CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.provides
+
+CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.provides.build: CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o
+
 # Object files for target bench
 bench_OBJECTS = \
 "CMakeFiles/bench.dir/benchmark/bench.c.o" \
@@ -554,7 +577,8 @@ bench_OBJECTS = \
 "CMakeFiles/bench.dir/src/hash/Keccak-compact.c.o" \
 "CMakeFiles/bench.dir/src/ibe/bbkem.c.o" \
 "CMakeFiles/bench.dir/src/ibe/bbkem_param.c.o" \
-"CMakeFiles/bench.dir/src/gss/gss_hwang.c.o"
+"CMakeFiles/bench.dir/src/gss/gss_hwang.c.o" \
+"CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o"
 
 # External object files for target bench
 bench_EXTERNAL_OBJECTS =
@@ -580,6 +604,7 @@ out/bin/bench: CMakeFiles/bench.dir/src/hash/Keccak-compact.c.o
 out/bin/bench: CMakeFiles/bench.dir/src/ibe/bbkem.c.o
 out/bin/bench: CMakeFiles/bench.dir/src/ibe/bbkem_param.c.o
 out/bin/bench: CMakeFiles/bench.dir/src/gss/gss_hwang.c.o
+out/bin/bench: CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o
 out/bin/bench: CMakeFiles/bench.dir/build.make
 out/bin/bench: CMakeFiles/bench.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable out/bin/bench"
@@ -610,6 +635,7 @@ CMakeFiles/bench.dir/requires: CMakeFiles/bench.dir/src/hash/Keccak-compact.c.o.
 CMakeFiles/bench.dir/requires: CMakeFiles/bench.dir/src/ibe/bbkem.c.o.requires
 CMakeFiles/bench.dir/requires: CMakeFiles/bench.dir/src/ibe/bbkem_param.c.o.requires
 CMakeFiles/bench.dir/requires: CMakeFiles/bench.dir/src/gss/gss_hwang.c.o.requires
+CMakeFiles/bench.dir/requires: CMakeFiles/bench.dir/src/sdh/sdh_zk.c.o.requires
 .PHONY : CMakeFiles/bench.dir/requires
 
 CMakeFiles/bench.dir/clean:

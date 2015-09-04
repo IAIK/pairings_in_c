@@ -20,6 +20,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem.c.o"
   "CMakeFiles/all_in_one_demo.dir/src/ibe/bbkem_param.c.o"
   "CMakeFiles/all_in_one_demo.dir/src/gss/gss_hwang.c.o"
+  "CMakeFiles/all_in_one_demo.dir/src/sdh/sdh_zk.c.o"
   "out/bin/all_in_one_demo.pdb"
   "out/bin/all_in_one_demo"
 )

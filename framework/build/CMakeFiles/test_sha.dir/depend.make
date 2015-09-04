@@ -230,6 +230,29 @@ CMakeFiles/test_sha.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/test_sha.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/test_sha.dir/src/rand.c.o: ../src/rand.c
 
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/arch.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/bi.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/arch/cortexm0/fp.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/bigint/bi_std.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/config.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/ec/ec.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp2_std.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/ec/ecfp_std.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp12_std.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/fp/fp_std.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact-settings.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/hash/Keccak-compact.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/hash/hash_function.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/hash/hashing.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/param.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/pbc/pbc.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/sdh/sdh_zk.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../include/types.h
+CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o: ../src/sdh/sdh_zk.c
+
 CMakeFiles/test_sha.dir/src/util.c.o: ../include/arch.h
 CMakeFiles/test_sha.dir/src/util.c.o: ../include/config.h
 CMakeFiles/test_sha.dir/src/util.c.o: ../include/types.h
@@ -237,6 +260,9 @@ CMakeFiles/test_sha.dir/src/util.c.o: ../include/util.h
 CMakeFiles/test_sha.dir/src/util.c.o: ../src/util.c
 
 CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/arch.h
+CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/arch/cortexm0/bi.h
+CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/bigint/bi.h
+CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/bigint/bi_std.h
 CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/config.h
 CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/hash/Keccak-compact-settings.h
 CMakeFiles/test_sha.dir/test/test_sha.c.o: ../include/hash/Keccak-compact.h

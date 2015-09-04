@@ -34,6 +34,8 @@
 
 #include "hash/hashing.h"
 #include "types.h"
+#include "bigint/bi.h"
+#include <string.h>
 
 int main(void) {
 	byte var_res[16];
@@ -49,7 +51,7 @@ int main(void) {
 	}
 
 #endif
-	return 0;
+
 }
 
 

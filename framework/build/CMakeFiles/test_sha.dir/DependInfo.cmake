@@ -23,6 +23,7 @@ SET(CMAKE_DEPENDS_CHECK_C
   "/home/work/workspace/bipair_in_c/src/ibe/bbkem_param.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/src/ibe/bbkem_param.c.o"
   "/home/work/workspace/bipair_in_c/src/param.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/src/param.c.o"
   "/home/work/workspace/bipair_in_c/src/rand.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/src/rand.c.o"
+  "/home/work/workspace/bipair_in_c/src/sdh/sdh_zk.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/src/sdh/sdh_zk.c.o"
   "/home/work/workspace/bipair_in_c/src/util.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/src/util.c.o"
   "/home/work/workspace/bipair_in_c/test/test_sha.c" "/home/work/workspace/bipair_in_c/build/CMakeFiles/test_sha.dir/test/test_sha.c.o"
   )
