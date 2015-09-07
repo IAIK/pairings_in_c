@@ -226,6 +226,7 @@ CMakeFiles/test_bbkem.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/test_bbkem.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/test_bbkem.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/test_bbkem.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/test_bbkem.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/test_bbkem.dir/src/rand.c.o: ../src/rand.c
 
@@ -258,9 +259,4 @@ CMakeFiles/test_bbkem.dir/src/util.c.o: ../include/types.h
 CMakeFiles/test_bbkem.dir/src/util.c.o: ../include/util.h
 CMakeFiles/test_bbkem.dir/src/util.c.o: ../src/util.c
 
-CMakeFiles/test_bbkem.dir/test/test_bbkem.c.o: ../include/arch.h
-CMakeFiles/test_bbkem.dir/test/test_bbkem.c.o: ../include/config.h
-CMakeFiles/test_bbkem.dir/test/test_bbkem.c.o: ../include/ibe/bbkem.h
-CMakeFiles/test_bbkem.dir/test/test_bbkem.c.o: ../include/types.h
-CMakeFiles/test_bbkem.dir/test/test_bbkem.c.o: ../test/test_bbkem.c
 

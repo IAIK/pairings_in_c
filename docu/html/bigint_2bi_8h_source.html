@@ -137,17 +137,16 @@
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#ac743c27db318c822b2e7693d5d07fb61">   85</a></span>&#160;<span class="preprocessor">#define bi_is_even(a)                           (!(a[0] &amp; 0x01))</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#abd38fdea063cfa59acf274f10c4b2873">   86</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define bi_is_odd(a)                            (a[0] &amp; 0x01)</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#a9772128ab3754227346cda1dab93914b">   88</a></span>&#160;<span class="preprocessor">#define bi_get_nafw(nafw, a, width)             bi_get_nafw_std(nafw, a, width)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#acea439160495f3a7daf4faeeb3694d7f">   89</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define bi_get_nafb(naf, a)                     bi_get_nafb_std(naf, a)</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#a6f923c7a69ea16cf1cf9aba3db2b282a">   91</a></span>&#160;<span class="preprocessor">#define bi_negate_var(res, a, length)           bi_negate_var_std(res, a, length)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#a700a8e96bfde85125e711b60ab94fa86">   92</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define bi_negate(res, a)                       bi_negate_var_std(res, a, BI_WORDS)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if ARCHITECTURE==ARCH_CORTEXM0</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="arch_2cortexm0_2bi_8h.html">arch/cortexm0/bi.h</a>&quot;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BI_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#acea439160495f3a7daf4faeeb3694d7f">   88</a></span>&#160;<span class="preprocessor">#define bi_get_nafb(naf, a)                     bi_get_nafb_std(naf, a)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#a6f923c7a69ea16cf1cf9aba3db2b282a">   90</a></span>&#160;<span class="preprocessor">#define bi_negate_var(res, a, length)           bi_negate_var_std(res, a, length)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="bigint_2bi_8h.html#a700a8e96bfde85125e711b60ab94fa86">   91</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define bi_negate(res, a)                       bi_negate_var_std(res, a, BI_WORDS)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#if ARCHITECTURE==ARCH_CORTEXM0</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="arch_2cortexm0_2bi_8h.html">arch/cortexm0/bi.h</a>&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BI_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="arch_2cortexm0_2bi_8h_html"><div class="ttname"><a href="arch_2cortexm0_2bi_8h.html">bi.h</a></div></div>
 <div class="ttc" id="bi__std_8h_html"><div class="ttname"><a href="bi__std_8h.html">bi_std.h</a></div></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
@@ -157,7 +156,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 4 2015 10:58:55 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 7 2015 09:43:11 for Pairings by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -274,28 +274,12 @@ void fp_rdc_monty_std(fp_t res, word_t *t, const bigint_t mod, const word_t n0)
 		bi_copy(res, t+BI_WORDS);
 	}
 #else
-
-// Lazy reduction in Fp
-#ifdef REAL_LAZY_REDUCTION
-	if (ct > 0) {
-		int carries = 0;
-		carries += bi_subtract(res, t+BI_WORDS, mod);
-		carries += bi_subtract(res, res, mod);
-		carries += bi_subtract(res, res, mod);
-		carries += bi_subtract(res, res, mod);
-		carries += bi_subtract(res, res, mod);
-		carries += bi_subtract(res, res, mod);
-	} else {
-		bi_copy(res, t+BI_WORDS);
-	}
-#else
 	c = bi_subtract(t, t+BI_WORDS, mod);
 	if (ct || !c) {
 		bi_copy(res, t);
 	} else {
 		bi_copy(res, t+BI_WORDS);
 	}
-#endif
 #endif
 }
 
@@ -426,7 +410,7 @@ void fp_mul_monty_std(fp_t res, const fp_t a, const fp_t b, const bigint_t modul
 	bi_copy(res, tmp3);
 }
 
-#ifndef REAL_LAZY_REDUCTION
+
 
 /**
  * Prime field exponentation that converts the operands into the Montgomery domain and converts the result back.
@@ -466,7 +450,7 @@ void fp_exp_monty(fp_t res, const fp_t a, const bigint_t b,
 	}
 }
 
-#endif
+
 
 /**
  * Prime field inversion by exponentiation using Little Fermat. Works for any prime modulus.
@@ -563,162 +547,9 @@ void fp_inv_bn(fp_t res, const fp_t a) {
 	fp_mul(res, res, t2);
 }
 
-#ifndef MONTGOMERY_ARITHMETIC
-/**
- * Sliding window prime field exponentiation algorithm based on the precomputation of a table.
- * @param res the result
- * @param a the operand
- * @param b the exponent
- * @param mod the (prime modulus)
- * @param mu the precomputed constant for the barrett reduction
- */
-void fp_exp_slide_var(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const bigint_t mu) {
-	fp_t tab[FP_EXP_SLW_TBL_SZ];	// precomputation table
-	int i;
-
-	bi_copy(tab[0], a);
-	fp_sqr_var(res, a, mod, mu);
-
-	// precomputation of table: a, a^3, a^5,...
-	for (i = 1; i < FP_EXP_SLW_TBL_SZ; i++) {
-		fp_mul_var(tab[i], tab[i - 1], res, mod, mu);
-	}
-
-	//fp_set_dig(t, 1);
-	bi_clear(res); res[0] = 1;
-
-	int exp;
-	int slw_len;
-	int bit;
-	int step;
-
-	// "step" represents the number of bits that was looked at
-	for (bit = bi_get_msb(b); bit >= 0; bit-=step) {
-		if (bi_test_bit(b, bit)) {
-
-			slw_len = 1;	// length of sliding window found
-			exp 	= 1;	// index of the exponent in the sliding window
-			i 		= 1;	// running idx to find sliding window
-
-			// analyze exponent
-			while (i < FP_EXP_SLW_WIDTH && (bit-i) >= 0) {
-				if (bi_test_bit(b, bit-i)) {
-					exp = (exp << (i - slw_len + 1)) + 1;
-					slw_len = i+1;
-				}
-				i++;
-			}
-			step = i;
-
-			// pre-processing: square
-			for (i = 0; i < slw_len; i++) {
-				fp_sqr_var(res, res, mod, mu);
-			}
-
-			// multiply precomupted
-			fp_mul_var(res, res, tab[exp >> 1], mod, mu);
-
-			// post-processing: square
-			for (i = slw_len; i < step; i++) {
-				fp_sqr_var(res, res, mod, mu);
-			}
-		} else {
-			// simple square in case of zero
-			fp_sqr_var(res, res, mod, mu);
-			step = 1;
-		}
-	}
-}
-#endif
 
 #ifdef MONTGOMERY_ARITHMETIC
 
-#ifdef REAL_LAZY_REDUCTION
-
-/**
- * Square-and-Multiply prime field exponentiation using lazy reduction technique.
- * @param res the result
- * @param a the first operand
- * @param b the exponent
- * @param mod the modulus
- * @param n0 the precomputed constant for the Montgomery reduction
- * @param multipleMod a multiple of the modulus for reduction
- */
-void fp_exp_sqrmul_lazy(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	fp_t r, t;
-	int i;
-
-	fp_copy(r, FP_ONE);
-
-	for (i = bi_get_msb(b); i >= 0; i--) {
-		fp_sqr_var(t, r, mod, n0, multipleMod);
-		fp_mul_var(r, t, a, mod, n0, multipleMod);
-		if (bi_test_bit(b, i)) {
-			fp_copy(t, r);
-		} else {// else side channel dummy (not really secure)
-			fp_copy(r, t);
-		}
-	}
-
-	fp_copy(res, r);
-}
-
-/**
- * Prime field exponentiation using lazy reduction technique.
- * @param res the result
- * @param a the first operand
- * @param b the exponent
- * @param mod the modulus
- * @param n0 the precomputed constant for the Montgomery reduction
- * @param multipleMod a multiple of the modulus for reduction
- */
-void fp_exp_lazy(fp_t res, const fp_t a, const bigint_t b, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	fp_exp_sqrmul_lazy(res, a, b, mod, n0, multipleMod);
-}
-
-/**
- * Prime field square root computation using the lazy reduction technique.
- * @param res the result
- * @param a the operand
- * @param mod the prime modulus
- * @param n0 the precomputed constant for the Montgomery reduction
- * @param multipleMod a multiple of the modulus for reduction
- */
-void fp_sqrt_lazy(fp_t res, const fp_t a, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	// Warning: this method does not check whether there exists a solution
-	bigint_t exp;
-	bi_add(exp, mod, bi_one);
-	bi_shift_right(exp, exp, 2);
-	fp_exp_var(res, a, exp, mod, n0, multipleMod);
-}
-
-/**
- * Lazy reduction legendre operation in the prime field, ie. it determines whether the operand is a square or not.
- * @param a the operand
- * @param mod the prime modulus
- * @param n0 the precomputed constnat for the montgomery reduction
- * @param multipleMod a multiple of the modulus for reduction
- * @return 1 if square, -1 if not, 0 if zero
- */
-int fp_legendre_lazy(const fp_t a, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	bigint_t 	exp;
-	fp_t 		tmp;
-
-	if (bi_compare(a, bi_zero) == 0)
-		return 0;
-
-	bi_subtract(exp, mod, bi_one);
-	bi_shift_right(exp, exp, 1);
-	fp_exp_var(tmp, a, exp, mod, n0, multipleMod);
-
-	// actually, monty prime (one) is a parameter...
-	if (bi_compare(tmp, FP_ONE) == 0)
-		return 1;
-
-	return -1;
-}
-
-#else
 
 /**
  * Square-and-Multiply prime field exponentiation.
@@ -799,7 +630,7 @@ int fp_legendre_std(const fp_t a, const bigint_t mod, const word_t n0) {
 	return -1;
 }
 
-#endif
+
 
 /**
  * Standard prime field inversion using the binary inversion algorithm.

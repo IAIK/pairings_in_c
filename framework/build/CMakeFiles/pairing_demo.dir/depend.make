@@ -232,6 +232,7 @@ CMakeFiles/pairing_demo.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/pairing_demo.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/pairing_demo.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/pairing_demo.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/pairing_demo.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/pairing_demo.dir/src/rand.c.o: ../src/rand.c
 

@@ -244,6 +244,7 @@ CMakeFiles/all_in_one_demo.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/all_in_one_demo.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/all_in_one_demo.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/all_in_one_demo.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/all_in_one_demo.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/all_in_one_demo.dir/src/rand.c.o: ../src/rand.c
 

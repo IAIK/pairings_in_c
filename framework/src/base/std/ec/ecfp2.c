@@ -572,10 +572,8 @@ void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
 		return;
 
 	cprng_get_bytes(z, 2*FP_BYTES);
-#ifndef REAL_LAZY_REDUCTION
 	fp_rdc(z[0]);
 	fp_rdc(z[1]);
-#endif
 
 	fp2_mul(x[1], (const fp_t*) a->x, (const fp_t*)z);
 	fp2_mul(x[0], (const fp_t*) a->y, (const fp_t*)z);
@@ -660,10 +658,8 @@ void ecfp2_get_jacobian_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2
 	// get random value for z and reduce modulo prime
 	cprng_get_bytes(projective->z, 2*FP_BYTES);
 
-#ifndef REAL_LAZY_REDUCTION
 	fp_rdc(projective->z[0]);
 	fp_rdc(projective->z[1]);
-#endif
 
 	fp2_t z2;
 	fp2_sqr(z2, (const fp_t*) projective->z);
@@ -689,10 +685,8 @@ void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ec
 	// get random value for z and reduce modulo prime
 	cprng_get_bytes(projective->z, 2*FP_BYTES);
 
-#ifndef REAL_LAZY_REDUCTION
 	fp_rdc(projective->z[0]);
 	fp_rdc(projective->z[1]);
-#endif
 
 	// adapt x and y coordinates appropriately
 	fp2_mul(projective->x, (const fp_t*) affine->x, (const fp_t*) projective->z);

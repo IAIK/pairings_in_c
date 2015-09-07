@@ -248,6 +248,7 @@ CMakeFiles/bench.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/bench.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/bench.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/bench.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/bench.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/bench.dir/src/rand.c.o: ../src/rand.c
 

@@ -85,7 +85,6 @@ extern const bigint_t bi_zero;
 #define bi_is_even(a)							(!(a[0] & 0x01))
 #define bi_is_odd(a)							(a[0] & 0x01)
 
-#define bi_get_nafw(nafw, a, width)				bi_get_nafw_std(nafw, a, width)
 #define bi_get_nafb(naf, a)						bi_get_nafb_std(naf, a)
 
 #define bi_negate_var(res, a, length)			bi_negate_var_std(res, a, length)

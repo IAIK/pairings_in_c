@@ -81,17 +81,8 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
 #undef fp_add_var
 #endif
 
-#if defined(REAL_LAZY_REDUCTION) && (BNCURVE == BN254)
-
-#define fp_add(res, a, b)						fp_add_lazy_cm0_bn254(res, a, b, PRIME_P, LAZYR_PRIMEC)
-#define fp_add_var(res, a, b, mod, multMod)		fp_add_lazy_cm0_bn254(res, a, b, mod, multMod)
-
-#else
-
 #define fp_add(res, a, b)				fp_add_cm0_256(res, a, b, PRIME_P)
 #define fp_add_var(res, a, b, mod)		fp_add_cm0_256(res, a, b, mod)
-
-#endif
 
 #ifdef fp_dbl
 #undef fp_dbl
@@ -101,18 +92,8 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
 #undef fp_dbl_var
 #endif
 
-#if defined(REAL_LAZY_REDUCTION) && (BNCURVE == BN254)
-
-#define fp_dbl(res, a)						fp_add_lazy_cm0_bn254(res, a, a, PRIME_P, LAZYR_PRIMEC)
-#define fp_dbl_var(res, a, mod, multMod)	fp_add_lazy_cm0_bn254(res, a, a, mod, multMod)
-
-#else
-
 #define fp_dbl(res, a)					fp_add_cm0_256(res, a, a, PRIME_P)
 #define fp_dbl_var(res, a, mod)			fp_add_cm0_256(res, a, a, mod)
-
-#endif
-
 
 #ifdef fp_sub
 #undef fp_sub
@@ -122,17 +103,8 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
 #undef fp_sub_var
 #endif
 
-#if defined(REAL_LAZY_REDUCTION) && (BNCURVE == BN254)
-
-#define fp_sub(res, a, b)						fp_subtract_lazy_cm0_bn254(res, a, b, PRIME_P, LAZYR_PRIMEC)
-#define fp_sub_var(res, a, b, mod, multMod)		fp_subtract_lazy_cm0_bn254(res, a, b, mod, multMod)
-
-#else
-
 #define fp_sub(res, a, b)				fp_subtract_cm0_256(res, a, b, PRIME_P)
 #define fp_sub_var(res, a, b, mod)		fp_subtract_cm0_256(res, a, b, mod)
-
-#endif
 
 #ifdef fp_hlv
 #undef fp_hlv
@@ -153,17 +125,8 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
 #undef fp_neg_var
 #endif
 
-#if defined(REAL_LAZY_REDUCTION) && (BNCURVE == BN254)
-
-#define fp_neg_var(res, a, mod, multMod)	fp_neg_lazy_cm0_bn254(res, a, mod, multMod)
-#define fp_neg(res, a)						fp_neg_lazy_cm0_bn254(res, a, PRIME_P, LAZYR_PRIMEC)
-
-#else
-
 #define fp_neg_var(res, a, mod)		fp_neg_cm0_256(res, a, mod)
 #define fp_neg(res, a)				fp_neg_cm0_256(res, a, PRIME_P)
-
-#endif
 
 #ifdef fp_rdc
 #undef fp_rdc
@@ -199,13 +162,8 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
   #define fp_mul_monty(res, a, b)				fp_mul_monty_cm0_256(MONTY_PRIME_N0[0], a, b, PRIME_P, res)
   #define fp_mul_monty_var(res, a, b, mod, n0) 	fp_mul_monty_cm0_256(n0, a, b, mod, res)
  #elif (BNCURVE == BN254)
-  #ifdef REAL_LAZY_REDUCTION
-   #define fp_mul_monty(res, a, b)							fp_mul_monty_lazy_cm0_bn254(MONTY_PRIME_N0[0], a, b, PRIME_P, res, LAZYR_PRIMEC)
-   #define fp_mul_monty_var(res, a, b, mod, n0, multMod)	fp_mul_monty_lazy_cm0_bn254(n0, a, b, mod, res, multMod)
-  #else
    #define fp_mul_monty(res, a, b)				fp_mul_monty_cm0_bn254(MONTY_PRIME_N0[0], a, b, PRIME_P, res)
    #define fp_mul_monty_var(res, a, b, mod, n0)	fp_mul_monty_cm0_bn254(n0, a, b, mod, res)
-  #endif
  #endif
 #endif
 
@@ -262,19 +220,11 @@ void fp_rdc_cm0_bn254(fp_t a, const bigint_t modulo);
    #define fp_sqr(res, a)					fp_mul_monty_cm0_256(MONTY_PRIME_N0[0], a, a, PRIME_P, res)
    #define fp_sqr_var(res, a, mod, n0)		fp_mul_monty_cm0_256(n0, a, a, mod, res)
   #elif (BNCURVE == BN254)
-   #ifdef REAL_LAZY_REDUCTION
-    #define fp_mul(res, a, b) 				fp_mul_monty_lazy_cm0_bn254(MONTY_PRIME_N0[0], a, b, PRIME_P, res, LAZYR_PRIMEC)
-    #define fp_mul_var(res, a, b, mod, n0, multMod)	fp_mul_monty_lazy_cm0_bn254(n0, a, b, mod, res, multMod)
-
-    #define fp_sqr(res, a)					fp_mul_monty_lazy_cm0_bn254(MONTY_PRIME_N0[0], a, a, PRIME_P, res, LAZYR_PRIMEC)
-    #define fp_sqr_var(res, a, mod, n0, multMod)	fp_mul_monty_lazy_cm0_bn254(n0, a, a, mod, res, multMod)
-   #else
     #define fp_mul(res, a, b) 				fp_mul_monty_cm0_bn254(MONTY_PRIME_N0[0], a, b, PRIME_P, res)
     #define fp_mul_var(res, a, b, mod, n0)	fp_mul_monty_cm0_bn254(n0, a, b, mod, res)
 
     #define fp_sqr(res, a)					fp_mul_monty_cm0_bn254(MONTY_PRIME_N0[0], a, a, PRIME_P, res)
     #define fp_sqr_var(res, a, mod, n0)		fp_mul_monty_cm0_bn254(n0, a, a, mod, res)
-   #endif
   #endif
  #endif
 #endif

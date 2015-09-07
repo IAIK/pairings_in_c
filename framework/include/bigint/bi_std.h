@@ -61,7 +61,6 @@ byte bi_get_byte_var_std(const word_t* a, const length_t length, const uint inde
 void bi_set_byte_var_std(word_t* a, const length_t length, const uint index, const byte value);
 void bi_negate_var_std(word_t* res, const word_t *a, const length_t length);
 
-int bi_get_nafw_std(sbyte *nafw, word_t *a, word_t width);
 int bi_get_nafb_std(sbyte *naf, word_t *a);
 
 #endif /* BI_STD_H_ */

@@ -632,9 +632,7 @@ void ecfp_mul_montyladder_std(ecfp_pt res, const ecfp_pt a, const fp_t k) {
 		return;
 
 	cprng_get_bytes(z, FP_BYTES);
-#ifndef REAL_LAZY_REDUCTION
 	fp_rdc(z);
-#endif
 	fp_mul(x[1], a->x, z);
 	fp_mul(x[0], a->y, z);
 
@@ -698,9 +696,7 @@ void ecfp_get_projective_std(ecfp_proj_pt projective, const ecfp_pt affine) {
 	// get random value for z and reduce modulo prime
 	cprng_get_bytes(projective->z, FP_BYTES);
 
-#ifndef REAL_LAZY_REDUCTION
 	fp_rdc(projective->z);
-#endif
 
 	fp_t z2;
 	fp_sqr(z2, projective->z);

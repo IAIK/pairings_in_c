@@ -226,6 +226,7 @@ CMakeFiles/test_fp12.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/test_fp12.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/test_fp12.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/test_fp12.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/test_fp12.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/test_fp12.dir/src/rand.c.o: ../src/rand.c
 

@@ -34,47 +34,6 @@
 
 #include "bigint/bi.h"
 
-/**
- * Returns a w-bit NAF representation of the input, where w is specified
- * by the parameter width.
- * @param nafw	an array for the resulting NAF representation
- * @param a		the value to be converted into NAF
- * @param width	the NAF-width
- * @return the number of elements in the NAF representation
- */
-int bi_get_nafw_std(sbyte *nafw, word_t *a, word_t width) {
-	uint i = 0;
-	uint mod      = (1 << width);
-	uint mod_mask = (1 << width) - 1;
-	uint bit_mask = (1 << (width-1));
-	word_t carry, tmp;
-
-	carry = 0;
-
-	// it is simplified as width is expected not to be bigger than the word size
-	while (bi_compare(a, bi_zero) > 0) {
-		if (bi_is_odd(a)) {
-			nafw[i] = a[0] & mod_mask;
-			if (nafw[i] & bit_mask)
-				nafw[i] = nafw[i] - mod;
-			tmp = a[0] >> (BITS_PER_WORD-1);
-			a[0] -= (word_t)nafw[i];
-			carry = tmp & ~(a[0] >> (BITS_PER_WORD-1));
-		} else {
-			nafw[i] = 0;
-		}
-
-		// carry propagation
-		tmp = a[1] & 0x01 & carry;
-		a[1] = a[1] ^ carry;
-		carry = tmp;
-
-		bi_shift_right_one(a, a);
-		i++;
-	}
-
-	return i;
-}
 
 /**
  * Returns a binary NAF representation of the input

@@ -83,9 +83,6 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 	fp12_from_montgomery(k, (const fp4_t *) k);
 #endif
 
-#ifdef REAL_LAZY_REDUCTION
-	fp12_rdc(k);
-#endif
 	hash_key(key, k);
 }
 
@@ -112,10 +109,6 @@ void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 	fp12_from_montgomery(p_res, (const fp4_t*) p_res);
 #else
 	pbc_map_opt_ate_div(p_res, &(cipher->c0), &(BB1_PK.d0), &(cipher->c1), &(BB1_PK.d1));
-#endif
-
-#ifdef REAL_LAZY_REDUCTION
-	fp12_rdc(p_res);
 #endif
 
 	hash_key(key, p_res);

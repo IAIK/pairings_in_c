@@ -112,12 +112,5 @@
 #define PRECISION		160
 #endif
 
-// precomputation constants for sliding window and naf-window exponentiations and multiplications
-
-#define FP_EXP_SLW_WIDTH 		4
-#define FP_EXP_SLW_TBL_SZ   	(1 << (FP_EXP_SLW_WIDTH-1))
-
-#define EC_MUL_NAFW_WIDTH		4
-#define EC_MUL_NAFW_TBL_SZ		((1 << (EC_MUL_NAFW_WIDTH-1))-1)
 
 #endif /* CONFIG_H_ */

@@ -226,6 +226,7 @@ CMakeFiles/ecfp2_hdl.dir/src/param.c.o: ../src/param.c
 
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/arch.h
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/config.h
+CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/hash/sha1.h
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../include/types.h
 CMakeFiles/ecfp2_hdl.dir/src/rand.c.o: ../src/rand.c
 

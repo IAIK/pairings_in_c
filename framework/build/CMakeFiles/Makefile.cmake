@@ -50,7 +50,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ibe_demo.dir/DependInfo.cmake"
   "CMakeFiles/pairing_demo.dir/DependInfo.cmake"
   "CMakeFiles/sdh_zk_demo.dir/DependInfo.cmake"
-  "CMakeFiles/test_bbkem.dir/DependInfo.cmake"
   "CMakeFiles/test_bigint.dir/DependInfo.cmake"
   "CMakeFiles/test_ecfp.dir/DependInfo.cmake"
   "CMakeFiles/test_ecfp2.dir/DependInfo.cmake"
