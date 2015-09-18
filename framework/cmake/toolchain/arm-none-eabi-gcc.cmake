@@ -1,9 +1,5 @@
-# to compile with this toolchain call cmake like this
-# e.g.: cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain/arm-none-eabi-gcc.cmake ..
-
 # some basic configurations for the target platform
 SET(CPU   cortex-m0    CACHE STRING "Device name for the compiler and tools (e.g.: cortex-m0)")
-
 
 INCLUDE(CMakeForceCompiler)
 
@@ -26,15 +22,11 @@ SET(ARCHITECTURE "ARCH_CORTEXM0"
 SET(ASM_ARCH_DIR "cortexm0/asm"
   CACHE STRING "Name of the folder with the ASM optimizations." FORCE)
 
-# extend the compile flags with the needed parameters
+# extend the compile flags with parameters to obtain small code size
 SET(ARCHITECTURE_ASM_FLAGS    "-mcpu=${CPU} -mthumb -ffunction-sections -fdata-sections")
 SET(ARCHITECTURE_C_FLAGS      "-mcpu=${CPU} -mthumb -ffunction-sections -fdata-sections")
 SET(ARCHITECTURE_CXX_FLAGS    "-mcpu=${CPU} -mthumb -ffunction-sections -fdata-sections")
 SET(ARCHITECTURE_LINKER_FLAGS "-mcpu=${CPU} -mthumb -Wl,-static -u _sbrk -Wl,-gc-sections -Wl,-lnosys -Wl,-T../linker/cortexm0.ld -nostartfiles --specs=nano.specs")
-# SET(ARCHITECTURE_LINKER_FLAGS "-mcpu=${CPU} -mthumb -Wl,-static -Wl,-gc-sections -Wl,-Tsrc/arch/arm_cortex_m0_gcc/cm0.ld --specs=nano.specs")
 
 # startup code for cortex m0
 SET(ARCHITECTURE_C_SOURCES    "../src/cortexm0/startup.c")
-
-# -Wl,--start-group -lc -lm -lnosys -Wl,--end-group
-#-u _printf_float -u _scanf_float 
