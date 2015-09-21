@@ -23,10 +23,9 @@ Optional:
 
 ## Building
 
-The library can be built like any other cmake project with the following commands:
+The library in the subdirectory `framework` can be built like any other cmake project with the following commands:
 
 ~~~ 
-$ cd framework
 $ mkdir <build-directory>
 $ cd <build-directory>
 $ cmake [cmake-options] <source-directory>
@@ -38,18 +37,19 @@ The `cmake-options` are of the form `-D<option>=<value>` and are optional.
 Selection of cmake-options:
 
 * `ARCHITECTURE`: The target architecture. (default: `ARCH_X86`)
-* `CMAKE_BUILD_TYPE`: The desired build type (`Debug`, `Release`, `MinSizeRel`, ...; default: `MinSizeRel`)
+* `BENCHMARK_SRC`: The time source for benchmarks. (`BM_CYCLE`, `BM_CLOCK`)
+* `CMAKE_BUILD_TYPE`: The desired build type. (`Debug`, `Release`, `MinSizeRel`, ...; default: `MinSizeRel`)
 * `CMAKE_TOOLCHAIN_FILE`: Path to the toolchain file for cross compilation. (examples can be found under `cmake/toolchain`)
 * `CMAKE_INSTALL_PREFIX`: Path to the desired installation root.
 * `TEST_COVERAGE`: Build library with profiling information to enable test coverage generation. (`ON`, `OFF`)
 * `INSTALL_DOXYGEN`: Include the doxygen documentation when installing/packaging. (`ON`, `OFF`)
 
-When no target-name is specified then the default target, the library itself, is built.
+If no target name is specified for make, the default target, the library itself, is built.
 
 Selection of target-names:
 
 * `suite`: Build the test applications.
-* `test_X`: Run test `X` to verify output.
+* `test_X`: Build test `X` to verify output.
 * `coverage`: Run the all tests and generate a coverage report. (requires `TEST_COVERAGE=ON`)
 * `doxygen`: Generate the doxygen documentation into the build directory.
 * `package`: Build the library and package the result including headers for distribution.
@@ -83,6 +83,10 @@ $ out/bin/demo-application
 ## Usage
 
 Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same `ARCHITECTURE` preprocessor definition as during compilation of the library.
+
+## Benchmark
+
+The subdirectory `benchmark` contains a simple application that allows to benchmark the operations at each arithmetic layer. Depending on the target platform, either the number of consumed clock cycles or the required amount of time is obtained. This already has to be considered during build configuration and thus the `BENCHMARK_SRC` has to be passed to cmake appropriately.
 
 ## Further Reading
 
