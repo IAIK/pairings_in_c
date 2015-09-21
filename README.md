@@ -106,8 +106,8 @@ Custom Commercial License or GPLv3 License.
 
 ## References
 
-[1] Boneh, Dan, and Xavier Boyen. "Secure identity based encryption without random oracles." Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.
-[2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. "Short group signatures." Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.
-[3] Hwang, Jung Yeon, et al. "Short group signatures with controllable linkability." Lightweight Security & Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.
-[4] Unterluggauer, Thomas, and Erich Wenger. "Efficient pairings and ECC for embedded systems." Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.
+* [1] Boneh, Dan, and Xavier Boyen. "Secure identity based encryption without random oracles." Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.
+* [2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. "Short group signatures." Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.
+* [3] Hwang, Jung Yeon, et al. "Short group signatures with controllable linkability." Lightweight Security & Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.
+* [4] Unterluggauer, Thomas, and Erich Wenger. "Efficient pairings and ECC for embedded systems." Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.
 
