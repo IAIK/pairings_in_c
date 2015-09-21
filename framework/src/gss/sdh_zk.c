@@ -32,16 +32,17 @@
 **
 ****************************************************************************/
 
-#include "sdh/sdh_zk.h"
+#include "gss/sdh_zk.h"
 #include "bigint/bi.h"
 #include "fp/fp.h"
 #include "ec/ec.h"
 #include "fp/fp12.h"
 #include "pbc/pbc.h"
 #include "hash/hashing.h"
+#include "hash/hash_function.h"
 
 /**
- * Generates the keys according to the scheme of short group signature.
+ * Generates the keys according to the scheme of short group signature by BBS.
  *
  * @param number_of_members  [in]   number of secret keys that should be generated.
  * @param gpk                [out]  public key of sgs scheme.
@@ -54,8 +55,8 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
 {
   bigint_t inv_1, inv_2, gamma, bi_tmp, k;
 
-  ecfp_copy_std(&gpk->g1, &ECFP_GENERATOR);
-  ecfp2_copy_std(&gpk->g2, &ECFP2_GENERATOR);
+  ecfp_copy_std(&gpk->g1, (const ecfp_pt)&ECFP_GENERATOR);
+  ecfp2_copy_std(&gpk->g2, (const ecfp2_pt)&ECFP2_GENERATOR);
 
   do {
     cprng_get_bytes(k, BI_BYTES); fp_rdc_n(k);
@@ -115,7 +116,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
 }
 
 /**
- * Generates a signature according to the scheme of short group signature.
+ * Generates a signature according to the scheme of short group signature by BBS.
  *
  * @param gpk        [in]  public key of sgs scheme.
  * @param gsk        [in]  user secret key to generate a valid signature.
@@ -243,7 +244,7 @@ void sgs_sign(group_public_key gpk, group_secret_key gsk, sdh_signiture *sig, co
   hash_update_G1(&state, &R_2);
 
   // hash R3
-  hash_update_GT(&state, R_3);
+  hash_update_GT(&state, (const fp4_t*)R_3);
 
   // hash R4
   hash_update_G1(&state, &R_4);
@@ -279,7 +280,7 @@ void sgs_sign(group_public_key gpk, group_secret_key gsk, sdh_signiture *sig, co
 }
 
 /**
- * Verifies a signature according to the scheme of short group signature.
+ * Verifies a signature according to the scheme of short group signatureb by BBS.
  *
  * @param gpk        [in]  public key of sgs scheme.
  * @param sig        [in]  computed signature.
@@ -324,7 +325,7 @@ sbyte sgs_verify(group_public_key gpk, sdh_signiture sig, const char *message) {
   bi_add(bi_tmp, bi_tmp, bi_tmp1); fp_rdc_n(bi_tmp);
   ecfp_mul(&G1_tmp2, &gpk.h, bi_tmp);
   pbc_map_opt_ate(GT_tmp2, &G1_tmp2, &gpk.w);
-  fp12_mul_std(GT_tmp3, GT_tmp1, GT_tmp2);
+  fp12_mul_std(GT_tmp3, (const fp4_t*)GT_tmp1, (const fp4_t*)GT_tmp2);
 
   ecfp_mul(&G1_tmp1, &sig.T_3, sig.c);
   ecfp_mul(&G1_tmp2, &gpk.g1, sig.c);
@@ -332,11 +333,11 @@ sbyte sgs_verify(group_public_key gpk, sdh_signiture sig, const char *message) {
   pbc_map_opt_ate(GT_tmp1, &G1_tmp1, &gpk.w);
 
   pbc_map_opt_ate(GT_tmp2, &G1_tmp2, &gpk.g2);
-  fp12_inv(GT_tmp2, GT_tmp2);
+  fp12_inv(GT_tmp2, (const fp4_t*)GT_tmp2);
 
-  fp12_mul_std(GT_tmp2, GT_tmp1, GT_tmp2);
+  fp12_mul_std(GT_tmp2, (const fp4_t*)GT_tmp1, (const fp4_t*)GT_tmp2);
 
-  fp12_mul_std(R_3, GT_tmp3, GT_tmp2);
+  fp12_mul_std(R_3, (const fp4_t*)GT_tmp3, (const fp4_t*)GT_tmp2);
 
   // R4
   bi_subtract(bi_tmp, EC_PARAM_N, sig.s_delta1);
@@ -371,7 +372,7 @@ sbyte sgs_verify(group_public_key gpk, sdh_signiture sig, const char *message) {
   hash_update_G1(&state, &R_2);
 
   // hash R3
-  hash_update_GT(&state, R_3);
+  hash_update_GT(&state, (const fp4_t*)R_3);
 
   // hash R4
   hash_update_G1(&state, &R_4);

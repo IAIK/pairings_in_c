@@ -54,6 +54,16 @@ typedef struct {
 	ecpoint_fp2 d1;
 } bbkem_pk;
 
+typedef struct {
+	fp_t alpha;
+	fp_t beta;
+	fp_t gamma;
+} bbkem_msk;
+
+void generate_params(bbkem_msk *msk, bbkem_public *params);
+
+void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, const char *id);
+
 /**
  * Generates and encapsulates a 128-bit key based on the BB1-KEM scheme
  * as proposed in the IEEE P1363.3 draft standard.
@@ -61,7 +71,7 @@ typedef struct {
  * @param cipher	[out] ciphertext that encapsulates the key
  * @param id		[in]  id of the party that the cipher is destined for
  */
-void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id);
+void encapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, const char *id);
 
 /**
  * Decapsulates the key that is contained by the ciphertext. This process is based
@@ -71,6 +81,6 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id);
  * @param cipher	[in]  ciphertext that encapsulates the key
  * @param id		[in]  the id of the party that the cipher is destined for
  */
-void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id);
+void decapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, bbkem_pk *upk);
 
 #endif /* BBKEM_H_ */

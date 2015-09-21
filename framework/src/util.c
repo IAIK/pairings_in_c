@@ -56,7 +56,7 @@ const char hex_lookup[] = {'0', '1', '2', '3',
  */
 void print(const char *msg) {
 #if (ARCHITECTURE == ARCH_X86 || ARCHITECTURE == ARCH_X86_64)
-	printf(msg);
+	printf("%s", msg);
 	fflush(stdout);
 #elif (ARCHITECTURE == ARCH_CORTEXM0)
 	byte *uart = (byte*) UART_BASE;

@@ -45,4 +45,38 @@ int compare_bytes(const byte *a, const byte* b, const length_t len);
 
 unsigned long long get_cycles(void);
 
+/** Print a bigint_t variable. */
+#define PRINT_BIGINT(TAG, num) \
+          print(TAG); print_value(num, BI_WORDS); print("\n");
+
+/** Print an element in \mathbb{G}_1. */
+#define PRINT_G1(TAG, g1) \
+          print(TAG); print("\n"); \
+          print("   x: "); print_value(g1.x, FP_WORDS); print("\n"); \
+          print("   y: "); print_value(g1.y, FP_WORDS); print("\n");
+
+/** Print an element in \mathbb{G}_2. */
+#define PRINT_G2(TAG, g2) \
+          print(TAG); print("\n"); \
+          print("   x[0]: "); print_value(g2.x[0], FP_WORDS); print("\n"); \
+          print("   x[1]: "); print_value(g2.x[1], FP_WORDS); print("\n"); \
+          print("   y[0]: "); print_value(g2.y[0], FP_WORDS); print("\n"); \
+          print("   y[1]: "); print_value(g2.y[1], FP_WORDS); print("\n");
+
+/** Print an element in \mathbb{G}_T. */
+#define PRINT_GT(TAG, gt) \
+         print(TAG); print("\n"); \
+         print("   0 0 0 "); print_value(gt[0][0][0], FP_WORDS); print("\n"); \
+         print("   0 0 1 "); print_value(gt[0][0][1], FP_WORDS); print("\n"); \
+         print("   0 1 0 "); print_value(gt[0][1][0], FP_WORDS); print("\n"); \
+         print("   0 1 1 "); print_value(gt[0][1][1], FP_WORDS); print("\n"); \
+         print("   1 0 0 "); print_value(gt[1][0][0], FP_WORDS); print("\n"); \
+         print("   1 0 1 "); print_value(gt[1][0][1], FP_WORDS); print("\n"); \
+         print("   1 1 0 "); print_value(gt[1][1][0], FP_WORDS); print("\n"); \
+         print("   1 1 1 "); print_value(gt[1][1][1], FP_WORDS); print("\n"); \
+         print("   2 0 0 "); print_value(gt[2][0][0], FP_WORDS); print("\n"); \
+         print("   2 0 1 "); print_value(gt[2][0][1], FP_WORDS); print("\n"); \
+         print("   2 1 0 "); print_value(gt[2][1][0], FP_WORDS); print("\n"); \
+         print("   2 1 1 "); print_value(gt[2][1][1], FP_WORDS); print("\n"); \
+
 #endif /* UTIL_H_ */

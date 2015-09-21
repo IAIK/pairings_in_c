@@ -33,7 +33,7 @@
 ****************************************************************************/
 #include "hash/hashing.h"
 #include "types.h"
-#include "sdh/sdh_zk.h"
+#include "gss/sdh_zk.h"
 #include "bigint/bi.h"
 #include <string.h>
 

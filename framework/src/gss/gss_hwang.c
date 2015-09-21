@@ -44,6 +44,8 @@
 #include "hash/hash_function.h"
 #include <string.h>
 
+#define DEBUG_PRINT 1
+
 /**
  * Generates a signature according to the scheme of HWANG.
  * @param sig    [out] computed signature.
@@ -255,8 +257,8 @@ void hwang_init_parameters(hwang_public_parameters_ptr data)
 #if DEBUG_PRINT == 1
   print("\n\n// -------------- Parameters/GPK --------------\n");
   PRINT_G1("GPK_g", data->g);
-  PRINT_G1("GPK_h1", data->h1);
-  PRINT_G1("GPK_h_theta", data->h_theta);
+  PRINT_G2("GPK_h1", data->h1);
+  PRINT_G2("GPK_h_theta", data->h_theta);
   PRINT_G1("GPK_g1", data->g1);
   PRINT_G1("GPK_g2", data->g2);
   PRINT_G1("GPK_u", data->u);
@@ -374,11 +376,11 @@ sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
   ecfp_mul(&g1_tmp1, &data->w, bi_tmp);
   ecfp_mul(&g1_tmp2, &data->g2, sig->s_y);
   pbc_map_opt_ate_mul(gt_tmp2, &g1_tmp1, &data->h1, &g1_tmp2, &data->h1);
-  fp12_mul_std(gt_tmp3, gt_tmp1, gt_tmp2);
+  fp12_mul_std(gt_tmp3, (const fp4_t*)gt_tmp1, (const fp4_t*)gt_tmp2);
 
   pbc_map_opt_ate_div(gt_tmp1, &sig->D_2, &data->h_theta, &data->g1, &data->h1);
-  fp12_exp_std(gt_tmp2, gt_tmp1, sig->c);
-  fp12_mul_std(R_2, gt_tmp3, gt_tmp2);
+  fp12_exp_std(gt_tmp2, (const fp4_t*)gt_tmp1, sig->c);
+  fp12_mul_std(R_2, (const fp4_t*)gt_tmp3, (const fp4_t*)gt_tmp2);
 
 #if DEBUG_PRINT == 1
   PRINT_GT("[verify] R_2:", R_2);

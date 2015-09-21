@@ -41,9 +41,53 @@
 #include "hash/hashing.h"
 #include "pbc/pbc.h"
 #include "bigint/bi.h"
+#include "util.h"
 
-extern const bbkem_pk BB1_PK;
-extern const bbkem_public BB1_PUBLIC;
+void generate_params(bbkem_msk *msk, bbkem_public *params)
+{
+	ecpoint_fp2 q;
+
+	print("prime:"); print_value(PRIME_P, BI_WORDS); print("\n");
+
+	do {
+		cprng_get_bytes(msk->alpha, BI_BYTES); fp_rdc_n(msk->alpha);
+	} while (bi_compare(msk->alpha, bi_zero) == 0);
+
+	do {
+		cprng_get_bytes(msk->beta, BI_BYTES); fp_rdc_n(msk->beta);
+	} while (bi_compare(msk->beta, bi_zero) == 0);
+
+	do {
+		cprng_get_bytes(msk->gamma, BI_BYTES); fp_rdc_n(msk->gamma);
+	} while (bi_compare(msk->gamma, bi_zero) == 0);
+
+	ecfp_mul(&(params->g1), (const ecfp_pt)&ECFP_GENERATOR, msk->alpha);
+	ecfp_mul(&(params->g3), (const ecfp_pt)&ECFP_GENERATOR, msk->gamma);
+
+	ecfp2_mul(&q, (const ecfp2_pt)&ECFP2_GENERATOR, msk->beta);
+	pbc_map_opt_ate(params->v0, &(params->g1), &q);
+}
+
+void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, const char *id)
+{
+	bigint_t id_bi;
+	fp_t r, k;
+
+	do {
+		cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
+	} while (bi_compare(r, bi_zero) == 0);
+
+	ecfp2_mul(&(upk->d1), (const ecfp2_pt)&ECFP2_GENERATOR, r);
+
+	hash_id(id_bi, id);
+
+	fp_mul_barett_var(k, id_bi, msk->alpha, EC_PARAM_N, EC_PARAM_MU_N);
+	fp_add_var(k, k, msk->gamma, EC_PARAM_N);
+	fp_mul_barett_var(k, k, r, EC_PARAM_N, EC_PARAM_MU_N);
+	fp_mul_barett_var(r, msk->alpha, msk->beta, EC_PARAM_N, EC_PARAM_MU_N);
+	fp_add_var(k, k, r, EC_PARAM_N);
+	ecfp2_mul(&(upk->d0), (const ecfp2_pt)&ECFP2_GENERATOR, k);
+}
 
 /**
  * Encapsulation routine of the BB1 IBE KEM. Uses the recipient's identity
@@ -53,14 +97,14 @@ extern const bbkem_public BB1_PUBLIC;
  * @param cipher	the resulting ciphertext
  * @param id		the identity string of the recipient
  */
-void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
+void encapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, const char *id) {
 	bigint_t s, factor, id_bi;
 	ecpoint_fp p;
 	fp12_t k;
 
 	cprng_get_bytes(s, BI_BYTES);
 
-	fp_rdc_n(s);		                          // reduce random number s by group order (constant time!)
+	fp_rdc_n(s); // reduce random number s by group order (constant time!)
 
 	hash_id(id_bi, id);
 
@@ -68,15 +112,14 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 	fp_mul_barett_var(factor, id_bi, s, EC_PARAM_N, EC_PARAM_MU_N);
 
 	// s*g3 + factor*g1 ... => interleaved calculation?
-	ecfp_mul(&(cipher->c1), (const ecfp_pt) &(BB1_PUBLIC.g3), s);
+	ecfp_mul(&(cipher->c1), (const ecfp_pt) &(params->g3), s);
 
-	ecfp_mul(&(cipher->c0), (const ecfp_pt) &(BB1_PUBLIC.g1), factor);
+	ecfp_mul(&(cipher->c0), (const ecfp_pt) &(params->g1), factor);
 	ecfp_add_affine(&(cipher->c1), &(cipher->c1), &(cipher->c0));
 
-	ecfp_mul(&(cipher->c0), (const ecfp_pt) &(BB1_PUBLIC.g), s);
+	ecfp_mul(&(cipher->c0), (const ecfp_pt) &ECFP_GENERATOR, s);
 
-	fp12_exp_cyclotomic(k, BB1_PUBLIC.v0, s);	// precompute v0^(bits/2) and interleave?
-
+	fp12_exp_cyclotomic(k, (const fp4_t*)params->v0, s);
 #ifdef MONTGOMERY_ARITHMETIC
 	ecfp_from_montgomery(&(cipher->c0), &(cipher->c0));
 	ecfp_from_montgomery(&(cipher->c1), &(cipher->c1));
@@ -96,7 +139,7 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
  * @param cipher	the ciphertext to be decrypted
  * @param id		the identity string used
  */
-void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
+void decapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, bbkem_pk *upk) {
 	fp12_t p_res;
 
 #ifdef MONTGOMERY_ARITHMETIC
@@ -105,10 +148,10 @@ void decapsulate_key(byte *key, bbkem_ciphertext *cipher, const char *id) {
 	ecfp_to_montgomery(&c0, &(cipher->c0));
 	ecfp_to_montgomery(&c1, &(cipher->c1));
 	ecfp_neg_affine(&c1);
-	pbc_map_opt_ate_mul(p_res, &c0, &(BB1_PK.d0), &c1, &(BB1_PK.d1));
+	pbc_map_opt_ate_mul(p_res, &c0, &(upk->d0), &c1, &(upk->d1));
 	fp12_from_montgomery(p_res, (const fp4_t*) p_res);
 #else
-	pbc_map_opt_ate_div(p_res, &(cipher->c0), &(BB1_PK.d0), &(cipher->c1), &(BB1_PK.d1));
+	pbc_map_opt_ate_div(p_res, &(cipher->c0), &(upk->d0), &(cipher->c1), &(upk->d1));
 #endif
 
 	hash_key(key, p_res);

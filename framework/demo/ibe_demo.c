@@ -33,13 +33,37 @@
 ****************************************************************************/
 
 #include "ibe/bbkem.h"
+#include "rand.h"
+#include "util.h"
 
 int main(void) {
 	byte key1[16], key2[16];
-	bbkem_ciphertext cipher;
-	const char *id = "cm0 in public";
+	bbkem_ciphertext ct;
+	bbkem_public params;
+	bbkem_msk msk;
+	bbkem_pk upk;
+	const char *id = "Bob";
 
-	encapsulate_key(key1, &cipher, id);
+	cprng_get_bytes(key1, 16);
 
-	decapsulate_key(key2, &cipher, id);
+	generate_params(&msk, &params);
+
+	print("Generating parameters...\n");
+
+	derive_private_key(&upk, &msk, &params, id);
+
+	print("Group Private Key: \n");
+	PRINT_G2("d0: ", upk.d0);
+	PRINT_G2("d1: ", upk.d1);
+
+	encapsulate_key(key1, &ct, &params, id);
+
+	print("Generated symmetric key: \n");
+	print("k: "); print_bytes(key1, 16); print("\n");
+	print("Ciphertext: \n");
+	PRINT_G1("c0:", ct.c0);
+	PRINT_G1("c1:", ct.c1);
+
+	decapsulate_key(key2, &ct, &params, &upk);
+	print("Restored symmetric key: "); print_bytes(key2, 16); print("\n");
 }

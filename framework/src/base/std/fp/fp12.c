@@ -501,7 +501,7 @@ void fp12_mul_tk3_std(fp12_t res, const fp12_t a, const fp12_t b) {
  */
 void fp12_exp_cyclotomic_masked_std(fp12_t res, const fp12_t a, const bigint_t b) {
 	int i = 0;
-	word_t mask;
+	long mask;
 	fp4_t *ptr;
 	fp12_t tmp;
 
@@ -514,8 +514,8 @@ void fp12_exp_cyclotomic_masked_std(fp12_t res, const fp12_t a, const bigint_t b
 
 	for (i = bi_get_msb(b); i >= 0; i--) {
 		fp12_sqr_cyclotomic(res, (const fp4_t*) res);
-		mask = (word_t) (-bi_test_bit(b, i));
-		ptr = (fp4_t*)(((word_t)res & mask)  | ((word_t)tmp & (~mask)));
+		mask = (long) (-bi_test_bit(b, i));
+		ptr = (fp4_t*)(((long)res & mask)  | ((long)tmp & (~mask)));
 		fp12_mul(ptr, (const fp4_t*) res, (const fp4_t*) a);
 	}
 }
@@ -627,7 +627,7 @@ void fp12_exp_masked_std(fp12_t res, const fp12_t a, const bigint_t b) {
 	int i = 0;
 	fp12_t tmp;
 	fp4_t *ptr;
-	word_t mask;
+	long mask;
 
 	// init one
 	fp4_clear(res[2]);
@@ -638,8 +638,8 @@ void fp12_exp_masked_std(fp12_t res, const fp12_t a, const bigint_t b) {
 
 	for (i = bi_get_msb(b); i >= 0; i--) {
 		fp12_sqr(res, (const fp4_t*) res);
-		mask = (word_t) (-bi_test_bit(b, i));
-		ptr = (fp4_t*)(((word_t)res & mask)  | ((word_t)tmp & (~mask)));
+		mask = (long) (-bi_test_bit(b, i));
+		ptr = (fp4_t*)(((long)res & mask)  | ((long)tmp & (~mask)));
 		fp12_mul(ptr, (const fp4_t*) res, (const fp4_t*) a);
 	}
 }
