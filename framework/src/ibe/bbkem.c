@@ -43,6 +43,12 @@
 #include "bigint/bi.h"
 #include "util.h"
 
+/**
+ * Generation of the master secret key and the public parameters
+ * for the BB1 IBE key encapsulation mechanism.
+ * @param msk the master secret key
+ * @param params the public parameters
+ */
 void generate_params(bbkem_msk *msk, bbkem_public *params)
 {
 	ecpoint_fp2 q;
@@ -68,6 +74,15 @@ void generate_params(bbkem_msk *msk, bbkem_public *params)
 	pbc_map_opt_ate(params->v0, &(params->g1), &q);
 }
 
+/**
+ * Derives a user private key to be used in the BB1 IBE key encapsulation
+ * mechanism from the master secret key, the public parameters, and the
+ * identity string.
+ * @param upk the generated user private key
+ * @param msk the master secret key
+ * @param params the public parameters
+ * @param id the identity string
+ */
 void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, const char *id)
 {
 	bigint_t id_bi;

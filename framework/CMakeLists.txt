@@ -30,7 +30,7 @@ IF(NOT BENCHMARK_SRC)
   CACHE STRING "BM_CYCLE, BM_CLOCK" FORCE)
 ENDIF(NOT BENCHMARK_SRC)
 
-SET(DOXYGEN_CONFIG_IN_FILE "${PROJECT_SOURCE_DIR}/doc/template.doxy.in")
+SET(DOXYGEN_CONFIG_IN_FILE "${PROJECT_SOURCE_DIR}/template.doxy.in")
 
 #------------------------------------------------------------------------------
 # Compiler Flags 
