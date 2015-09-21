@@ -54,6 +54,5 @@ var searchData=
   ['ecfp_5fto_5fmontgomery_5fstd',['ecfp_to_montgomery_std',['../db/da0/ecfp_8c.html#a35b8756864ba88317fe673a6cd010276',1,'ecfp.c']]],
   ['ecfp_5fverify_5fcoordinates',['ecfp_verify_coordinates',['../db/da0/ecfp_8c.html#a7d1b5f74119df68584d6165646bf020d',1,'ecfp.c']]],
   ['ecfp_5fverify_5fhomogeneous_5fprojective_5fcoordinates',['ecfp_verify_homogeneous_projective_coordinates',['../db/da0/ecfp_8c.html#ad09c7aa0d75bda25e29b38a56418a235',1,'ecfp.c']]],
-  ['encapsulate_5fkey',['encapsulate_key',['../d6/d38/bbkem_8c.html#aaaf49dd7f219d72807300faed6d4f100',1,'bbkem.c']]],
-  ['experiment_2ec',['experiment.c',['../d4/d7d/experiment_8c.html',1,'']]]
+  ['encapsulate_5fkey',['encapsulate_key',['../d6/d38/bbkem_8c.html#aaaf49dd7f219d72807300faed6d4f100',1,'bbkem.c']]]
 ];

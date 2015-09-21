@@ -1,6 +1,6 @@
 # Pairings in C
 
-The repository contains a C library for pairing-based cryptography. The library was part of the results published at CHES 2014 [4].
+This repository contains a C library for pairing-based cryptography which was part of results published at CHES 2014 [4].
 
 [![Build Status](https://travis-ci.org/IAIK/pairings_in_c.svg?branch=external_use)](https://travis-ci.org/IAIK/pairings_in_c)
 [![Coverage Status](https://coveralls.io/repos/IAIK/pairings_in_c/badge.svg?branch=external_use)](https://coveralls.io/r/IAIK/pairings_in_c?branch=develop)
@@ -10,6 +10,13 @@ The repository contains a C library for pairing-based cryptography. The library 
 * `android_demo`: A demo application for pairing-based group signatures.
 * `doc`: Documentation for the pairing library and the demo application.
 * `framework`: The source files for the pairing library.
+  * `benchmark`: Contains an application for benchmarking the library.
+  * `cmake`: CMake configuration files.
+  * `demo`: Applications showing the versatility of the pairing library.
+  * `include`: Header files of the pairing library.
+  * `linker`: Linker scripts.
+  * `src`: Source files of the pairing library.
+  * `test`: Applications containing test vectors for each arithmetic layer of the library.
 
 ## Build Requirements
 
@@ -80,6 +87,12 @@ $ make <demo-application>
 $ out/bin/demo-application
 ~~~
 
+## Android Demo
+
+The Android demo implements the group signature scheme by Boneh et al [2]. It uses the android-ndk to delegate the group signature operations to native C code built upon our library and to transfer the data involved in the group signature operations via the Java Native Interface (JNI). The native code provides both the sign and verify operations and is supplied with the secret group credentials from the Java code. 
+
+The application can be started in either signer or verifier mode. The signer obtains a signature for a specific message from our library using JNI and transmits the resulting signature to the verifier using Near Field Communication (NFC). The generated signatures are transferred via NFC to a device running the application as a verifier. The verifier receiving the anonymous group signature then checks its validity. However, for demonstration purposes it also implements the opening feature that usually is only available to the group manager, allowing to reveal the signer's identity.
+
 ## Usage
 
 Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same `ARCHITECTURE` preprocessor definition as during compilation of the library.
@@ -106,8 +119,13 @@ Custom Commercial License or GPLv3 License.
 
 ## References
 
-* [1] Boneh, Dan, and Xavier Boyen. "Secure identity based encryption without random oracles." Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.
-* [2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. "Short group signatures." Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.
-* [3] Hwang, Jung Yeon, et al. "Short group signatures with controllable linkability." Lightweight Security & Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.
-* [4] Unterluggauer, Thomas, and Erich Wenger. "Efficient pairings and ECC for embedded systems." Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.
+[1] Boneh, Dan, and Xavier Boyen. "Secure identity based encryption without random oracles." Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.
+  
+[2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. "Short group signatures." Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.
+  
+[3] Hwang, Jung Yeon, et al. "Short group signatures with controllable linkability." Lightweight Security & Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.
+  
+[4] Unterluggauer, Thomas, and Erich Wenger. "Efficient pairings and ECC for embedded systems." Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.
+  
+
 
