@@ -1,0 +1,27 @@
+var bi_8c =
+[
+    [ "bi_add_carry_var_std", "d6/df9/bi_8c.html#ad199fd67684859c3f5a106b99e6211d8", null ],
+    [ "bi_add_var_std", "d6/df9/bi_8c.html#aaf932a213e27cd20fba2358aa46a1114", null ],
+    [ "bi_add_word_var_std", "d6/df9/bi_8c.html#afb065e889c57553459521975a8d71eeb", null ],
+    [ "bi_clear_var_std", "d6/df9/bi_8c.html#ab8f4e154c6cf109a174045d738f8e926", null ],
+    [ "bi_compare_var_std", "d6/df9/bi_8c.html#af3fd5b2e4ba367afd30f10b03413bf4b", null ],
+    [ "bi_compare_vl_std", "d6/df9/bi_8c.html#aa0d41e5b08ad4db2f52172e218070c68", null ],
+    [ "bi_copy_var_std", "d6/df9/bi_8c.html#a4abe007654e9cfe32edab93a43dc97fc", null ],
+    [ "bi_div3_var_std", "d6/df9/bi_8c.html#a16b1d17fe4a67b4457a8ce31fc31cf1f", null ],
+    [ "bi_get_byte_var_std", "d6/df9/bi_8c.html#a436b9d7a754277e553b6cf836330d30e", null ],
+    [ "bi_get_msb_var_std", "d6/df9/bi_8c.html#afa1c8fddc51c53b112a79b8ea71d4a1f", null ],
+    [ "bi_get_nafb_std", "d6/df9/bi_8c.html#a47e9a9efc6cf8044c65a664c539a7fe1", null ],
+    [ "bi_multiply_var_std", "d6/df9/bi_8c.html#a675a571527982debd654a1f1cc1ecf9f", null ],
+    [ "bi_multiply_word_var_std", "d6/df9/bi_8c.html#a2dadd8872caea962f9d439a3a390dd84", null ],
+    [ "bi_negate_var_std", "d6/df9/bi_8c.html#ab889cf3ebd4fdde3861c455ef126f56e", null ],
+    [ "bi_set_bit_var_std", "d6/df9/bi_8c.html#ab9721a6b67568c8411b4a495fdc1b808", null ],
+    [ "bi_set_byte_var_std", "d6/df9/bi_8c.html#a6ecbc36c5e703d2c0dda37736ff2d6b5", null ],
+    [ "bi_shift_left_one_var_std", "d6/df9/bi_8c.html#a0acbebc0971af6906ae0544a7b1cc5cf", null ],
+    [ "bi_shift_right_one_var_std", "d6/df9/bi_8c.html#a6046ec47d71e30a03efe1418cea6be09", null ],
+    [ "bi_shift_right_var_std", "d6/df9/bi_8c.html#ad5c2b7db053a13be0cad8d1dd35393c4", null ],
+    [ "bi_subtract_var_std", "d6/df9/bi_8c.html#a6f12c7326292227d8788ebd51d53be11", null ],
+    [ "bi_subtract_vl_std", "d6/df9/bi_8c.html#a8045740b6f35dd53588e2d10f873a40c", null ],
+    [ "bi_subtract_word_var_std", "d6/df9/bi_8c.html#aced3e1ee5a515797ae7cfe6c9b0bd03f", null ],
+    [ "bi_test_bit_var_std", "d6/df9/bi_8c.html#a5aeb7985ba5b5e863b4f618f83976598", null ],
+    [ "bi_xor_var_std", "d6/df9/bi_8c.html#a8e8316ef6b78615b75ea1b667ef23f8d", null ]
+];

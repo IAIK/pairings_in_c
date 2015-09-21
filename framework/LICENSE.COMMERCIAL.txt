@@ -1,0 +1,6 @@
+COMMERCIAL LICENSE
+Version 0.1, 23 October 2014
+
+This file is a placeholder for the custom-made commercial license you (the licensee) and 
+Stiftung Secure Information and Communication Technologies SIC agree upon. For further 
+information contact us at http://www.iaik.tugraz.at.
