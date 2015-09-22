@@ -110,6 +110,7 @@ The subdirectory `benchmark` contains a simple application that allows to benchm
 
 * Thomas Unterluggauer (<thomas.unterluggauer@iaik.tugraz.at>)
 * Erich Wenger (<erich.wenger@iaik.tugraz.at>)
+* Raphael Spreitzer (<raphael.spreitzer@iaik.tugraz.at>)
 * Mario Werner (<mario.werner@iaik.tugraz.at>)
 * René Hölbling (<rene.hoelbling@student.tugraz.at>)
 
