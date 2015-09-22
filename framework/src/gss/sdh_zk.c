@@ -87,7 +87,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
 
   // generate w
   ecfp2_mul(&gpk->w, &gpk->g2, gamma);
-
+/*
   print("   h:   "); print_value(&gpk->h.x, BI_WORDS); print("\n");
   print("        "); print_value(&gpk->h.y, BI_WORDS); print("\n");
   print("   u:   "); print_value(&gpk->u.x, BI_WORDS); print("\n");
@@ -98,7 +98,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
   print("        "); print_value(&gpk->w.y, 2*BI_WORDS); print("\n");
   print("   xi1: "); print_value(&gmsk->xi1, BI_WORDS); print("\n");
   print("   xi2: "); print_value(&gmsk->xi2, BI_WORDS); print("\n");
-
+*/
   int i = 0;
   for(i = 0; i < number_of_members; i++) {
     do {
@@ -108,11 +108,12 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
     bi_add(bi_tmp, gamma, (gsk+i)->x); fp_rdc_n(bi_tmp);
     fp_inv_n(inv_1, bi_tmp);
     ecfp_mul((&(gsk+i)->A), &gpk->g1, inv_1);
-
+/*
     print("   x:   "); print_value(&(gsk+i)->x, BI_WORDS); print("\n");
     print("   A:   "); print_value(&(gsk+i)->A.x, BI_WORDS); print("\n");
     print("        "); print_value(&(gsk+i)->A.y, BI_WORDS); print("\n");
-  }
+*/ 
+ }
 }
 
 /**

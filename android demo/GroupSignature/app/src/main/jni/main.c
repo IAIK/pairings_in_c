@@ -4,7 +4,16 @@
 #include "hash/hashing.h"
 #include "bigint/bi.h"
 #include <string.h>
-#include "sdh/sdh_zk.h"
+#include <time.h>
+#include "gss/sdh_zk.h"
+
+#define DEBUG 1
+#if DEBUG
+#include <android/log.h>
+#  define  D(x...)  __android_log_print(ANDROID_LOG_INFO,"Native-Code",x)
+#else
+#  define  D(...)  do {} while (0)
+#endif
 
 /*
  * Class:     iaik_at_groupsignature_MainActivity
@@ -199,7 +208,11 @@ JNIEXPORT jint JNICALL Java_iaik_at_groupsignature_MainActivity_verify
 
     const char *var_a = (char*)(*env)->GetStringUTFChars(env, message, NULL);
     // verify the signature if every structure needed is initialized
+    clock_t t;
+    t = clock();
     sbyte verify = sgs_verify(gpk, sig, var_a);
+    t = clock() - t;
+    D("TIME: %f", ((double)t)/CLOCKS_PER_SEC);
     // return the result
     return verify;
 }
@@ -212,10 +225,14 @@ JNIEXPORT jint JNICALL Java_iaik_at_groupsignature_MainActivity_verify
 JNIEXPORT jobject JNICALL Java_iaik_at_groupsignature_MainActivity_sign
         (JNIEnv *env, jobject obj, jstring message, jobject gpk_object, jobject gsk_object)
 {
+    clock_t t_with_jni;
+    t_with_jni = clock();
+
     group_public_key gpk;
     group_secret_key gsk;
 
     jclass clsTest = (*env)->GetObjectClass(env, gpk_object);
+
 
     // get u_object
     jfieldID fidTest = (*env)->GetFieldID(env, clsTest, "u", "Liaik/at/groupsignature/EcPoint_Fp;");
@@ -357,7 +374,35 @@ JNIEXPORT jobject JNICALL Java_iaik_at_groupsignature_MainActivity_sign
     sdh_signiture sig;
     const char *var_a = (char*)(*env)->GetStringUTFChars(env, message, NULL);
     // after everything is initialized generate the signature
+    clock_t t;
+    t = clock();
     sgs_sign(gpk, gsk, &sig, var_a);
+    t = clock() - t;
+    D("TIME: %f", ((double)t)/CLOCKS_PER_SEC);
+    /*
+    t = clock();
+    sbyte verify = sgs_verify(gpk, sig, var_a);
+    t = clock() - t;
+    D("TIME ver: %f", ((double)t)/CLOCKS_PER_SEC);
+
+    hwang_signing_key sk;
+    hwang_public_parameters parameters;
+    hwang_signature sig_hwang;
+
+    hwang_init_parameters(&parameters);
+
+    hwang_generate_usk(&sk, &parameters);
+
+    t = clock();
+    hwang_sign(&sig_hwang, &parameters, &sk);
+    t = clock() - t;
+    D("TIME hwang: %f", ((double)t)/CLOCKS_PER_SEC);
+
+    t = clock();
+    hwang_verify(&parameters, &sig_hwang);
+    t = clock() - t;
+    D("TIME hwang-ver: %f", ((double)t)/CLOCKS_PER_SEC);
+    */
 
     // get the class for returning the signature (must be equal to the structure in C)
     jclass outCls = (*env)->FindClass(env, "iaik/at/groupsignature/SdhSignature");
@@ -432,6 +477,8 @@ JNIEXPORT jobject JNICALL Java_iaik_at_groupsignature_MainActivity_sign
     fid = (*env)->GetFieldID(env, cls, "infinity", "B");
     (*env)->SetByteField(env, t3_object, fid, sig.T_3.infinity);
     // return result
+    t_with_jni = clock() - t_with_jni;
+    D("TIME in C with JNI: %f", ((double)t_with_jni)/CLOCKS_PER_SEC);
     return jresult;
 }
 

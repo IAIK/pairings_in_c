@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GroupSigniture</string>
+    <string name="app_name">GroupSignature</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -12,11 +12,11 @@
     </string-array>
 
     <string-array name="options">
-        <item>Signature 1</item>
-        <item>Signature 2</item>
-        <item>Signature 3</item>
-        <item>Signature 4</item>
-        <item>Wrong Signature</item>
+        <item>Group secret key 1</item>
+        <item>Group secret key 2</item>
+        <item>Group secret key 3</item>
+        <item>Group secret key 4</item>
+        <item>Wrong Group secret key</item>
         <item>Wrong Message</item>
     </string-array>
     <string name="choose_function">Choose your function:</string>

@@ -6,9 +6,9 @@ C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/obj/local/arm64-
  C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/android/api-level.h \
  C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/malloc.h \
  C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/xlocale.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact-settings.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact-settings.h
+ ../../../../../../framework/include/hash/Keccak-compact-settings.h \
+ ../../../../../../framework/include/hash/Keccak-compact.h \
+ ../../../../../../framework/include/hash/Keccak-compact-settings.h
 
 C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/string.h:
 
@@ -22,8 +22,8 @@ C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm
 
 C:/Users/Work/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/xlocale.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact-settings.h:
+../../../../../../framework/include/hash/Keccak-compact-settings.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact.h:
+../../../../../../framework/include/hash/Keccak-compact.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/hash/Keccak-compact-settings.h:
+../../../../../../framework/include/hash/Keccak-compact-settings.h:

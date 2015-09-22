@@ -183,7 +183,10 @@ public class MainActivity extends AppCompatActivity {
                             if (message.trim().isEmpty()) {
                                 Toast.makeText(v.getContext(), R.string.no_message, Toast.LENGTH_LONG).show();
                             } else {
+                                double t = System.nanoTime();
                                 SdhSignature sig = sign(message, gpk, actualGsk);
+                                t = System.nanoTime() - t;
+                                Log.i("TIME in java",""+t/1000000000.0);
                                 if(isWrongMessage) {
                                     message = message + " some text";
                                 }

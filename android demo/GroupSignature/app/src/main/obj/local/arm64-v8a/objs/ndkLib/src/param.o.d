@@ -1,14 +1,14 @@
 C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/obj/local/arm64-v8a/objs/ndkLib/./src/param.o: \
  C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/./src/param.c \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/param.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/types.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/config.h \
- C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/arch.h
+ ../../../../../../framework/include/param.h \
+ ../../../../../../framework/include/types.h \
+ ../../../../../../framework/include/config.h \
+ ../../../../../../framework/include/arch.h
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/param.h:
+../../../../../../framework/include/param.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/types.h:
+../../../../../../framework/include/types.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/config.h:
+../../../../../../framework/include/config.h:
 
-C:/Users/Work/AndroidStudioProjects/GroupSignature/app/src/main/jni/include/arch.h:
+../../../../../../framework/include/arch.h:
