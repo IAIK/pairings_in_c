@@ -172,6 +172,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>The application can be started in either signer or verifier mode. The signer obtains a signature for a specific message from our library using JNI and transmits the resulting signature to the verifier using Near Field Communication (NFC). The generated signatures are transferred via NFC to a device running the application as a verifier. The verifier receiving the anonymous group signature then checks its validity. However, for demonstration purposes it also implements the opening feature that usually is only available to the group manager, allowing to reveal the signer's identity.</p>
 <h2>Usage</h2>
 <p>Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same <code>ARCHITECTURE</code> preprocessor definition as during compilation of the library.</p>
+<p>The library supports both a 160-bit and a 254-bit elliptic curve and bilinear pairings suitable for these curves. Relevant configurations like the elliptic curve and optimizations to be used can be done in the file <code>framework/include/config.h</code>.</p>
 <h2>Benchmark</h2>
 <p>The subdirectory <code>benchmark</code> contains a simple application that allows to benchmark the operations at each arithmetic layer. Depending on the target platform, either the number of consumed clock cycles or the required amount of time is obtained. This already has to be considered during build configuration and thus the <code>BENCHMARK_SRC</code> has to be passed to cmake appropriately.</p>
 <h2>Further Reading</h2>
@@ -199,7 +200,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 22 2015 07:54:25 for PAIRINGS_IN_C by
+    <li class="footer">Generated on Tue Sep 22 2015 16:56:35 for PAIRINGS_IN_C by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

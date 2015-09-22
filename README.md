@@ -97,6 +97,8 @@ The application can be started in either signer or verifier mode. The signer obt
 
 Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same `ARCHITECTURE` preprocessor definition as during compilation of the library.
 
+The library supports both a 160-bit and a 254-bit elliptic curve and bilinear pairings suitable for these curves. Relevant configurations like the elliptic curve and optimizations to be used can be done in the file `framework/include/config.h`. 
+
 ## Benchmark
 
 The subdirectory `benchmark` contains a simple application that allows to benchmark the operations at each arithmetic layer. Depending on the target platform, either the number of consumed clock cycles or the required amount of time is obtained. This already has to be considered during build configuration and thus the `BENCHMARK_SRC` has to be passed to cmake appropriately.
