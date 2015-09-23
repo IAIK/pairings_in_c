@@ -2,9 +2,6 @@
 
 This repository contains a C library for pairing-based cryptography which was part of results published at CHES 2014 [4].
 
-[![Build Status](https://travis-ci.org/IAIK/pairings_in_c.svg?branch=external_use)](https://travis-ci.org/IAIK/pairings_in_c)
-[![Coverage Status](https://coveralls.io/repos/IAIK/pairings_in_c/badge.svg?branch=external_use)](https://coveralls.io/r/IAIK/pairings_in_c?branch=develop)
-
 ## Directory Structure
 
 * `android_demo`: A demo application for pairing-based group signatures.

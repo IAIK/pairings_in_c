@@ -108,136 +108,133 @@ $(document).ready(function(){initNavTree('d9/dd6/_r_e_a_d_m_e_8md.html','../../'
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;This repository contains a C library <span class="keywordflow">for</span> pairing-based cryptography which was part of results published at CHES 2014 [4].</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[![Build Status](https:<span class="comment">//travis-ci.org/IAIK/pairings_in_c.svg?branch=external_use)](https://travis-ci.org/IAIK/pairings_in_c)</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;[![Coverage Status](https:<span class="comment">//coveralls.io/repos/IAIK/pairings_in_c/badge.svg?branch=external_use)](https://coveralls.io/r/IAIK/pairings_in_c?branch=develop)</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">## Directory Structure</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;* `android_demo`: A demo application <span class="keywordflow">for</span> pairing-based group signatures.</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;* `doc`: Documentation <span class="keywordflow">for</span> the pairing library and the demo application.</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;* `framework`: The source files <span class="keywordflow">for</span> the pairing library.</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  * `benchmark`: Contains an application <span class="keywordflow">for</span> benchmarking the library.</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  * `cmake`: CMake configuration files.</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  * `demo`: Applications showing the versatility of the pairing library.</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  * `include`: Header files of the pairing library.</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  * `linker`: Linker scripts.</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  * `src`: Source files of the pairing library.</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  * `test`: Applications containing test vectors <span class="keywordflow">for each</span> arithmetic layer of the library.</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;## Build Requirements</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;## Directory Structure</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;* `android_demo`: A demo application <span class="keywordflow">for</span> pairing-based group signatures.</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;* `doc`: Documentation <span class="keywordflow">for</span> the pairing library and the demo application.</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;* `framework`: The source files <span class="keywordflow">for</span> the pairing library.</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  * `benchmark`: Contains an application <span class="keywordflow">for</span> benchmarking the library.</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  * `cmake`: CMake configuration files.</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  * `demo`: Applications showing the versatility of the pairing library.</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  * `include`: Header files of the pairing library.</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  * `linker`: Linker scripts.</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  * `src`: Source files of the pairing library.</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  * `test`: Applications containing test vectors <span class="keywordflow">for each</span> arithmetic layer of the library.</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;## Build Requirements</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;* cmake</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;* a C compiler <span class="keywordflow">for</span> the targeted platform</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;* cmake</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;* a C compiler <span class="keywordflow">for</span> the targeted platform</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;Optional:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;Optional:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;* doxygen (<span class="keywordflow">for</span> the code documentation)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;* lcov &amp; genhtml (<span class="keywordflow">for</span> coverage testing)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;* doxygen (<span class="keywordflow">for</span> the code documentation)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;* lcov &amp; genhtml (<span class="keywordflow">for</span> coverage testing)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">## Building</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;The library in the subdirectory `framework` can be built like any other cmake project with the following commands:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;~~~ </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;$ mkdir &lt;build-directory&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;$ cd &lt;build-directory&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;$ cmake [cmake-options] &lt;source-directory&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;$ cmake --build . [--target &lt;target-name&gt;]</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;~~~</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;The `cmake-options` are of the form `-D&lt;option&gt;=&lt;value&gt;` and are optional.</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;Selection of cmake-options:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;* `ARCHITECTURE`: The target architecture. (<span class="keywordflow">default</span>: `ARCH_X86`)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;* `BENCHMARK_SRC`: The time source <span class="keywordflow">for</span> benchmarks. (`BM_CYCLE`, `BM_CLOCK`)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;* `CMAKE_BUILD_TYPE`: The desired build type. (`Debug`, `Release`, `MinSizeRel`, ...; <span class="keywordflow">default</span>: `MinSizeRel`)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;* `CMAKE_TOOLCHAIN_FILE`: Path to the toolchain file <span class="keywordflow">for</span> cross compilation. (examples can be found under `cmake/toolchain`)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;* `CMAKE_INSTALL_PREFIX`: Path to the desired installation root.</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;* `TEST_COVERAGE`: Build library with profiling information to enable test coverage generation. (`ON`, `OFF`)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;* `INSTALL_DOXYGEN`: Include the doxygen documentation when installing/packaging. (`ON`, `OFF`)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;If no target name is specified <span class="keywordflow">for</span> make, the <span class="keywordflow">default</span> target, the library itself, is built.</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;Selection of target-names:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;* `suite`: Build the test applications.</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;* `test_X`: Build test `X` to verify output.</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;* `coverage`: Run the all tests and generate a coverage report. (requires `TEST_COVERAGE=ON`)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;* `doxygen`: Generate the doxygen documentation into the build directory.</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;* `package`: Build the library and package the result including headers <span class="keywordflow">for</span> distribution.</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;* `package_source`: Package the source tree <span class="keywordflow">for</span> distribution.</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;## Testing</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;The library comes with a comprehensive test set created in advance. Each arithmetic layer involved in the pairing computations, i.e., multi-precision integer, prime field, elliptic curves, and pairing arithmetic itself, is tested in a separate test program consisting of test vectors invoked on the library interface. The target `suite` can be used to built these test applications. The tests are then executed via the respective the test programs that <a class="code" href="../../de/df1/util_8c.html#a3ef8f6a8ea3d3304dd22ce582c404bfc">print</a> the test result on the console, e.g.:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;~~~</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;$ &lt;build-directory&gt;/bin/test_fp </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;~~~</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;## Demo Applications</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;The subdirectory `demo` of the library provides a set of simple console demo applications:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;* `gss_hwang_demo`: Group signature scheme by Hwang et al. [3].</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;* `ibe_demo`: Key encapsulation variant of the identity-based encryption scheme by Boneh et al. [1].</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;* `pairing_demo`: Simple demonstration of the bilinearity property. </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;* `sdh_zk_demo`: Group signature scheme by Boneh et al. [2].</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;These demo applications can be built and invoked as follows:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;~~~</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;$ cd &lt;build-directory&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;$ make &lt;demo-application&gt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;$ out/bin/demo-application</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;~~~</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;## Android Demo</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;The Android demo implements the group signature scheme by Boneh et al [2]. It uses the android-ndk to delegate the group signature operations to native C code built upon our library and to transfer the data involved in the group signature operations via the Java Native Interface (JNI). The native code provides both the sign and verify operations and is supplied with the secret group credentials from the Java code. </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;The application can be started in either signer or verifier mode. The signer obtains a signature <span class="keywordflow">for</span> a specific message from our library <span class="keyword">using</span> JNI and transmits the resulting signature to the verifier <span class="keyword">using</span> Near Field Communication (NFC). The generated signatures are transferred via NFC to a device running the application as a verifier. The verifier receiving the anonymous group signature then checks its validity. However, <span class="keywordflow">for</span> demonstration purposes it also implements the opening feature that usually is only available to the group manager, allowing to reveal the signer<span class="stringliteral">&#39;s identity.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral">## Usage</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral">Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same `ARCHITECTURE` preprocessor definition as during compilation of the library.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral">The library supports both a 160-bit and a 254-bit elliptic curve and bilinear pairings suitable for these curves. Relevant configurations like the elliptic curve and optimizations to be used can be done in the file `framework/include/config.h`. </span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">## Benchmark</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">The subdirectory `benchmark` contains a simple application that allows to benchmark the operations at each arithmetic layer. Depending on the target platform, either the number of consumed clock cycles or the required amount of time is obtained. This already has to be considered during build configuration and thus the `BENCHMARK_SRC` has to be passed to cmake appropriately.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">## Further Reading</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">## Building</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;The library in the subdirectory `framework` can be built like any other cmake project with the following commands:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;~~~ </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;$ mkdir &lt;build-directory&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;$ cd &lt;build-directory&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;$ cmake [cmake-options] &lt;source-directory&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;$ cmake --build . [--target &lt;target-name&gt;]</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;~~~</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;The `cmake-options` are of the form `-D&lt;option&gt;=&lt;value&gt;` and are optional.</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;Selection of cmake-options:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;* `ARCHITECTURE`: The target architecture. (<span class="keywordflow">default</span>: `ARCH_X86`)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;* `BENCHMARK_SRC`: The time source <span class="keywordflow">for</span> benchmarks. (`BM_CYCLE`, `BM_CLOCK`)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;* `CMAKE_BUILD_TYPE`: The desired build type. (`Debug`, `Release`, `MinSizeRel`, ...; <span class="keywordflow">default</span>: `MinSizeRel`)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;* `CMAKE_TOOLCHAIN_FILE`: Path to the toolchain file <span class="keywordflow">for</span> cross compilation. (examples can be found under `cmake/toolchain`)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;* `CMAKE_INSTALL_PREFIX`: Path to the desired installation root.</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;* `TEST_COVERAGE`: Build library with profiling information to enable test coverage generation. (`ON`, `OFF`)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;* `INSTALL_DOXYGEN`: Include the doxygen documentation when installing/packaging. (`ON`, `OFF`)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;If no target name is specified <span class="keywordflow">for</span> make, the <span class="keywordflow">default</span> target, the library itself, is built.</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;Selection of target-names:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;* `suite`: Build the test applications.</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;* `test_X`: Build test `X` to verify output.</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;* `coverage`: Run the all tests and generate a coverage report. (requires `TEST_COVERAGE=ON`)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;* `doxygen`: Generate the doxygen documentation into the build directory.</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;* `package`: Build the library and package the result including headers <span class="keywordflow">for</span> distribution.</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;* `package_source`: Package the source tree <span class="keywordflow">for</span> distribution.</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;## Testing</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;The library comes with a comprehensive test set created in advance. Each arithmetic layer involved in the pairing computations, i.e., multi-precision integer, prime field, elliptic curves, and pairing arithmetic itself, is tested in a separate test program consisting of test vectors invoked on the library interface. The target `suite` can be used to built these test applications. The tests are then executed via the respective the test programs that <a class="code" href="../../de/df1/util_8c.html#a3ef8f6a8ea3d3304dd22ce582c404bfc">print</a> the test result on the console, e.g.:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;~~~</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;$ &lt;build-directory&gt;/bin/test_fp </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;~~~</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;## Demo Applications</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;The subdirectory `demo` of the library provides a set of simple console demo applications:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;* `gss_hwang_demo`: Group signature scheme by Hwang et al. [3].</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;* `ibe_demo`: Key encapsulation variant of the identity-based encryption scheme by Boneh et al. [1].</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;* `pairing_demo`: Simple demonstration of the bilinearity property. </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;* `sdh_zk_demo`: Group signature scheme by Boneh et al. [2].</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;These demo applications can be built and invoked as follows:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;~~~</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;$ cd &lt;build-directory&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;$ make &lt;demo-application&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;$ out/bin/demo-application</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;~~~</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;## Android Demo</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;The Android demo implements the group signature scheme by Boneh et al [2]. It uses the android-ndk to delegate the group signature operations to native C code built upon our library and to transfer the data involved in the group signature operations via the Java Native Interface (JNI). The native code provides both the sign and verify operations and is supplied with the secret group credentials from the Java code. </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;The application can be started in either signer or verifier mode. The signer obtains a signature <span class="keywordflow">for</span> a specific message from our library <span class="keyword">using</span> JNI and transmits the resulting signature to the verifier <span class="keyword">using</span> Near Field Communication (NFC). The generated signatures are transferred via NFC to a device running the application as a verifier. The verifier receiving the anonymous group signature then checks its validity. However, <span class="keywordflow">for</span> demonstration purposes it also implements the opening feature that usually is only available to the group manager, allowing to reveal the signer<span class="stringliteral">&#39;s identity.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral">## Usage</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral">Using the library is straight forward given the header files and the static library (libpairings_in_c.a). It has however to be considered that the user code is compiled with the same `ARCHITECTURE` preprocessor definition as during compilation of the library.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral">The library supports both a 160-bit and a 254-bit elliptic curve and bilinear pairings suitable for these curves. Relevant configurations like the elliptic curve and optimizations to be used can be done in the file `framework/include/config.h`. </span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral">## Benchmark</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral">The subdirectory `benchmark` contains a simple application that allows to benchmark the operations at each arithmetic layer. Depending on the target platform, either the number of consumed clock cycles or the required amount of time is obtained. This already has to be considered during build configuration and thus the `BENCHMARK_SRC` has to be passed to cmake appropriately.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral">## Further Reading</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">* [Project Page](http://www.iaik.tugraz.at/content/research/opensource/pairings_in_c/)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">* [Institute for Applied Information Processing and Communications (IAIK)](http://www.iaik.tugraz.at)</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">* [Project Page](http://www.iaik.tugraz.at/content/research/opensource/pairings_in_c/)</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">* [Institute for Applied Information Processing and Communications (IAIK)](http://www.iaik.tugraz.at)</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">## Authors</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">* Thomas Unterluggauer (&lt;thomas.unterluggauer@iaik.tugraz.at&gt;)</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">* Erich Wenger (&lt;erich.wenger@iaik.tugraz.at&gt;)</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral">* Raphael Spreitzer (&lt;raphael.spreitzer@iaik.tugraz.at&gt;)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">* Mario Werner (&lt;mario.werner@iaik.tugraz.at&gt;)</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">* René Hölbling (&lt;rene.hoelbling@student.tugraz.at&gt;)</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">## License</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">Custom Commercial License or GPLv3 License. </span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">## References</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">[1] Boneh, Dan, and Xavier Boyen. &quot;Secure identity based encryption without random oracles.&quot; Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">  </span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">[2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. &quot;Short group signatures.&quot; Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">  </span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">[3] Hwang, Jung Yeon, et al. &quot;Short group signatures with controllable linkability.&quot; Lightweight Security &amp; Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">  </span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral">[4] Unterluggauer, Thomas, and Erich Wenger. &quot;Efficient pairings and ECC for embedded systems.&quot; Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral">  </span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">## Authors</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">* Thomas Unterluggauer (&lt;thomas.unterluggauer@iaik.tugraz.at&gt;)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">* Erich Wenger (&lt;erich.wenger@iaik.tugraz.at&gt;)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">* Raphael Spreitzer (&lt;raphael.spreitzer@iaik.tugraz.at&gt;)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">* Mario Werner (&lt;mario.werner@iaik.tugraz.at&gt;)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">* René Hölbling (&lt;rene.hoelbling@student.tugraz.at&gt;)</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">## License</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">Custom Commercial License or GPLv3 License. </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral">## References</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">[1] Boneh, Dan, and Xavier Boyen. &quot;Secure identity based encryption without random oracles.&quot; Advances in Cryptology–Crypto 2004. Springer Berlin Heidelberg, 2004.</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">  </span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">[2] Boneh, Dan, Xavier Boyen, and Hovav Shacham. &quot;Short group signatures.&quot; Advances in Cryptology–CRYPTO 2004. Springer Berlin Heidelberg, 2004.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">  </span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">[3] Hwang, Jung Yeon, et al. &quot;Short group signatures with controllable linkability.&quot; Lightweight Security &amp; Privacy: Devices, Protocols and Applications (LightSec), 2011 Workshop on. IEEE, 2011.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">  </span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">[4] Unterluggauer, Thomas, and Erich Wenger. &quot;Efficient pairings and ECC for embedded systems.&quot; Cryptographic Hardware and Embedded Systems–CHES 2014. Springer Berlin Heidelberg, 2014. 298-315.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">  </span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral"></span></div>
 <div class="ttc" id="util_8c_html_a3ef8f6a8ea3d3304dd22ce582c404bfc"><div class="ttname"><a href="../../de/df1/util_8c.html#a3ef8f6a8ea3d3304dd22ce582c404bfc">print</a></div><div class="ttdeci">void print(const char *msg)</div><div class="ttdoc">Prints a message. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00057">util.c:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -245,7 +242,7 @@ $(document).ready(function(){initNavTree('d9/dd6/_r_e_a_d_m_e_8md.html','../../'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/dd6/_r_e_a_d_m_e_8md.html">README.md</a></li>
-    <li class="footer">Generated on Tue Sep 22 2015 16:56:35 for PAIRINGS_IN_C by
+    <li class="footer">Generated on Wed Sep 23 2015 14:25:16 for PAIRINGS_IN_C by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
