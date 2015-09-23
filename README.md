@@ -1,6 +1,6 @@
 # Pairings in C
 
-This repository contains a C library for pairing-based cryptography which was part of results published at CHES 2014 [4].
+This repository contains a C library for pairing-based cryptography which was part of results published at CHES 2014 [4]. It supports bilinear pairings based on 160-bit and 254-bit Barreto-Naehrig elliptic curves.
 
 ## Directory Structure
 
