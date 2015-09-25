@@ -1,0 +1,5 @@
+COMMERCIAL LICENSE
+Version 0.1, 23 October 2014
+
+Custom licenses are available on request. If you are interested in using the library in a 
+commercial product, please get in touch with us at http://www.iaik.tugraz.at. 
