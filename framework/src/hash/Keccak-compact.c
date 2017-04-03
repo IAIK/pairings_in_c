@@ -288,7 +288,7 @@ HashReturn Update(hashState *state, const BitSequence *data, DataLength databitl
 
 HashReturn Final(hashState *state, BitSequence *hashval, int hashbytelen)
 {
-	tSmallUInt	i;
+	int	i;
 
 	if ( state->bitsInQueue < 0 )
 	{

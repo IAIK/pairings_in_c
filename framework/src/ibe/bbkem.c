@@ -67,10 +67,10 @@ void generate_params(bbkem_msk *msk, bbkem_public *params)
 		cprng_get_bytes(msk->gamma, BI_BYTES); fp_rdc_n(msk->gamma);
 	} while (bi_compare(msk->gamma, bi_zero) == 0);
 
-	ecfp_mul(&(params->g1), (const ecfp_pt)&ECFP_GENERATOR, msk->alpha);
-	ecfp_mul(&(params->g3), (const ecfp_pt)&ECFP_GENERATOR, msk->gamma);
+	ecfp_mul(&(params->g1), &ECFP_GENERATOR, msk->alpha);
+	ecfp_mul(&(params->g3), &ECFP_GENERATOR, msk->gamma);
 
-	ecfp2_mul(&q, (const ecfp2_pt)&ECFP2_GENERATOR, msk->beta);
+	ecfp2_mul(&q, &ECFP2_GENERATOR, msk->beta);
 	pbc_map_opt_ate(params->v0, &(params->g1), &q);
 }
 
@@ -92,7 +92,7 @@ void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, con
 		cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
 	} while (bi_compare(r, bi_zero) == 0);
 
-	ecfp2_mul(&(upk->d1), (const ecfp2_pt)&ECFP2_GENERATOR, r);
+	ecfp2_mul(&(upk->d1), &ECFP2_GENERATOR, r);
 
 	hash_id(id_bi, id);
 
@@ -101,7 +101,7 @@ void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, con
 	fp_mul_barett_var(k, k, r, EC_PARAM_N, EC_PARAM_MU_N);
 	fp_mul_barett_var(r, msk->alpha, msk->beta, EC_PARAM_N, EC_PARAM_MU_N);
 	fp_add_var(k, k, r, EC_PARAM_N);
-	ecfp2_mul(&(upk->d0), (const ecfp2_pt)&ECFP2_GENERATOR, k);
+	ecfp2_mul(&(upk->d0), &ECFP2_GENERATOR, k);
 }
 
 /**
@@ -114,7 +114,6 @@ void derive_private_key(bbkem_pk *upk, bbkem_msk *msk, bbkem_public *params, con
  */
 void encapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, const char *id) {
 	bigint_t s, factor, id_bi;
-	ecpoint_fp p;
 	fp12_t k;
 
 	cprng_get_bytes(s, BI_BYTES);
@@ -127,12 +126,12 @@ void encapsulate_key(byte *key, bbkem_ciphertext *cipher, bbkem_public *params, 
 	fp_mul_barett_var(factor, id_bi, s, EC_PARAM_N, EC_PARAM_MU_N);
 
 	// s*g3 + factor*g1 ... => interleaved calculation?
-	ecfp_mul(&(cipher->c1), (const ecfp_pt) &(params->g3), s);
+	ecfp_mul(&(cipher->c1), &(params->g3), s);
 
-	ecfp_mul(&(cipher->c0), (const ecfp_pt) &(params->g1), factor);
+	ecfp_mul(&(cipher->c0), &(params->g1), factor);
 	ecfp_add_affine(&(cipher->c1), &(cipher->c1), &(cipher->c0));
 
-	ecfp_mul(&(cipher->c0), (const ecfp_pt) &ECFP_GENERATOR, s);
+	ecfp_mul(&(cipher->c0), &ECFP_GENERATOR, s);
 
 	fp12_exp_cyclotomic(k, (const fp4_t*)params->v0, s);
 #ifdef MONTGOMERY_ARITHMETIC

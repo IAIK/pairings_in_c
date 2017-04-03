@@ -37,24 +37,21 @@
 
 #include "config.h"
 
+#include <stdint.h>
+
 /*
  * Elementary types for low-level arithmetics based on processor architecture.
  */
 
 #if BYTES_PER_WORD == 1
-typedef unsigned char word_t;
-typedef unsigned short dword_t;
+typedef uint8_t  word_t;
+typedef uint16_t dword_t;
 #elif BYTES_PER_WORD == 2
-typedef unsigned short word_t;
-typedef unsigned long dword_t;
+typedef uint16_t word_t;
+typedef uint32_t dword_t;
 #elif BYTES_PER_WORD == 4
-  #if ARCHITECTURE == ARCH_X86_64
-  typedef unsigned int word_t;
-  typedef unsigned long long dword_t;
-  #else
-  typedef unsigned long word_t;
-  typedef unsigned long long dword_t;
-  #endif
+typedef uint32_t word_t;
+typedef uint64_t dword_t;
 #endif
 
 typedef unsigned int 	length_t;
@@ -112,8 +109,6 @@ typedef struct {
 	byte infinity;
 } ecpoint_fp;
 
-typedef ecpoint_fp *ecfp_pt;
-
 typedef struct {
 	fp_t x;
 	fp_t y;
@@ -121,15 +116,11 @@ typedef struct {
 	byte infinity;
 } ecpoint_fp_proj;
 
-typedef ecpoint_fp_proj *ecfp_proj_pt;
-
 typedef struct {
 	fp2_t x;
 	fp2_t y;
 	byte infinity;
 } ecpoint_fp2;
-
-typedef ecpoint_fp2 *ecfp2_pt;
 
 typedef struct {
 	fp2_t x;
@@ -137,7 +128,5 @@ typedef struct {
 	fp2_t z;
 	byte infinity;
 } ecpoint_fp2_proj;
-
-typedef ecpoint_fp2_proj *ecfp2_proj_pt;
 
 #endif /* TYPES_H_ */

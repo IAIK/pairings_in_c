@@ -39,7 +39,7 @@
 #include "fp/fp12.h"
 #include "pbc/pbc.h"
 #include "hash/hashing.h"
-#include "hash/hash_function.h"
+#include "rand.h"
 
 /**
  * Generates the keys according to the scheme of short group signature by BBS.
@@ -55,8 +55,8 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
 {
   bigint_t inv_1, inv_2, gamma, bi_tmp, k;
 
-  ecfp_copy_std(&gpk->g1, (const ecfp_pt)&ECFP_GENERATOR);
-  ecfp2_copy_std(&gpk->g2, (const ecfp2_pt)&ECFP2_GENERATOR);
+  ecfp_copy_std(&gpk->g1, &ECFP_GENERATOR);
+  ecfp2_copy_std(&gpk->g2, &ECFP2_GENERATOR);
 
   do {
     cprng_get_bytes(k, BI_BYTES); fp_rdc_n(k);
@@ -99,8 +99,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
   print("   xi1: "); print_value(&gmsk->xi1, BI_WORDS); print("\n");
   print("   xi2: "); print_value(&gmsk->xi2, BI_WORDS); print("\n");
 */
-  int i = 0;
-  for(i = 0; i < number_of_members; i++) {
+  for(length_t i = 0; i < number_of_members; i++) {
     do {
       cprng_get_bytes((&(gsk+i)->x), BI_BYTES); fp_rdc_n((gsk+i)->x);
     } while (bi_compare((gsk+i)->x, bi_zero) == 0);
@@ -113,7 +112,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
     print("   A:   "); print_value(&(gsk+i)->A.x, BI_WORDS); print("\n");
     print("        "); print_value(&(gsk+i)->A.y, BI_WORDS); print("\n");
 */ 
- }
+  }
 }
 
 /**
@@ -127,7 +126,7 @@ void sgs_init(length_t number_of_members, group_public_key *gpk, group_master_se
  *
  */
 void sgs_sign(group_public_key gpk, group_secret_key gsk, sdh_signiture *sig, const char *message) {
-  bigint_t alpha, beta, delta1, delta2, bi_tmp, bi_tmp1, r_alpha, r_beta, r_x, r_delta1, r_delta1_m, r_delta2, r_delta2_m;
+  bigint_t alpha, beta, delta1, delta2, bi_tmp, bi_tmp1, r_alpha, r_beta, r_x, r_delta1, r_delta2;
   ecpoint_fp G1_tmp1, G1_tmp2, R_1, R_2, R_4, R_5;
   fp12_t  GT_tmp1, R_3;
   unsigned char hash[HASH_BYTES];
@@ -296,7 +295,7 @@ sbyte sgs_verify(group_public_key gpk, sdh_signiture sig, const char *message) {
   ecpoint_fp G1_tmp1, G1_tmp2, R_1, R_2, R_4, R_5;
   fp12_t  GT_tmp1, GT_tmp2, GT_tmp3, R_3;
   unsigned char hash[HASH_BYTES];
-  word_t bigint_tmp_dbl[2*BI_WORDS], bigint_tmp_dbl2[2*BI_WORDS];
+  word_t bigint_tmp_dbl[2*BI_WORDS];
 
   hashState state;
 
@@ -406,7 +405,6 @@ sbyte sgs_verify(group_public_key gpk, sdh_signiture sig, const char *message) {
  */
 void sgs_open(group_master_secret_key gmsk, sdh_signiture sig, ecpoint_fp *A) {
   ecpoint_fp G1_tmp1, G1_tmp2;
-  bigint_t bi_tmp;
   ecfp_mul(&G1_tmp1, &sig.T_1, gmsk.xi1);
   ecfp_mul(&G1_tmp2, &sig.T_2, gmsk.xi2);
   ecfp_add_affine(&G1_tmp1, &G1_tmp1, &G1_tmp2);

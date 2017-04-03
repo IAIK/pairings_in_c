@@ -41,6 +41,7 @@ void fp12_add_std(fp12_t res, const fp12_t a, const fp12_t b);
 void fp12_sub_std(fp12_t res, const fp12_t a, const fp12_t b);
 void fp12_neg_std(fp12_t res, const fp12_t a);
 void fp12_mul_std(fp12_t res, const fp12_t a, const fp12_t b);
+void fp12_mul_distinct_b_std(fp12_t res, const fp12_t a, const fp12_t b);
 void fp12_mul_tk3_std(fp12_t res, const fp12_t a, const fp12_t b);
 void fp12_sqr_std(fp12_t res, const fp12_t a);
 void fp12_sqr_cyclotomic_std(fp12_t res, const fp12_t a);

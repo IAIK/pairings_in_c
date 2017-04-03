@@ -63,7 +63,7 @@ void cprng_one_way_func(byte *hash, byte *msg, length_t len) {
  */
 void cprng_get_bytes(void *buffer, length_t size) {
 	byte carry, c0, c1, r0, r1;
-	int i, j;
+	length_t i, j;
 	byte hash[HASH_LEN];
 	byte *buf = (byte*)buffer;
 

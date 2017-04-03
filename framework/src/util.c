@@ -80,8 +80,6 @@ void print(const char *msg) {
  * @return a pointer to the buffer
  */
 char *print_word(char *buffer, const word_t w) {
-    int index;
-
 #if (BYTES_PER_WORD > 2)
     *buffer++ = hex_lookup[ (w >> 28) & 0xF ];
     *buffer++ = hex_lookup[ (w >> 24) & 0xF];
@@ -105,7 +103,7 @@ char *print_word(char *buffer, const word_t w) {
  * @param value the value to be printed
  * @param len the number of words of the value
  */
-void print_value(const word_t *value, const length_t len) {
+void print_value(const word_t *value, length_t len) {
     char buf[10];
     char *buf_ptr;
     int cnt, i;
@@ -130,7 +128,7 @@ void print_value(const word_t *value, const length_t len) {
  * @param value the byte array to be printed
  * @param len the length of the array
  */
-void print_bytes(const byte *value, const length_t len) {
+void print_bytes(const byte *value, length_t len) {
 	int i;
 	char buf[3];
 
@@ -149,7 +147,7 @@ void print_bytes(const byte *value, const length_t len) {
  * @param len the length of the arrays
  * @return 0 if equal, 1 if the first is larger, -1 otherwise
  */
-int compare_bytes(const byte *a, const byte* b, const length_t len) {
+int compare_bytes(const byte *a, const byte* b, length_t len) {
 	int i = len - 1;
 
 	while (i >= 0) {

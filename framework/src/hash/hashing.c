@@ -56,9 +56,9 @@ void hash_key(byte *res, fp12_t key) {
  * @param res the resulting big integer
  * @param id the identity string of arbitrary length
  */
-void hash_id(bigint_t res, char *id) {
+void hash_id(bigint_t res, const char *id) {
 	byte hash[HASH_BYTES];
-	hash_function(hash, id, strlen(id)*8);
+	hash_function(hash, id, strlen(id));
 	memcpy(res, hash, BI_BYTES);
 }
 
@@ -95,7 +95,7 @@ void hash_update_message(hashState *state, const char *message)
  * @param state the Hash state to be used.
  * @param g1 the elliptic curve point to be hashed.
  */
-void hash_update_G1(hashState *state, const ecfp_pt g1)
+void hash_update_G1(hashState *state, const ecpoint_fp *g1)
 {
   byte block[BLOCK_BYTES];
 

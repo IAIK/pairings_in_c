@@ -37,8 +37,9 @@
 #include "types.h"
 #include "gss/gss_hwang.h"
 #include "hash/hash_function.h"
-#include <string.h>
+#include "util.h"
 
+#include <string.h>
 
 int main(void) {
   hwang_signing_key sk;
@@ -55,5 +56,4 @@ int main(void) {
     print("Signature is invalid!");
   else
     print("Signature is VALID!\n");
-
 }

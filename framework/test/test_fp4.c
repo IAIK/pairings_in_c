@@ -32,8 +32,9 @@
 **
 ****************************************************************************/
 
-#include "types.h"
+#include "assert.h"
 #include "fp/fp4.h"
+#include "types.h"
 
 int main (void) {
 	fp4_t var_tmp, var_res;

@@ -47,7 +47,7 @@
  * @param b the ending point of the line
  * @param p the point necessary for evaluation
  */
-void pbc_eval_line_function(fp12_t res, ecfp2_proj_pt a, ecfp2_pt b, ecfp_pt p) {
+void pbc_eval_line_function(fp12_t res, ecpoint_fp2_proj *a, ecpoint_fp2 *b, ecpoint_fp *p) {
 	if (a->infinity || b->infinity || p->infinity) {
 		fp12_clear(res);
 		res[0][0][0][0] = 1;
@@ -89,7 +89,7 @@ void pbc_eval_line_function(fp12_t res, ecfp2_proj_pt a, ecfp2_pt b, ecfp_pt p) 
  * @param a the point in which the tangent line is placed
  * @param p the point necessary for evaluation
  */
-void pbc_eval_tangent_function(fp12_t res, ecfp2_proj_pt a, ecfp_pt p) {
+void pbc_eval_tangent_function(fp12_t res, ecpoint_fp2_proj *a, ecpoint_fp *p) {
 	if (a->infinity || p->infinity) {
 		fp12_clear(res);
 		res[0][0][0][0] = 1;
@@ -131,11 +131,10 @@ void pbc_eval_tangent_function(fp12_t res, ecfp2_proj_pt a, ecfp_pt p) {
  * Pairing is E(F_p) x E'(F_p2) -> F_p12
  * E' denotes the sextic twist of the curve E
  */
-void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
+void pbc_map_opt_ate_std(fp12_t res, ecpoint_fp *p, ecpoint_fp2 *q) {
 	ecpoint_fp2_proj 	t;
 	ecpoint_fp2			q1;
-	word_t				e[2*BI_WORDS];
-	fp12_t				tmp, v0, f1, f2, f3;
+	fp12_t				tmp;
 	int len, i;
 
 	// Actually, the pairing over BN curves is defined as
@@ -253,7 +252,7 @@ void pbc_map_opt_ate_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
  * @param q the projective point to be doubled
  * @param p the point necessary for line function evaluation
  */
-void pbc_point_dbl_line_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q, ecfp_pt p) {
+void pbc_point_dbl_line_eval(fp12_t l, ecpoint_fp2_proj *t, ecpoint_fp2_proj *q, ecpoint_fp *p) {
 	fp2_t t0, t1, t2, t3, t4, t5;
 
 	fp2_sqr(t0, (const fp_t*) q->x);
@@ -311,7 +310,7 @@ void pbc_point_dbl_line_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q, ecfp_pt
  * @param q the projective point to be doubled
  * @param p the point necessary for line function evaluation
  */
-void pbc_point_dbl_line_costello_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q, ecfp_pt p) {
+void pbc_point_dbl_line_costello_eval(fp12_t l, ecpoint_fp2_proj *t, const ecpoint_fp2_proj *q, const ecpoint_fp *p) {
 	fp2_t b, c, e, h;
 
 	fp2_sqr(h, (const fp_t*) q->x);
@@ -375,7 +374,7 @@ void pbc_point_dbl_line_costello_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt q
  * @param q the affine point to be added
  * @param p the point necessary for line function evaluation
  */
-void pbc_point_add_line_costello_eval(fp12_t l, ecfp2_proj_pt t, ecfp2_proj_pt r, ecfp2_pt q, ecfp_pt p) {
+void pbc_point_add_line_costello_eval(fp12_t l, ecpoint_fp2_proj *t, const ecpoint_fp2_proj *r, const ecpoint_fp2 *q, const ecpoint_fp *p) {
 	fp2_t a, b, d, e, f;
 
 	fp2_mul(a, (const fp_t*) q->y, (const fp_t*) r->z);
@@ -561,7 +560,7 @@ void pbc_map_opt_ate_optimized_final_exp_std(fp12_t res, fp12_t a, fp12_t b) {
  * @param p point from G1 (elliptic curve over prime field)
  * @param q point from G2 (twisted curve over quadratic extension of prime field)
  */
-void pbc_map_opt_ate_optimized_miller_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
+void pbc_map_opt_ate_optimized_miller_std(fp12_t res, const ecpoint_fp *p, const ecpoint_fp2 *q) {
 	ecpoint_fp2_proj 	t;
 	ecpoint_fp2			q1;
 	int 	len, i;
@@ -626,7 +625,7 @@ void pbc_map_opt_ate_optimized_miller_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
  * @param p2 elliptic curve point operand of second pairing
  * @param q2 elliptic curve point operand (quadratic extension) of second pairing
  */
-void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt p2, ecfp2_pt q2) {
+void pbc_map_opt_ate_div_miller_std(fp12_t res, const ecpoint_fp *p1, const ecpoint_fp2 *q1, const ecpoint_fp *p2, const ecpoint_fp2 *q2) {
 	ecpoint_fp2_proj 	t;
 	ecpoint_fp2			q_f1;
 	fp12_t 				a, r2;
@@ -728,7 +727,7 @@ void pbc_map_opt_ate_div_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
  * @param p2 elliptic curve point operand of second pairing
  * @param q2 elliptic curve point operand (quadratic extension) of second pairing
  */
-void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt p2, ecfp2_pt q2) {
+void pbc_map_opt_ate_mul_miller_std(fp12_t res, const ecpoint_fp *p1, const ecpoint_fp2 *q1, const ecpoint_fp *p2, const ecpoint_fp2 *q2) {
 	ecpoint_fp2_proj 	t1, t2;
 	ecpoint_fp2			q_f1;
 	fp12_t 				a;
@@ -813,7 +812,7 @@ void pbc_map_opt_ate_mul_miller_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt
  * @param p elliptic curve point operand of first pairing
  * @param q elliptic curve point operand (quadratic extension) of first pairing
  */
-void pbc_map_opt_ate_optimized_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
+void pbc_map_opt_ate_optimized_std(fp12_t res, const ecpoint_fp *p, const ecpoint_fp2 *q) {
 	pbc_map_opt_ate_optimized_miller_std(res, p, q);		// miller loop
 	pbc_map_opt_ate_optimized_final_exp_easy(res);			// easy part of final exponentiation
 	pbc_map_opt_ate_optimized_final_exp_fuentes(res);		// hard part of final exponentiation
@@ -827,7 +826,7 @@ void pbc_map_opt_ate_optimized_std(fp12_t res, ecfp_pt p, ecfp2_pt q) {
  * @param p2 elliptic curve point operand of second pairing
  * @param q2 elliptic curve point operand (quadratic extension) of second pairing
  */
-void pbc_map_opt_ate_mul_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt p2, ecfp2_pt q2) {
+void pbc_map_opt_ate_mul_std(fp12_t res, const ecpoint_fp *p1, const ecpoint_fp2 *q1, const ecpoint_fp *p2, const ecpoint_fp2 *q2) {
 	pbc_map_opt_ate_mul_miller_std(res, p1, q1, p2, q2);
 	pbc_map_opt_ate_optimized_final_exp_easy(res);
 	pbc_map_opt_ate_optimized_final_exp_fuentes(res);
@@ -841,7 +840,7 @@ void pbc_map_opt_ate_mul_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt p2, ec
  * @param p2 elliptic curve point operand of second pairing
  * @param q2 elliptic curve point operand (quadratic extension) of second pairing
  */
-void pbc_map_opt_ate_div_std(fp12_t res, ecfp_pt p1, ecfp2_pt q1, ecfp_pt p2, ecfp2_pt q2) {
+void pbc_map_opt_ate_div_std(fp12_t res, const ecpoint_fp *p1, const ecpoint_fp2 *q1, const ecpoint_fp *p2, const ecpoint_fp2 *q2) {
 	pbc_map_opt_ate_div_miller_std(res, p1, q1, p2, q2);
 	pbc_map_opt_ate_optimized_final_exp_easy(res);
 	pbc_map_opt_ate_optimized_final_exp_fuentes(res);

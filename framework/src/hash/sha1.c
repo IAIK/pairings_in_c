@@ -156,7 +156,7 @@ void sha1_process_message(HASH_SHA1* state, const uint8_t *message) {
  * (total_length - remaining_length) must be a multiple of 64!!
  */
 void sha1_process_message_final(HASH_SHA1* state, const uint8_t *message, uint32_t remaining_length, uint32_t total_length) {
-    int i;
+    uint32_t i;
     uint32_t w[16];
     uint32_t temp;
 

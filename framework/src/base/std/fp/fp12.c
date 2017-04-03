@@ -184,7 +184,7 @@ void fp12_decompress_std(fp12_t a) {
 		fp2_mul_qnr(a[0][0], (const fp_t*) a[0][0]);
 		fp2_add(a[0][0], (const fp_t*) a[0][0], (const fp_t*) FP_ONE);
 	} else {
-		fp2_t t0, t1;
+		fp2_t t0;
 		fp2_sqr(a[0][1], (const fp_t*) a[2][1]);
 		fp2_mul_qnr(a[0][1], (const fp_t*) a[0][1]);
 

@@ -32,13 +32,14 @@
 **
 ****************************************************************************/
 
+#include "assert.h"
+#include "bigint/bi.h"
 #include "hash/hashing.h"
 #include "types.h"
-#include "bigint/bi.h"
+
 #include <string.h>
 
 int main(void) {
-	byte var_res[16];
 	bigint_t var_res_bi;
 
 #if PRECISION == 256

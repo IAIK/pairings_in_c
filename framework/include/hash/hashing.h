@@ -41,7 +41,7 @@
 void hash_key(byte *res, fp12_t key);
 void hash_id(bigint_t bi, const char* text);
 
-void hash_update_G1(hashState *state, const ecfp_pt g1);
+void hash_update_G1(hashState *state, const ecpoint_fp *g1);
 void hash_update_GT(hashState *state, const fp12_t gt);
 void hash_update_message(hashState *state, const char *message);
 

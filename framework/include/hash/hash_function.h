@@ -45,7 +45,7 @@
 #define BLOCK_BYTES (BLOCK_BITS/8)
 
 #ifdef KECCAK_SHA
-  #define hash_function(dest, msg, length) crypto_hash(dest, msg, length)
+  #define hash_function(dest, msg, length) crypto_hash(dest, (const unsigned char*) msg, length)
   #define hash_init(state)  Init(state)
   #define hash_update(state, data, databitlen) Update(state, data, databitlen)
   #define hash_final(state, hashval, hashbytelen) Final(state, hashval, hashbytelen)

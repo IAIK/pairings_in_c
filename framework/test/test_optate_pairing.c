@@ -32,7 +32,7 @@
 **
 ****************************************************************************/
 
-
+#include "assert.h"
 #include "pbc/pbc.h"
 #include "types.h"
 
@@ -62,7 +62,7 @@ int main(void) {
 	{0x57D9159D, 0x5BA63966, 0x97974415, 0x1026770A, 0x00C84DAF, 0xD0CC4EE2, 0xDCE5EA54, 0x875D89FD} } ,
 	 { {0xDA03AD91, 0x43BFDA25, 0xD264BF5B, 0xB0CF3D90, 0x11B19B37, 0x25161995, 0x37EC3568, 0x8CFEB4AB},
 	{0x49AF51EB, 0xF479D2C7, 0xA8B59B5C, 0x717629E3, 0x82EF2C50, 0xF9ACC153, 0xAEEA7F27, 0x61558BCD} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5832 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5833 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5834 a010");
@@ -97,7 +97,7 @@ int main(void) {
 	{0x8AA6A71A, 0x649C8F9A, 0x1ABF47D7, 0x04567971, 0x43DC94AB, 0xCBC59903, 0x3E3A1F0D, 0x8BA37020} } ,
 	 { {0x8238A6FF, 0xD56EBFF6, 0x9A5868C7, 0x2B7DB352, 0xB2253BD1, 0x9D36F878, 0x7B90BDE4, 0x5FB5CBE1},
 	{0xB0266115, 0xBF49759D, 0xBDA18E62, 0x75406022, 0x886B75B5, 0x208F20A3, 0xE5E12AD5, 0x25D941F2} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5844 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5845 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5846 a010");
@@ -132,7 +132,7 @@ int main(void) {
 	{0xE9351FCA, 0x760951DD, 0x5AA378F3, 0xCCE9AB77, 0x12E6A887, 0xA90D8F75, 0x78DB3B57, 0x1CF541BE} } ,
 	 { {0x9CF098F6, 0x45AA593F, 0x9573DCD4, 0x4D96BF8E, 0x5560E405, 0xF9E5533D, 0x24C38F90, 0xAE00F195},
 	{0x0D080781, 0xD926EBA0, 0x1019F1B9, 0x69D2C116, 0x968A6480, 0x645289AB, 0x24133FF9, 0x080E4A2B} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5856 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5857 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5858 a010");
@@ -167,7 +167,7 @@ int main(void) {
 	{0x42F90B91, 0x1B4BE287, 0xC5C9ADC7, 0x0F36137A, 0x40D0E78D, 0x96DD7B91, 0xB47709DD, 0x25AC9138} } ,
 	 { {0x7CDCBDE6, 0x1D46AE92, 0xF1E291DC, 0xD5B4188F, 0xAEEE990B, 0xBBF2768B, 0xAE489396, 0x504ABFA9},
 	{0x12D25B9F, 0x7EC29451, 0xF885B69D, 0xBDDAD26F, 0x78EAD264, 0x16BB453B, 0x3A24FA7F, 0xB2B7B2B0} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5868 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5869 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5870 a010");
@@ -202,7 +202,7 @@ int main(void) {
 	{0xD5CED170, 0x30A7ECF9, 0x5EF74203, 0x5BAC76C5, 0x052418E2, 0xCA6B58DD, 0x0425A867, 0xA6F747AB} } ,
 	 { {0xBDB5D5F1, 0xEB18539C, 0x128A2E5D, 0x28D08DA9, 0x758C96A0, 0x9C52595F, 0x4FF97CC2, 0x83FCB56B},
 	{0x7A6B4DC9, 0xDCC421BB, 0x6443BA7C, 0x21CADFED, 0x2074F195, 0xCCDD9B8E, 0xE45FB0FA, 0x1B3B7E48} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5880 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5881 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5882 a010");
@@ -237,7 +237,7 @@ int main(void) {
 	{0x9D5B8FF7, 0x091745DD, 0xFA004970, 0x75815208, 0x39C78B39, 0x6A2AADCC, 0x3DD47D35, 0xB77684B7} } ,
 	 { {0x0338CF78, 0x4BC97B5E, 0xA2EFB39E, 0x401ED184, 0x4E9445C3, 0x37B6D5A2, 0xAE587396, 0x1EF7BA99},
 	{0xD2040BC1, 0x982DF3FB, 0xCD9F6789, 0x89D02AA8, 0x9AFB802C, 0xD7F0E4C8, 0xE38DE5B4, 0xB094CE2F} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5892 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5893 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5894 a010");
@@ -272,7 +272,7 @@ int main(void) {
 	{0x827E63BA, 0x3CB35499, 0x1504B2F2, 0xE3D5723B, 0x977CA630, 0x2C8B12D3, 0x8FCA9EFA, 0x29FE9D3A} } ,
 	 { {0x33490B5F, 0xF3AF8C73, 0xDB736A2A, 0x36AF4964, 0x54018481, 0x0E32C084, 0xE4A75D49, 0x4BEF0047},
 	{0x1BDE9E9E, 0xAEABA1CA, 0x5E044A3F, 0x07B73C81, 0xD1845946, 0x379DD05A, 0x19B3066F, 0x39B0EF5F} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5904 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5905 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5906 a010");
@@ -307,7 +307,7 @@ int main(void) {
 	{0x1911E61B, 0x75BD4242, 0x540E8352, 0xD3AC473C, 0xCC1A5C0D, 0x0BDD956A, 0xE57F9796, 0x5BFFE28E} } ,
 	 { {0x68AA3152, 0x99ACA4CD, 0x2751B99E, 0x1C938B3D, 0x257E4917, 0x964094C9, 0x8BA039AC, 0x3398777A},
 	{0xC0109811, 0x579FE4DD, 0x05CBFE93, 0x5B9F4B2F, 0xF9D7D4B7, 0xB67A3C6E, 0x9691E838, 0x88270819} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5916 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5917 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5918 a010");
@@ -342,7 +342,7 @@ int main(void) {
 	{0x74A5D383, 0x4FFD35EF, 0xF4DD7802, 0xAD0E252A, 0x5F91238D, 0x239D6459, 0x0C8A1524, 0x94F562D2} } ,
 	 { {0xF2D56FC0, 0x3A3D1071, 0x3CA98453, 0xFADA9C30, 0x307A8904, 0xB7BB66CD, 0x18A10498, 0x8C7DA24B},
 	{0x87D3FE45, 0xDDFB665D, 0xFEF360A1, 0xF4E6EC95, 0x8EF608AB, 0x434A0804, 0x10904CD5, 0x929F4CD5} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5928 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5929 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5930 a010");
@@ -377,7 +377,7 @@ int main(void) {
 	{0x237EEDFE, 0xFB2D79C2, 0x971D025E, 0x1F78902D, 0x92573B04, 0xF30FCF84, 0x7CFAD85A, 0x6772EB08} } ,
 	 { {0x56CD94F4, 0x6A3FD8E9, 0xD76D0324, 0x832A893B, 0xB19417D1, 0x86BDE14B, 0x782FA46D, 0x380B7451},
 	{0xFF42FD2F, 0x30D3C97A, 0x6E321790, 0xCECF5EDF, 0x2AA234C1, 0xB6313FC9, 0x469DD850, 0x93799BC8} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5940 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5941 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5942 a010");
@@ -412,7 +412,7 @@ int main(void) {
 	{0x07A1B4DD, 0x0BFEDEAA, 0xF8ECD96C, 0x1A7B9B6B, 0xDAD4900C, 0x813C3819, 0x44D3B9D5, 0x42AA8FE2} } ,
 	 { {0x7FD335BD, 0xFA80E432, 0x05EADC9F, 0xE3F861EA, 0x5916F5D4, 0x98DC1CA7, 0x45DC7DFD, 0x0E13A80B},
 	{0x23BFBEC4, 0x1C47892A, 0x7E1CBB34, 0x3C4F447B, 0x8168CB9D, 0xD5D1FE42, 0xC89DE92E, 0x83106CB8} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5952 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5953 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5954 a010");
@@ -447,7 +447,7 @@ int main(void) {
 	{0x872E7309, 0x5BA3D2C8, 0xC21657C8, 0xB7ADD8E9, 0xDE46AB2C, 0x402BFCE6, 0x8F3C03F7, 0x825E7E1F} } ,
 	 { {0x95ED33CB, 0x64E50AC3, 0xA17B7B64, 0xC9B67EA9, 0x53211CFF, 0x8F9471C2, 0xB7374CC5, 0x1E5C90D7},
 	{0xA536A413, 0xFAD3EAB1, 0x9D01FD5D, 0x8749602B, 0x606A3272, 0xF243A3E8, 0x47D1FCE6, 0xAC344018} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5964 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5965 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5966 a010");
@@ -482,7 +482,7 @@ int main(void) {
 	{0x2914224D, 0x6EC1246A, 0xFD156A69, 0x799C98D4, 0x5A6C9C2B, 0xD4F73549, 0x7B6851A5, 0x2DD27F79} } ,
 	 { {0xB640DE9A, 0xB3653DEC, 0x7EBEB90D, 0x9C99C88D, 0x782E3997, 0xA1E4DE18, 0xDD1A795C, 0xB4A36F3A},
 	{0xC36AAAC0, 0xE14F419E, 0xB85F90C4, 0x7057839F, 0x2B7E09BC, 0xCD5C54BC, 0x06830B51, 0x499159D9} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5976 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5977 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5978 a010");
@@ -517,7 +517,7 @@ int main(void) {
 	{0xFEA1E663, 0xD7AD9EDA, 0x1F38A5E2, 0x243C303D, 0xCA402638, 0x4EE40736, 0xB1AA1CC4, 0x4E9F8AA7} } ,
 	 { {0xA76380ED, 0xD9C5356A, 0x91FD55E1, 0x93BE9E9B, 0x50043DA0, 0xADAED995, 0x9DC3869A, 0x1EB2E170},
 	{0x4E0880D1, 0xA4650E0A, 0xE44C3408, 0xD27806E6, 0x57FF402F, 0xCD9E9BAE, 0x9B0EBF03, 0x2F50E2E4} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 5988 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 5989 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 5990 a010");
@@ -552,7 +552,7 @@ int main(void) {
 	{0x51FC3808, 0xB0B56FA9, 0xE8D8A7F6, 0x830E32CC, 0x8FC9F4D9, 0xE86C49AE, 0x45497E10, 0xA171785E} } ,
 	 { {0x0372B629, 0xEA94CCF1, 0xF0AA81B4, 0x8002DFA4, 0xC7502B1A, 0x9ED65D77, 0x6E91F346, 0xAC3CF27D},
 	{0x89ADFF5D, 0xB89EDB02, 0x52A60451, 0x8779C967, 0x09B741C8, 0x05B7A144, 0xFA6FA3C1, 0x9F461FE9} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 6000 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 6001 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 6002 a010");
@@ -587,7 +587,7 @@ int main(void) {
 	{0x01B637E3, 0x9242A1B2, 0xD961EB8E, 0xE54A059D, 0xC3822F4F, 0xA970CBC5, 0x090B7608, 0x3AE41A55} } ,
 	 { {0x68804450, 0x207E10DD, 0x70AEDD54, 0x63470A2A, 0xC5142879, 0x02759E13, 0x2711E0C2, 0x0FA6DD79},
 	{0xC1E4217F, 0x4ACB3501, 0x91130CE8, 0x102FBDD8, 0x6D6CD56E, 0x58836D4D, 0xCCECB65D, 0x7F817941} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 6012 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 6013 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 6014 a010");
@@ -622,7 +622,7 @@ int main(void) {
 	{0xB6E4C90E, 0x90991E55, 0xF6C785AF, 0xCD8463B7, 0x1AC0686F, 0xA9E422A7, 0xA05880D8, 0x211EEF6D} } ,
 	 { {0x1EECB4D9, 0x324810DA, 0xA4018E00, 0xF6AAB29D, 0xE5FCA9BD, 0x1E163249, 0xDEB779F7, 0x4420FACD},
 	{0xE2281F1A, 0x47FBDA62, 0x257E4D94, 0x46236CBB, 0x4037D03C, 0x72EC9D3A, 0xF8FDA043, 0x6B9D0E5C} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 6024 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 6025 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 6026 a010");
@@ -657,7 +657,7 @@ int main(void) {
 	{0xB55147B7, 0xA9BD1F8C, 0xFAB89512, 0xFA372366, 0xB0BA7D4F, 0x564EE617, 0x39C02B3D, 0x43EEF952} } ,
 	 { {0x9E333240, 0x91677664, 0xB6D9457A, 0xC48A2604, 0xA2EBFD7C, 0x33DE2968, 0x92EF9B50, 0x7BFF06F1},
 	{0x441F5F60, 0xB912286A, 0x4837A8F3, 0x892620B8, 0x37EC15E9, 0x33D54F8D, 0x344E4D59, 0x0DEA1989} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 6036 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 6037 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 6038 a010");
@@ -700,7 +700,7 @@ int main(void) {
 	{0x246A727B, 0xCBAED9F3, 0xD1267C62, 0x31B7FE68, 0x82A78B8A, 0x07443B57, 0x4AB1F011, 0xAC0B0CB0} } ,
 	 { {0xDD80293C, 0x216CF46F, 0xEA29A92F, 0xE4EE6DF8, 0x534B63F8, 0xC1CF902C, 0x8CA80E6D, 0x4B5D94E1},
 	{0xAA5833DB, 0x8DB73D81, 0xD02555B6, 0x8D48D7F1, 0x7D777475, 0xAC8F5C22, 0xB799B912, 0x27E32FEB} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6048 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6049 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6050 a010");
@@ -743,7 +743,7 @@ int main(void) {
 	{0x178E11C8, 0xE5BAED81, 0xA4271781, 0xF317EA3A, 0xC1D53E1F, 0x21955D6E, 0x709961B7, 0x3FD55B2D} } ,
 	 { {0x4A0A4329, 0x95E55016, 0x59F5137E, 0xE63A6ED8, 0xFAF76846, 0x8FD0676E, 0xD8A87F17, 0x3E4A0C6A},
 	{0x112B93EC, 0xFD313E54, 0xA4024537, 0xE8556D4D, 0x2E8D5B7D, 0xA0CBB244, 0x8C3EE245, 0x4477644F} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6060 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6061 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6062 a010");
@@ -786,7 +786,7 @@ int main(void) {
 	{0xE89B9050, 0xE265C2F3, 0xDB2A5F1C, 0x3FFE3107, 0xBF507C7F, 0x99C1D958, 0xD490401C, 0x84576C42} } ,
 	 { {0x41988DBD, 0xEE0B4D90, 0xBC0559BF, 0x3DDE59B7, 0x8CD9EDD5, 0xC0774027, 0x403ECFD4, 0x744D4448},
 	{0xD23EDD7A, 0xB2A844AF, 0xC6F3FC23, 0xB4F2F34B, 0x61DDC704, 0x69EA0DEA, 0xD01F01A1, 0x942889F2} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6072 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6073 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6074 a010");
@@ -829,7 +829,7 @@ int main(void) {
 	{0x4312A450, 0x71A46C5F, 0x39E57DAE, 0x21D8A9AF, 0x3E515E17, 0xE9900A66, 0x8344FAA1, 0x398F7A94} } ,
 	 { {0xA77A1AA6, 0x0F2B263C, 0x776AB208, 0xF585614E, 0x35CB2713, 0x688AA5ED, 0x23C3038F, 0x67748CF1},
 	{0x98496080, 0x7C1E8D75, 0x4B45F3D8, 0x2CDCA801, 0x18CD9AC7, 0xDD1B47E4, 0xA0F0AB3C, 0x43821B65} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6084 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6085 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6086 a010");
@@ -872,7 +872,7 @@ int main(void) {
 	{0xB1D89DC5, 0xBAEE892E, 0xCD60ACAD, 0xB9CD18DC, 0xA3EF09B2, 0xFA845F2F, 0x52BFEAF2, 0x1C7A1172} } ,
 	 { {0x467E8156, 0xC24820BC, 0x85C508C6, 0xDF18CF3E, 0x43C87546, 0x3DE8B7DF, 0x118E4057, 0x1B1C589A},
 	{0x74C380F7, 0x74646D2A, 0x62B374C4, 0x5A287B5F, 0xE5682C0F, 0x49CAB36E, 0xF91E1334, 0xB327CF41} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6096 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6097 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6098 a010");
@@ -915,7 +915,7 @@ int main(void) {
 	{0x3C03B66E, 0xD02B23AC, 0xDFF572FF, 0xCEF36A53, 0xCFCE5A16, 0x095C779A, 0x4CA85149, 0x324EFD86} } ,
 	 { {0xC89A3DB6, 0x293BF5CA, 0xB343557C, 0xA31C3FEB, 0x8CCB9FC6, 0x7D6D65B4, 0x3C29C762, 0xB1295EAA},
 	{0x511A6DBD, 0x5A16EC49, 0x79C9033F, 0x33D00603, 0x3ACDE22E, 0xC920C71A, 0x0D89B609, 0x0A7E86C3} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6108 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6109 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6110 a010");
@@ -958,7 +958,7 @@ int main(void) {
 	{0x45DACC49, 0x23CF86DA, 0x3AE47CB1, 0x152E8E38, 0x24446237, 0xF057BFD6, 0x4B28ABCE, 0x75637173} } ,
 	 { {0x073A34E7, 0x34F0D996, 0xA56148C7, 0xF36FB95D, 0x1E137773, 0xD135B646, 0x00715080, 0x375956D4},
 	{0x03FF9C1A, 0xB5794242, 0x5E113884, 0x2EC86765, 0x81CAFD1B, 0x24C8823B, 0xCEDD0874, 0x2A12C3AA} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6120 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6121 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6122 a010");
@@ -1001,7 +1001,7 @@ int main(void) {
 	{0x8D0C17CA, 0xB2866609, 0x4082F665, 0x6EBB7847, 0xC287E22C, 0xEA4E0C01, 0x8EC1D99A, 0x8E3C1F13} } ,
 	 { {0xF536EF28, 0xBCC819B9, 0xC0978D0E, 0x4D4EF6E4, 0x4E1BDF69, 0xF840741C, 0x88CFC748, 0x1EA589B3},
 	{0x5F396C99, 0x5B21B1C8, 0xCAC33579, 0x4F10C3A5, 0x73FDDF53, 0xD04B29A7, 0xDB7FADF0, 0x1D624437} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 6132 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 6133 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 6134 a010");
@@ -1044,7 +1044,7 @@ int main(void) {
 	{0x4B104AA0, 0x6EBC1D35, 0x2CA6488A, 0x25F0F727, 0x43744153, 0x7A6683BA, 0x806FF4A9, 0x769C65DD} } ,
 	 { {0xA5EF1BE9, 0x8A0C7C75, 0x8C94626F, 0x257A9AA1, 0x0B9AC432, 0x561A7DF0, 0x2A145142, 0x7EC656B8},
 	{0xBC3F3D29, 0x6868A9DB, 0xBB9A0D61, 0x3AF5DCE5, 0x0C72B41C, 0x845494A3, 0xE3A66656, 0x0AE63518} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6144 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6145 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6146 a010");
@@ -1087,7 +1087,7 @@ int main(void) {
 	{0xAFA176FD, 0xAC2E041B, 0xE9A89240, 0xCF429E94, 0x6FA0EC26, 0x3BBBA1CC, 0x9B4993C9, 0x64A886E8} } ,
 	 { {0x48C6A8D6, 0x02993F1E, 0xA88F2F5D, 0x1B53489C, 0x518D2618, 0x526CF835, 0xF1157C1D, 0x4A91FDFB},
 	{0xD5189538, 0x22D388AC, 0xE3D83665, 0x0087AD94, 0xC582B25E, 0x9A596187, 0xBF0DC38B, 0x6247C618} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6156 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6157 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6158 a010");
@@ -1130,7 +1130,7 @@ int main(void) {
 	{0x1E5D942C, 0x99454A1C, 0xF5A74592, 0x00881AFB, 0x52742622, 0xA95751A9, 0x20942EE8, 0x446E0389} } ,
 	 { {0x35D9D706, 0x940E40B4, 0xABE11D3D, 0x76CCB213, 0xC750235D, 0xA79048FD, 0x66AF4D66, 0x79C12278},
 	{0x411F6555, 0xC2A37C5A, 0x64500822, 0x6D8D2F97, 0xBEC5F3E0, 0x105B0B89, 0xC9C7AB38, 0x8C3B43C3} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6168 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6169 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6170 a010");
@@ -1173,7 +1173,7 @@ int main(void) {
 	{0xDE506A6D, 0xF64D331A, 0xFF786089, 0x86787A57, 0x63DA3E1F, 0x0276BF75, 0x4CAF664F, 0x4FFBD957} } ,
 	 { {0x2898B19F, 0xD82033B9, 0x1E4B2A3E, 0x611CE703, 0xB71EC980, 0xE3D6DD87, 0x8979891F, 0x4BF6F6F6},
 	{0x220B66F0, 0x890887E0, 0x21AA7DB5, 0x4260AF1F, 0x76C6BE18, 0x2C1B9402, 0xEF2F8747, 0x2809AAF0} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6180 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6181 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6182 a010");
@@ -1216,7 +1216,7 @@ int main(void) {
 	{0x2A7A884D, 0xA890E7DD, 0x917AA241, 0x32416B28, 0xA1347DA1, 0xD18DE68A, 0xF7A7253E, 0x2A96F105} } ,
 	 { {0xE611FF9C, 0x14424080, 0x13CF94CE, 0x79F725FE, 0x41BA6A9F, 0x366D6154, 0x9E0828C8, 0xAD237D8A},
 	{0x7EDD51C6, 0xD3CE2B03, 0x678C1859, 0xD55CF54F, 0xF3FB7E68, 0x2C2E4DAD, 0xDFDC6D45, 0xA49FD890} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6192 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6193 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6194 a010");
@@ -1259,7 +1259,7 @@ int main(void) {
 	{0x6C56D058, 0x039E23AB, 0x10C50AFB, 0x27188FB0, 0x1C55A9DA, 0xD6AA4C41, 0x5C5A6A78, 0x52DD776B} } ,
 	 { {0xC68C43BF, 0x3600F081, 0xEB2D3380, 0xF95F01AE, 0x6D8E9A50, 0x20A02A70, 0xB22A9EC9, 0x7E5C2215},
 	{0xA23E901C, 0x10F451FE, 0xF93FC3BB, 0x20FE707D, 0x5399C41A, 0x0183EB56, 0x9F869004, 0x54005FA9} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6204 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6205 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6206 a010");
@@ -1302,7 +1302,7 @@ int main(void) {
 	{0xD13337B1, 0x4C7EED6A, 0x94417F7A, 0xF5E08DBC, 0x85DD8D67, 0x225F7011, 0x213239CE, 0x158874A4} } ,
 	 { {0x7BD5507C, 0x4FDECF92, 0xFC1921B6, 0x32EEA8B5, 0xF364BD6A, 0x6C5BEA24, 0xE8BEFFC4, 0x9841BE4E},
 	{0xE56F7B65, 0x67421C50, 0xBD9E8D15, 0x51771772, 0xAD1378F4, 0xCFAEB991, 0x0F752E87, 0xA196C885} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6216 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6217 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6218 a010");
@@ -1345,7 +1345,7 @@ int main(void) {
 	{0x4A38AD7F, 0x320730EB, 0x65371544, 0x9EBE880C, 0xB96C2911, 0x68C143DC, 0x3F414086, 0xB6B48E0D} } ,
 	 { {0xDAA03D3D, 0xE1CB1D16, 0xBFCF85C6, 0x0C3B9205, 0x4C011E22, 0xB85A2630, 0xB50F782E, 0x014C29F4},
 	{0xE2AD903C, 0xA8BC450E, 0xB9AD8D0C, 0xE80DCAAC, 0xD5EE6622, 0xE21131F0, 0x3DB24D90, 0x5D4DD34F} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 6228 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 6229 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 6230 a010");
@@ -1404,7 +1404,7 @@ int main(void) {
 						0x7457B158, 0x3D578BBE, 0x5CD0562D }, { 0xF70FE8BB,
 						0xCB2CE032, 0x42347E4C, 0x6D94E531, 0x201389F8,
 						0x35306AA4, 0x38AAD244, 0xB59879D9 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 1 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1474,7 +1474,7 @@ int main(void) {
 						0xFC7B0657, 0x6E7F5258, 0xA6BDD560 }, { 0x8241AABE,
 						0xB980C0B5, 0xE52940F9, 0xFE40F5D0, 0xC8C214C3,
 						0x66986B18, 0x3B901651, 0x1774AEF9 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 13 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1544,7 +1544,7 @@ int main(void) {
 						0xCA496729, 0xEBEAB156, 0x0243132E }, { 0x4962D0E1,
 						0x35422B67, 0xD9F07677, 0x46F21462, 0x191AE493,
 						0xB5C0AABC, 0x46B4AB92, 0x9E3635D7 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 25 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1614,7 +1614,7 @@ int main(void) {
 						0x60A949F3, 0x9AFD4873, 0x08085FFE }, { 0xD5531BA1,
 						0xEF92059C, 0xED327A6B, 0xD8795A15, 0xC866041C,
 						0x79175781, 0x8C7CD744, 0x9CC942E3 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 37 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1684,7 +1684,7 @@ int main(void) {
 						0x027ADD96, 0x734393B5, 0x4203D581 }, { 0x43560584,
 						0xB1E0A0FD, 0xECA18EA3, 0xB65C0116, 0xB8158C16,
 						0xE51D221C, 0xF8918DDE, 0x01EAD57C } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 49 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1754,7 +1754,7 @@ int main(void) {
 						0x05AEA438, 0xF6497C38, 0x0CDE4331 }, { 0xF20F0A9E,
 						0x75D28CBE, 0x2EC0F71F, 0x66939F05, 0x74A4CEC9,
 						0x81F08E62, 0xC1D53D32, 0x2CE8D42A } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 61 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1824,7 +1824,7 @@ int main(void) {
 						0x1D575EA4, 0x921E38B5, 0x14714213 }, { 0x1A645C37,
 						0x220171AE, 0x6C27EDD6, 0xBE3001DC, 0xE1215418,
 						0x8BF60367, 0x725165B1, 0x8BFA4BE1 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 73 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1894,7 +1894,7 @@ int main(void) {
 						0x10929DDD, 0x2CDF27D0, 0x6C0926D1 }, { 0xBE331030,
 						0x6E002F39, 0xC095AFD5, 0x81138E89, 0x24AB274C,
 						0x4D32AF75, 0x3B90829E, 0x3DC24DEB } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 85 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -1964,7 +1964,7 @@ int main(void) {
 						0xD5305EB6, 0xC222CC09, 0x5BAE7AD6 }, { 0xFCA6EC5D,
 						0x4B7545CC, 0x7C6B3E59, 0x4EB877D9, 0xAE8F9BC9,
 						0xE66C8CE8, 0x296EA78A, 0x6E03EF43 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 97 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2034,7 +2034,7 @@ int main(void) {
 						0x78C5E497, 0x9FB3BE5B, 0x2D0710A6 }, { 0x1B117A2C,
 						0x47FDECD8, 0x26A745F9, 0x75DBF111, 0x9DC58252,
 						0xD2BE14FE, 0x5486AF9B, 0x6699EC52 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 109 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2104,7 +2104,7 @@ int main(void) {
 						0x62171F9D, 0xF4FBC541, 0x7DF8D80B }, { 0xFCDB092D,
 						0xA0A48B8E, 0x7F525CAC, 0x96EB9FFB, 0xC9F27FE1,
 						0x6D1B8915, 0x7C55B783, 0x4EBE5B84 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 121 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2174,7 +2174,7 @@ int main(void) {
 						0x2B49BCCA, 0x8A7C7ACE, 0x06DD26F1 }, { 0x081D1FA2,
 						0x10928E35, 0x302BED48, 0xDD881822, 0x4F1D8066,
 						0x4C5D51F6, 0x4A4A8387, 0x0D82D8CC } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 133 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2244,7 +2244,7 @@ int main(void) {
 						0x6C80E793, 0x2EDDB2A5, 0x1F0A7F44 }, { 0xC8B181CE,
 						0x0046C666, 0x07526F0B, 0x25AACF97, 0x496A0B5B,
 						0xA60FA94F, 0xB883227D, 0xA3BE6CF6 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 145 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2314,7 +2314,7 @@ int main(void) {
 						0x1FA0E6C8, 0x1C2D198D, 0x8CFD18D0 }, { 0x5B78D06D,
 						0xE60C4FD5, 0xA7EEE1E4, 0x1A663F38, 0x2C600629,
 						0xA60C0A6B, 0xD0B09F25, 0x69C9BE1B } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 157 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2384,7 +2384,7 @@ int main(void) {
 						0x1AC99B26, 0x49A93512, 0x8EC9D57C }, { 0xEA32C860,
 						0xAB248C58, 0x4B37D4E5, 0xF79CB094, 0x5603140A,
 						0x412C6B01, 0x62DDEB57, 0xB7753BBA } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 169 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2454,7 +2454,7 @@ int main(void) {
 						0xAC784EC5, 0x6E54BE5B, 0xB3564AFB }, { 0x1E792567,
 						0xA59B91EC, 0xD79A16CD, 0x8C64DB2E, 0x93EA1D23,
 						0x89600AC1, 0x0D4BC347, 0x27C7ED8F } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 181 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2524,7 +2524,7 @@ int main(void) {
 						0x6E082A33, 0xDFBFBA7F, 0x356B1F27 }, { 0xB479A29F,
 						0x30BCA93C, 0x74B8F033, 0x83416836, 0x82544BA5,
 						0xF3AD77BE, 0xD803D621, 0x70399143 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 193 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2594,7 +2594,7 @@ int main(void) {
 						0x9F2097DB, 0xCBF2B1E2, 0x2F98C675 }, { 0x44024E52,
 						0x0D3484FA, 0xB8086513, 0x35021FC6, 0x711A9114,
 						0xE0A7FB32, 0x2D9E8281, 0x682A30C7 } } } };
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate 205 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2676,7 +2676,7 @@ int main(void) {
 						0x0215432D, 0xCC6EBDDF, 0x529A203C }, { 0xEB73BD13,
 						0xA50F5E8E, 0x9FA871C7, 0x523A04DD, 0xC7B646C4,
 						0x460A771C, 0xD9DF55B4, 0x1AD9D7B5 } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 217 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2758,7 +2758,7 @@ int main(void) {
 						0x739CF2BA, 0xF4BFC9EB, 0x9C15FDB5 }, { 0xAE7802B0,
 						0x1D4EA6A6, 0x97EB8612, 0xF315636F, 0x178AEE75,
 						0x418559C0, 0x48DC2A9C, 0x83819B80 } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 229 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2840,7 +2840,7 @@ int main(void) {
 						0x46DA57A5, 0x1FD74329, 0x903F6893 }, { 0xBBBC679E,
 						0xB0611C1C, 0x19C4D483, 0x77995E50, 0x68964C59,
 						0xF1240FBD, 0xABC193E6, 0x6550224B } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 241 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -2922,7 +2922,7 @@ int main(void) {
 						0x89C3F3D3, 0x0057DF75, 0x769C6C82 }, { 0x9268CBA5,
 						0xCCFC10BF, 0x46954210, 0x5D12343E, 0x4856E771,
 						0x894D39B2, 0xAFE124BC, 0x2C0FA8A7 } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 253 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3004,7 +3004,7 @@ int main(void) {
 						0xF0281278, 0x5FC2A236, 0xA6F3EF19 }, { 0x4D675359,
 						0x45E82232, 0xEF250359, 0x2C07804D, 0x54476FF5,
 						0xD041FCEA, 0xE46051A5, 0x0F941BFB } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 265 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3086,7 +3086,7 @@ int main(void) {
 						0x7C76DB6C, 0x027374CC, 0x09C44992 }, { 0x615842C7,
 						0x05C76636, 0x37E22A48, 0x48829D5D, 0x600752B3,
 						0xD2770D31, 0x3F196365, 0x3B0FB8B0 } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 277 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3168,7 +3168,7 @@ int main(void) {
 						0xD0CF55BA, 0x5FAEADED, 0x1760F212 }, { 0x0478D797,
 						0x0E0F08DE, 0xF275BB0C, 0xF5AEA41E, 0xCF0F0EA8,
 						0x0E195EA7, 0x35A2AEE2, 0x81A12686 } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 289 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3250,7 +3250,7 @@ int main(void) {
 						0x0AD9EDB4, 0xC24ECF8E, 0x6182C4CB }, { 0x3EAB69C9,
 						0xB339A179, 0x1823D023, 0x42FD074C, 0xD53A772A,
 						0x07C6B928, 0x414E6BA2, 0x83AC507A } } } };
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_mul 301 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3332,7 +3332,7 @@ int main(void) {
 						0x4F0085BE, 0x69370005, 0x3DFCBD3D }, { 0xFCF34B05,
 						0x010402AB, 0x4AC6F6F6, 0xC661708F, 0x4068E987,
 						0x7E930A21, 0x47E7B7CD, 0x0BB48C55 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 313 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3414,7 +3414,7 @@ int main(void) {
 						0xF242A74D, 0x68B3CE66, 0x7B676BF1 }, { 0x45D4874F,
 						0xC71D7DF4, 0x8DCF522E, 0x900AB4C7, 0xABDB9676,
 						0x14EDCC69, 0x7D5C7B79, 0x3B4F27F4 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 325 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3496,7 +3496,7 @@ int main(void) {
 						0x6088CC30, 0x311EB284, 0x5C155714 }, { 0x69EEA5F5,
 						0xB67DF569, 0x57150CC2, 0x9000CCB6, 0xCFCEF598,
 						0xD62A7BB2, 0xA3A088DB, 0x0359EC24 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 337 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3578,7 +3578,7 @@ int main(void) {
 						0xC3279AE9, 0x7D73E57B, 0x80937402 }, { 0xDD3EF402,
 						0x64AA64D2, 0xDDF06DDE, 0x4FAAA6D2, 0x025300F9,
 						0xB04C3CBC, 0xCF6E382D, 0x3895814D } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 349 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3660,7 +3660,7 @@ int main(void) {
 						0x583F3893, 0x3445D773, 0x39D8190A }, { 0x2E73D7FC,
 						0x6C02D6CC, 0x129B58B8, 0x8C3F1114, 0x0D2CCC21,
 						0x892F878B, 0xDE5BC384, 0x2BB6A5D6 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 361 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3742,7 +3742,7 @@ int main(void) {
 						0xFE08FA8D, 0x23352EA3, 0x6C6B0882 }, { 0x78FB68C1,
 						0x362CEAD5, 0x5B5D2F86, 0xA599D435, 0x2D28E1FC,
 						0x17A3131C, 0xD201B479, 0x0AE0A1F5 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 373 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3824,7 +3824,7 @@ int main(void) {
 						0x6563D0FA, 0xCE1EC445, 0x305C718F }, { 0xA1C9B4A3,
 						0xF4C5D4E6, 0xF30024E9, 0x2032B3E7, 0x4565A909,
 						0x98A37201, 0xAB551E48, 0x672AF2E4 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 385 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3906,7 +3906,7 @@ int main(void) {
 						0xCA7E5986, 0xBA4C8E98, 0x78EB3EAB }, { 0x056F906B,
 						0x72A106A6, 0x70D62DE5, 0x15BDC891, 0x8CC3D27B,
 						0xAF252DF4, 0xF0BA95EB, 0x78CD76C5 } } } };
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+    pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0],
 				"pbc_map_opt_ate_div 397 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1],
@@ -3956,7 +3956,7 @@ int main(void) {
 	{0x382DD884, 0x28289C27, 0x3802131D, 0xB59B202B, 0xFD5AB98B, 0x2F88F88C, 0xC794B525, 0x1D68A188} } ,
 	 { {0x8A6D06A1, 0xCEDB332C, 0xB336E8EC, 0x0E239A1F, 0x765A5284, 0x5DF01A42, 0x0461990D, 0x08724A28},
 	{0x080B618A, 0x2DD389C7, 0x977F5185, 0x8237F6DD, 0x6445E8CB, 0x4D3CE7B5, 0xF0B5E80A, 0x0E0D1082} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 539 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 540 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 541 a010");
@@ -3991,7 +3991,7 @@ int main(void) {
 	{0xBDEC5DF1, 0x61767953, 0x879460AB, 0x3F623AB7, 0xD6A6BA68, 0x1DE5249D, 0x479B5F50, 0x1973A8E4} } ,
 	 { {0xF34E4E1F, 0xC095D900, 0x9D159BAF, 0xAB294306, 0xBF83F113, 0xF5A05A7F, 0x54D3314E, 0x222CB39C},
 	{0x338A3499, 0x685FD288, 0x383C2229, 0x34B2E96A, 0xEFA7A106, 0x61442880, 0x532D0333, 0x09332A0D} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 551 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 552 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 553 a010");
@@ -4026,7 +4026,7 @@ int main(void) {
 	{0x901D1AB0, 0x288745D0, 0xDF31F998, 0xBF871D91, 0x8C825997, 0x170B36DC, 0x8526F009, 0x1F6A4CDE} } ,
 	 { {0x14E3DB0E, 0x24590204, 0x7D44C79B, 0x1ACB4A1C, 0xC75A5C1F, 0x8EBE098F, 0x47DCDCD8, 0x120C3161},
 	{0x6AECBB5E, 0x3DDF1048, 0x22DEE7BE, 0x96B8D121, 0x5FF7B13C, 0x283DCD6B, 0x3041BDF7, 0x096DF02B} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 563 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 564 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 565 a010");
@@ -4061,7 +4061,7 @@ int main(void) {
 	{0xC988025F, 0xDF56B524, 0xE3955B1C, 0x9AF00183, 0xFB5CD4FC, 0xCC14C93F, 0xF0EF29CC, 0x05CA7CC3} } ,
 	 { {0x68EB6D27, 0x38D77033, 0xED0A07F6, 0x0EF94CAC, 0xCE1AA3DC, 0xA75B8D11, 0xC650E4CF, 0x11CB3D71},
 	{0x322DDD2D, 0x3AC78D32, 0x38FE7EA4, 0x9B345DF9, 0xF30F9686, 0x27EE4961, 0x4CE42C69, 0x06CA44D7} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 575 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 576 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 577 a010");
@@ -4096,7 +4096,7 @@ int main(void) {
 	{0xE9E051C0, 0xAFA58E6B, 0x56532DA4, 0xA5C9ECD8, 0x2BEBBCD3, 0x0997064F, 0x31F9A117, 0x0C457CA9} } ,
 	 { {0xA5091C84, 0x2FFD7E3D, 0xB25FE186, 0xC4A51A16, 0xB0CE30DD, 0x3A1CBF3A, 0x723C40DF, 0x0B17CCCF},
 	{0x4EA66972, 0xB5E75AE4, 0xAAED626C, 0xD461FE44, 0x41184E61, 0xA97F2AC6, 0xDE3865D5, 0x0E652DBD} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 587 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 588 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 589 a010");
@@ -4131,7 +4131,7 @@ int main(void) {
 	{0xA9F45AEF, 0x681FCD07, 0x56B944BE, 0x4341F13D, 0xAE0CC78F, 0x6C2ACCEA, 0x70B92695, 0x04150AFA} } ,
 	 { {0x603A0CCE, 0x3782D274, 0xE744D6D5, 0xFCA169C7, 0x83414198, 0xEAF5214D, 0xE0FC58CB, 0x164D21EE},
 	{0x9D2CD792, 0x10F5A325, 0x0F4F4BD1, 0xE41DB175, 0xB8B0A07D, 0xE99D3DE5, 0xCFF013A9, 0x19232D7A} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 599 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 600 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 601 a010");
@@ -4166,7 +4166,7 @@ int main(void) {
 	{0xAAC96FD5, 0x2B857F5B, 0x07FCFA3C, 0xB7C5A43A, 0x1305A29F, 0x682418B4, 0x01C07C6F, 0x1A667D2E} } ,
 	 { {0x584C11F1, 0x716B59DC, 0x9438672C, 0x1602478D, 0x264F198B, 0x4CB71C06, 0x051A0DE0, 0x05816951},
 	{0xC92BA1CD, 0xC2CEECC8, 0x9B428D3B, 0x923B7796, 0x9F621A70, 0x5EF094ED, 0xFAA88B06, 0x1472246C} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 611 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 612 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 613 a010");
@@ -4201,7 +4201,7 @@ int main(void) {
 	{0x16CBAAA5, 0x01DE6987, 0x87D80E65, 0x542F3E76, 0x0836AFD9, 0x20CA5179, 0x40CE5AA8, 0x1036B4E8} } ,
 	 { {0x76E3F900, 0xCE438F90, 0xD4F9AAE9, 0x559BAD72, 0xF22DB3DF, 0xE91DC1C4, 0x3E09ACC0, 0x03087693},
 	{0x52F1C5AE, 0x65C00DAC, 0x85C74541, 0x08F567A0, 0xF60FE5EC, 0xEE0CD13F, 0x2DABBBFD, 0x0F65AF40} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 623 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 624 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 625 a010");
@@ -4236,7 +4236,7 @@ int main(void) {
 	{0x86D63ABA, 0xFD3BA4F6, 0x393008F7, 0x5DCB83C3, 0x24553A4A, 0x53FDF0C7, 0xEBF76B56, 0x0BFCCE87} } ,
 	 { {0x8741C0BC, 0x9A6A65C5, 0xF710B8C6, 0x089CFFB1, 0x0F97ADB6, 0x07ED8250, 0xC6AB3B9A, 0x1EAC653E},
 	{0x5A926803, 0x3A4B8144, 0xBA7D38C5, 0x0AB8E667, 0xE1B694C2, 0x189325D1, 0x3DDB6D25, 0x1E779A9B} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 635 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 636 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 637 a010");
@@ -4271,7 +4271,7 @@ int main(void) {
 	{0xD36AA2C4, 0x695E1EB0, 0x643C1EA8, 0x3822DE17, 0x210CAC55, 0x2B1C98E7, 0x3AA6D11D, 0x0A86283C} } ,
 	 { {0x9570C5D6, 0x25F3D99C, 0x2083A9DA, 0x7D428A78, 0x60415FAC, 0xF8F98514, 0x53F3B299, 0x138EBAD5},
 	{0x6953EAAC, 0x6C46A715, 0x8A8186D3, 0x9E74086C, 0x72731617, 0x8B8C924F, 0x843AB870, 0x1F92F68F} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 647 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 648 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 649 a010");
@@ -4306,7 +4306,7 @@ int main(void) {
 	{0xB64E4A4E, 0x052CC9DB, 0x3D23FEFD, 0x011399A6, 0xFBD6177E, 0x5E0045CB, 0xD60C9A96, 0x02F95AC1} } ,
 	 { {0x0CADC588, 0x2AF9A9FD, 0x56DE9E17, 0xE870E0EE, 0xB4635DBA, 0x1A7EE810, 0xED99F3D5, 0x1BC72C99},
 	{0x984B1E49, 0xD1C99F08, 0x03CC6853, 0x86F4D3B3, 0xFC8F33CF, 0x5ABBCEF6, 0xB7A0C0D1, 0x076B4576} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 659 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 660 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 661 a010");
@@ -4341,7 +4341,7 @@ int main(void) {
 	{0x9E63188C, 0x45D16760, 0x1E444938, 0x1761B514, 0xD0D3491A, 0xCBF2ED50, 0x830EC5A0, 0x1FEC69DE} } ,
 	 { {0x805CDDDD, 0xE5BE37DC, 0x8BA5B478, 0x11D9691A, 0xB0F37CAC, 0x8E6955D4, 0xA0AAA6BC, 0x24BACE1E},
 	{0x63185FD0, 0x6AE28DC4, 0x64B5C947, 0x011E71C5, 0x59C3D684, 0x2E2247FB, 0x49B034A4, 0x20481DD5} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 671 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 672 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 673 a010");
@@ -4376,7 +4376,7 @@ int main(void) {
 	{0xB1B0E9CD, 0x9D7B937B, 0x3C3AD578, 0xD9A7E38F, 0x02B9AF66, 0xD8A87F08, 0xB086518C, 0x16160558} } ,
 	 { {0x2CEE7B2B, 0x8EC6C3D8, 0x56C9F5AD, 0x68D49781, 0xAB6260D2, 0xE7502523, 0xB79B623B, 0x118243D9},
 	{0x140022F8, 0x1A7A75F7, 0x1EB075AB, 0xB021DFCB, 0x09A7D260, 0xE6E1B970, 0xDA63A90B, 0x17AAF103} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 683 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 684 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 685 a010");
@@ -4411,7 +4411,7 @@ int main(void) {
 	{0x9773F35C, 0x34895F4A, 0x181CE05F, 0xDF8E6E99, 0x1F2A9CD3, 0x4CAB927A, 0x8F58BC66, 0x1F5A0576} } ,
 	 { {0xF357DE27, 0xE82293B4, 0xF88B1332, 0xE138348F, 0xEFD4021A, 0x6B7D84C9, 0x145BE380, 0x1DCA06F9},
 	{0x4B6D9D82, 0x63AC0110, 0xC114E121, 0x4C9FF870, 0xE3DA685F, 0xD4EBFF40, 0xCBEA51BA, 0x18B99784} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 695 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 696 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 697 a010");
@@ -4446,7 +4446,7 @@ int main(void) {
 	{0xE1F5C68F, 0x6B38FFE7, 0x8F57B0F3, 0xF7E3B02D, 0xE586D08B, 0xD2A8F554, 0xF438DFEA, 0x0E92B578} } ,
 	 { {0x58E8F942, 0x5C447237, 0xFB519FE5, 0x6F45D314, 0x1021119F, 0x3E08EF27, 0x2A800AEC, 0x1E272678},
 	{0xB8760D47, 0xC5857EB2, 0xC1D38FE5, 0xEF8C3D7A, 0x3812D6FE, 0x4F5A3410, 0x470D45ED, 0x1D335123} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 707 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 708 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 709 a010");
@@ -4481,7 +4481,7 @@ int main(void) {
 	{0x2A2E7001, 0xF6F1BD00, 0x0DFCE09B, 0xF110C2E9, 0xFC77DE11, 0x1EB08DCE, 0xBC9CEC0B, 0x13D95D5A} } ,
 	 { {0x7DD0D8ED, 0xBC3045BC, 0xEAD6BC58, 0x63F08813, 0x0758C45D, 0x449F30A1, 0x7FF762E0, 0x08D3F645},
 	{0x4B5A65CC, 0x4E39A5B7, 0xB9EB381A, 0x78A203F9, 0x9190CB01, 0x514F10A1, 0x1B128D53, 0x06953A46} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 719 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 720 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 721 a010");
@@ -4516,7 +4516,7 @@ int main(void) {
 	{0x0BBAA0B2, 0x4E3287DB, 0x862FE774, 0xC46ABA1F, 0xD5FE3F4C, 0x43A7370E, 0x7873F026, 0x02539BC9} } ,
 	 { {0xE2A64882, 0x3C593C71, 0x1F5BA91C, 0x9E33D682, 0xB05D8B1E, 0x1F902E5C, 0x18B3E902, 0x055B4BD6},
 	{0x5D270E17, 0xD5C7B917, 0xF99D257F, 0x4622AC6F, 0x2CD3FF89, 0x445D5FD5, 0x35ED239B, 0x206BEA73} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 731 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 732 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 733 a010");
@@ -4551,7 +4551,7 @@ int main(void) {
 	{0xC5ACA70D, 0x84AC59AF, 0xC69333AD, 0x888F1D36, 0xB27F1064, 0xFC3D2838, 0xBAB907CE, 0x0ED2C24C} } ,
 	 { {0x740006DB, 0xB2894408, 0x092DE70F, 0x3249D22C, 0x1E8CF5C7, 0xC0F52B64, 0x648A56D3, 0x1E1E460D},
 	{0x8F934746, 0x4C08927F, 0xF9394894, 0x75DA40C4, 0x72045FE1, 0x009ED52E, 0xC01E362A, 0x03A252D8} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 743 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 744 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 745 a010");
@@ -4594,7 +4594,7 @@ int main(void) {
 	{0x4157B035, 0x50E01B14, 0xD8984224, 0xF3F80A18, 0x3C7A731E, 0x5B497B7E, 0x53D28264, 0x1115B6B5} } ,
 	 { {0x740AE37F, 0x662B03F0, 0x04095CC4, 0x3B303BC3, 0xD5E71E73, 0x370BE804, 0x3C555544, 0x23D589ED},
 	{0x16CEFDB2, 0xE5DF8104, 0xB46924B8, 0x6DB35CDF, 0x4F3BFCF5, 0x79C535E7, 0x3631A085, 0x09B8A69A} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 755 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 756 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 757 a010");
@@ -4637,7 +4637,7 @@ int main(void) {
 	{0xE9B75D80, 0x7BC0DD4A, 0xFB9DD9A7, 0xEC7F9849, 0x56B4BF79, 0x6F2127DD, 0x0085BAAB, 0x0E92F70F} } ,
 	 { {0x0BF0B674, 0x5F10E306, 0xB6C4CC85, 0x1763AF2A, 0x2C1C904B, 0x43307EA8, 0x14CEB488, 0x04693F12},
 	{0x6E886F03, 0xAC3BF80B, 0x7E37F26E, 0x34585E07, 0xFD18E464, 0x381DB0FF, 0x351FC986, 0x001056CA} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 767 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 768 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 769 a010");
@@ -4680,7 +4680,7 @@ int main(void) {
 	{0x333031A6, 0x0D43F597, 0x6461A415, 0xCCA70AE4, 0x20FEBED9, 0xF0EED3BE, 0x2ED46674, 0x0EB4A813} } ,
 	 { {0xC4B559C6, 0xF639D37E, 0xE40F2E17, 0xEF41EE89, 0x2B399DCC, 0x222C3967, 0x0544CD69, 0x13C77228},
 	{0x618B5ED6, 0x06567350, 0xD5F1D677, 0xAA796A16, 0x474103A0, 0xC178FE73, 0x5904FAB8, 0x245C8AFF} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 779 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 780 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 781 a010");
@@ -4723,7 +4723,7 @@ int main(void) {
 	{0x7A047F8F, 0x7804F694, 0x6C755B5E, 0xF12A2772, 0x7CBF7BC8, 0x024254AF, 0x4DB34020, 0x0B40F577} } ,
 	 { {0x35CA0910, 0x9CE7E784, 0x8471765F, 0x0425457F, 0xF905436B, 0x1E690A4B, 0xE2FA5465, 0x237E313A},
 	{0xA94BB25F, 0x81E2017D, 0xA651A6A1, 0x7EFD4C2A, 0x348E97CA, 0x5C08E5B2, 0xA10C74AA, 0x05382D1C} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 791 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 792 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 793 a010");
@@ -4766,7 +4766,7 @@ int main(void) {
 	{0xD9717185, 0xCDAB2E08, 0x68A41452, 0x9D61EE2A, 0x8CB4B18F, 0xAACBE27A, 0xA4D50611, 0x18D35BA8} } ,
 	 { {0x30C10325, 0xBAB38CDF, 0x7B285966, 0x11F38338, 0x3F5D1925, 0xF60EA4E6, 0x7CD5520B, 0x10FC028B},
 	{0x49457311, 0xEA824757, 0xF8906697, 0x2524EAC9, 0x2D9F00A3, 0xA6F04621, 0x3572EC1C, 0x132CC093} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 803 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 804 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 805 a010");
@@ -4809,7 +4809,7 @@ int main(void) {
 	{0xC93388F6, 0x0C3CCF3D, 0xAF00D8BE, 0xDD0B127F, 0xD2ABF84F, 0x19819D39, 0x2DCFB2D5, 0x13DEA9F4} } ,
 	 { {0x46223BDB, 0x0B82328D, 0xCA3F9031, 0x635BD60B, 0x25AC5907, 0x21BDE7A2, 0x138D38D4, 0x10ADEAD8},
 	{0x7938B06F, 0x3BFC3679, 0xE99AC76A, 0xF5E8EC17, 0xAE545F59, 0xFE0914B1, 0x486F0092, 0x0650DA84} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 815 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 816 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 817 a010");
@@ -4852,7 +4852,7 @@ int main(void) {
 	{0x307DAA1B, 0x70C4FAF2, 0x1A225474, 0x32CD9392, 0xBE9876A8, 0x559101C1, 0x6B723A7C, 0x152BF06E} } ,
 	 { {0x5C6176C0, 0xC704E79B, 0x87B05A82, 0xAA20AE5C, 0xD259B9C0, 0x6BE33194, 0x26CE2DF6, 0x1D08D20E},
 	{0xBFAAF591, 0x58A56AF6, 0x968DFB35, 0xF8B5DD23, 0x3AA8C964, 0x4380F6E4, 0x34855E5E, 0x186F6D33} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 827 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 828 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 829 a010");
@@ -4895,7 +4895,7 @@ int main(void) {
 	{0xC3DFC43D, 0xB29A5F86, 0xAF477805, 0x1BEBC84A, 0x69BD72B6, 0xE37E4A36, 0x2C7C24E8, 0x0D0A1406} } ,
 	 { {0x3A9CD35C, 0x15E5F200, 0xD61ADCD0, 0x99FC0BA4, 0x8E9EFE75, 0xD22B5D99, 0xB612DA15, 0x1827796D},
 	{0x1B61372F, 0x01756F78, 0x7FEC5DCF, 0xD817E495, 0xDCC67ACE, 0x2AF1BC64, 0x898F76C0, 0x21BD05E4} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 839 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 840 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 841 a010");
@@ -4938,7 +4938,7 @@ int main(void) {
 	{0x80073321, 0x1AB69297, 0x9B98852D, 0x3550C098, 0x8B7E3403, 0x97DEC6E6, 0x3F55CA61, 0x229D3AD9} } ,
 	 { {0x6865BC8E, 0x51A07F4C, 0x9313A36C, 0xB4189A67, 0xF8E428C2, 0xE776B140, 0xEE4E17D7, 0x085FD504},
 	{0xCD991AA0, 0x17764FB8, 0xD14F7E25, 0x5A66305D, 0xBFB53514, 0x25FA26D8, 0x03AAC247, 0x186F4555} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 851 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 852 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 853 a010");
@@ -4981,7 +4981,7 @@ int main(void) {
 	{0xC40C65BE, 0x5B15CF2A, 0x28777EA4, 0x3C2D601D, 0xC4C5DED7, 0x05257DB3, 0xC622197E, 0x1AF6826C} } ,
 	 { {0x0EFB2412, 0x3F5539B6, 0xF3CA6566, 0x98993187, 0xEFC46264, 0xFBA71AAA, 0xB00444BF, 0x0F10311C},
 	{0xC6A50786, 0xED165BA6, 0x68B2290C, 0x827CD2FC, 0xB19D1A19, 0x943D614E, 0x7A9A4B47, 0x0089D2F2} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 863 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 864 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 865 a010");
@@ -5024,7 +5024,7 @@ int main(void) {
 	{0x182C0C06, 0xD73712B1, 0xC2101DCA, 0xE5F2DD06, 0xAE7C41D5, 0x0AC4774C, 0xBD6E0811, 0x0935201F} } ,
 	 { {0xAC8B661C, 0xAA893561, 0xC1CCD40C, 0xA53C2AD3, 0x89F686CE, 0xB4898E73, 0x9322D4D2, 0x1DD5C652},
 	{0x9E63C800, 0x8668EBB4, 0xA213F6BC, 0x951470DF, 0xD3726CC8, 0xD8DB7577, 0xDA8B56BF, 0x064A4072} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 875 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 876 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 877 a010");
@@ -5067,7 +5067,7 @@ int main(void) {
 	{0xCDA05B52, 0x36AC1BC1, 0xEBD230DD, 0x46357602, 0x764D0EDB, 0x6305994A, 0x870883FE, 0x1B3D54CE} } ,
 	 { {0xACB1A529, 0x0562939B, 0xAD8E8B2C, 0xAF4D21BF, 0x096CA87D, 0x992C218A, 0x4E0D4E49, 0x14DC678E},
 	{0x5A028D18, 0xF9A1795B, 0xAE28009F, 0x80075726, 0x1168C956, 0x33D45B6D, 0x6A59F6E7, 0x09085F07} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 887 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 888 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 889 a010");
@@ -5110,7 +5110,7 @@ int main(void) {
 	{0x1C7BE9F7, 0xD459AC24, 0xCB063FED, 0x23B9933E, 0x3E59EE1F, 0x654F3210, 0xDB466237, 0x0AFBD50F} } ,
 	 { {0xEC8E1951, 0x95CEA5EA, 0x0901B545, 0x6C365974, 0x960FB41C, 0xE7270F2E, 0x4F68A63C, 0x18084F87},
 	{0x61BA6F55, 0xCA93D5E6, 0x6ABB7F4F, 0x91D0A6A0, 0xC4AD5269, 0xE97E2003, 0x6542DCB9, 0x1546580C} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 899 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 900 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 901 a010");
@@ -5153,7 +5153,7 @@ int main(void) {
 	{0xA0802D90, 0xD8D5B1E6, 0x10A92F09, 0x10637E47, 0xBB162A1E, 0xC753BD23, 0x357D7177, 0x1B318686} } ,
 	 { {0x2FB21CF5, 0x94B528E9, 0xF7533CEA, 0xA5B25233, 0xF93CB95E, 0x370F9563, 0x0B6D1275, 0x16EECA47},
 	{0xED91F680, 0x667592D0, 0x835EFB7F, 0x39173B43, 0xA78ED956, 0x3DDCF416, 0x3FDEA8D5, 0x1F38888B} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 911 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 912 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 913 a010");
@@ -5196,7 +5196,7 @@ int main(void) {
 	{0x19A78E79, 0x28D767D9, 0x1F87FB26, 0x2F17ABE3, 0xC54C9BAE, 0xDFC5D453, 0x4F5A9CF8, 0x0C1EC045} } ,
 	 { {0xE6CE247D, 0x593D55F5, 0xB8761C5C, 0x1833F4D6, 0x0653944B, 0xC3687F77, 0x4854265D, 0x093DFD16},
 	{0x8DFFF0D8, 0x0AA14DB9, 0x4DDE78ED, 0x5705BEF9, 0xECAFDD97, 0xFD25B46A, 0x9FE3882D, 0x2165BBDF} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 923 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 924 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 925 a010");
@@ -5239,7 +5239,7 @@ int main(void) {
 	{0x45C0A580, 0xA91693E1, 0x925A7DF4, 0x818DCF97, 0x0D4D705D, 0x7BBEE743, 0xA2E24632, 0x08B99631} } ,
 	 { {0x82EC0646, 0xACAA0BA0, 0x1EC9650A, 0x0638D857, 0xD0922E16, 0xF9F1BDBE, 0x26584CB4, 0x181B436F},
 	{0x1771AD16, 0xA420A3B1, 0x70C856F2, 0xC4F607FA, 0x45C8884B, 0x4739D735, 0x97D933A5, 0x0313F417} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 935 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 936 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 937 a010");
@@ -5277,7 +5277,7 @@ int main(void) {
 	{0x012C60F1, 0x2D180809, 0x463C8C35, 0x61786871, 0x07F53542} } ,
 	 { {0xCD0DDDA9, 0x58880531, 0xE4067EB5, 0xE936A1EC, 0x08FBA75D},
 	{0x2C8AE44B, 0x93787948, 0x139FE372, 0x904B0308, 0x1BB15D20} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 539 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 540 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 541 a010");
@@ -5312,7 +5312,7 @@ int main(void) {
 	{0x53EAB0F3, 0xF5717280, 0xE31079E9, 0x15B7041F, 0x13C5822A} } ,
 	 { {0x6611876B, 0xBB4E9060, 0x642AD061, 0xCD397CDA, 0x08203352},
 	{0x983CB462, 0x6D183A8F, 0xF0226D5A, 0xC3BF9F31, 0x1A9B8126} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 551 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 552 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 553 a010");
@@ -5347,7 +5347,7 @@ int main(void) {
 	{0x5D04D8F2, 0xABB22D5C, 0x904832AE, 0xF311FC7D, 0x0FF27999} } ,
 	 { {0x7A6A9D2C, 0x47AE16ED, 0xA88E1CF9, 0x88746BBF, 0x0F39ADC2},
 	{0x028681E8, 0xED749EA5, 0xDCE3F4F7, 0x1601CC94, 0x0DF94AA5} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 563 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 564 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 565 a010");
@@ -5382,7 +5382,7 @@ int main(void) {
 	{0x89F3A2AA, 0x8C6A529E, 0xFB3B200C, 0xE554400E, 0x150C7F81} } ,
 	 { {0xBD35C992, 0x7BC39A30, 0x9CF34D82, 0x59F6149A, 0x15BD7CE9},
 	{0x37D831FB, 0xA941F185, 0x278F4C35, 0x6B53B4D2, 0x01EFD02F} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 575 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 576 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 577 a010");
@@ -5417,7 +5417,7 @@ int main(void) {
 	{0x651ED814, 0xD33CD34D, 0x92A3FBB5, 0x65811EB8, 0x215F8D6C} } ,
 	 { {0x1CB7B06A, 0x46832DC1, 0x0E6C150F, 0x2E20367A, 0x1627EEF1},
 	{0x3DDC5B66, 0xB8D183F4, 0xBCD1D336, 0x9DAFACD3, 0x09FAB212} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 587 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 588 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 589 a010");
@@ -5452,7 +5452,7 @@ int main(void) {
 	{0x6B9EADB6, 0x7340E177, 0x03ABDF68, 0xE56B8247, 0x01B2AA1B} } ,
 	 { {0xD7DFCE87, 0x05B6CE68, 0x772C5D33, 0xA33DD332, 0x018F8F57},
 	{0x59FAB064, 0x2099001E, 0xB7FBC26E, 0x0897A86D, 0x080D180C} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 599 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 600 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 601 a010");
@@ -5487,7 +5487,7 @@ int main(void) {
 	{0x260D880A, 0xF680D469, 0xCA19D858, 0x8A916733, 0x196AD5D1} } ,
 	 { {0x4FBAEA51, 0x5D10F17B, 0xA5E37219, 0x4BDEC175, 0x1A8C2C31},
 	{0xA3194656, 0x027C6922, 0x0B255F6B, 0x1ADC2A76, 0x00B340EA} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 611 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 612 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 613 a010");
@@ -5522,7 +5522,7 @@ int main(void) {
 	{0xE735497D, 0x4D6C2AE3, 0xFA2DEDEC, 0x7CB00402, 0x186A5F3F} } ,
 	 { {0xF4988F5D, 0x941FC83E, 0x0E76596B, 0xB6256B41, 0x098453C5},
 	{0x029CB9F2, 0x3C0112BA, 0x156723D3, 0x0748A316, 0x23B58FE2} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 623 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 624 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 625 a010");
@@ -5557,7 +5557,7 @@ int main(void) {
 	{0x98B57EC3, 0xC189D01D, 0x5F00AC89, 0x105ADB4A, 0x10B59E07} } ,
 	 { {0x2B0A09CF, 0xC4BCAC70, 0xE08D0801, 0xA8F6831C, 0x08CAF4C8},
 	{0x8DD4B082, 0xA89BD460, 0xCFE60E8B, 0x5A8ADC7F, 0x1812D1F6} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 635 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 636 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 637 a010");
@@ -5592,7 +5592,7 @@ int main(void) {
 	{0x4887544B, 0xD591BDD3, 0x60CF9ADE, 0x2F70B997, 0x196C8096} } ,
 	 { {0x27696417, 0xFFA61AE7, 0xEB0E8825, 0x00E59B30, 0x049C29E0},
 	{0x7957B10C, 0x8DC80A7A, 0x0B83A4C0, 0xEB1C4C74, 0x06442E5D} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 647 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 648 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 649 a010");
@@ -5627,7 +5627,7 @@ int main(void) {
 	{0x4265D6B7, 0x76E9D279, 0x52FC5C88, 0x97B1F1E1, 0x0B506892} } ,
 	 { {0x1A2CAE3D, 0x6E605078, 0x5CEF8746, 0x4C5152CA, 0x23A60DB0},
 	{0x8F5851C3, 0xCD8AD4F2, 0xAD58ECFE, 0xC3665B19, 0x1B26267B} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 659 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 660 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 661 a010");
@@ -5662,7 +5662,7 @@ int main(void) {
 	{0xCAA17F51, 0xE8F1B68E, 0x4B0C9D35, 0x078FC7D9, 0x1BD51C80} } ,
 	 { {0x67E0CC77, 0x3DA50B4C, 0xDC2B10BB, 0xBFE33229, 0x0581EB2F},
 	{0xD60B03D0, 0x7937775D, 0xCC99C502, 0x974E0D3F, 0x02013571} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 671 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 672 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 673 a010");
@@ -5697,7 +5697,7 @@ int main(void) {
 	{0x7646A5AA, 0x412A21FA, 0x4733B788, 0x36082ACD, 0x217B0526} } ,
 	 { {0x2237C7C5, 0x65A6FA01, 0x6D235C7D, 0x64A3B809, 0x1885AD92},
 	{0xC9FBC475, 0xDFC59A93, 0x06B876B6, 0x6676A7CD, 0x117FCA9E} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 683 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 684 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 685 a010");
@@ -5732,7 +5732,7 @@ int main(void) {
 	{0x6EDF60A0, 0x4A8749FB, 0x7B731CA2, 0xA6551CD7, 0x1E44AD2F} } ,
 	 { {0xBA1449DD, 0x19841F30, 0xF2F5138B, 0xE93D73B0, 0x005DF1FA},
 	{0xAE62A21A, 0xCF8FA68B, 0x2DC04A52, 0x1CC189DA, 0x1430A3DD} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 695 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 696 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 697 a010");
@@ -5767,7 +5767,7 @@ int main(void) {
 	{0x9F7B2209, 0x4E5379FE, 0xC7AECD29, 0x2AFDA5AA, 0x0F26F1D9} } ,
 	 { {0xB718687F, 0x121F6E89, 0x9D56D1CE, 0x38860DD0, 0x1C03ED8F},
 	{0x4343DAF9, 0x1153DDA1, 0xEF1D663D, 0x8724FCD2, 0x1136148C} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 707 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 708 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 709 a010");
@@ -5802,7 +5802,7 @@ int main(void) {
 	{0x9B7A254F, 0x03C62E1E, 0x2A2BB951, 0xBCD42A20, 0x1E05396C} } ,
 	 { {0xEC8E3764, 0x865A56CF, 0x0B5FBA63, 0xEE76753E, 0x1FEB3955},
 	{0x2015B1F7, 0x9FF5AB05, 0x44229279, 0x003239FB, 0x098B19F3} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 719 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 720 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 721 a010");
@@ -5837,7 +5837,7 @@ int main(void) {
 	{0x22810FC0, 0x9403C862, 0x8EDE61B7, 0x8899F00E, 0x08F7617F} } ,
 	 { {0x2F19FE85, 0x61BBA486, 0x82AECB6B, 0x8DF47A3B, 0x232BFC0A},
 	{0xCCDB252E, 0x09BA855C, 0xB8232D71, 0x15DE8AA3, 0x20C34BFA} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 731 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 732 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 733 a010");
@@ -5872,7 +5872,7 @@ int main(void) {
 	{0xAECD0043, 0xA8BC7D83, 0xB8E04649, 0xFBA8A817, 0x19CE0BA6} } ,
 	 { {0x42AF25A0, 0x80D9C65B, 0x59D8E064, 0xB57D2E05, 0x06910FE9},
 	{0x468B2457, 0x8B0D8F97, 0xABB8D912, 0xD3560C08, 0x0BB3AAA7} }  }  } ;
-		pbc_map_opt_ate(&var_res, &var_a, &var_b);
+		pbc_map_opt_ate(var_res, &var_a, &var_b);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate 743 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate 744 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate 745 a010");
@@ -5915,7 +5915,7 @@ int main(void) {
 	{0x44A590B1, 0x5C6D1210, 0x78670D67, 0x57709F21, 0x21ED62F0} } ,
 	 { {0x9E91A4A0, 0x2E669921, 0xAAEF5CC8, 0x45635B70, 0x0D8ACD67},
 	{0x72032466, 0xB2F7109D, 0x6E2D7776, 0x62A4734C, 0x1D367C7F} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 755 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 756 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 757 a010");
@@ -5958,7 +5958,7 @@ int main(void) {
 	{0x139763C2, 0x39D80F1B, 0xB53AEC8D, 0x527EB293, 0x0E9700AA} } ,
 	 { {0xE15735FE, 0xDB1A0662, 0x6902F7B4, 0x7344ABEC, 0x1CC6C999},
 	{0x40C4AC4D, 0x3CF3CF3F, 0x82F81ADB, 0x710E16BF, 0x085CC53A} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 767 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 768 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 769 a010");
@@ -6001,7 +6001,7 @@ int main(void) {
 	{0x97B90566, 0xE1E80D23, 0xF436CA0E, 0xE0AE8862, 0x01DDCE3F} } ,
 	 { {0x894C75DB, 0xEA97003A, 0x34DA41EC, 0xF21BC42F, 0x0B41BA8F},
 	{0x65229D1A, 0x0621DD59, 0x62C4F17A, 0xB06F65F5, 0x09AEE3EE} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 779 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 780 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 781 a010");
@@ -6044,7 +6044,7 @@ int main(void) {
 	{0x2B81A165, 0x4A6C8FEF, 0xD11EEA18, 0xC5481202, 0x0785DAE0} } ,
 	 { {0x8A30F70B, 0x755F963A, 0xCD2AE256, 0x7DAF9D4E, 0x1D9A9C10},
 	{0x162AE8B4, 0x6662A90E, 0x82AA41D7, 0xD4734551, 0x1B35189D} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 791 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 792 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 793 a010");
@@ -6087,7 +6087,7 @@ int main(void) {
 	{0x01484115, 0x060CD07A, 0xB68CE0A6, 0xD459D054, 0x0D6A7306} } ,
 	 { {0xA6D9BB2D, 0x77A85A31, 0x18373854, 0x55872E90, 0x16CD2670},
 	{0xAE2261FB, 0x8EEF3A43, 0x4F00D560, 0x95A97505, 0x1619ECAF} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 803 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 804 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 805 a010");
@@ -6130,7 +6130,7 @@ int main(void) {
 	{0x4816FCCF, 0x84C5A170, 0x47C43122, 0x7A9980B7, 0x19531E95} } ,
 	 { {0xDF97C597, 0x35651954, 0xD0FE00CA, 0x6A4CF1A7, 0x1368C43D},
 	{0x7CDB8ADF, 0x48A0B9A7, 0x03E567BA, 0x66386222, 0x085D30BE} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 815 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 816 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 817 a010");
@@ -6173,7 +6173,7 @@ int main(void) {
 	{0x9499B16B, 0xDB48B372, 0x27B69762, 0x8BF4DE69, 0x162B4A4A} } ,
 	 { {0xF15671E1, 0x61D692A4, 0x7B69799A, 0x700674CE, 0x1A29CED6},
 	{0x7FEF5444, 0x3ABD8828, 0x3CCB460B, 0xF8401C18, 0x01C97DDE} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 827 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 828 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 829 a010");
@@ -6216,7 +6216,7 @@ int main(void) {
 	{0x293C33E7, 0x3DD80A0D, 0xD8A25FF5, 0x1AB0136B, 0x17F331B9} } ,
 	 { {0xEBACC8C9, 0x54A64B24, 0xCAF44588, 0x14AAF938, 0x1CDAD30E},
 	{0xA5880EB0, 0x8341308D, 0x1BA6CB2E, 0xD27B082E, 0x0D36518E} }  }  } ;
-		pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_mul 839 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_mul 840 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_mul 841 a010");
@@ -6259,7 +6259,7 @@ int main(void) {
 	{0xF407E10E, 0xD01AD257, 0xC13BB85B, 0xB4E6D28F, 0x1E342838} } ,
 	 { {0x9A081951, 0x4B755C31, 0xF9A6289E, 0xD1240662, 0x13A765DC},
 	{0xEBAF18C3, 0xCF6694CE, 0xBA6A47DE, 0x79618A19, 0x200B1CD4} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 851 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 852 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 853 a010");
@@ -6302,7 +6302,7 @@ int main(void) {
 	{0x97097F18, 0xC0379B90, 0x05297847, 0x3503FBAC, 0x22D835B1} } ,
 	 { {0x1AEF1E4A, 0x90C49857, 0x6A29DF63, 0xCC35578A, 0x0C91218B},
 	{0x3EE04F26, 0x8CBF448C, 0xC5FF4A4E, 0x963D021E, 0x188A85CA} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 863 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 864 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 865 a010");
@@ -6345,7 +6345,7 @@ int main(void) {
 	{0x0F6DE0BD, 0xD54E588A, 0xE3912FF1, 0xDE3A3B52, 0x1DD33654} } ,
 	 { {0x27B5EA64, 0x3B53DB40, 0x681E9787, 0xC0EC7B0F, 0x1A2601B2},
 	{0x0374B53A, 0xBAF8784B, 0x1C3BBE12, 0xDE741B1A, 0x22E0021B} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 875 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 876 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 877 a010");
@@ -6388,7 +6388,7 @@ int main(void) {
 	{0xD7CFBDA0, 0x58645328, 0x081E3F6D, 0x5C4CF4A8, 0x04D71A74} } ,
 	 { {0xEE0D1F68, 0xC9463D35, 0x2E8B0174, 0xF3C72670, 0x08D77755},
 	{0xCC977FA3, 0x4655194A, 0xB671A6C9, 0xADC7C70A, 0x1E734BF3} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 887 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 888 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 889 a010");
@@ -6431,7 +6431,7 @@ int main(void) {
 	{0x42EDE6B7, 0x32F8AB45, 0xD0050298, 0xB2764B8C, 0x00BE439D} } ,
 	 { {0x97D30011, 0x4DCB5ACC, 0x76301366, 0x587946DC, 0x0A973F7F},
 	{0xCFF99FAF, 0x208FE5CA, 0xFF384189, 0x15D2591F, 0x12013987} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 899 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 900 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 901 a010");
@@ -6474,7 +6474,7 @@ int main(void) {
 	{0x38E86992, 0x77D5EC69, 0x0547F280, 0xF5760055, 0x175D364B} } ,
 	 { {0x1BB896FF, 0x3CAA8697, 0xC059B495, 0xA65B6B19, 0x065DA335},
 	{0x7F95F90A, 0x5DCB86CA, 0xEC05BF2F, 0x36A6AC79, 0x0333FC8E} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 911 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 912 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 913 a010");
@@ -6517,7 +6517,7 @@ int main(void) {
 	{0x23638CA1, 0xE48C049B, 0x60D39425, 0xFE0FAF64, 0x21FA743D} } ,
 	 { {0x38986FB7, 0xF6406040, 0x766DE925, 0x55A56395, 0x007D72D9},
 	{0x0E71BA6C, 0xE3E5998C, 0xAEE18F29, 0x3F824414, 0x007F69A0} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 923 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 924 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 925 a010");
@@ -6560,7 +6560,7 @@ int main(void) {
 	{0x47B6E077, 0x32784BBF, 0x6667AE1E, 0x4A154FEC, 0x1D58F725} } ,
 	 { {0x3DC93545, 0xDE972B39, 0x289AE56C, 0x09E7F84E, 0x034A649D},
 	{0xCC2E32DB, 0xE706D73A, 0xDE6A3994, 0xEE661D65, 0x146A1EA8} }  }  } ;
-		pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2);
+		pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2);
 		assert_bi_equal(var_expected[0][0][0], var_res[0][0][0], "pbc_map_opt_ate_div 935 a000");
 		assert_bi_equal(var_expected[0][0][1], var_res[0][0][1], "pbc_map_opt_ate_div 936 a001");
 		assert_bi_equal(var_expected[0][1][0], var_res[0][1][0], "pbc_map_opt_ate_div 937 a010");

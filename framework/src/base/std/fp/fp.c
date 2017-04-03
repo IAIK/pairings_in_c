@@ -62,7 +62,6 @@ void fp_add_std(fp_t res, const fp_t a, const fp_t b, const bigint_t mod) {
  * @param multipleMod a multiple of the modulus that, if an overflow occurs, can be subtracted at once if the prime has leading zeros
  */
 void fp_add_lazy(fp_t res, const fp_t a, const fp_t b, const bigint_t mod, const bigint_t multipleMod) {
-	fp_t t;
 	int carry = bi_add(res, a, b);
 
 	if (carry) {
@@ -113,7 +112,6 @@ void fp_sub_std(fp_t res, const fp_t a, const fp_t b, const bigint_t mod) {
  * @param multipleMod a multiple of the modulus that, if an underflow occurs, can be added at once if the prime has leading zeros
  */
 void fp_sub_lazy(fp_t res, const fp_t a, const fp_t b, const bigint_t mod, const bigint_t multipleMod) {
-	fp_t t;
 	if(bi_subtract(res, a, b)) {
 		if (!bi_add(res, res, multipleMod))
 			bi_add(res, res, mod);
@@ -194,8 +192,8 @@ void fp_hlv_std(fp_t res, const fp_t a, const bigint_t mod) {
  * @param multipleMod a multiple of the modulus that may be subtracted at once in the final reduction step if the prime has leading zeros
  */
 void fp_rdc_monty_lazy(fp_t res, word_t *t, const bigint_t mod, const word_t n0, const bigint_t multipleMod) {
-	int i, j, neg;
-	word_t m, c, ct, cp;
+	length_t i, j;
+	word_t m, c, ct;
 	dword_t r;
 	ct = 0;
 
@@ -235,7 +233,7 @@ void fp_rdc_monty_lazy(fp_t res, word_t *t, const bigint_t mod, const word_t n0,
  */
 void fp_rdc_monty_std(fp_t res, word_t *t, const bigint_t mod, const word_t n0)
 {
-	int i, j, neg;
+	length_t i, j;
 	word_t m, c, ct, cp;
 	dword_t r;
 	ct = 0;
@@ -324,7 +322,7 @@ void fp_mul_monty_twostep(fp_t res, const fp_t a, const fp_t b, const bigint_t m
  * @param n0 the precomputed constant for montgomery reduction
  */
 void fp_mul_monty_fips_std(fp_t res, const fp_t a, const fp_t b, const bigint_t n, const word_t n0) {
-	int 	i, j;
+	length_t 	i, j;
 	word_t 	t[3];
 	word_t 	tmp[3];
 	fp_t	m;
@@ -812,14 +810,20 @@ void fp_rdc_2l_std(word_t *a, const bigint_t mod, const word_t *mu) {
     c1 = bi_subtract_var(q_p, a, q, FP_WORDS+1);
     c2 = bi_subtract_var(q_p+FP_WORDS+1, q_p, q, FP_WORDS+1);
 
-#if (ARCHITECTURE == ARCH_X86_64)
+// #if (ARCHITECTURE == ARCH_X86_64)
    if (c2)
      	bi_copy(a, q_p);
     if (!(c1 || c2))
     	bi_copy(a, q_p+FP_WORDS+1);
-#else
-    bi_copy(a, (word_t*)(((-c1) & (int)a) | ((-c2) & (int)q_p) | (~(-c1 | -c2) & (int)(q_p+FP_WORDS+1))));
-#endif
+// FIXME is this a side channel counter measure or just an "broken" optimization?
+// #else
+//     bi_copy(a, 
+//             (word_t*)
+//             (
+//               ((-c1) & (int)a) | ((-c2) & (int)q_p) | (~(-c1 | -c2) & (int)(q_p+FP_WORDS+1))
+//             )
+//     );
+// #endif
 }
 
 /**

@@ -37,29 +37,29 @@
 
 #include "types.h"
 
-int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length);
-int bi_add_carry_var_std(word_t *res, const word_t *a, const word_t *b, const int carry, const length_t length);
-int bi_add_word_var_std(word_t *res, const word_t *a, const word_t b, const length_t length);
-int bi_subtract_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length);
-int bi_subtract_vl_std(word_t *res, const word_t *a, const word_t *b, const length_t length_a, const length_t length_b);
-int bi_subtract_word_var_std(word_t *res, const word_t *a, const word_t b, const length_t length);
-void bi_clear_var_std(word_t *a, const length_t length);
-void bi_xor_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length);
-void bi_shift_right_var_std(word_t *res, const word_t *a, const uint right, const length_t length);
-void bi_shift_right_one_var_std(word_t *res, const word_t *a, const length_t length);
-void bi_shift_left_one_var_std(word_t *res, const word_t *a, const length_t length);
+int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, length_t length);
+int bi_add_carry_var_std(word_t *res, const word_t *a, const word_t *b, const int carry, length_t length);
+int bi_add_word_var_std(word_t *res, const word_t *a, const word_t b, length_t length);
+int bi_subtract_var_std(word_t *res, const word_t *a, const word_t *b, length_t length);
+int bi_subtract_vl_std(word_t *res, const word_t *a, const word_t *b, length_t length_a, length_t length_b);
+int bi_subtract_word_var_std(word_t *res, const word_t *a, const word_t b, length_t length);
+void bi_clear_var_std(word_t *a, length_t length);
+void bi_xor_var_std(word_t *res, const word_t *a, const word_t *b, length_t length);
+void bi_shift_right_var_std(word_t *res, const word_t *a, uint right, length_t length);
+void bi_shift_right_one_var_std(word_t *res, const word_t *a, length_t length);
+void bi_shift_left_one_var_std(word_t *res, const word_t *a, length_t length);
 void bi_div3_var_std(word_t *res, const word_t *a, length_t length);
-int bi_compare_var_std(const word_t *a, const word_t *b, const length_t length);
-int bi_compare_vl_std(const word_t *a, const word_t *b, const length_t length_a, const length_t length_b);
-void bi_multiply_var_std(word_t *result, const word_t *a, const word_t *b, const length_t length_a, const length_t length_b);
-void bi_multiply_word_var_std(word_t *result, const word_t *a, const word_t b, const length_t length_a);
-void bi_copy_var_std(word_t *dest, const word_t *source, const length_t length);
-void bi_set_bit_var_std(word_t* a, const uint bit, const length_t length);
-int bi_test_bit_var_std(const word_t* a, const uint bit, const length_t length);
-int bi_get_msb_var_std( const word_t* a, const length_t length);
-byte bi_get_byte_var_std(const word_t* a, const length_t length, const uint index);
-void bi_set_byte_var_std(word_t* a, const length_t length, const uint index, const byte value);
-void bi_negate_var_std(word_t* res, const word_t *a, const length_t length);
+int bi_compare_var_std(const word_t *a, const word_t *b, length_t length);
+int bi_compare_vl_std(const word_t *a, const word_t *b, length_t length_a, length_t length_b);
+void bi_multiply_var_std(word_t *result, const word_t *a, const word_t *b, length_t length_a, length_t length_b);
+void bi_multiply_word_var_std(word_t *result, const word_t *a, const word_t b, length_t length_a);
+void bi_copy_var_std(word_t *dest, const word_t *source, length_t length);
+void bi_set_bit_var_std(word_t* a, uint bit, length_t length);
+int bi_test_bit_var_std(const word_t* a, uint bit, length_t length);
+int bi_get_msb_var_std( const word_t* a, length_t length);
+byte bi_get_byte_var_std(const word_t* a, length_t length, uint index);
+void bi_set_byte_var_std(word_t* a, length_t length, uint index, byte value);
+void bi_negate_var_std(word_t* res, const word_t *a, length_t length);
 
 int bi_get_nafb_std(sbyte *naf, word_t *a);
 

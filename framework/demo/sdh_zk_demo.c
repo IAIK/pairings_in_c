@@ -35,6 +35,8 @@
 #include "types.h"
 #include "gss/sdh_zk.h"
 #include "bigint/bi.h"
+#include "util.h"
+
 #include <string.h>
 
 int main(void) {

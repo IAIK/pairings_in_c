@@ -15,9 +15,7 @@ SET(DEFAULT_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/out/static")
 SET(DEFAULT_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/out/lib")
 SET(DEFAULT_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/out/bin")
 
-SET(DEFAULT_C_FLAGS_GCC "-Wall")
-SET(DEFAULT_ECLIPSE_SUPPORT_STATE "ON")
-SET(DEFAULT_32BIT_COMPILE_STATE "OFF")
+SET(DEFAULT_C_FLAGS_GCC "-Wall -Wextra -Wno-unused-parameter")
 
 # set default Architecture
 IF(NOT ARCHITECTURE)
@@ -36,12 +34,13 @@ SET(DOXYGEN_CONFIG_IN_FILE "${PROJECT_SOURCE_DIR}/template.doxy.in")
 # Compiler Flags 
 #------------------------------------------------------------------------------
 # adapt compiler flags according to architecture
-SET(CMAKE_ASM_FLAGS        "${CMAKE_ASM_FLAGS}        ${ARCHITECTURE_ASM_FLAGS}")
-SET(CMAKE_C_FLAGS          "${CMAKE_C_FLAGS}          ${ARCHITECTURE_C_FLAGS}")
-SET(CMAKE_CXX_FLAGS        "${CMAKE_CXX_FLAGS}        ${ARCHITECTURE_CXX_FLAGS}")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ARCHITECTURE_LINKER_FLAGS}")
-SET(CMAKE_ASM_FLAGS        "${CMAKE_ASM_FLAGS}        ${ARCHITECTURE_ASM_FLAGS}")
-
+if(CMAKE_TOOLCHAIN_FILE)
+  SET(CMAKE_ASM_FLAGS        "${CMAKE_ASM_FLAGS}        ${ARCHITECTURE_ASM_FLAGS}")
+  SET(CMAKE_C_FLAGS          "${CMAKE_C_FLAGS}          ${ARCHITECTURE_C_FLAGS}")
+  SET(CMAKE_CXX_FLAGS        "${CMAKE_CXX_FLAGS}        ${ARCHITECTURE_CXX_FLAGS}")
+  SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ARCHITECTURE_LINKER_FLAGS}")
+  SET(CMAKE_ASM_FLAGS        "${CMAKE_ASM_FLAGS}        ${ARCHITECTURE_ASM_FLAGS}")
+endif()
 #------------------------------------------------------------------------------
 # General config
 #------------------------------------------------------------------------------
@@ -83,7 +82,7 @@ SET(LIBNAME "bipair_in_c-${ARCHITECTURE}")
 ADD_LIBRARY("${LIBNAME}" ${PairingLibSources} ${ArchLibSources})
 SET_TARGET_PROPERTIES("${LIBNAME}" PROPERTIES
         COMPILE_FLAGS "-DARCHITECTURE=${ARCHITECTURE}")
-        
+
 install_lib(TARGETS "${LIBNAME}" DESTINATION "lib${LIBDIR_INSTALL_SUFFIX}")
 
 OPTION(INSTALL_DOXYGEN "Install the doxygen documentation with the library." OFF)
@@ -102,6 +101,8 @@ foreach( sourceFile ${DemoSources} )
     target_link_libraries(${exeName} "${LIBNAME}")
     set_target_properties("${exeName}" PROPERTIES
         COMPILE_FLAGS "-DARCHITECTURE=${ARCHITECTURE}")
+    add_to_suite("${exeName}")
+    add_test(NAME "${exeName}" COMMAND $<TARGET_FILE:${exeName}>)
 endforeach( sourceFile ${DemoSources} )
 
 # build the benchmark
@@ -129,7 +130,7 @@ foreach( sourceFile ${TestSources} )
     set_target_properties("${exeName}" PROPERTIES
         COMPILE_FLAGS "-DARCHITECTURE=${ARCHITECTURE}")
     add_to_suite("${exeName}")
-    add_test("${exeName}" "out/bin/${exeName}")
+    add_test(NAME "${exeName}" COMMAND $<TARGET_FILE:${exeName}>)
 endforeach( sourceFile ${TestSources} )
 
 #------------------------------------------------------------------------------

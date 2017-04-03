@@ -32,12 +32,12 @@
 **
 ****************************************************************************/
 
+#include "assert.h"
 #include "ec/ec.h"
 #include "types.h"
 
 int main(void) {
-	ecpoint_fp2 var_res, var_tmp;
-	ecpoint_fp2_proj var_res_proj;
+	ecpoint_fp2 var_res;
 
 #if (BNCURVE == BN254)
 #ifdef MONTGOMERY_ARITHMETIC

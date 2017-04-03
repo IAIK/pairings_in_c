@@ -61,7 +61,7 @@ int assert_true(const int c, const char *msg) {
  * @param msg the message to be printed
  * @return 0 if successful, 1 on failure
  */
-int assert_bytearr_equal(const byte* ex, const byte* tst, const length_t length, const char *msg) {
+int assert_bytearr_equal(const byte* ex, const byte* tst, length_t length, const char *msg) {
     print(msg);
     if(compare_bytes(ex, tst, length)) {
     	print(": failure\n     expected:  ");
@@ -111,7 +111,7 @@ int assert_bi_equal(const bigint_t ex, const bigint_t tst, const char *msg) {
  * @param msg the message to be printed
  * @return 0 if successful, 1 otherwise
  */
-int assert_bi_equal_var(const word_t *ex, const word_t *tst, const length_t len, const char *msg) {
+int assert_bi_equal_var(const word_t *ex, const word_t *tst, length_t len, const char *msg) {
     word_t t[len];
 
     print(msg);

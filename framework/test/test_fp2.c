@@ -32,8 +32,9 @@
 **
 ****************************************************************************/
 
-#include "types.h"
+#include "assert.h"
 #include "fp/fp2.h"
+#include "types.h"
 
 int main (void) {
 	fp2_t var_tmp, var_res;

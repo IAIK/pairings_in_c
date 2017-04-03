@@ -41,7 +41,7 @@
 #include "pbc/pbc.h"
 #include "fp/fp12.h"
 #include "gss/gss_hwang.h"
-#include "hash/hash_function.h"
+#include "hash/hashing.h"
 #include <string.h>
 
 #define DEBUG_PRINT 1
@@ -224,7 +224,7 @@ sbyte hwang_sign(hwang_signature_ptr sig, hwang_public_parameters_ptr data, hwan
  */
 void hwang_init_parameters(hwang_public_parameters_ptr data)
 {
-  bigint_t eta, xi, bi_tmp;
+  bigint_t eta, xi;
 
   // We need the order (p) of the groups G1 and G2 to compute in Z_p
   bi_copy_var_std(data->order_p, EC_PARAM_N, BI_WORDS);
@@ -286,8 +286,7 @@ void hwang_init_parameters(hwang_public_parameters_ptr data)
  */
 void hwang_generate_usk(hwang_signing_key_ptr usk, hwang_public_parameters_ptr data)
 {
-  bigint_t bi_tmp, bi_tmp1, inv, bi_tmp3;
-  word_t bi_tmp_mul[2*BI_WORDS];
+  bigint_t bi_tmp, bi_tmp1, inv;
   ecpoint_fp G1_tmp;
 
   // x, y, z \in_R \mathbb{Z}_p
@@ -348,7 +347,7 @@ sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
   sbyte ret = -1;
   ecpoint_fp R_1, R_3, g1_tmp1, g1_tmp2;
 
-  fp12_t R_2, gt_tmp1, gt_tmp2, gt_tmp3, gt_tmp4;
+  fp12_t R_2, gt_tmp1, gt_tmp2, gt_tmp3;
 
   bigint_t bi_tmp, c;
   word_t bigint_tmp_dbl[2*BI_WORDS];
@@ -437,4 +436,3 @@ sbyte hwang_verify(hwang_public_parameters_ptr data, hwang_signature_ptr sig)
 
    return ret;
 }
-

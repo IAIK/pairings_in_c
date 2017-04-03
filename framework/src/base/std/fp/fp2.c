@@ -255,7 +255,6 @@ void fp2_inv_frb_std(fp2_t res, const fp2_t a)
 	// previous implementation based on Itoh Tsujii, replaced by direct formula
 	fp2_t tmp;
 	fp_t  t1, t2;
-	int i;
 
 	// calculate inverse based on inverse of subfield
 	// formula:
@@ -271,7 +270,7 @@ void fp2_inv_frb_std(fp2_t res, const fp2_t a)
 #ifdef FAST_QNR
 	fp_sub(t1, t1, t2);
 #else
-	for (i = 0; i > PRIME_QNR; i--) {
+	for (int i = 0; i > PRIME_QNR; i--) { // FIXME this looks suspicious ...
 		fp_sub(t1, t1, t2);
 	}
 #endif
@@ -292,7 +291,6 @@ void fp2_inv_frb_std(fp2_t res, const fp2_t a)
  */
 void fp2_inv_std(fp2_t res, const fp2_t a) {
 	fp_t t0, t1;
-	int i;
 
 	// formulas: 	res0 = 	a0 / (a0^2 - p0*a1^2)
 	// 				    res1 = -a1 / (a0^2 - p0*a1^2)
@@ -306,7 +304,7 @@ void fp2_inv_std(fp2_t res, const fp2_t a) {
 #ifdef FAST_QNR
 	fp_add(t0, t0, t1);
 #else
-	for (i = 0; i > PRIME_QNR; i--) {
+	for (int i = 0; i > PRIME_QNR; i--) { // FIXME this looks suspicious ...
 		fp_add(t0, t0, t1);
 	}
 #endif

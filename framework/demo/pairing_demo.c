@@ -39,6 +39,7 @@
 #include "ec/ec.h"
 #include "fp/fp12.h"
 #include "util.h"
+#include "rand.h"
 
 int main(void) {
 	fp12_t res1, res2;
@@ -57,8 +58,8 @@ int main(void) {
 	fp12_exp_cyclotomic(res2, (const fp4_t*)res1, k1);
 	fp12_exp_cyclotomic(res1, (const fp4_t*)res2, k2);
 
-	ecfp_mul(&p, (const ecfp_pt)&ECFP_GENERATOR, k1);
-	ecfp2_mul(&q, (const ecfp2_pt)&ECFP2_GENERATOR, k2);
+	ecfp_mul(&p, &ECFP_GENERATOR, k1);
+	ecfp2_mul(&q, &ECFP2_GENERATOR, k2);
 	pbc_map_opt_ate(res2, &p, &q);
 
 	PRINT_GT("res1: ", res1);

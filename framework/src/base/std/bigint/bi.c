@@ -77,7 +77,7 @@ int bi_get_nafb_std(sbyte *naf, word_t *a) {
  * @param length	length of a, b, and res
  * @return	carry
  */
-int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length) {
+int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, length_t length) {
 	uint	i;
 	word_t	c, carry, r;
 
@@ -100,7 +100,7 @@ int bi_add_var_std(word_t *res, const word_t *a, const word_t *b, const length_t
  * @param length	length of a, b, and res
  * @return	carry
  */
-int bi_add_carry_var_std(word_t *res, const word_t *a, const word_t *b, const int cin, const length_t length) {
+int bi_add_carry_var_std(word_t *res, const word_t *a, const word_t *b, const int cin, length_t length) {
 	uint	i;
 	word_t	c, cout, r;
 
@@ -123,7 +123,7 @@ int bi_add_carry_var_std(word_t *res, const word_t *a, const word_t *b, const in
  * @param length	length of a and res
  * @return carry
  */
-int bi_add_word_var_std(word_t *res, const word_t *a, const word_t b, const length_t length) {
+int bi_add_word_var_std(word_t *res, const word_t *a, const word_t b, length_t length) {
 	uint 	i = 0;
 	word_t 	r, c;
 
@@ -147,7 +147,7 @@ int bi_add_word_var_std(word_t *res, const word_t *a, const word_t b, const leng
  * @param length	length of a, b, and res
  * @return	carry
  */
-int bi_subtract_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length) {
+int bi_subtract_var_std(word_t *res, const word_t *a, const word_t *b, length_t length) {
 	uint	i;
 	word_t	c, carry, r;
 
@@ -172,10 +172,10 @@ int bi_subtract_var_std(word_t *res, const word_t *a, const word_t *b, const len
  * @param length_b	lenght of b
  * @return
  */
-int bi_subtract_vl_std(word_t *res, const word_t *a, const word_t *b, const length_t length_a, const length_t length_b) {
+int bi_subtract_vl_std(word_t *res, const word_t *a, const word_t *b, length_t length_a, length_t length_b) {
 	// lenght_a must be greater than or equal to length_b to yield a correct result
 	uint	i;
-	word_t	c, carry, r;
+	word_t	carry, r;
 
 	carry = 0;
 	for (i = 0; i < length_b && i < length_a; i++) {
@@ -201,7 +201,7 @@ int bi_subtract_vl_std(word_t *res, const word_t *a, const word_t *b, const leng
  * @param length	length of a and res
  * @return carry
  */
-int bi_subtract_word_var_std(word_t *res, const word_t *a, const word_t b, const length_t length) {
+int bi_subtract_word_var_std(word_t *res, const word_t *a, const word_t b, length_t length) {
 	uint 	i = 0;
 	word_t 	r, c;
 
@@ -222,7 +222,7 @@ int bi_subtract_word_var_std(word_t *res, const word_t *a, const word_t b, const
  * @param a	the big integer to be reset
  * @param length length of a
  */
-void bi_clear_var_std(word_t *a, const length_t length) {
+void bi_clear_var_std(word_t *a, length_t length) {
 	uint i;
 	for (i = 0; i < length; i++) {
 		*a++ = 0;
@@ -236,7 +236,7 @@ void bi_clear_var_std(word_t *a, const length_t length) {
  * @param b operand b
  * @param length length of a, b, and res
  */
-void bi_xor_var_std(word_t *res, const word_t *a, const word_t *b, const length_t length){
+void bi_xor_var_std(word_t *res, const word_t *a, const word_t *b, length_t length){
 	uint i;
 	for (i = 0; i < length; i++) {
 		*(res+i) = *(a+i) ^ *(b+i);
@@ -250,7 +250,7 @@ void bi_xor_var_std(word_t *res, const word_t *a, const word_t *b, const length_
  * @param right number of bits to shift
  * @param length length of a and res
  */
-void bi_shift_right_var_std(word_t *res, const word_t *a, const uint right, const length_t length) {
+void bi_shift_right_var_std(word_t *res, const word_t *a, uint right, length_t length) {
 	int 	i;
 	uint 	wordNum = right >> LD_BITS_PER_WORD;
 	uint 	bitNum = right & (BITS_PER_WORD-1);
@@ -312,7 +312,7 @@ void bi_div3_var_std(word_t *res, const word_t *a, length_t length) {
  * @param a the value to be shifted
  * @param length length of a and res
  */
-void bi_shift_right_one_var_std(word_t *res, const word_t *a, const length_t length) {
+void bi_shift_right_one_var_std(word_t *res, const word_t *a, length_t length) {
 	uint i;
 	word_t shift_in;
 	for (i = 0; i < (length-1); i++) {
@@ -328,7 +328,7 @@ void bi_shift_right_one_var_std(word_t *res, const word_t *a, const length_t len
  * @param a the value to be shifted
  * @param length length of a and res
  */
-void bi_shift_left_one_var_std(word_t *res, const word_t *a, const length_t length) {
+void bi_shift_left_one_var_std(word_t *res, const word_t *a, length_t length) {
 	uint i;
 	word_t shift_in = 0, shift_out;
 	for (i = 0; i < length; i++) {
@@ -345,7 +345,7 @@ void bi_shift_left_one_var_std(word_t *res, const word_t *a, const length_t leng
  * @param length length of a and b
  * @return 0 if equal, 1 if a > b, -1 otherwise
  */
-int bi_compare_var_std(const word_t *a, const word_t *b, const length_t length) {
+int bi_compare_var_std(const word_t *a, const word_t *b, length_t length) {
 	int i = length - 1;
 
 	while (i >= 0) {
@@ -367,25 +367,22 @@ int bi_compare_var_std(const word_t *a, const word_t *b, const length_t length) 
  * @param length_b length of big integer b
  * @return 0 if equal, 1 if a > b, -1 otherwise
  */
-int bi_compare_vl_std(const word_t *a, const word_t *b, const length_t length_a, const length_t length_b) {
+int bi_compare_vl_std(const word_t *a, const word_t *b, length_t length_a, length_t length_b) {
 	// lenght_a must be greater than or equal to length_b to yield a correct result
-	uint i = length_a -1;
 
-	while (i >= length_b) {
-		if (*(a+i) != 0)
+	for (length_t i = length_a - 1; i >= length_b; --i) {
+		if (a[i] != 0)
 			return 1;
-		i--;
 	}
 
-	while (i >= 0) {
-		if (*(a+i) > *(b+i))
+	for (length_t i = length_b - 1;; --i) {
+		if (a[i] > b[i])
 			return 1;
-		if (*(a+i) < *(b+i))
+		if (a[i] < b[i])
 			return -1;
-		i--;
+		if (i == 0)
+			return 0;
 	}
-
-	return 0;
 }
 
 /**
@@ -397,7 +394,7 @@ int bi_compare_vl_std(const word_t *a, const word_t *b, const length_t length_a,
  * @param length_a length of a
  * @param length_b length of b
  */
-void bi_multiply_var_std(word_t *result, const word_t *a, const word_t *b, const length_t length_a, const length_t length_b)
+void bi_multiply_var_std(word_t *result, const word_t *a, const word_t *b, length_t length_a, length_t length_b)
 {
 	dword_t tmp;
 	word_t carry;
@@ -426,7 +423,7 @@ void bi_multiply_var_std(word_t *result, const word_t *a, const word_t *b, const
  * @param b parameter b (word)
  * @param length_a length of big integer a
  */
-void bi_multiply_word_var_std(word_t *result, const word_t *a, const word_t b, const length_t length_a) {
+void bi_multiply_word_var_std(word_t *result, const word_t *a, const word_t b, length_t length_a) {
 	bi_multiply_var(result, a, &b, length_a, 1);
 }
 
@@ -436,7 +433,7 @@ void bi_multiply_word_var_std(word_t *result, const word_t *a, const word_t b, c
  * @param source source
  * @param length length of source and destination
  */
-void bi_copy_var_std(word_t *dest, const word_t *source, const length_t length) {
+void bi_copy_var_std(word_t *dest, const word_t *source, length_t length) {
 	uint i;
 	for (i = 0; i < length; i++) {
 		*dest++ = *source++;
@@ -449,7 +446,7 @@ void bi_copy_var_std(word_t *dest, const word_t *source, const length_t length) 
  * @param bit the number of the bit to be set
  * @param length length of a
  */
-void bi_set_bit_var_std(word_t* a, const uint bit, const length_t length) {
+void bi_set_bit_var_std(word_t* a, uint bit, length_t length) {
 	if (bit >= length*BITS_PER_WORD)
 		return;
 
@@ -466,7 +463,7 @@ void bi_set_bit_var_std(word_t* a, const uint bit, const length_t length) {
  * @param length length of parameter a
  * @return 1 if set, 0 otherwise
  */
-int bi_test_bit_var_std(const word_t* a, const uint bit, const length_t length) {
+int bi_test_bit_var_std(const word_t* a, uint bit, length_t length) {
 	if (bit >= length * BITS_PER_WORD)
 		return 0;
 
@@ -482,7 +479,7 @@ int bi_test_bit_var_std(const word_t* a, const uint bit, const length_t length) 
  * @param length length of a
  * @return index of the MSB, -1 if a is 0
  */
-int bi_get_msb_var_std( const word_t* a, const length_t length)
+int bi_get_msb_var_std( const word_t* a, length_t length)
 {
 	int wordIdx = length-1;
 	while (wordIdx >= 0 && !(*(a+wordIdx)))
@@ -506,7 +503,7 @@ int bi_get_msb_var_std( const word_t* a, const length_t length)
  * @param index the index of the byte to be read
  * @return the byte at the specified index
  */
-byte bi_get_byte_var_std(const word_t* a, const length_t length, const uint index)
+byte bi_get_byte_var_std(const word_t* a, length_t length, uint index)
 {
 	uint wordNum = index >> LD_BYTES_PER_WORD;
 
@@ -526,7 +523,7 @@ byte bi_get_byte_var_std(const word_t* a, const length_t length, const uint inde
  * @param index the index of the byte to be written
  * @param value the value to be written at the specified index
  */
-void bi_set_byte_var_std(word_t* a, const length_t length, const uint index, const byte value)
+void bi_set_byte_var_std(word_t* a, length_t length, uint index, byte value)
 {
 	uint wordNum = index >> LD_BYTES_PER_WORD;
 	uint bitShift = (index & (BYTES_PER_WORD - 1)) << 3;
@@ -535,7 +532,7 @@ void bi_set_byte_var_std(word_t* a, const length_t length, const uint index, con
 	a[wordNum] = value;
 #else
 	word_t tmp = a[wordNum] & ~(0xFF << bitShift);
-	a[wordNum] |= (((word_t)value) << bitShift);
+	a[wordNum] = tmp | (((word_t)value) << bitShift);
 #endif
 }
 
@@ -545,7 +542,7 @@ void bi_set_byte_var_std(word_t* a, const length_t length, const uint index, con
  * @param a		the big integer to be negated
  * @param length length of a and res
  */
-void bi_negate_var_std(word_t* res, const word_t *a, const length_t length) {
+void bi_negate_var_std(word_t* res, const word_t *a, length_t length) {
 	uint i;
 	for (i = 0; i < length-1; i++) {
 		res[i] = ~a[i];

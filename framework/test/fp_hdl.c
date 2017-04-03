@@ -32,10 +32,11 @@
 **
 ****************************************************************************/
 
+#include "assert.h"
 #include "fp/fp.h"
 
 int main (void) {
-	fp_t var_tmp, var_res;
+	fp_t var_res;
 
 #if (BNCURVE == BN256)
 #ifdef MONTGOMERY_ARITHMETIC

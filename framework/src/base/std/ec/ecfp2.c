@@ -46,7 +46,7 @@
  * @param a operand a
  * @param b operand b
  */
-void ecfp2_add_affine_std(ecfp2_pt res, const ecfp2_pt a, const ecfp2_pt b) {
+void ecfp2_add_affine_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const ecpoint_fp2 *b) {
 	ecpoint_fp2_proj a_proj, res_proj;
 
 	ecfp2_get_jacobian_projective(&a_proj, a);
@@ -61,7 +61,7 @@ void ecfp2_add_affine_std(ecfp2_pt res, const ecfp2_pt a, const ecfp2_pt b) {
  * @param a operand a
  * @param b operand b
  */
-void ecfp2_add_affine_direct_std(ecfp2_pt res, const ecfp2_pt a, const ecfp2_pt b) {
+void ecfp2_add_affine_direct_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const ecpoint_fp2 *b) {
 	fp2_t t0, t1;
 
 	if (a->infinity && !b->infinity) {
@@ -115,7 +115,7 @@ void ecfp2_add_affine_direct_std(ecfp2_pt res, const ecfp2_pt a, const ecfp2_pt 
  * @param a the projective point operand
  * @param b the affine point operand
  */
-void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt b) {
+void ecfp2_add_proj_std(ecpoint_fp2_proj *res, const ecpoint_fp2_proj *a, const ecpoint_fp2 *b) {
 	// calculation based on jacobian coordinates
 	// b in projective coordinates is (b.x, b.y, 1)
 
@@ -187,7 +187,7 @@ void ecfp2_add_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a, const ecfp2_pt
  * @param res the result
  * @param a the point operand
  */
-void ecfp2_dbl_affine_std(ecfp2_pt res, const ecfp2_pt a) {
+void ecfp2_dbl_affine_std(ecpoint_fp2 *res, const ecpoint_fp2 *a) {
 	ecpoint_fp2_proj a_proj, res_proj;
 
 	ecfp2_get_jacobian_projective(&a_proj, a);
@@ -202,7 +202,7 @@ void ecfp2_dbl_affine_std(ecfp2_pt res, const ecfp2_pt a) {
  * @param res the result
  * @param a the point operand
  */
-void ecfp2_dbl_affine_direct_std(ecfp2_pt res, const ecfp2_pt a) {
+void ecfp2_dbl_affine_direct_std(ecpoint_fp2 *res, const ecpoint_fp2 *a) {
 	fp2_t t0, t1;
 
 	if (a->infinity) {
@@ -244,7 +244,7 @@ void ecfp2_dbl_affine_direct_std(ecfp2_pt res, const ecfp2_pt a) {
  * @param res the result
  * @param a the point operand
  */
-void ecfp2_dbl_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a) {
+void ecfp2_dbl_proj_std(ecpoint_fp2_proj *res, const ecpoint_fp2_proj *a) {
 	// calculation based on jacobian coordinates
 
 	if (a->infinity) {
@@ -301,7 +301,7 @@ void ecfp2_dbl_proj_std(ecfp2_proj_pt res, const ecfp2_proj_pt a) {
  * quadratic extension of a prime field, i.e., computes -P.
  * @param a the affine elliptic curve point (out: the negated point)
  */
-void ecfp2_neg_affine_std(ecfp2_pt a) {
+void ecfp2_neg_affine_std(ecpoint_fp2 *a) {
 	fp2_neg(a->y, (const fp_t*) a->y);
 }
 
@@ -310,7 +310,7 @@ void ecfp2_neg_affine_std(ecfp2_pt a) {
  * quadratic extension of a prime field, i.e., computes -P.
  * @param a the projective elliptic curve point (out: the negated point)
  */
-void ecfp2_neg_proj_std(ecfp2_proj_pt a) {
+void ecfp2_neg_proj_std(ecpoint_fp2_proj *a) {
 	fp2_neg(a->y, (const fp_t*) a->y);
 }
 
@@ -321,7 +321,7 @@ void ecfp2_neg_proj_std(ecfp2_proj_pt a) {
  * @param a the elliptic curve point to be multiplied
  * @param k the scalar operand
  */
-void ecfp2_mul_l2rb_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
+void ecfp2_mul_l2rb_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const fp_t k) {
 	// plain left-to-right binary multiplication
 	int msb = bi_get_msb(k);
 	int i ;
@@ -495,44 +495,44 @@ void ecfp2_recover_full_coord_coz_std(fp2_t x1, fp2_t x2, fp2_t z, const fp2_t x
 	fp2_add(x2, (const fp_t*) r4, (const fp_t*) r3);
 }
 
-int ecfp2_verify_coordinates(fp2_t x, fp2_t y)  {
+int ecfp2_verify_coordinates(const fp2_t x, const fp2_t y)  {
 	// y² = x^3 + a'x + b'
 	fp2_t r0, r1;
 
-	fp2_sqr(r1, (const fp_t*) x);
-	fp2_mul(r1, (const fp_t*) r1, (const fp_t*) x);
+	fp2_sqr(r1, x);
+	fp2_mul(r1, r1, x);
 
 #ifndef OPTIMIZE_ZERO_A
 	fp_clear(r0[1]);							// calc a' of twisted curve
 	fp_copy(r0[0], EC_PARAM_A);
-	fp2_div_qnr(r0, (const fp_t*) r0);
+	fp2_div_qnr(r0, r0);
 	fp2_mul(r0, r0, x);
 	fp2_add(r1, r1, r0);
 #endif
 
 	fp_clear(r0[1]);							// calc b' of twisted curve
 	fp_copy(r0[0], EC_PARAM_B);
-	fp2_div_qnr(r0, (const fp_t*) r0);
-	fp2_add(r1, (const fp_t*) r1, (const fp_t*) r0);
+	fp2_div_qnr(r0, r0);
+	fp2_add(r1, r1, r0);
 
-	fp2_sqr(r0, (const fp_t*) y);
+	fp2_sqr(r0, y);
 
 	return (bi_compare(r0[0], r1[0]) || bi_compare(r0[1], r1[1]));
 }
 
-int ecfp2_verify_homogeneous_projective_coordinates(fp2_t x, fp2_t y, fp2_t z) {
+int ecfp2_verify_homogeneous_projective_coordinates(const fp2_t x, const fp2_t y, const fp2_t z) {
 	// Y^2 Z = X^3 + a' X Z^2 + b' Z^3
 
 	fp2_t r0, r1, r2, r3;
 
-	fp2_sqr(r1, (const fp_t*) x);
-	fp2_mul(r1, (const fp_t*) r1, (const fp_t*) x);
+	fp2_sqr(r1, x);
+	fp2_mul(r1, r1, x);
 
-	fp2_sqr(r2, (const fp_t*) z);
+	fp2_sqr(r2, z);
 #ifndef OPTIMIZE_ZERO_A
 	fp_clear(r0[1]);							// calc a' of twisted curve
 	fp_copy(r0[0], EC_PARAM_A);
-	fp2_div_qnr(r0, (const fp_t*) r0);
+	fp2_div_qnr(r0, r0);
 	fp2_mul(r0, r0, x);
 	fp2_mul(r0, r0, r2);
 	fp2_add(r1, r1, r0);
@@ -541,13 +541,13 @@ int ecfp2_verify_homogeneous_projective_coordinates(fp2_t x, fp2_t y, fp2_t z) {
 
 	fp_clear(r3[1]);							// calc b' of twisted curve
 	fp_copy(r3[0], EC_PARAM_B);
-	fp2_div_qnr(r0, (const fp_t*) r3);
-	fp2_mul(r0, (const fp_t*) r0, (const fp_t*) r2);
-	fp2_mul(r0, (const fp_t*) r0, (const fp_t*) (const fp_t*) z);
-	fp2_add(r1, (const fp_t*) r1, (const fp_t*) r0);
+	fp2_div_qnr(r0, r3);
+	fp2_mul(r0, r0, r2);
+	fp2_mul(r0, r0, z);
+	fp2_add(r1, r1, r0);
 
-	fp2_sqr(r0, (const fp_t*) y);
-	fp2_mul(r0, (const fp_t*) r0, (const fp_t*) z);
+	fp2_sqr(r0, y);
+	fp2_mul(r0, r0, z);
 
 	return (bi_compare(r0[0], r1[0]) || bi_compare(r0[1], r1[1]));
 }
@@ -558,7 +558,7 @@ int ecfp2_verify_homogeneous_projective_coordinates(fp2_t x, fp2_t y, fp2_t z) {
  * @param a the point operand
  * @param k the scalar operand
  */
-void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
+void ecfp2_mul_montyladder_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const fp_t k) {
 	int msb = bi_get_msb(k);
 	int i;
 	fp2_t x1, x2, z;
@@ -612,7 +612,7 @@ void ecfp2_mul_montyladder_std(ecfp2_pt res, const ecfp2_pt a, const fp_t k) {
  * @param affine the resulting affine elliptic curve point
  * @param projective the input projective elliptic curve point
  */
-void ecfp2_get_affine_from_jacobian_std(ecfp2_pt affine, const ecfp2_proj_pt projective) {
+void ecfp2_get_affine_from_jacobian_std(ecpoint_fp2 *affine, const ecpoint_fp2_proj *projective) {
 	affine->infinity = projective->infinity;
 	if (projective->infinity)
 		return;
@@ -632,7 +632,7 @@ void ecfp2_get_affine_from_jacobian_std(ecfp2_pt affine, const ecfp2_proj_pt pro
  * @param projective the resulting projective elliptic curve point
  * @param affine the input affine elliptic curve point
  */
-void ecfp2_get_projective_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
+void ecfp2_get_projective_std(ecpoint_fp2_proj *projective, const ecpoint_fp2 *affine) {
 	projective->infinity = affine->infinity;
 
 	if (affine->infinity)
@@ -649,7 +649,7 @@ void ecfp2_get_projective_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
  * @param projective the resulting randomized, projective elliptic curve point
  * @param affine the input affine elliptic curve point
  */
-void ecfp2_get_jacobian_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
+void ecfp2_get_jacobian_projective_rnd_std(ecpoint_fp2_proj *projective, const ecpoint_fp2 *affine) {
 	projective->infinity = affine->infinity;
 
 	if (affine->infinity)
@@ -676,7 +676,7 @@ void ecfp2_get_jacobian_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2
  * @param projective the resulting randomized, projective elliptic curve point
  * @param affine the input affine elliptic curve point
  */
-void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ecfp2_pt affine) {
+void ecfp2_get_homogeneous_projective_rnd_std(ecpoint_fp2_proj *projective, const ecpoint_fp2 *affine) {
 	projective->infinity = affine->infinity;
 
 	if (affine->infinity)
@@ -699,7 +699,7 @@ void ecfp2_get_homogeneous_projective_rnd_std(ecfp2_proj_pt projective, const ec
  * @param res the resulting copy
  * @param a the affine input point to be copied
  */
-void ecfp2_copy_std(ecfp2_pt res, const ecfp2_pt a) {
+void ecfp2_copy_std(ecpoint_fp2 *res, const ecpoint_fp2 *a) {
 	res->infinity = a->infinity;
 	fp2_copy(res->x, (const fp_t*) a->x);
 	fp2_copy(res->y, (const fp_t*) a->y);
@@ -710,7 +710,7 @@ void ecfp2_copy_std(ecfp2_pt res, const ecfp2_pt a) {
  * quadratic extension of a prime field.
  * @param a the elliptic curve point in affine coordinates
  */
-void ecfp2_clear_std(ecfp2_pt a) {
+void ecfp2_clear_std(ecpoint_fp2 *a) {
 	fp2_clear(a->x);
 	fp2_clear(a->y);
 	a->infinity = 0;
@@ -724,9 +724,7 @@ void ecfp2_clear_std(ecfp2_pt a) {
  * @param a the operand point
  * @param i the order of frobenius
  */
-void ecfp2_frobenius_map_precomp_std(ecfp2_pt res, const ecfp2_pt a, const word_t i) {
-	fp2_t 		q, q2, q3;
-	bigint_t 	e;
+void ecfp2_frobenius_map_precomp_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const word_t i) {
 	uint 		j;
 
 	ecfp2_copy(res, a);	// TODO: extract i = 1 to save copy
@@ -750,7 +748,7 @@ void ecfp2_frobenius_map_precomp_std(ecfp2_pt res, const ecfp2_pt a, const word_
  * @param a the operand point
  * @param i the order of frobenius
  */
-void ecfp2_frobenius_map_std(ecfp2_pt res, const ecfp2_pt a, const word_t i) {
+void ecfp2_frobenius_map_std(ecpoint_fp2 *res, const ecpoint_fp2 *a, const word_t i) {
 	fp2_t 		q, q2, q3;
 	bigint_t 	e;
 	uint 		j;
@@ -790,7 +788,7 @@ void ecfp2_frobenius_map_std(ecfp2_pt res, const ecfp2_pt a, const word_t i) {
  * @param b the second projective elliptic curve point
  * @return 0 if equal, 1 otherwise
  */
-int ecfp2_compare_std(ecfp2_proj_pt a, const ecfp2_proj_pt b) {
+int ecfp2_compare_std(ecpoint_fp2_proj *a, const ecpoint_fp2_proj *b) {
 	return a->infinity != b->infinity ||
 			bi_compare(a->x[0], b->x[0]) || bi_compare(a->x[1], b->x[1]) ||
 			bi_compare(a->y[0], b->y[0]) || bi_compare(a->y[1], b->y[1]) ||
@@ -803,7 +801,7 @@ int ecfp2_compare_std(ecfp2_proj_pt a, const ecfp2_proj_pt b) {
  * @param res the resulting elliptic curve point
  * @param t the integer to be hashed
  */
-void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
+void ecfp2_hash_to_point_std(ecpoint_fp2 *res, const bigint_t t) {
 	fp_t sqrtM3;
 	fp2_t w, t0;
 	fp2_t x[3];
@@ -897,7 +895,7 @@ void ecfp2_hash_to_point_std(ecfp2_pt res, const bigint_t t) {
  * @param res the resulting point in Montgomery domain
  * @param a the elliptic curve point to be converted
  */
-void ecfp2_to_montgomery_std(ecfp2_pt res, const ecfp2_pt a) {
+void ecfp2_to_montgomery_std(ecpoint_fp2 *res, const ecpoint_fp2 *a) {
 	res->infinity = a->infinity;
 	fp2_to_montgomery(res->x, (const fp_t*) a->x);
 	fp2_to_montgomery(res->y, (const fp_t*) a->y);
@@ -908,7 +906,7 @@ void ecfp2_to_montgomery_std(ecfp2_pt res, const ecfp2_pt a) {
  * @param res the resulting point in normal number format
  * @param a the elliptc curve point in Montgomery domain to be converted
  */
-void ecfp2_from_montgomery_std(ecfp2_pt res, const ecfp2_pt a) {
+void ecfp2_from_montgomery_std(ecpoint_fp2 *res, const ecpoint_fp2 *a) {
 	res->infinity = a->infinity;
 	fp2_from_montgomery(res->x, (const fp_t*) a->x);
 	fp2_from_montgomery(res->y, (const fp_t*) a->y);
@@ -920,10 +918,10 @@ void ecfp2_from_montgomery_std(ecfp2_pt res, const ecfp2_pt a) {
  * anyone) and multiply it with the base point.
  * @param res the randomly generated point.
  */
-void ecfp2_rand_std(ecfp2_pt res) {
+void ecfp2_rand_std(ecpoint_fp2 *res) {
   bigint_t r;
     do {
       cprng_get_bytes(r, BI_BYTES); fp_rdc_n(r);
     } while (bi_compare(r, bi_zero) == 0);
-  ecfp2_mul(res, (const ecfp2_pt) &ECFP2_GENERATOR, r);
+  ecfp2_mul(res, &ECFP2_GENERATOR, r);
 }
