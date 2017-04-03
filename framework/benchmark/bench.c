@@ -32,6 +32,7 @@
 **
 ****************************************************************************/
 
+#include "assert.h"
 #include "bench_util.h"
 #include "types.h"
 #include "fp/fp.h"
@@ -41,9 +42,9 @@
 #include "pbc/pbc.h"
 #include "bigint/bi.h"
 #include "ibe/bbkem.h"
+#include "util.h"
 
 #define benchmark_call(msg, function)						\
-	benchmark_start();														\
 	benchmark_start();														\
 	function;																      \
 	benchmark_stop();														  \
@@ -58,8 +59,6 @@ void benchmark_bi() {
 			0xB0000145, 0xEF2FB831, 0x411B3B01, 0x26CA1422, 0xFABBC18D };
 	static const bigint_t var_b = { 0x20055C46, 0x1C4826CA, 0xF70F7773,
 			0xD7EFEA0D, 0x243BF18B, 0xB9F4580D, 0x5C61EC83, 0x1E138820 };
-	static const bigint_t var_exp = { 0x55AED7A4, 0xBC6EAECD, 0x98E6EF94,
-			0x6287AD04, 0x12293515, 0x2BF8414A, 0xF15BAEA7, 0xB4812FBD };
 
 	word_t var_res[2*BI_WORDS];
 
@@ -139,9 +138,9 @@ void benchmark_g1() {
 	ecpoint_fp var_res;
 
 	benchmark_call("Addition:       ",
-			ecfp_add_affine(&var_res, (const ecfp_pt) &var_a, (const ecfp_pt) &var_b));
-	benchmark_call("Double:         ", ecfp_dbl_affine(&var_res, (const ecfp_pt) &var_a));
-	benchmark_call("Multiplication: ", ecfp_mul(&var_res, (const ecfp_pt) &var_a, var_k));
+			ecfp_add_affine(&var_res, &var_a, &var_b));
+	benchmark_call("Double:         ", ecfp_dbl_affine(&var_res, &var_a));
+	benchmark_call("Multiplication: ", ecfp_mul(&var_res, &var_a, var_k));
 	benchmark_call("Hash to point:  ", ecfp_hash_to_point(&var_res, var_k));
 }
 
@@ -169,9 +168,9 @@ void benchmark_g2() {
 	ecpoint_fp2 var_res;
 
 	benchmark_call("Addition:       ",
-			ecfp2_add_affine(&var_res, (const ecfp2_pt) &var_a, (const ecfp2_pt) &var_b));
-	benchmark_call("Double:         ", ecfp2_dbl_affine(&var_res, (const ecfp2_pt) &var_a));
-	benchmark_call("Multiplication: ", ecfp2_mul(&var_res, (const ecfp2_pt) &var_a, var_k));
+			ecfp2_add_affine(&var_res, &var_a, &var_b));
+	benchmark_call("Double:         ", ecfp2_dbl_affine(&var_res, &var_a));
+	benchmark_call("Multiplication: ", ecfp2_mul(&var_res, &var_a, var_k));
 	benchmark_call("Hash to point:  ", ecfp2_hash_to_point(&var_res, var_k));
 }
 
@@ -277,23 +276,30 @@ void benchmark_pairing() {
 	print("Benchmark for pairing \n");
 
 	benchmark_call("Optimal Ate:    ",
-			pbc_map_opt_ate(&var_res, &var_a, &var_b));
+			pbc_map_opt_ate(var_res, &var_a, &var_b));
 	benchmark_call("Optimal Ate Mul:",
-			pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2));
+			pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2));
 	benchmark_call("Optimal Ate Div:",
-			pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2));
+			pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2));
 }
 
 void benchmark_ibe() {
+	bbkem_public params;
+	bbkem_msk msk;
+	bbkem_pk upk;
+	const char *id = "cm0 in public";
+
+	generate_params(&msk, &params);
+	derive_private_key(&upk, &msk, &params, id);
+
 	byte key1[16], key2[16];
 	bbkem_ciphertext cipher;
-	const char *id = "cm0 in public";
 
 	print("Benchmark for BB1-KEM IBE \n");
 
-	benchmark_call("Encapsulate: ", encapsulate_key(key1, &cipher, id));
+	benchmark_call("Encapsulate: ", encapsulate_key(key1, &cipher, &params, id));
 
-	benchmark_call("Decapsulate: ", decapsulate_key(key2, &cipher, id));
+	benchmark_call("Decapsulate: ", decapsulate_key(key2, &cipher, &params, &upk));
 
 	assert_bytearr_equal(key1, key2, 16, "key equal");
 }
@@ -377,9 +383,9 @@ void benchmark_g1() {
 	ecpoint_fp var_res;
 
 	benchmark_call("Addition:       ",
-			ecfp_add_affine(&var_res, (const ecfp_pt) &var_a, (const ecfp_pt) &var_b));
-	benchmark_call("Double:         ", ecfp_dbl_affine(&var_res, (const ecfp_pt) &var_a));
-	benchmark_call("Multiplication: ", ecfp_mul(&var_res, (const ecfp_pt) &var_a, var_k));
+			ecfp_add_affine(&var_res,  &var_a, &var_b));
+	benchmark_call("Double:         ", ecfp_dbl_affine(&var_res, &var_a));
+	benchmark_call("Multiplication: ", ecfp_mul(&var_res, &var_a, var_k));
 	benchmark_call("Hash to point:  ", ecfp_hash_to_point(&var_res, var_k));
 }
 
@@ -400,9 +406,9 @@ void benchmark_g2() {
 	ecpoint_fp2 var_res;
 
 	benchmark_call("Addition:       ",
-			ecfp2_add_affine(&var_res, (const ecfp2_pt) &var_a, (const ecfp2_pt) &var_b));
-	benchmark_call("Double:         ", ecfp2_dbl_affine(&var_res, (const ecfp2_pt) &var_a));
-	benchmark_call("Multiplication: ", ecfp2_mul(&var_res, (const ecfp2_pt) &var_a, var_k));
+			ecfp2_add_affine(&var_res, &var_a, &var_b));
+	benchmark_call("Double:         ", ecfp2_dbl_affine(&var_res, &var_a));
+	benchmark_call("Multiplication: ", ecfp2_mul(&var_res, &var_a, var_k));
 	benchmark_call("Hash to point:  ", ecfp2_hash_to_point(&var_res, var_k));
 }
 
@@ -482,23 +488,30 @@ void benchmark_pairing() {
 	print("Benchmark for pairing \n");
 
 	benchmark_call("Optimal Ate:    ",
-			pbc_map_opt_ate(&var_res, &var_a, &var_b));
+			pbc_map_opt_ate(var_res, &var_a, &var_b));
 	benchmark_call("Optimal Ate Mul:",
-			pbc_map_opt_ate_mul(&var_res, &var_a1, &var_b1, &var_a2, &var_b2));
+			pbc_map_opt_ate_mul(var_res, &var_a1, &var_b1, &var_a2, &var_b2));
 	benchmark_call("Optimal Ate Div:",
-			pbc_map_opt_ate_div(&var_res, &var_a1, &var_b1, &var_a2, &var_b2));
+			pbc_map_opt_ate_div(var_res, &var_a1, &var_b1, &var_a2, &var_b2));
 }
 
 void benchmark_ibe() {
+	bbkem_public params;
+	bbkem_msk msk;
+	bbkem_pk upk;
+	const char *id = "cm0 in public";
+
+	generate_params(&msk, &params);
+	derive_private_key(&upk, &msk, &params, id);
+
 	byte key1[16], key2[16];
 	bbkem_ciphertext cipher;
-	const char *id = "cm0 in public";
 
 	print("Benchmark for BB1-KEM IBE \n");
 
-	benchmark_call("Encapsulate: ", encapsulate_key(key1, &cipher, id));
+	benchmark_call("Encapsulate: ", encapsulate_key(key1, &cipher, &params, id));
 
-	benchmark_call("Decapsulate: ", decapsulate_key(key2, &cipher, id));
+	benchmark_call("Decapsulate: ", decapsulate_key(key2, &cipher, &params, &ubk));
 
 	assert_bytearr_equal(key1, key2, 16, "key equal");
 }
@@ -524,6 +537,9 @@ int main() {
 	print("\n\n");
 
 	benchmark_pairing();
+	print("\n\n");
+
+	benchmark_ibe();
 	print("\n\n");
 
 	return 0;
