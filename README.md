@@ -1,5 +1,8 @@
 # Pairings in C
 
+[![Build Status](https://travis-ci.org/IAIK/pairings_in_c.svg?branch=develop)](https://travis-ci.org/IAIK/pairings_in_c)
+[![codecov](https://codecov.io/gh/IAIK/pairings_in_c/branch/develop/graph/badge.svg)](https://codecov.io/gh/IAIK/pairings_in_c)
+
 This repository contains a C library for pairing-based cryptography which was part of results published at CHES 2014 [4]. It supports bilinear pairings based on 160-bit and 254-bit Barreto-Naehrig elliptic curves.
 
 ## Directory Structure

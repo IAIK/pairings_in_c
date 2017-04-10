@@ -1,0 +1,26 @@
+language: c
+sudo: required
+
+addons:
+  apt:
+    sources:
+    - george-edison55-precise-backports   # cmake 3.x
+    packages:
+    - cmake-data
+    - cmake
+    - lcov
+
+before_script:
+  - mkdir _build
+  - cd _build
+
+# configure, build and run the test suite with coverage support
+script:
+  - cmake -DTEST_COVERAGE=1 ../framework
+  - make suite
+  - make coverage
+
+# generate coverage reports
+after_script:
+  - lcov -l _coverage/bipair_in_c.info
+  - bash <(curl -s https://codecov.io/bash) -f _coverage/bipair_in_c.info
