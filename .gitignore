@@ -1,0 +1,44 @@
+# various unwanted files (backups, objects, cmake artifacts)
+*~
+*.o
+*.kate-swp
+*.swp
+.#*
+\#*#
+CMakeCache.txt
+Makefile
+CMakeFiles
+/build*/
+/_build*/
+*.res
+.DS_Store
+
+# eclipse project files
+.settings
+.project
+.cproject
+.cdtproject
+.cdtbuild
+
+# netbeans project files
+/dist/
+Makefile
+.dep.inc
+nbproject
+
+# QtCreator project files
+CMakeLists.txt.user
+
+# ignore all _ prefixed directories (usually used for generated directories)
+_*/
+
+# Latex build output
+*.pdf
+*.log
+*.out
+*.aux
+*.bbl
+*.toc
+*.blg
+/testgenerator/build/
+/testgenerator/dist/

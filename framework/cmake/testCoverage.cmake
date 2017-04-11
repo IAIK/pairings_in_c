@@ -1,5 +1,5 @@
 # This script discovers the lcov and the genhtml binaries which are used to
-# generate a coverage report. Custom targets for generating 
+# generate a coverage report. Custom targets for generating
 # a coverage report are registered.
 #
 # When the "coverage" target should be used it is mandatory to add tests via
@@ -9,84 +9,100 @@
 # are defined. These can be used when the coverage of custom program executions
 # should be determined.
 #
-# The following variables can be used to customize the function:
-#   DEFAULT_COVERAGE_OUTPUT_DIR............custom output directory for the report
+# Processed variables:
+#   COVERAGE_OUTPUT_DIR...........custom output directory for the report
+#                                 (gets exported into the cache)
+#   DEFAULT_COVERAGE_OUTPUT_DIR...when COVERAGE_OUTPUT_DIR is undefined then
+#                                 this default directory is used to define it
+#   SUB_PROJECT...................building the current project as sub project
+#                                 disables the coverage functionality
 #
-# As feedback if the targets are available the COVERAGE_TEST_POSSIBLE variable
-# is set.
+# Provided targets:
+#   covReset......................Delete coverage counter files.
+#   covGenerate...................Analyze counter files and generate report.
+#   coverage......................Reset Counters + run tests + generate report.
 #
+# When neither COVERAGE_OUTPUT_DIR nor DEFAULT_COVERAGE_OUTPUT_DIR is set then
+# "${PROJECT_BINARY_DIR}/_coverage" is set as fallback directory.
 
-# include the coverage testing logic only once
-IF( DEFINED COVERAGE_TEST_POSSIBLE )
-  RETURN()
-ENDIF()
+# The master project is responsible for the coverage support.
+if(SUB_PROJECT)
+  return()
+endif()
 
-FIND_PROGRAM(LCOV_COMMAND NAMES lcov)
-FIND_PROGRAM(GENHTML_COMMAND NAMES genhtml)
-MARK_AS_ADVANCED(LCOV_COMMAND GENHTML_COMMAND)
+set(LCOV_GCOV_ARG --rc lcov_branch_coverage=1)
+if(CLANG) # "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang"
+  find_program(LLVM_COV_COMMAND NAMES llvm-cov)
+  mark_as_advanced(LLVM_COV_COMMAND)
+  list(APPEND LCOV_GCOV_ARG --gcov-tool "${PROJECT_SOURCE_DIR}/cmake/scripts/llvm-gcov.sh")
+endif()
 
-IF( NOT LCOV_COMMAND OR NOT GENHTML_COMMAND )
-  INFO_MSG("lcov and/or genhtml couldn't be found. Coverage testing will not be available." )
-ENDIF ( )
+# Search for lcov and genhtml and skip coverage support on error.
+find_program(LCOV_COMMAND NAMES lcov)
+find_program(GENHTML_COMMAND NAMES genhtml)
+mark_as_advanced(LCOV_COMMAND GENHTML_COMMAND)
+if(NOT LCOV_COMMAND OR NOT GENHTML_COMMAND OR (CLANG AND NOT LLVM_COV_COMMAND))
+  info_msg("lcov, genhtml, or llvm-cov couldn't be found.")
+  info_msg("Coverage testing will not be available.")
+  return()
+endif()
 
-SET( COVERAGE_TEST_POSSIBLE 0)
-IF( LCOV_COMMAND AND GENHTML_COMMAND AND (CMAKE_COMPILER_IS_GNUCC OR MINGW) )
-  SET( COVERAGE_TEST_POSSIBLE 1)
+# add option to enable coverage builds
+option(TEST_COVERAGE "Adds compile flags coverage testing." "OFF")
+if(TEST_COVERAGE)
+  set(CMAKE_C_FLAGS          "${CMAKE_C_FLAGS} --coverage")
+  set(CMAKE_CXX_FLAGS        "${CMAKE_CXX_FLAGS} --coverage")
+  # C and CXX FLAGS are also used during linking
+else()
+  return()
+endif()
 
-  # add option to enable coverage builds
-  OPTION(TEST_COVERAGE "Adds compile flags coverage testing." "OFF")
+# define a output directory if nothing has been specified
+if(NOT DEFAULT_COVERAGE_OUTPUT_DIR)
+  set(DEFAULT_COVERAGE_OUTPUT_DIR "${PROJECT_BINARY_DIR}/_coverage")
+endif()
 
-  IF(TEST_COVERAGE)
-    SET(CMAKE_C_FLAGS          "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
-    SET(CMAKE_CXX_FLAGS        "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lgcov")
-  ENDIF()
+# export the output directory to the cache to enable modification
+cache_with_default(COVERAGE_OUTPUT_DIR
+                   "${DEFAULT_COVERAGE_OUTPUT_DIR}"
+                   "PATH"
+                   "Output directory for the coverage report."
+)
+mark_as_advanced(COVERAGE_OUTPUT_DIR)
 
-  # configure default output directory
-  IF(NOT DEFAULT_COVERAGE_OUTPUT_DIR)
-    SET(DEFAULT_COVERAGE_OUTPUT_DIR "${PROJECT_BINARY_DIR}/_coverage")
-  ENDIF()
+# add the output directory to the clean target of the project
+set_property(
+  DIRECTORY "${PROJECT_SOURCE_DIR}"
+  APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES "${COVERAGE_OUTPUT_DIR}"
+)
 
-  IF(NOT COVERAGE_OUTPUT_DIR AND DEFAULT_COVERAGE_OUTPUT_DIR)
-    SET(COVERAGE_OUTPUT_DIR "${DEFAULT_COVERAGE_OUTPUT_DIR}"
-      CACHE PATH "Output directory for the coverage report.")
-  ENDIF()
+add_custom_target(covReset
+                  COMMAND "${LCOV_COMMAND}" -z -d "${PROJECT_BINARY_DIR}"
+                  WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
+                  COMMENT "Reset the counters for the coverage tests."
+                  VERBATIM
+)
 
-  SET_PROPERTY(
-    DIRECTORY "${PROJECT_SOURCE_DIR}"
-    APPEND
-    PROPERTY ADDITIONAL_MAKE_CLEAN_FILES "${COVERAGE_OUTPUT_DIR}"
-  )
+add_custom_target(covGenerate
+                  COMMAND "${CMAKE_COMMAND}" -E make_directory "${COVERAGE_OUTPUT_DIR}"
+                  COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/base.info"
+                  COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/coverage.info"
+                  COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
+                  COMMAND "${LCOV_COMMAND}" ${LCOV_GCOV_ARG} -i -c -d "${PROJECT_BINARY_DIR}" -o "${COVERAGE_OUTPUT_DIR}/base.info"
+                  COMMAND "${LCOV_COMMAND}" ${LCOV_GCOV_ARG} -c -d "${PROJECT_BINARY_DIR}" -o "${COVERAGE_OUTPUT_DIR}/coverage.info"
+                  COMMAND "${LCOV_COMMAND}" ${LCOV_GCOV_ARG} -a "${COVERAGE_OUTPUT_DIR}/base.info" -a "${COVERAGE_OUTPUT_DIR}/coverage.info" -o "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
+                  COMMAND "${LCOV_COMMAND}" ${LCOV_GCOV_ARG} -r "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info" "/usr/include/*" -o "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
+                  COMMAND "${CMAKE_COMMAND}" -E chdir "${COVERAGE_OUTPUT_DIR}" "${GENHTML_COMMAND}" -p "${PROJECT_SOURCE_DIR}" "${CMAKE_PROJECT_NAME}.info" --branch-coverage
+                  WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
+                  COMMENT "Collect coverage data and generate HTML."
+                  VERBATIM
+)
 
-  ADD_CUSTOM_TARGET(covReset COMMAND "${LCOV_COMMAND}" -z -d "${PROJECT_BINARY_DIR}"
-                            WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
-                            COMMENT "Reset the counters for the coverage tests."
-                            VERBATIM )
-
-  ADD_CUSTOM_TARGET(covGenerate
-                            COMMAND "${CMAKE_COMMAND}" -E make_directory "${COVERAGE_OUTPUT_DIR}"
-                            COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/base.info"
-                            COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/coverage.info"
-                            COMMAND "${CMAKE_COMMAND}" -E remove "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
-                            COMMAND "${LCOV_COMMAND}" -i -c -d "${PROJECT_BINARY_DIR}" -o "${COVERAGE_OUTPUT_DIR}/base.info"
-                            COMMAND "${LCOV_COMMAND}" -c -d "${PROJECT_BINARY_DIR}" -o "${COVERAGE_OUTPUT_DIR}/coverage.info"
-                            COMMAND "${LCOV_COMMAND}" -a "${COVERAGE_OUTPUT_DIR}/base.info" -a "${COVERAGE_OUTPUT_DIR}/coverage.info" -o "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
-                            COMMAND "${LCOV_COMMAND}" -r "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info" "/usr/include/*" -o "${COVERAGE_OUTPUT_DIR}/${CMAKE_PROJECT_NAME}.info"
-                            COMMAND "${CMAKE_COMMAND}" -E chdir "${COVERAGE_OUTPUT_DIR}" "${GENHTML_COMMAND}" -p "${PROJECT_SOURCE_DIR}" "${CMAKE_PROJECT_NAME}.info"
-                            WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
-                            COMMENT "Collect coverage data and generate HTML."
-                            VERBATIM )
-
-  ADD_CUSTOM_TARGET( coverage COMMAND "${CMAKE_COMMAND}" -D "LCOV_COMMAND:STRING=${LCOV_COMMAND}"
-                                                      -D "GENHTML_COMMAND:STRING=${GENHTML_COMMAND}"
-                                                      -D "COVERAGE_OUTPUT_DIR:STRING=${COVERAGE_OUTPUT_DIR}"
-                                                      -D "PROJECT_BINARY_DIR:STRING=${PROJECT_BINARY_DIR}"
-                                                      -D "PROJECT_SOURCE_DIR:STRING=${PROJECT_SOURCE_DIR}"
-                                                      -D "CMAKE_PROJECT_NAME:STRING=${CMAKE_PROJECT_NAME}"
-                                                      -P "${PROJECT_SOURCE_DIR}/cmake/executeCoverageTest.cmake"
-                                                      VERBATIM )
-ENDIF( )
-
-
-
-
+add_custom_target(coverage
+                  COMMAND "${CMAKE_COMMAND}" "--build" "." "--target" "suite"
+                  COMMAND "${CMAKE_COMMAND}" "--build" "." "--target" "covReset"
+                  COMMAND "${CMAKE_COMMAND}" -D "PROGRAM:STRING=${CMAKE_CTEST_COMMAND}" -D "RETURN_VALUE:STRING=ZERO" -P "${PROJECT_SOURCE_DIR}/cmake/scripts/run.cmake"
+                  COMMAND "${CMAKE_COMMAND}" "--build" "." "--target" "covGenerate"
+                  WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
+                  VERBATIM
+)
