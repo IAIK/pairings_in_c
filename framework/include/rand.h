@@ -40,7 +40,7 @@
  * @param seed the seed for initialization
  * @param len the length of the seed in bytes
  */
-void cprng_init(void *seed, length_t len);
+void cprng_init(const void *seed, length_t len);
 
 /**
  * Returns the specified number of bytes in the buffer.
