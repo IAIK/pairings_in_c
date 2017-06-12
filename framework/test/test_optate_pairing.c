@@ -33,12 +33,15 @@
 ****************************************************************************/
 
 #include "assert.h"
+#include "bigint/bi.h"
 #include "pbc/pbc.h"
 #include "types.h"
+#include "rand.h"
 
 int main(void) {
 	fp12_t var_res;
 
+        cprng_init(bi_one, BI_BYTES);
 #if (BNCURVE == BN256)
 #ifdef MONTGOMERY_ARITHMETIC
 	{

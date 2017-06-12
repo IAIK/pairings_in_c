@@ -36,6 +36,13 @@
 #define RAND_H_
 
 /**
+ * Initializes the PRNG seed.
+ * @param seed the seed for initialization
+ * @param len the length of the seed in bytes
+ */
+void cprng_init(void *seed, length_t len);
+
+/**
  * Returns the specified number of bytes in the buffer.
  * @param buf the buffer to filled with random bytes
  * @param size number of random bytes to generate

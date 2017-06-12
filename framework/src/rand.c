@@ -38,8 +38,27 @@
 #define CPRNG_SIZE 	20
 #define HASH_LEN	20
 
+static byte CPRNGState[CPRNG_SIZE];	
 
-byte CPRNGState[CPRNG_SIZE];		// seed needs to be initialized, for now we assume memory to be initialized randomly
+/**
+ * Initialize the CPRNG seed.
+ * @param seed the seed used for initialization
+ * @param len the length of the seed for initialization
+ */
+void cprng_init(void *seed, length_t len) {
+    length_t i, j;
+
+    i = 0; 
+    j = 0;
+    while (i < len) {
+       if (j == CPRNG_SIZE) {
+           j = 0;
+       }
+       CPRNGState[j] = ((byte*)seed)[i];
+       i++;
+       j++;
+    }
+}
 
 /**
  * One-way function used to create CPRNG. Delegates to
